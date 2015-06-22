@@ -1,0 +1,81 @@
+@import "settings";
+@import "../../bower_components/foundation/scss/foundation";
+$font-stack: Cabin, Lobster, lato, Helvetica, sans-serif;
+
+$color-1: #000000;
+$color-2: #FFFFFF;
+$color-3: #B5CA15;
+$color-4: #333333;
+$color-5: #F40066;
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin transition($transition:0.4s) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	transition: $transition;
+}
+
+@mixin blur ($blur:5px) {
+filter: blur(5px);
+-webkit-filter: blur(5px);
+}
+
+
+body {
+	font: 100% $font-stack;
+	background-image: url("../img/hexellence.png");
+}
+
+.blur {
+	-webkit-filter:blur(10px);
+}
+
+box { 
+	@include border-radius (10px); 
+	margin: auto;
+	background-color: $color-4;
+}
+ 
+h1 {
+	color:$color-1;
+	font-family: cabin;
+}
+
+h2 {color:$color-3; font-family: lobster;}
+h3 {color:$color-5}
+// p {font-family: lato;}
+
+.pencils {
+	width: 400px;
+	@include transition;
+
+	&:hover {
+		width: 300px;
+		@include blur (10px);
+	}
+}
+
+.textbox {
+	width: 450px;
+	height: 200px;
+	background-color: white;
+	-webkit-filter:opacity(0.3);
+	-webkit-filter:blur(1px);
+	z-index: 0;
+	position: absolute;
+
+}
+
+.content {
+	padding:15px;	
+	z-index: 10;
+	position: relative;
+
+}
