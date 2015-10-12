@@ -149,7 +149,7 @@ class WebApp extends \CWebApplication
 	 */
 	public function processRequest()
 	{
-		// If this is a resource request, we should respond with the resource ASAP
+		// If this is a resource request, we should respond with the resource ASAP.
 		$this->_processResourceRequest();
 
 		$configService = $this->config;
@@ -761,10 +761,10 @@ class WebApp extends \CWebApplication
 				$url = UrlHelper::getUrl('install');
 				$this->request->redirect($url);
 			}
-			// Otherwise return a 404
+			// Otherwise return a 503
 			else
 			{
-				throw new HttpException(404);
+				throw new HttpException(503);
 			}
 		}
 	}

@@ -28,7 +28,9 @@ $.extend(Craft,
 		'243':'o',  '244':'o',  '245':'o',  '246':'oe', '248':'o',  '249':'u',  '250':'u',  '251':'u',  '252':'ue', '255':'y',
 		'257':'aa', '269':'ch', '275':'ee', '291':'gj', '299':'ii', '311':'kj', '316':'lj', '326':'nj', '353':'sh', '363':'uu',
 		'382':'zh', '256':'aa', '268':'ch', '274':'ee', '290':'gj', '298':'ii', '310':'kj', '315':'lj', '325':'nj', '337':'o',
-		'352':'sh', '362':'uu', '369':'u',  '381':'zh'
+		'352':'sh', '362':'uu', '369':'u',  '381':'zh', '260':'A',  '261':'a',  '262':'C',  '263':'c',  '280':'E',  '281':'e',
+		'321':'L',  '322':'l',  '323':'N',  '324':'n',  '211':'O',  '346':'S',  '347':'s',  '379':'Z',  '380':'z',  '377':'Z',
+		'388':'z'
 	},
 
 	/**
@@ -363,7 +365,7 @@ $.extend(Craft,
 			}
 			else
 			{
-				if (typeof data !== 'object')
+				if (data === null || typeof data !== 'object')
 				{
 					data = {};
 				}
@@ -1262,7 +1264,10 @@ $.extend($.fn,
 	{
 		return this.each(function()
 		{
-			new Craft.Pane(this);
+			if (!$.data(this, 'pane'))
+			{
+				new Craft.Pane(this);
+			}
 		});
 	},
 
@@ -1332,7 +1337,7 @@ $.extend($.fn,
 	{
 		return this.each(function()
 		{
-			if (!$.data(this, 'text'))
+			if (!$.data(this, 'nicetext'))
 			{
 				new Garnish.NiceText(this);
 			}
@@ -3482,6 +3487,10 @@ Craft.BaseElementSelectInput = Garnish.Base.extend(
 		}
 
 		this.$container = this.getContainer();
+
+		// Store a reference to this class
+		this.$container.data('elementSelect', this);
+
 		this.$elementsContainer = this.getElementsContainer();
 		this.$addElementBtn = this.getAddElementsBtn();
 
@@ -4173,6 +4182,7 @@ Craft.BaseInputGenerator = Garnish.Base.extend(
 {
 	$source: null,
 	$target: null,
+	$form: null,
 	settings: null,
 
 	listening: null,
@@ -4182,6 +4192,8 @@ Craft.BaseInputGenerator = Garnish.Base.extend(
 	{
 		this.$source = $(source);
 		this.$target = $(target);
+		this.$form = this.$source.closest('form');
+
 		this.setSettings(settings);
 
 		this.startListening();
@@ -4210,6 +4222,7 @@ Craft.BaseInputGenerator = Garnish.Base.extend(
 		this.listening = true;
 
 		this.addListener(this.$source, 'textchange', 'onTextChange');
+		this.addListener(this.$form, 'submit', 'onFormSubmit');
 
 		this.addListener(this.$target, 'focus', function() {
 			this.addListener(this.$target, 'textchange', 'stopListening');
@@ -4230,6 +4243,7 @@ Craft.BaseInputGenerator = Garnish.Base.extend(
 
 		this.removeAllListeners(this.$source);
 		this.removeAllListeners(this.$target);
+		this.removeAllListeners(this.$form);
 	},
 
 	onTextChange: function()
@@ -4240,6 +4254,16 @@ Craft.BaseInputGenerator = Garnish.Base.extend(
 		}
 
 		this.timeout = setTimeout($.proxy(this, 'updateTarget'), 250);
+	},
+
+	onFormSubmit: function()
+	{
+		if (this.timeout)
+		{
+			clearTimeout(this.timeout);
+		}
+
+		this.updateTarget();
 	},
 
 	updateTarget: function()
@@ -9079,6 +9103,15 @@ Craft.Grid = Garnish.Base.extend(
 	{
 		this.$container = $(container);
 
+		// Is this already a grid?
+		if (this.$container.data('grid'))
+		{
+			Garnish.log('Double-instantiating a grid on an element');
+			this.$container.data('grid').destroy();
+		}
+
+		this.$container.data('grid', this);
+
 		this.setSettings(settings, Craft.Grid.defaults);
 
 		if (this.settings.mode == 'pct')
@@ -9800,6 +9833,11 @@ Craft.ImageHandler = Garnish.Base.extend(
 						Craft.ImageUpload.$modalContainerDiv = $('<div class="modal fitted"></div>').addClass(settings.modalClass).appendTo(Garnish.$bod);
 					}
 
+					if (response.fileName)
+					{
+						this.source = response.fileName;
+					}
+
 					if (response.html)
 					{
 						Craft.ImageUpload.$modalContainerDiv.empty().append(response.html);
@@ -9940,7 +9978,8 @@ Craft.ImageModal = Garnish.Modal.extend(
 
 		$img.height(newHeight).width(newWidth);
 		this.factor = factor;
-		if (this.cropAreaTool)
+
+		if (this.cropAreaTool && typeof $img.imgAreaSelect({instance: true}) != "undefined")
 		{
 			$img.imgAreaSelect({instance: true}).update();
 		}
