@@ -11,23 +11,52 @@ $colorMainLight: #FF696D;
 $color2nd:       #4795C4;
 $color2ndLight:  #AAC9EC;
 
-// $color-1: #4796C2;
-// $color-2: white;
-// $color-3: #7EA7BA;
-// $color-4: #085072;
-// $color-5: #053D58;
-// $color-6: #B5CA15;
-// $color-7: #333333;
-// $color-8: #F40066;
+// : #4796C2;
+// : white;
+// : #7EA7BA;
+// : #085072;
+// : #053D58;
+// : #B5CA15;
+// : #333333;
+// : #F40066;
+
+/* Lists
+========================================================================= */
+
+// Remove default list styles, margins and padding
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  color: $colorLight;
+  line-height: 1.5em;
+} 
+
+h1 {color:$color2nd}
+h2 {color:$colorMain}
+h3 {color:$colorDark}
+
+/* /END/ Lists
+========================================================================= */
 
 /* Header, Banner and Footer Layout
 ==================================== */
 
 
-// .navbar {
+.navbar {
+  max-height: 300px;
+  background-color: $colorMainLight;
+}
 
-// }
-
+nav {
+  text-align: center;
+  text-transform: uppercase;
+}
 
 .main-logo,
 .navbar li {
@@ -56,16 +85,15 @@ $color2ndLight:  #AAC9EC;
 
 .main-header {
   padding-top: 20px;
-  color: pink;
-  background-color: orange;
+  // color: pink;
+  // background-color: orange;
 }
 
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
+
+
+
+/* /END/ Header, Banner and Footer Layout
+==================================== */
 
 body 
 {font: 100% $font-stack;
@@ -78,106 +106,55 @@ margin: auto;
 background-color: green;
 }
 
-box { 
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+.imgbox {
   @include border-radius (10px); 
   margin: auto;
+  max-width: 50%;
+  text-align: center;
+  padding: 12px 12px;
+
+}
+
+.imgtest {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  background-image: url("/../images/windmill.png");
+}
+
+.textbox { 
+  @include border-radius (3px); 
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  padding: 12px 12px;
   background-color: $colorLight;
 }
 
-
-
-/* Lists
-========================================================================= */
-
-// Remove default list styles, margins and padding
-
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.textbox p, .textbox h1, .textbox h2, .textbox h3 {
+  padding: 2px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-p {color: $colorLight} 
-h1 {color:$color2nd}
-h2 {color:$colorDark}
-h3 {color:$colorLight}
-
-  //BELOW IS SITE44 SCSS
-
-  //@import "settings";
-  //@import "../../bower_components/foundation/scss/foundation";
-
-  // @mixin transition($transition:0.4s) {
-  //   -webkit-transition: $transition;
-  //   -moz-transition: $transition;
-  //   -ms-transition: $transition;
-  //   transition: $transition;
-  // }
-
-  // @mixin blur ($blur:5px) {
-  // filter: blur(5px);
-  // -webkit-filter: blur(5px);
-  // }
-
-  // body {
-  //   font: 100% $font-stack;
-  //   background-image: url("../img/hexellence.png");
-  // }
-
-  // .blur {
-  //   -webkit-filter:blur(10px);
-  // }
-
-  // h1 {
-  //   color:$color-1;
-  //   font-family: cabin;
-  // }
-
-  // h2 {color:$color-3; font-family: lobster;}
-  // h3 {color:$color-5}
-
-  // .pencils {
-  //   width: 700px;
-  //   @include transition;
-
-  //   &:hover {
-  //     width: 500px;
-  //     @include blur (10px);
-  //   }
-  // }
-
-  // box { 
-  //   @include border-radius (10px); 
-  //   margin: auto;
-  //   background-color: $color-4;
-  // }
+.textbox p {
+  color: $colorDark;
+}
 
 
-  // .textbox {
-  //   width: 450px;
-  //   height: 200px;
-  //   background-color: white;
-  //   -webkit-filter:opacity(0.3);
-  //   -webkit-filter:blur(1px);
-  //   z-index: 0;
-  //   position: absolute;
-
-  // }
-
-  // .content {
-  //   padding:15px; 
-  //   z-index: 10;
-  //   position: relative;
-
-  // }
-
+  
 // BELOW IS LIZ LIZ AND CRAFT NEW TESTS
 
 html { 
   background: $colorMain; 
 }
-
 
 a {
     color: $colorLight;
@@ -215,15 +192,7 @@ text-decoration:none;
 color: #f8f8f8; 
 }
 
-.navbar {
-	max-height: 300px;
-	background-color: $colorMainLight;
-}
 
-nav {
-  text-align: center;
-  text-transform: uppercase;
-}
 
 
 /*nav.fixed {
@@ -362,3 +331,71 @@ nav {
 }*/
 
 
+//BELOW IS SITE44 SCSS
+
+  //@import "settings";
+  //@import "../../bower_components/foundation/scss/foundation";
+
+  // @mixin transition($transition:0.4s) {
+  //   -webkit-transition: $transition;
+  //   -moz-transition: $transition;
+  //   -ms-transition: $transition;
+  //   transition: $transition;
+  // }
+
+  // @mixin blur ($blur:5px) {
+  // filter: blur(5px);
+  // -webkit-filter: blur(5px);
+  // }
+
+  // body {
+  //   font: 100% $font-stack;
+  //   background-image: url("../img/hexellence.png");
+  // }
+
+  // .blur {
+  //   -webkit-filter:blur(10px);
+  // }
+
+  // h1 {
+  //   color:$color-1;
+  //   font-family: cabin;
+  // }
+
+  // h2 {color:$color-3; font-family: lobster;}
+  // h3 {color:$color-5}
+
+  // .pencils {
+  //   width: 700px;
+  //   @include transition;
+
+  //   &:hover {
+  //     width: 500px;
+  //     @include blur (10px);
+  //   }
+  // }
+
+  // box { 
+  //   @include border-radius (10px); 
+  //   margin: auto;
+  //   background-color: $color-4;
+  // }
+
+
+  // .textbox {
+  //   width: 450px;
+  //   height: 200px;
+  //   background-color: white;
+  //   -webkit-filter:opacity(0.3);
+  //   -webkit-filter:blur(1px);
+  //   z-index: 0;
+  //   position: absolute;
+
+  // }
+
+  // .content {
+  //   padding:15px; 
+  //   z-index: 10;
+  //   position: relative;
+
+  // }

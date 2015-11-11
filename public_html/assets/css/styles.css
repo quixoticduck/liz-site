@@ -1,7 +1,38 @@
 /* Layout Element Colors
 ==================================== */
+/* Lists
+========================================================================= */
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+p {
+  color: white;
+  line-height: 1.5em; }
+
+h1 {
+  color: #4795C4; }
+
+h2 {
+  color: #EE163D; }
+
+h3 {
+  color: #333333; }
+
+/* /END/ Lists
+========================================================================= */
 /* Header, Banner and Footer Layout
 ==================================== */
+.navbar {
+  max-height: 300px;
+  background-color: #FF696D; }
+
+nav {
+  text-align: center;
+  text-transform: uppercase; }
+
 .main-logo,
 .navbar li {
   display: inline-block; }
@@ -24,10 +55,10 @@
   padding: 10px 20px; }
 
 .main-header {
-  padding-top: 20px;
-  color: pink;
-  background-color: orange; }
+  padding-top: 20px; }
 
+/* /END/ Header, Banner and Footer Layout
+==================================== */
 body {
   font: 100% Cabin, Lobster, lato, Helvetica, sans-serif; }
 
@@ -36,33 +67,40 @@ body {
   margin: auto;
   background-color: green; }
 
-box {
+.imgbox {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   border-radius: 10px;
   margin: auto;
+  max-width: 50%;
+  text-align: center;
+  padding: 12px 12px; }
+
+.imgtest {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  background-image: url("/../images/windmill.png"); }
+
+.textbox {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  padding: 12px 12px;
   background-color: white; }
 
-/* Lists
-========================================================================= */
-ol,
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
+.textbox p, .textbox h1, .textbox h2, .textbox h3 {
+  padding: 2px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
-p {
-  color: white; }
-
-h1 {
-  color: #4795C4; }
-
-h2 {
+.textbox p {
   color: #333333; }
-
-h3 {
-  color: white; }
 
 html {
   background: #EE163D; }
@@ -93,14 +131,6 @@ a:visited {
 a:active {
   text-decoration: none;
   color: #f8f8f8; }
-
-.navbar {
-  max-height: 300px;
-  background-color: #FF696D; }
-
-nav {
-  text-align: center;
-  text-transform: uppercase; }
 
 /*nav.fixed {
   position: fixed;
