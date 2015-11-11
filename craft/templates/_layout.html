@@ -18,42 +18,40 @@
 	<link rel="stylesheet" href="/assets/css/normalize.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-
-<body class="{{ bodyClass }}">
-
-	<div id="container">
-			<div class="navbar">
-
-
+	<div class="main-wrapper">
+		<body class="{{ bodyClass }}">
+			<div id="container">
+					<div class="navbar">
 						<nav>
 							<ul>
-										<header id="header">
-					<h1><a href="{{ siteUrl }}">{{ siteName }}</a> A Websitey website</h1>
-								<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
-								<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
-								<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
-								<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'relationships' %}class="active"{% endif %}>Relationships</a></li>
-								<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
-								<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
+								<header class="main-header">
+									<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> A Websitey website</h1>
+									<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
+									<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
+									<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+									<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'relationships' %}class="active"{% endif %}>Relationships</a></li>
+									<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
+									<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
+								</header>
 							</ul>
 						</nav>
-			</header>
+					</div>
+
+		{% if craft.request.firstSegment == '' %}
+		testetststs
+		{% endif %}
+
+				<main id="content" role="main">
+					{% block content %}
+						<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+						<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+					{% endblock %}
+				</main>
+
+				<footer id="footer">
+					Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>
+				</footer>
+			</div>
 		</div>
-
-{% if craft.request.firstSegment == '' %}
-testetststs
-{% endif %}
-
-		<main id="content" role="main">
-			{% block content %}
-				<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-				<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-			{% endblock %}
-		</main>
-
-		<footer id="footer">
-			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>
-		</footer>
-	</div>
 </body>
 </html>

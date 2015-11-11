@@ -1,7 +1,40 @@
+/* Layout Element Colors
+==================================== */
+/* Header, Banner and Footer Layout
+==================================== */
+.main-logo,
+.navbar li {
+  display: inline-block; }
+
+.main-logo,
+.main-nav li {
+  border-radius: 5px;
+  margin-right: 10px; }
+
+.main-logo {
+  margin-right: 50px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.main-logo a,
+.main-nav a {
+  text-decoration: none;
+  display: block;
+  text-align: block;
+  padding: 10px 20px; }
+
+.main-header {
+  padding-top: 20px;
+  color: pink;
+  background-color: orange; }
+
 body {
-  font: 100% Cabin, Lobster, lato, Helvetica, sans-serif;
+  font: 100% Cabin, Lobster, lato, Helvetica, sans-serif; }
+
+.main-wrapper {
   width: 90%;
-  margin: auto; }
+  margin: auto;
+  background-color: green; }
 
 box {
   -webkit-border-radius: 10px;
