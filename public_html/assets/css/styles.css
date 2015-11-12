@@ -23,85 +23,8 @@ h3 {
 
 /* /END/ Lists
 ========================================================================= */
-/* Header, Banner and Footer Layout
-==================================== */
-.navbar {
-  max-height: 300px;
-  background-color: #FF696D; }
-
-nav {
-  text-align: center;
-  text-transform: uppercase; }
-
-.main-logo,
-.navbar li {
-  display: inline-block; }
-
-.main-logo,
-.main-nav li {
-  border-radius: 5px;
-  margin-right: 10px; }
-
-.main-logo {
-  margin-right: 50px;
-  margin-top: 0px;
-  margin-bottom: 0px; }
-
-.main-logo a,
-.main-nav a {
-  text-decoration: none;
-  display: block;
-  text-align: block;
-  padding: 10px 20px; }
-
-.main-header {
-  padding-top: 20px; }
-
-/* /END/ Header, Banner and Footer Layout
-==================================== */
-body {
-  font: 100% Cabin, Lobster, lato, Helvetica, sans-serif; }
-
-.main-wrapper {
-  width: 90%;
-  margin: auto;
-  background-color: green; }
-
-.imgbox {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
-  margin: auto;
-  max-width: 50%;
-  text-align: center;
-  padding: 12px 12px; }
-
-.imgtest {
-  height: 100px;
-  width: 100px;
-  background-color: blue;
-  background-image: url("/../images/windmill.png"); }
-
-.textbox {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  border-radius: 3px;
-  margin: auto;
-  max-width: 50%;
-  text-align: center;
-  padding: 12px 12px;
-  background-color: white; }
-
-.textbox p, .textbox h1, .textbox h2, .textbox h3 {
-  padding: 2px 0px;
-  margin-top: 0px;
-  margin-bottom: 0px; }
-
-.textbox p {
-  color: #333333; }
-
+/* Link stylings
+========================================================================= */
 html {
   background: #EE163D; }
 
@@ -131,6 +54,99 @@ a:visited {
 a:active {
   text-decoration: none;
   color: #f8f8f8; }
+
+/* /END/ Link stylings
+========================================================================= */
+/* Header, Banner and Footer Layout
+==================================== */
+nav {
+  text-align: center;
+  text-transform: uppercase;
+  max-height: 300px;
+  background-color: #FF696D;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 15px;
+  border-radius: 5px; }
+
+nav li {
+  display: inline-block; }
+
+.main-logo,
+.main-logo h1
+ {
+  border-radius: 5px; }
+
+.main-logo,
+.main-nav a,
+.main-nav h1 {
+  text-decoration: none;
+  display: inline-block;
+  text-align: inline-block;
+  padding: 10px 15px; }
+
+.main-logo
+ {
+  margin-right: 20px;
+  margin-top: -11px;
+  margin-bottom: 0px;
+  display: inline-block;
+  float: left; }
+
+.main-logo a {
+  margin-right: 20px; }
+
+/* /END/ Header, Banner and Footer Layout
+==================================== */
+body {
+  font: 100% Cabin, Lobster, lato, Helvetica, sans-serif; }
+
+.main-wrapper {
+  width: 90%;
+  margin: auto;
+  background-color: green; }
+
+.imgbox {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  padding: 12px 12px; }
+
+.imgtest {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  background-image: url("/../images/windmill.png"); }
+
+.imgtest2 {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  background-image: url("../images/windmill.png"); }
+
+.textbox {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  margin: auto;
+  max-width: 50%;
+  text-align: center;
+  padding: 12px 12px;
+  background-color: white; }
+
+.textbox p, .textbox h1, .textbox h2, .textbox h3 {
+  padding: 2px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.textbox p {
+  color: #333333; }
 
 /*nav.fixed {
   position: fixed;

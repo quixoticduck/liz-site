@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"back",
+				"background-color"
+			],
+			[
 				"tex",
 				"text-align"
 			],
@@ -30,10 +34,6 @@
 			[
 				"c",
 				"colorLight"
-			],
-			[
-				"back",
-				"background-color"
 			]
 		]
 	},
@@ -43,7 +43,7 @@
 			"file": "public_html/assets/scss/styles.scss",
 			"settings":
 			{
-				"buffer_size": 6074,
+				"buffer_size": 6424,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "craft/templates/index.html",
 			"settings":
 			{
-				"buffer_size": 1426,
+				"buffer_size": 1497,
 				"line_ending": "Windows"
 			}
 		},
@@ -59,8 +59,17 @@
 			"file": "craft/templates/_layout.html",
 			"settings":
 			{
-				"buffer_size": 2482,
+				"buffer_size": 2508,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "created textbox css, issue linking to two different assets folders in directory to fix\n",
+			"settings":
+			{
+				"buffer_size": 87,
+				"line_ending": "Windows",
+				"name": "created textbox css, issue linking to two differen"
 			}
 		}
 	],
@@ -106,17 +115,22 @@
 	"expanded_folders":
 	[
 		"/C/Users/Clara/GitHub/liz-site",
-		"/C/Users/Clara/GitHub/liz-site/craft",
 		"/C/Users/Clara/GitHub/liz-site/craft/app",
 		"/C/Users/Clara/GitHub/liz-site/craft/config",
 		"/C/Users/Clara/GitHub/liz-site/craft/templates",
 		"/C/Users/Clara/GitHub/liz-site/dev",
+		"/C/Users/Clara/GitHub/liz-site/dev/assets",
+		"/C/Users/Clara/GitHub/liz-site/dev/assets/css",
+		"/C/Users/Clara/GitHub/liz-site/dev/assets/img",
 		"/C/Users/Clara/GitHub/liz-site/public_html",
 		"/C/Users/Clara/GitHub/liz-site/public_html/assets",
+		"/C/Users/Clara/GitHub/liz-site/public_html/assets/images",
 		"/C/Users/Clara/GitHub/liz-site/public_html/assets/scss"
 	],
 	"file_history":
 	[
+		"/C/Users/Clara/GitHub/liz-site/dev/assets/css/main.css",
+		"/C/Users/Clara/GitHub/liz-site/index.html",
 		"/C/Users/Clara/GitHub/liz-site/public_html/index.php",
 		"/C/Users/Clara/GitHub/liz-site/craft/templates/_layout.html",
 		"/C/Users/Clara/GitHub/liz-site/public_html/assets/css/styles.css",
@@ -165,7 +179,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -180,6 +194,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"main-nav",
+			"main",
 			"ul",
 			"deep",
 			"aard",
@@ -219,7 +235,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -228,15 +244,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6074,
+						"buffer_size": 6424,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2091,
+								2091
 							]
 						],
 						"settings":
@@ -247,10 +263,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1305.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -259,15 +275,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1426,
+						"buffer_size": 1497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								768,
+								768
 							]
 						],
 						"settings":
@@ -288,15 +304,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2482,
+						"buffer_size": 2508,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								884,
+								884
 							]
 						],
 						"settings":
@@ -309,7 +325,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 87,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								87
+							]
+						],
+						"settings":
+						{
+							"auto_name": "created textbox css, issue linking to two differen",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -392,7 +437,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 189.0,
+	"side_bar_width": 50.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
