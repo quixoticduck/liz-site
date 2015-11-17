@@ -15,15 +15,19 @@
 	<meta charset="utf-8" />
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
+	<link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/assets/css/normalize.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
+	<link rel="stylesheet" href="/assets/css/styles.min.css">
 </head>
 	<div class="main-wrapper">
 		<body class="{{ bodyClass }}">
 			<div id="container">
 						<nav>
 <!-- 							<header class="main-header"> -->
-								<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> A Websitey website
+								<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
+								<!-- A Websitey website -->
 								</h1>
 									<ul class="main-nav">
 										<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
@@ -40,6 +44,7 @@
 		testetststsfirstsegment
 		{% endif %}
 
+<h2> Health Promotion</h2>
 
 
 				<main id="content" role="main">

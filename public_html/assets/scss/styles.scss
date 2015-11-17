@@ -1,6 +1,23 @@
-// BELOW IS HUGO TUTORIAL
+@font-face {
+  font-family: 'brushpen';
+  src: url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
 
-$font-stack: Cabin, Lobster, lato, Helvetica, sans-serif;
+$featureFont: 'brushpen', cursive;
+$headingFont: 'Fenix', serif;
+$pFont:'Open Sans', sans-serif;
+
+// @font-face {
+//   font-family: 'Lobster';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Lobster'), local('Lobster), url(http://fonts.gstatic.com/s/vollkorn/v5/BCFBp4rt5gxxFrX6F12DKnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+// }
 
 /* Layout Element Colors
 ==================================== */
@@ -37,8 +54,16 @@ p {
   line-height: 1.5em;
 } 
 
-h1 {color:$color2nd}
-h2 {color:$colorMain}
+h1 {
+  color:$colorLight;
+  font-family: $featureFont;
+  font-size: 40px;
+}
+
+h2 {
+  color:$colorMain;
+  font-family: $headingFont;
+}
 h3 {color:$colorDark}
 
 /* /END/ Lists
@@ -105,16 +130,16 @@ nav {
   text-transform: uppercase;
   max-height: 300px;
   background-color: $colorMainLight;
-  padding-top: 20px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 15px;
-  border-radius: 5px;
+  // padding-top: 20px;
+  // padding-bottom: 5px;
+  // padding-left: 10px;
+  // padding-right: 15px;
+  padding: 20px 15px;
+  // border-radius: 5px;
+  // background-color: blue; 
 }
 
-.main-nav {
-  // border-radius: 5px;
-}
+
 
 nav li {
 
@@ -134,7 +159,7 @@ nav li {
 .main-logo h1
 // .main-nav li 
 {
-  border-radius: 5px;
+  // border-radius: 5px;
   // margin-right: 10px;
 }
 
@@ -149,19 +174,42 @@ nav li {
   padding: 10px 15px;
 }
 
+
+.main-nav {
+  // border-radius: 5px;
+  text-align: right;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    color: $colorLight;
+    font: $headingFont;
+    font-size: 16px;
+    line-height: 28px;
+    border-bottom: 2px dotted $colorLight;
+    padding: 0px 0px;
+    margin: 10px 15px;
+    &:hover {color:$color2ndLight;}
+  }
+}
+
 .main-logo
 // .main-logo a 
 {
-  margin-right: 20px;
-  // padding-top: 10px;
-  margin-top: -11px;
-  margin-bottom: 0px;
+  // margin-right: 20px;
+  // // padding-top: 10px;
+  // margin-top: -11px;
+  // margin-bottom: 0px;
   display: inline-block;
   float: left;
+  margin: 0;
 }
 
 .main-logo a {
 margin-right: 20px;
+color: $colorLight;
 }
 
 
@@ -179,7 +227,7 @@ margin-right: 20px;
 ==================================== */
 
 body 
-{font: 100% $font-stack;
+{font: 100% $pFont;
 // color: $colorMain 
 }
 
@@ -241,6 +289,23 @@ background-color: green;
 
 
   
+
+
+
+
+
+
+@media (max-width: 992px) {
+  .main-nav li a {
+    font-size: 13px;
+  }
+} 
+
+
+
+
+
+
 // BELOW IS LIZ LIZ AND CRAFT NEW TESTS
 
 
