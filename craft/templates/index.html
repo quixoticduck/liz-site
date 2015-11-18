@@ -27,29 +27,45 @@
         </div>
 
         <div>
-		<img src="../../public_html/assets/images/white_tiles.png">
+		<img src="/assets/images/white_tiles.png">
 		image here
 		</div>
 
-        <div class="imgbox">
-          <img src="/../public_html/assets/images/white_tiles.png">
-          image here? 3
-        </div>
 
-        <div>
-		<img src="../public_html/assets/images/white_tiles.png">
-		image here 4
+	<div class="imgtest imgbox">
+	imgtesty
+	</div>
+
+	<div class="imgbox">
+		<img src="/assets/images/lizAppleSm.png">
+	</div>
+
+	<div class="imgbox">
+		<img src="/assets/images/globe.png">
+	</div>
+
+	<div class="imgbox">
+		<img src="/assets/images/textboxDots.png">
+	</div>
+
+	<div class="imgbox">
+		<img src="/assets/images/heart.png">
+	</div>
+
+<div class="center">
+	<div class="grid">
+		<div class="grid">
+			<div class="cloudBox">
+				<h3>TETETYYSTSYT</h3>
+			</div>
 		</div>
-
-	<div class="imgtest">
-	imgtesty
+		<div class="grid">
+			<div class="cloudBox">
+				<h3>TETETYYSTSYT</h3>
+			</div>
+		</div>
 	</div>
-
-		<div class="imgtest2">
-	imgtesty
-	</div>
-
-    <img src='../../dev/assets/img/white_tiles.png'>
+</div>
 
 	{{ entry.body }}
 
@@ -70,7 +86,7 @@
         {% set image = block.myBlockImage.first().getUrl %}
         {% if image %}
       		<div class="imgbox">
-  	        	<img src="{{ image }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}"> 
+  	        	<img src="{{ image }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}> 
            </div>
         {% endif %}
 
