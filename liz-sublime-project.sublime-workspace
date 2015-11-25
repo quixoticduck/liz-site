@@ -4,16 +4,24 @@
 		"selected_items":
 		[
 			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"color",
+				"colorMain"
+			],
+			[
 				"padding",
 				"padding-left"
 			],
 			[
 				"p",
 				"padding-top"
-			],
-			[
-				"mar",
-				"margin-top"
 			],
 			[
 				"back",
@@ -52,21 +60,27 @@
 	"buffers":
 	[
 		{
-			"contents": "<!doctype html>\n<html class=\"no-js\" lang=\"en\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Clara Alder | Portfolio</title>\n    <link rel=\"stylesheet\" href=\"assets/css/app.css\">\n    <link rel=\"stylesheet\" href=\"assets/css/main.css\">\n    <script src=\"bower_components/modernizr/modernizr.js\"></script>\n    <link href='http://fonts.googleapis.com/css?family=Roboto|Roboto+Slab' rel='stylesheet' type='text/css'>\n    <!-- GOOGLE ANALYTICS -->\n    <script>\n    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n    ga('create', 'UA-26372463-5', 'auto');\n    ga('send', 'pageview');\n    </script>\n    <!-- GOOGLE ANALYTICS END -->\n    <!-- <script>\n    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){\n    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),\n    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)\n    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');\n    ga('create', 'UA-26372463-4', 'auto');\n    ga('send', 'pageview');\n    </script> -->\n  </head>\n  <body>\n    <nav class=\"top-bar\" data-topbar role=\"navigation\">\n      <ul class=\"title-area\">\n        <li class=\"name\">\n          <h1><a href=\"#\">Liz Dean</a></h1>\n        </li>\n        <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n        <li class=\"toggle-topbar menu-icon\"><a href=\"#\"><span>Menu</span></a></li>\n      </ul>\n      <section class=\"top-bar-section\">\n        <!-- Right Nav Section -->\n        <ul class=\"right\">\n          <li class=\"active\"><a href=\"#\">Right Button Active</a></li>\n          <li class=\"has-dropdown\">\n            <a href=\"#\">Right Button Dropdown</a>\n            <ul class=\"dropdown\">\n              <li><a href=\"#\">First link in dropdown</a></li>\n              <li class=\"active\"><a href=\"#\">Active link in dropdown</a></li>\n            </ul>\n          </li>\n        </ul>\n        <ul class=\"right\">\n          <li><a href=\"#\">Right Nav Button 2</a></li>\n        </ul>\n        <!-- Left Nav Section -->\n        <ul class=\"left\">\n          <li><a href=\"#\">Left Nav Button</a></li>\n        </ul>\n      </section>\n    </nav>\n    <div class=\"row\">\n      <div class=\"large-12 columns\">\n        <h1>Liz Dean Consultancy</h1>\n        <div class=\"textbox\">\n          <h2>\n          Test\n          </h2>\n        </div>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"large-12 columns\">\n        <div class=\"panel\">\n          <h2>About me </h2>\n          <p>A I am a self-employed practitioner in Health Promotion.  My main area of interest is in Sexual Health and Relationships work however I have varst experience of working across a variety of areas, including youth work, education and social care covering a range of isses relating to health & well-being, specificaly drugs, alcohol and mental health and well-being.\n            \n          I plan and deliver presentations, training courses, workshops and lessons.  I also produce teaching resources and health promotion materials, conduct needs assessments and small scale pieces of research.  I am based in Sussex, but also work across the UK.  I also I am passionate and committed to Health Promotion and sex and relationships work, specifically the entitlement of young people to high quality objective sex and relationships education. I have been working in the field of Health Promotion, Supporting Behaviour change, Motivational Interviewing and sex and relationships education for 15 years.  I am a member of MINT (Motivational Interviewing Network of Trainers) www.motivationalinterviewing.org.</p>\n        </div>\n\n        <div class=\"imgbox\">\n          <img src='assets/img/white_tiles.png'>\n        </div>\n\n  <div class=\"imgtest\">\n  imgtesty\n  </div>\n\n\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"large-8 medium-8 columns\">\n        <h5>Here's your basic grid:</h5>\n        <!-- Grid Example -->\n        <div class=\"row\">\n          <div class=\"large-12 columns\">\n            <div class=\"callout panel\">\n              <p><strong>This is a twelve column section in a row.</strong> Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"large-6 medium-6 columns\">\n            <div class=\"callout panel\">\n              <p>Six columns</p>\n            </div>\n          </div>\n          <div class=\"large-6 medium-6 columns\">\n            <div class=\"callout panel\">\n              <p>Six columns</p>\n            </div>\n          </div>\n        </div>\n        <div class=\"row\">\n          <div class=\"large-4 medium-4 small-4 columns\">\n            <div class=\"callout panel\">\n              <p>Four columns</p>\n            </div>\n          </div>\n          <div class=\"large-4 medium-4 small-4 columns\">\n            <div class=\"callout panel\">\n              <p>Four columns <kbd>Quest</kbd></p>\n            </div>\n          </div>\n          <div class=\"large-4 medium-4 small-4 columns\">\n            <div class=\"callout panel\">\n              <p>Four columns</p>\n            </div>\n          </div>\n        </div>\n        <hr />\n        \n      </div>\n      <div class=\"large-4 medium-4 columns\">\n        <h5>Try one of these buttons:</h5>\n        <p><a href=\"#\" class=\"small button\">Simple Button</a><br/>\n        <a href=\"#\" class=\"small radius button\">Radius Button</a><br/>\n        <a href=\"#\" class=\"medium secondary button\">Secondary Btn</a></p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"large-12 columns\">\n        <h1>Welcome to Foundation</h1>\n        <img src=\"assets/img/pencils.jpeg\" class=\"pencils\">\n      </div>\n    </div>\n    <div class=\"content\"><h1>HELLO</h1><h2>test</h2>\n    </div>\n    <script src=\"bower_components/jquery/jquery.js\"></script>\n    <script src=\"bower_components/foundation/js/foundation.min.js\"></script>\n    <script src=\"js/app.js\"></script>\n  </body>\n</html>",
-			"file": "dev/testindex.html",
-			"file_size": 6522,
-			"file_write_time": 130917646533535114,
+			"file": "public_html/assets/scss/Bugfixes",
 			"settings":
 			{
-				"buffer_size": 6381,
+				"buffer_size": 99,
+				"line_ending": "Windows",
+				"name": "Bugfixes"
+			}
+		},
+		{
+			"file": "public_html/assets/scss/styles.scss",
+			"settings":
+			{
+				"buffer_size": 6648,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "craft/templates/testindex.html",
+			"file": "/C/Users/Clara/Google Drive/00. Work shared w Duck/Working From Home/claraAircraftIT email signature3.html",
 			"settings":
 			{
-				"buffer_size": 6401,
+				"buffer_size": 2491,
 				"line_ending": "Windows"
 			}
 		},
@@ -74,15 +88,7 @@
 			"file": "craft/templates/index.html",
 			"settings":
 			{
-				"buffer_size": 1992,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "public_html/assets/scss/styles.scss",
-			"settings":
-			{
-				"buffer_size": 7072,
+				"buffer_size": 2163,
 				"line_ending": "Windows"
 			}
 		},
@@ -90,7 +96,7 @@
 			"file": "craft/templates/_layout.html",
 			"settings":
 			{
-				"buffer_size": 2509,
+				"buffer_size": 4037,
 				"line_ending": "Windows"
 			}
 		}
@@ -147,6 +153,9 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Clara/GitHub/liz-site/public_html/assets/scss/test.css",
+		"/C/Users/Clara/GitHub/liz-site/dev/testindex.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/testindex.html",
 		"/C/Users/Clara/GitHub/liz-site/dev/index.html",
 		"/C/Users/Clara/GitHub/liz-site/index.html",
 		"/C/Users/Clara/GitHub/liz-site/dev/assets/css/main.css",
@@ -213,6 +222,16 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"border-radius: 10px;",
+			"img",
+			"assets",
+			"main-nav",
+			"mobile na",
+			"mobilen",
+			"mobileNav",
+			"media",
+			"transi",
+			"trans",
 			"  \n",
 			"main-nav",
 			"main",
@@ -255,86 +274,85 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "dev/testindex.html",
+					"file": "public_html/assets/scss/Bugfixes",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6381,
+						"buffer_size": 99,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4096,
-								4003
+								99,
+								99
 							]
 						],
 						"settings":
 						{
+							"auto_name": "Bugfixes",
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "craft/templates/testindex.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6401,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4106,
-								4054
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 630.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "craft/templates/index.html",
+					"buffer": 1,
+					"file": "public_html/assets/scss/styles.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1992,
+						"buffer_size": 6648,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1279,
-								1279
+								4991,
+								4991
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3153.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Clara/Google Drive/00. Work shared w Duck/Working From Home/claraAircraftIT email signature3.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2491,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2491
 							]
 						],
 						"settings":
@@ -346,38 +364,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "public_html/assets/scss/styles.scss",
+					"file": "craft/templates/index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7072,
+						"buffer_size": 2163,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1921,
-								1921
+								1389,
+								1389
 							]
 						],
 						"settings":
 						{
 							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1350.0,
+						"translation.y": 90.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -386,15 +402,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2509,
+						"buffer_size": 4037,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								792,
-								757
+								3544,
+								3546
 							]
 						],
 						"settings":
@@ -404,10 +420,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -444,6 +460,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -490,7 +510,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 445.0,
+	"side_bar_width": 294.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
