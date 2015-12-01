@@ -22,12 +22,12 @@
 	</div>
 
         <div class="imgbox">
-          <img src="/assets/images/white_tiles.png">
+          <img src="/assets/myImg/white_tiles.png">
           image here?
         </div>
 
         <div>
-		<img src="/assets/images/white_tiles.png">
+		<img src="/assets/myImg/white_tiles.png">
 		image here
 		</div>
 
@@ -36,21 +36,18 @@
 	imgtesty
 	</div>
 
-	<div class="imgbox">
-		<img src="/assets/images/lizAppleSm.png">
+<figure><img src="/assets/myImg/appleBlueW.png" class="rounded-corners-2" width="200"> 
+</figure>
+
+	<div class=" imgbox">
+	<img class="imgbox" src="/assets/myImg/appleBlueW.png">
 	</div>
 
-	<div class="imgbox">
-		<img src="/assets/images/globe.png">
+
+	<div>
+		<img class="imgbox" src="/assets/myImg/appleBlueW.png">
 	</div>
 
-	<div class="imgbox">
-		<img src="/assets/images/textboxDots.png">
-	</div>
-
-	<div class="imgbox">
-		<img src="/assets/images/heart.png">
-	</div>
 
 <div class="center">
 	<div class="grid">
@@ -85,9 +82,7 @@
 
         {% set image = block.myBlockImage.first().getUrl %}
         {% if image %}
-      		<div class="imgbox">
-  	        	<img src="{{ image }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}> 
-           </div>
+  	        	<img class="liz" src="{{ image }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}> 
         {% endif %}
 
         <a href="{{ block.myBlockUrl }}">Read More</a>

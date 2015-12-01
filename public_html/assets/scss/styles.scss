@@ -256,11 +256,7 @@ background-color: $colorMain;
   display: inline-block;
 }
 
-.img {
-  @include border-radius (10px); 
-}
-
-.imgbox {
+.liz {
   @include border-radius (10px); 
   margin: auto;
   max-width: 50%;
@@ -268,11 +264,30 @@ background-color: $colorMain;
   padding: 12px 12px;
 }
 
+// .img {
+//   @include border-radius (10px); 
+// }
+
+// .imgbox2 {
+//   @include border-radius (10px); 
+//   margin: auto;
+//   max-width: 50%;
+//   text-align: center;
+//   padding: 12px 12px;
+// }
+
 .imgtest {
   height: 100px;
   width: 100px;
   background-color: blue;
   background-image: url("/assets/images/white_tiles.png");
+}
+
+figure{
+    width:300px;
+    height:300px;
+    @include border-radius (30px);
+    overflow:hidden;
 }
 
 .cloudBox {

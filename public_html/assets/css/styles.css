@@ -133,13 +133,7 @@ body {
   margin: auto;
   display: inline-block; }
 
-.img {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px; }
-
-.imgbox {
+.liz {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -154,6 +148,15 @@ body {
   width: 100px;
   background-color: blue;
   background-image: url("/assets/images/white_tiles.png"); }
+
+figure {
+  width: 300px;
+  height: 300px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  border-radius: 30px;
+  overflow: hidden; }
 
 .cloudBox {
   background-image: url("/assets/images/cloud.png");
