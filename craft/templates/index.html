@@ -21,16 +21,16 @@
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 	 </p>
 	</div>
 
-        <div class="imgbox">
-          <img src="/assets/myImg/white_tiles.png">
-          image here?
-        </div>
 
-        <div>
-		<img src="/assets/myImg/white_tiles.png">
-		image here
-		</div>
+<!--     <div class="imgbox">
+      <img src="/assets/myImg/white_tiles.png">
+      image here?
+    </div>
 
+    <div>
+	<img src="/assets/myImg/white_tiles.png">
+	image here
+	</div>
 
 	<div class="imgtest imgbox">
 	imgtesty
@@ -42,11 +42,11 @@
 	<div class=" imgbox">
 	<img class="imgbox" src="/assets/myImg/appleBlueW.png">
 	</div>
-
+-->
 
 	<div>
-		<img class="imgbox" src="/assets/myImg/appleBlueW.png">
-	</div>
+		<img class="imgbox" src="/assets/myImg/cloud.png">
+	</div> 
 
 
 <div class="center">
@@ -77,16 +77,15 @@
 {% for block in entry.myBlock %}
 
     {% if block.type == "myBlock" %}
-
         <h3>{{ block.myBlockDescription }}</h3>
+    {% set image = block.myBlockImage.first().getUrl %}
 
-        {% set image = block.myBlockImage.first().getUrl %}
-        {% if image %}
-  	        	<img class="liz" src="{{ image }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}> 
-        {% endif %}
+    {% if image %}
+  	    <img class="myImage" src="{{ image }}" width="{{ image.getWidth('thumb') }}" height="{{ image.getHeight('thumb') }}" alt="{{ image.title }}">  
+    {% endif %}
 
         <a href="{{ block.myBlockUrl }}">Read More</a>
-
+        {{ block.myBlockSummary }}
     {% endif %}
 
 {% endfor %}

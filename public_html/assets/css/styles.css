@@ -133,21 +133,16 @@ body {
   margin: auto;
   display: inline-block; }
 
-.liz {
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  border-radius: 10px;
+.myImage {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
   margin: auto;
-  max-width: 50%;
+  max-width: 30%;
   text-align: center;
-  padding: 12px 12px; }
-
-.imgtest {
-  height: 100px;
-  width: 100px;
-  background-color: blue;
-  background-image: url("/assets/images/white_tiles.png"); }
+  padding: 12px 12px;
+  display: block; }
 
 figure {
   width: 300px;
@@ -182,14 +177,14 @@ figure {
 .textbox p {
   color: #333333; }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .main-nav li a {
     font-size: 15px;
     color: pink; } }
 .main-nav-close {
   display: none; }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   nav {
     position: fixed;
     top: 0px;

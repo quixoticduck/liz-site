@@ -138,11 +138,11 @@ nav {
   text-transform: uppercase;
   max-height: 300px;
   background-color: $colorMainLight;
+  padding: 20px 15px;
   // padding-top: 20px;
   // padding-bottom: 5px;
   // padding-left: 10px;
   // padding-right: 15px;
-  padding: 20px 15px;
   // border-radius: 5px;
   // background-color: blue; 
 }
@@ -256,12 +256,13 @@ background-color: $colorMain;
   display: inline-block;
 }
 
-.liz {
-  @include border-radius (10px); 
+.myImage {
+  @include border-radius (15px); 
   margin: auto;
-  max-width: 50%;
+  max-width: 30%;
   text-align: center;
   padding: 12px 12px;
+  display: block;
 }
 
 // .img {
@@ -276,12 +277,12 @@ background-color: $colorMain;
 //   padding: 12px 12px;
 // }
 
-.imgtest {
-  height: 100px;
-  width: 100px;
-  background-color: blue;
-  background-image: url("/assets/images/white_tiles.png");
-}
+// .imgtest {
+//   height: 100px;
+//   width: 100px;
+//   background-color: blue;
+//   background-image: url("/assets/images/white_tiles.png");
+// }
 
 figure{
     width:300px;
@@ -315,7 +316,7 @@ figure{
   color: $colorDark;
 }
 
-@media (min-width: $breakpointTabletMin) and (max-width: $breakpointTabletMax) {
+@media screen and (min-width: $breakpointTabletMin) and (max-width: $breakpointTabletMax) {
   .main-nav li a {
     font-size: 15px;
     color: pink;
@@ -326,7 +327,7 @@ figure{
   display: none;
 }
 
-@media (max-width: $breakpointPhoneMax) {
+@media screen and (max-width: $breakpointPhoneMax) {
   nav {
     position: fixed;
     top: 0px;
