@@ -232,12 +232,6 @@ body
 // color: $colorMain 
 }
 
-.main-wrapper {
-width: 90%;
-margin: auto;
-background-color: $colorMain;
-}
-
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
@@ -250,10 +244,48 @@ background-color: $colorMain;
   display: block;
 }
 
-.grid {
+.grid2 {
   // max-width: 50%;
   margin: auto;
   display: inline-block;
+}
+
+.main-wrapper {
+width: 90%;
+margin: auto;
+background-color: $colorMain;
+}
+
+$gutter: 20px;
+
+.grid {
+
+}
+
+.col {
+  float: left;
+  margin: auto;
+  // padding-left: $gutter;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.col-quarter {
+  width: 22.5%;
+}
+
+.col-half {
+  width: 45%;
+}
+.col-third {
+  width: 33.333333333%;
+}
+.col-twoThirds {
+  width: 66.666666666%;
+}
+
+.col-threeQuarters {
+  width: 75%;
 }
 
 .myImage {

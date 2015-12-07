@@ -120,18 +120,39 @@ nav li {
 body {
   font: 100% "Open Sans", sans-serif; }
 
+.center {
+  margin: auto;
+  display: block; }
+
+.grid2 {
+  margin: auto;
+  display: inline-block; }
+
 .main-wrapper {
   width: 90%;
   margin: auto;
   background-color: #EE163D; }
 
-.center {
+.col {
+  float: left;
   margin: auto;
-  display: block; }
+  margin-top: 15px;
+  margin-bottom: 15px; }
 
-.grid {
-  margin: auto;
-  display: inline-block; }
+.col-quarter {
+  width: 22.5%; }
+
+.col-half {
+  width: 45%; }
+
+.col-third {
+  width: 33.333333333%; }
+
+.col-twoThirds {
+  width: 66.666666666%; }
+
+.col-threeQuarters {
+  width: 75%; }
 
 .myImage {
   -webkit-border-radius: 15px;
