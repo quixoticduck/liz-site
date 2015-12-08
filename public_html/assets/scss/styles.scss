@@ -268,6 +268,18 @@ $gutter: 20px;
   // padding-left: $gutter;
   margin-top: 15px;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+.colpadding {
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.homeImages {
+  min-height: 350px;
+  float: left;
 }
 
 .col-quarter {
@@ -275,7 +287,7 @@ $gutter: 20px;
 }
 
 .col-half {
-  width: 45%;
+  width: 50%;
 }
 .col-third {
   width: 33.333333333%;
@@ -286,6 +298,10 @@ $gutter: 20px;
 
 .col-threeQuarters {
   width: 75%;
+}
+
+.col-fullWidth {
+  width: 100%;
 }
 
 .myImage {

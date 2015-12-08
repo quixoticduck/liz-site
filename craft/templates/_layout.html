@@ -25,19 +25,19 @@
 		<body class="{{ bodyClass }}">
 			<div id="container">
 						<nav>
-<!-- 							<header class="main-header"> -->
-								<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
-								<!-- A Websitey website -->
+<!-- 						<header class="main-header"> -->
+							<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
+							<!-- A Websitey website -->
 <!-- 								<div class="desktopNav"> -->
-									</h1>
-										<ul class="main-nav">
-											<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
-											<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
-											<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
-											<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
-											<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
-											<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
-										</ul>
+								</h1>
+									<ul class="main-nav">
+										<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
+										<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
+										<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+										<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
+										<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
+										<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
+									</ul>
 <!-- 								</div> -->
 <!-- 							</header> -->
 							<button class="main-nav-close">x
@@ -45,7 +45,7 @@
 						</nav>
 
 		{% if craft.request.firstSegment == '' %}
-		testetststsfirstsegment
+		<p>testetststsfirstsegment</p>
 		{% endif %}
 
 <h2> Health Promotion</h2>
