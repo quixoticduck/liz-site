@@ -32,7 +32,8 @@ h2 {
   font-family: "Fenix", serif; }
 
 h3 {
-  color: #333333; }
+  color: #333333;
+  margin: 12px; }
 
 /* /END/ Lists
 ========================================================================= */
@@ -76,7 +77,6 @@ nav {
   text-align: center;
   text-transform: uppercase;
   max-height: 300px;
-  background-color: #FF696D;
   padding: 20px 15px; }
 
 nav li {
@@ -147,7 +147,8 @@ body {
 
 .homeImages {
   min-height: 350px;
-  float: left; }
+  float: left;
+  padding-top: 10px 0px; }
 
 .col-quarter {
   width: 22.5%; }
@@ -173,9 +174,14 @@ body {
   -ms-border-radius: 15px;
   border-radius: 15px;
   margin: auto;
-  max-width: 30%;
+  max-width: 34%;
+  max-height: 199px;
   text-align: center;
-  padding: 12px 12px;
+  padding: 18px 18px;
+  padding-top: 5px;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  padding-right: 18px;
   display: block; }
 
 figure {
@@ -224,11 +230,14 @@ figure {
     top: 0px;
     bottom: 0px;
     left: 0px;
-    width: 400px;
-    max-height: none; }
+    width: 260px;
+    max-height: none;
+    background-color: #FF696D;
+    display: none; }
 
   .main-nav li {
-    display: block; }
+    display: block;
+    min-height: 45px; }
     .main-nav li a {
       font-size: 15px;
       display: block; }
@@ -245,6 +254,13 @@ figure {
     width: 60px;
     height: 60px;
     background-color: white;
-    border: none; } }
+    border: none; }
+
+  .col-half {
+    width: 100%; }
+
+  .myImage:hover {
+    width: 90%;
+    display: none; } }
 
 /*# sourceMappingURL=styles.css.map */
