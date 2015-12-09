@@ -175,6 +175,21 @@ body {
   border-radius: 15px;
   margin: auto;
   max-width: 34%;
+  text-align: center;
+  padding: 18px 18px;
+  padding-top: 5px;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  padding-right: 18px;
+  display: block; }
+
+.myImageGroup {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  border-radius: 15px;
+  margin: auto;
+  max-width: 34%;
   max-height: 199px;
   text-align: center;
   padding: 18px 18px;
