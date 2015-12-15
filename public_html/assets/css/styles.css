@@ -20,15 +20,17 @@ ul {
 
 p {
   color: white;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  margin: 7px 0px; }
 
 h1 {
   color: white;
   font-family: "brushpen", cursive;
-  font-size: 40px; }
+  font-size: 40px;
+  margin: 12px 0px; }
 
 h2 {
-  color: #EE163D;
+  color: white;
   font-family: "Fenix", serif; }
 
 h3 {
@@ -199,6 +201,9 @@ body {
   padding-right: 18px;
   display: block; }
 
+.homepageBig {
+  display: none; }
+
 figure {
   width: 300px;
   height: 300px;
@@ -248,7 +253,8 @@ figure {
     width: 260px;
     max-height: none;
     background-color: #FF696D;
-    display: none; }
+    transform: translate3d(-200px, 0, 0);
+    transition: transform 0.4s ease; }
 
   .main-nav li {
     display: block;

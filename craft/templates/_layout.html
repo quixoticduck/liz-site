@@ -33,11 +33,12 @@
 								</h1>
 									<ul class="main-nav">
 										<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
-										<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
+										<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
 										<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+										<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
 										<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
 										<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
-										<li><a href="{{ url('news') }}" {% if craft.request.firstSegment == 'news' %}class="active"{% endif %}>News</a></li>
+										
 									</ul>
 <!-- 								</div> -->
 <!-- 							</header> -->
@@ -49,9 +50,6 @@
 		<p>testetststsfirstsegment</p>
 		{% endif %}
 
-<h2> Health Promotion</h2>
-
-
 				<main id="content" role="main">
 					{% block content %}
 						<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
@@ -60,7 +58,12 @@
 				</main>
 
 				<footer id="footer">
-					Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>
+					Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •  
+<!-- 					<p>
+					<ul>
+						<li> --><a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>		
+<!-- 					</ul>
+					</p> -->
 				</footer>
 			</div>
 		</div>

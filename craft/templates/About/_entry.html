@@ -16,10 +16,10 @@
 {% extends "_layout" %}
 
 {% block content %}
-news entry
 	<article>
 		<h1>{{ entry.title }}</h1>
 		<p><b>Posted on {{ entry.postDate.format('F d, Y') }}</b></p>
 		{{ entry.body }}
+		about entry
 	</article>
 {% endblock %}
