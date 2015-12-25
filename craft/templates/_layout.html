@@ -19,53 +19,124 @@
 	<link href='https://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="/assets/css/normalize.css">
 	<link rel="stylesheet" href="/assets/css/styles.css">
-	<link rel="stylesheet" href="/assets/css/styles.min.css">
+<!-- 	<link rel="stylesheet" href="/assets/css/styles.min.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- 	">">https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> -->
+	<script src="/assets/js/jquery-1.11.3.min.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-	<div class="main-wrapper">
-		<body class="{{ bodyClass }}">
-			<div id="container">
-						<nav>
-<!-- 						<header class="main-header"> -->
-							<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
-							<!-- A Websitey website -->
-<!-- 								<div class="desktopNav"> -->
-								</h1>
-									<ul class="main-nav">
-										<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
-										<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
-										<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
-										<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
-										<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
-										<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
-										
-									</ul>
-<!-- 								</div> -->
-<!-- 							</header> -->
-							<button class="main-nav-close">x
-							</button>
-						</nav>
 
-		{% if craft.request.firstSegment == '' %}
-		<p>testetststsfirstsegment</p>
-		{% endif %}
+<div class="main-wrapper">
+	<body class="{{ bodyClass }}">
+		<div id="container">
+					<nav>
 
-				<main id="content" role="main">
-					{% block content %}
-						<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
-						<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
-					{% endblock %}
-				</main>
+						<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
+						<!-- A Websitey website -->
 
-				<footer id="footer">
-					Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •  
-<!-- 					<p>
-					<ul>
-						<li> --><a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>		
-<!-- 					</ul>
-					</p> -->
-				</footer>
-			</div>
+							</h1>
+								<ul class="main-nav">
+									<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
+									<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
+									<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+									<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
+									<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
+									<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active"{% endif %}>Health</a></li>
+									
+								</ul>
+
+
+						<button class="main-nav-close"><i class="fa fa-bars fa-2x"></i>
+						</button>
+					</nav>
+
+	{% if craft.request.firstSegment == '' %}
+	<p>testetststsfirstsegment</p>
+	{% endif %}
+
+			<main id="content" role="main">
+				{% block content %}
+					<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+					<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+				{% endblock %}
+			</main>
+
+			<footer id="footer">
+				Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •  
+					<a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>		
+			</footer>
 		</div>
+	</body>
+</div>
+
+<script>
+	var $menuButton = $('.main-nav-close');
+
+	$(document).ready(function() {
+		// $menuButton.click(function() {
+		// 	if ('nav').hasClass('navClose') {
+		// 		$('nav.navClose').removeClass('navClose')
+		// 		$('nav').addClass('navOpen');
+		// 	};
+
+		// 	else {
+		// 		$('nav.navOpen').removeClass('navOpen')
+		// 		$('nav').addClass('navClose');
+		// 	};
+		// });
+
+		
+			
+		
+
+
+
+		$menuButton.click(function() {
+			// $(this).hide();
+			$('nav').addClass('navOpen');
+			// $(this).fadeOut('slow');
+		});
+	});
+
+</script>
+
+
+
+
+
+
+// <script>
+var $thisdiv = $('nav, body');
+var $buffer = $('#buffer');
+$(window).scroll(function (event) {
+	// what the y position of the scroll is
+	var y = $(window).scrollTop();
+	// whether that's below the form
+	if (y >= 01) {
+	// if so, add the shrink class
+		$thisdiv.addClass('shrink');
+		$buffer.addClass('shrink');
+	} else {
+		$thisdiv.removeClass('shrink');
+		$buffer.removeClass('shrink');
+	}
+});
+var isMenuDown = false;
+$('.button').on('click', function(){
+	if (isMenuDown) {
+		$('nav').slideUp(function () {
+			$('nav').removeAttr("style");
+			isMenuDown = false;
+		});
+	} else {
+		$('nav').slideDown(function () {
+			isMenuDown = true;
+		});
+	}
+	//$('nav').removeAttr("style");
+	//console.log("slideToggle")
+});
+// </script>
+
 </body>
 </html>

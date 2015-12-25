@@ -399,10 +399,23 @@ figure {
     max-height: none;
     background-color: $colorMainLight;
     // display: none;
-    transform: translate3d(-200px, 0, 0);
+    transform: translate3d(-260px, 0, 0);
     transition: transform 0.4s ease;
   }
 
+  .navOpen {
+    transform: translate3d(0px, 0, 0);
+    transition: transform 0.4s ease;
+  }
+
+  .navClose {
+    transform: translate3d(-260px, 0, 0);
+    transition: transform 0.4s ease;
+  }
+
+  .bob {
+    color: green;
+  }
   .main-nav li {
     display: block;
     min-height: 45px;
