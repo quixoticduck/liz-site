@@ -387,7 +387,7 @@ figure {
   }
 } 
 
-.main-nav-close{
+.main-nav-close, .mobileTopBar {
   display: none;
 }
 
@@ -428,6 +428,15 @@ figure {
     float: none;
   }
 
+  .mobileWrap {
+    height: 60px;
+    width: 100%;
+    display: block;
+    max-height: 300px;
+    padding: 20px 15px;
+    background-color: red;
+  }
+
   .main-nav-close {
     display: block;
     position: absolute;
@@ -435,7 +444,20 @@ figure {
     right: -60px;
     width: 60px;
     height: 60px;
-    background-color: white;
+    background-color: $colorLight;
+    border: none;
+  }
+
+  .mobileTopBar {
+
+    position: absolute;
+    top: 0px;
+    // left: 0px;
+    right: -120px;
+    width: 100%;
+        width: 60px;
+    height: 60px;
+    background-color: $colorMainLight;
     border: none;
   }
 
