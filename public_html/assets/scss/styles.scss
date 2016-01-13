@@ -407,7 +407,7 @@ figure {
   }
 } 
 
-.mainNavClose, .mobileTopBar {
+.mainNavClose {
   display: none;
 }
 
@@ -493,17 +493,17 @@ body {
     padding-top: 55px;
   }
 
-  .mobileTopBar {
-    position: absolute;
-    top: 0px;
-    // left: 0px;
-    right: -120px;
-    width: 100%;
-        width: 60px;
-    height: 60px;
-    background-color: $colorMainLight;
-    border: none;
-  }
+  // .mobileTopBar {
+  //   position: absolute;
+  //   top: 0px;
+  //   // left: 0px;
+  //   right: -120px;
+  //   width: 100%;
+  //       width: 60px;
+  //   height: 60px;
+  //   background-color: $colorMainLight;
+  //   border: none;
+  // }
 
   .col-half {
     width: 100%;

@@ -260,7 +260,7 @@ figure {
     color: pink;
     margin-left: 13px;
     margin-right: 13px; } }
-.mainNavClose, .mobileTopBar {
+.mainNavClose {
   display: none; }
 
 @media screen and (max-width: 767px) {
@@ -320,16 +320,6 @@ figure {
 
   body {
     padding-top: 55px; }
-
-  .mobileTopBar {
-    position: absolute;
-    top: 0px;
-    right: -120px;
-    width: 100%;
-    width: 60px;
-    height: 60px;
-    background-color: #FF696D;
-    border: none; }
 
   .col-half {
     width: 100%; }
