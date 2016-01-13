@@ -29,6 +29,19 @@
 <div class="main-wrapper">
 	<body class="{{ bodyClass }}">
 		<div id="container">
+
+
+
+<!-- 					<div class="mobileWrap"> -->
+							<button class="mainNavClose menuClose">
+								<i class="fa fa-bars fa-2x"></i> 
+								<h2>MENU</h2>
+							</button>
+							<div class="mobileTopBar">
+								LIZ2
+							</div>
+		<!-- 			</div> -->
+
 					<nav class="navClose">
 
 						<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
@@ -46,16 +59,16 @@
 								</ul>
 
 <!-- 					<div class="mobileWrap"> -->
-							<button class="main-nav-close"><i class="fa fa-bars fa-2x"></i>
+<!-- 							<button class="mainNavClose"><i class="fa fa-bars fa-2x"></i>
 							</button>
 							<div class="mobileTopBar">
 								LIZ
-							</div>
+							</div> -->
 		<!-- 			</div> -->
 					</nav>
 
 	{% if craft.request.firstSegment == '' %}
-	<p>testetststsfirstsegment</p>
+	<p>I AM A TEST. Testy test.</p>
 	{% endif %}
 
 			<main id="content" role="main">
@@ -78,7 +91,7 @@
 <script>
 $(document).ready(function() {
 
-var $menuButton = $('.main-nav-close');
+var $menuButton = $('.mainNavClose');
 var $navBar = $('nav');
 var $navList = $('.main-nav');
 var sideBarOpen = false;
@@ -88,16 +101,20 @@ var sideBarOpen = false;
 	    if (!sideBarOpen) {
 			$navBar.removeClass('navClose');
 			$navList.removeClass('navClose');
+			$menuButton.removeClass('menuClose');
 			$navBar.addClass('navOpen');
 			$navList.addClass('navOpen');
+			$menuButton.addClass('menuOpen');
 	        sideBarOpen = true;
 	        console.log ("true");
 	    } 
 	    else {
 			$navBar.removeClass('navOpen');
 			$navList.removeClass('navOpen');
+			$menuButton.removeClass('menuOpen');
 			$navBar.addClass('navClose');
 			$navList.addClass('navClose');
+			$menuButton.addClass('menuClose');
 	        sideBarOpen = false;
 	        console.log ("false");
 	    }
@@ -151,7 +168,7 @@ var sideBarOpen = false;
 		
 
 // 	$(document).ready(function() 
-// 	var $menuButton = $('.main-nav-close');
+// 	var $menuButton = $('.mainNavClose');
 // 	{
 // 		// $('nav').addClass('navClose');
 

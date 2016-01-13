@@ -62,7 +62,7 @@ ul {
 p {
   color: $colorLight;
   line-height: 1.5em;
-  margin: 7px 0px;
+  margin: 7px 0px 10px 0px;
 } 
 
 h1 {
@@ -75,11 +75,31 @@ h1 {
 h2 {
   color:$colorLight;
   font-family: $headingFont;
+  display: inline;
 }
+
+.textbox h2 {
+  color: $colorDark;
+}
+
 h3 {
   color:$colorDark;
   margin: 12px;
+  display: inline;
 }
+
+.fa {
+  color: red;
+}
+
+.mainNavClose .fa  {
+  color: $colorLight;
+  margin-left: 20px;
+  margin-right: -20px;
+  float: left;
+}
+
+button:focus { outline: none; }
 
 /* /END/ Lists
 ========================================================================= */
@@ -387,7 +407,7 @@ figure {
   }
 } 
 
-.main-nav-close, .mobileTopBar {
+.mainNavClose, .mobileTopBar {
   display: none;
 }
 
@@ -414,6 +434,16 @@ figure {
     transition: transform 0.3s ease;
   }
 
+  .menuOpen {
+    transform: translate3d(138px, 0, 0);
+    transition: transform 0.8s ease;
+  }
+
+  .menuClose {
+    transform: translate3d(0px, 0, 0);
+    transition: transform 0.3s ease;
+  }
+
   .main-nav li {
     display: block;
     min-height: 45px;
@@ -437,15 +467,30 @@ figure {
     background-color: red;
   }
 
-  .main-nav-close {
+  .mainNavClose {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0px;
-    right: -60px;
-    width: 60px;
-    height: 60px;
-    background-color: $colorLight;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: $colorMainLight;
     border: none;
+  }
+
+  // .top {
+  //   display: block;
+  //   position: fixed;
+  //   top: 0px;
+  //   left: 0px;
+  //   width: 100%;
+  //   height: 55px;
+  //   background-color: $colorLight;
+  //   border: none;
+  // }
+
+body {
+    padding-top: 55px;
   }
 
   .mobileTopBar {
