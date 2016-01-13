@@ -322,8 +322,11 @@ figure {
     padding-top: 55px; }
 
   .col-half {
-    width: 100%; }
-
+    width: 100%; } }
+@media screen and (max-width: 767px) and (max-width: 460px) {
+  .menuOpen h2 {
+    display: none; } }
+@media screen and (max-width: 767px) {
   .myImage:hover {
     width: 90%;
     display: none; } }

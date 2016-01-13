@@ -25,6 +25,8 @@ $breakpointDesktopMin: 992px;
 $breakpointTabletMax: ($breakpointDesktopMin - 1px);
 $breakpointTabletMin: 768px;
 $breakpointPhoneMax: ($breakpointTabletMin - 1px);
+$breakpointPhoneMin: 460px;
+$breakpointTinyMax: ($breakpointPhoneMin - 1px);
 
 /* /END/ Media Query Breakpoints
 ==================================== */
@@ -508,6 +510,12 @@ body {
   .col-half {
     width: 100%;
   }
+
+@media screen and (max-width: $breakpointPhoneMin) {
+  .menuOpen h2 {
+    display: none;
+  }
+} 
 
 .main-wrapper {
 // width: 90%;
