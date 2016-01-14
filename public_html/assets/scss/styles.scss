@@ -21,9 +21,9 @@ $pFont:'Open Sans', sans-serif;
 
 /* Media Query Breakpoints
 ==================================== */
-$breakpointDesktopMin: 992px;
+$breakpointDesktopMin: 1038px;
 $breakpointTabletMax: ($breakpointDesktopMin - 1px);
-$breakpointTabletMin: 768px;
+$breakpointTabletMin: 915px;
 $breakpointPhoneMax: ($breakpointTabletMin - 1px);
 $breakpointPhoneMin: 460px;
 $breakpointTinyMax: ($breakpointPhoneMin - 1px);
@@ -165,7 +165,7 @@ nav {
   text-transform: uppercase;
   max-height: 300px;
   // background-color: $colorMainLight;
-  padding: 20px 15px;
+  padding: 20px 0px;
   // padding-top: 20px;
   // padding-bottom: 5px;
   // padding-left: 10px;
@@ -203,7 +203,7 @@ nav li {
   text-decoration: none;
   display: inline-block;
   text-align: inline-block;
-  padding: 10px 15px;
+  padding: 10px 0px;
 }
 
 .main-nav {
@@ -217,14 +217,20 @@ nav li {
   a {
     color: $colorLight;
     font: $headingFont;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 28px;
     border-bottom: 2px dotted $colorLight;
     padding: 0px 0px;
     margin: 10px 15px;
     &:hover {color:$color2ndLight;}
   }
+
+//bug not working
+  .last {
+    margin-right: 0px !important;
+  }
 }
+
 
 .main-logo
 // .main-logo a 
@@ -400,14 +406,35 @@ figure {
   color: $colorDark;
 }
 
-@media screen and (min-width: $breakpointTabletMin) and (max-width: $breakpointTabletMax) {
+@media screen and (min-width: $breakpointDesktopMin) {
   .main-nav li a {
-    font-size: 14px;
-    color: pink;
+    font-size: 19px;
+    color: yellow;
     margin-left: 13px;
     margin-right: 13px;
   }
 } 
+
+@media screen and (min-width: $breakpointTabletMin) and (max-width: $breakpointTabletMax) {
+  .main-nav li a {
+    font-size: 15px;
+    color: green;
+    // margin-left: 13px;
+    // margin-right: 13px;
+  }
+} 
+
+
+// @media screen and (min-width: $breakpointPhoneMax) and (max-width: $breakpointTabletMin) {
+//   .main-nav li a {
+//     font-size: 15px;
+//     color: green;
+//     margin-left: 13px;
+//     margin-right: 13px;
+//   }
+// }
+
+
 
 .mainNavClose {
   display: none;
@@ -422,6 +449,7 @@ figure {
     width: 260px;
     max-height: none;
     background-color: $colorMainLight;
+    padding: 20px 15px;
     // transform: translate3d(-290px, 0, 0);
     // transition: transform 0.4s ease;
   }
@@ -446,12 +474,14 @@ figure {
     transition: transform 0.3s ease;
   }
 
+//bug below not working
   .main-nav li {
     display: block;
     min-height: 45px;
     a {
-      font-size: 15px;
+      font-size: 19px;
       display: block;
+      color: blue;
     }
   }
 
