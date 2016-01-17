@@ -9,9 +9,9 @@
 	<h2>{{ entry.title }}</h2>
 
 	{{ entry.body }}
-
+</br>
 	<div class="textbox">
-		<h2>Testbox Heading</h2>
+		<h3>Testbox Heading</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -22,17 +22,17 @@
 
 <div class="grid">
   <div class="col col-half colpadding center">
-    <h2>Half</h2>
+    <h3>Half</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia labore possimus suscipit nesciunt, voluptatem, ut. Dolore ipsam eligendi, soluta quae cupiditate delectus magni totam enim, aperiam exercitationem ab blanditiis.  </p>
   </div>
 
   <div class="col col-half colpadding center">
-    <h2>HALF COLUMN</h2>
+    <h3>HALF COLUMN</h3>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam labore laboriosam repellat voluptatum adipisci eum suscipit quasi deleniti illo eligendi voluptate reiciendis, aperiam provident totam quas, maxime, repellendus ducimus! </p>
   </div>
 </div>
 
-<!-- 	<h2>Recent News</h2>
+<!-- 	<h3>Recent News</h3>
 
 
 		<ul>
@@ -47,7 +47,7 @@
 			
 			    {% if block.type == "singleBlock" %}
 				    <div class="col-fullWidth">
-				        <h3> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h3>
+				        <h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
 					    {% set image = block.myBlockImage.first().getUrl %}
 
 					    {% if image %}
@@ -62,31 +62,32 @@
 		{% endfor %}
 </div>
 
-<div class="col">
-		{% for block in entry.myBlock %}
-				
-			    {% if block.type == "groupBlocks" %}
-				    <div class="col-half homeImages">
-					    <h3> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h3>
-					    {% set image = block.myBlockImage.first().getUrl %}
+<!-- <div class="col backgroundPattern"> -->
+	{% for block in entry.myBlock %}
+			
+		    {% if block.type == "groupBlocks" %}
+			    <div class="col-half homeImages">
+				    <h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
+				    {% set image = block.myBlockImage.first().getUrl %}
 
-					    {% if image %}
-					   		 <div class="imgContainer">
-						  	    <a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-						  	</div>
-						    {% endif %}
-							<div class="textbox">
-				<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-						        {{ block.myBlockSummary }}
-						    </div>
-				    </div>
+				    {% if image %}
+				   		 <div class="imgContainer">
+					  	    <a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+					  	</div>
+					    {% endif %}
+						<div class="textbox">
+			<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+					        {{ block.myBlockSummary }}
+					    </div>
+			    </div>
 
-			    {% endif %}
+		    {% endif %}
 
-		{% endfor %}
-		</div>
+	{% endfor %}
+<!-- </div> -->
 
-		{% endblock %}
+
+{% endblock %}
 
 
 

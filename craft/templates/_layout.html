@@ -33,9 +33,15 @@
 
 
 <!-- 					<div class="mobileWrap"> -->
-							<button class="mainNavClose menuClose">
-								<i class="fa fa-bars fa-2x"></i> 
-								<h2>MENU</h2>
+							<button class="mainNavClose navHeadingWhenClose">
+								<i class="fa fa-bars fa-2x"></i>
+									<div class="menuTextMenu"> 
+										<h2>MENU</h2>
+									</div>
+									<div class="menuTextClose"> 
+										<h2>X</h2>
+									</div>
+
 							</button>
 <!-- 							<div class="mobileTopBar">
 								LIZ2
@@ -90,9 +96,10 @@
 <script>
 $(document).ready(function() {
 
-var $menuButton = $('.mainNavClose');
 var $navBar = $('nav');
 var $navList = $('.main-nav');
+var $menuButton = $('.mainNavClose');
+
 var sideBarOpen = false;
 
 	$menuButton.click(function() {
@@ -100,159 +107,41 @@ var sideBarOpen = false;
 	    if (!sideBarOpen) {
 			$navBar.removeClass('navClose');
 			$navList.removeClass('navClose');
-			$menuButton.removeClass('menuClose');
+			$menuButton.removeClass('navHeadingWhenClose');
+			$('.menuTextClose').removeClass('navHeadingWhenClose');
+			$('.menuTextMenu').removeClass('navHeadingWhenClose');
+
 			$navBar.addClass('navOpen');
 			$navList.addClass('navOpen');
-			$menuButton.addClass('menuOpen');
+			$menuButton.addClass('navHeadingWhenOpen');
+			$('.menuTextClose').addClass('navHeadingWhenOpen');
+			$('.menuTextMenu').addClass('navHeadingWhenOpen');
+
 	        sideBarOpen = true;
 	        console.log ("true");
 	    } 
 	    else {
 			$navBar.removeClass('navOpen');
 			$navList.removeClass('navOpen');
-			$menuButton.removeClass('menuOpen');
+			$menuButton.removeClass('navHeadingWhenOpen');
+			$('.menuTextClose').removeClass('navHeadingWhenOpen');
+			$('.menuTextMenu').removeClass('navHeadingWhenOpen');
+
 			$navBar.addClass('navClose');
 			$navList.addClass('navClose');
-			$menuButton.addClass('menuClose');
+			$menuButton.addClass('navHeadingWhenClose');
+			$('.menuTextClose').addClass('navHeadingWhenClose');
+			$('.menuTextMenu').addClass('navHeadingWhenClose');
+
 	        sideBarOpen = false;
 	        console.log ("false");
 	    }
 	});
 });		
 
-// if (!sideBarOpen) 
-// 	{
-
-// 		$menuButton.click(function() 
-// 		{
-// 			$navBar.removeClass('navClose');
-// 			$navList.removeClass('navClose');
-// 			$navBar.addClass('navOpen');
-// 			$navList.addClass('navOpen');
-// 			sideBarOpen = true;
-// 			console.log ("true");
-// 		});
-// 	}
-
-// else if (sideBarOpen)
-// 	{
-// 		$menuButton.click(function() 
-// 		{
-// 			$navBar.removeClass('navOpen');
-// 			$navList.removeClass('navOpen');
-// 			$navBar.addClass('navClose');
-// 			$navList.addClass('navClose');
-// 			sideBarOpen = false;
-// 			console.log ("false");
-// 		});
-// 	};
-// });
 
 </script>
 
-// <script>
-	
-				// $(this).fadeOut('slow');
-
-		// $menuButton.click(function() {
-		// 	if ('nav').hasClass('navClose') {
-		// 		$('nav.navClose').removeClass('navClose')
-		// 		$('nav').addClass('navOpen');
-		// 	};
-		// 	else {
-		// 		$('nav.navOpen').removeClass('navOpen')
-		// 		$('nav').addClass('navClose');
-		// 	};
-		// });
-		
-
-// 	$(document).ready(function() 
-// 	var $menuButton = $('.mainNavClose');
-// 	{
-// 		// $('nav').addClass('navClose');
-
-// 		$menuButton.click(function() 
-// 		{
-// 			$('nav').removeClass('navClose');
-// 			// if ('nav').hasClass('navClose') 
-// 			// {
-// 			// 	// $('nav.navClose').removeClass('navClose')
-// 			// 	// $('nav').removeClass('navClose');
-// 			// 	// $('nav').addClass('navOpen');
-// 			// };
-
-// 			// else 
-// 			// {
-// 			// 	$('nav.navOpen').removeClass('navOpen')
-// 			// 	$('nav').addClass('navClose');
-// 			// };
-// 		});
-// 	});
-// </script>
-		
-			
-<!-- 		// var isMenuOpen = false;
-		// $('.button').on('click', function(){
-		// 	if (isMenuDown) {
-		// 		$('nav').slideUp(function () {
-		// 			$('nav').removeAttr("style");
-		// 			isMenuOpen = false;
-		// 		});
-		// 	} else {
-		// 		$('nav').slideDown(function () {
-		// 			isMenuDown = true;
-		// 		});
-		// 	}		
-		// }); -->
-
-
-<!-- 
-	// 	$menuButton.click(function() {
-	// 		// $(this).hide();
-	// 		$('nav').addClass('navOpen');
-	// 		// $(this).fadeOut('slow');
-	// 	});
-	// });
- -->
-</script>
-
-
-
-
-
-
-<script>
-// var $thisdiv = $('nav, body');
-// var $buffer = $('#buffer');
-// $(window).scroll(function (event) {
-// 	// what the y position of the scroll is
-// 	var y = $(window).scrollTop();
-// 	// whether that's below the form
-// 	if (y >= 01) {
-// 	// if so, add the shrink class
-// 		$thisdiv.addClass('shrink');
-// 		$buffer.addClass('shrink');
-// 	} else {
-// 		$thisdiv.removeClass('shrink');
-// 		$buffer.removeClass('shrink');
-// 	}
-// });
-// var isMenuDown = false;
-// $('.button').on('click', function(){
-// 	if (isMenuDown) {
-// 		$('nav').slideUp(function () {
-// 			$('nav').removeAttr("style");
-// 			isMenuDown = false;
-// 		});
-// 	} else {
-// 		$('nav').slideDown(function () {
-// 			isMenuDown = true;
-// 		});
-// 	}
-// 	//$('nav').removeAttr("style");
-// 	//console.log("slideToggle")
-// });
- </script>
 
 </body>
 </html>
