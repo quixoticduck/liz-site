@@ -521,7 +521,7 @@ and (max-width: $breakpointPhoneMax)
   }
 
   .navHeadingWhenOpen {
-    transform: translate3d(138px, 0, 0);
+    transform: translate3d(69px, 0, 0);
     transition: transform 0.8s ease;
   }
 
@@ -623,11 +623,11 @@ and (max-width: $breakpointPhoneMax)
     }
 
   .navHeadingWhenOpen .menuTextClose {
-      display: block;
+      display: none;
     }
 
   .navHeadingWhenOpen .menuTextMenu {
-      display: none;
+      display: block;
     }
 } 
 
@@ -635,13 +635,21 @@ and (max-width: $breakpointPhoneMax)
 @media screen
 and (max-width: $breakpointTinyMax) 
 {
-.navHeadingWhenClose .menuTextClose {
-    display: block;
-  }
+  .navHeadingWhenClose .menuTextClose {
+      display: none;
+    }
 
-.navHeadingWhenClose  .menuTextMenu {
-    display: none;
-  }
+  .navHeadingWhenClose .menuTextMenu {
+      display: block;
+    }
+
+  .navHeadingWhenOpen .menuTextClose {
+      display: block;
+    }
+
+  .navHeadingWhenOpen .menuTextMenu {
+      display: none;
+    }
 }
 
 

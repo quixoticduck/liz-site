@@ -310,7 +310,7 @@ figure {
     transition: transform 0.3s ease; }
 
   .navHeadingWhenOpen {
-    transform: translate3d(138px, 0, 0);
+    transform: translate3d(69px, 0, 0);
     transition: transform 0.8s ease; }
 
   .navHeadingWhenClose {
@@ -365,15 +365,21 @@ figure {
     display: block; }
 
   .navHeadingWhenOpen .menuTextClose {
+    display: none; }
+
+  .navHeadingWhenOpen .menuTextMenu {
+    display: block; } }
+@media screen and (max-width: 459px) {
+  .navHeadingWhenClose .menuTextClose {
+    display: none; }
+
+  .navHeadingWhenClose .menuTextMenu {
+    display: block; }
+
+  .navHeadingWhenOpen .menuTextClose {
     display: block; }
 
   .navHeadingWhenOpen .menuTextMenu {
-    display: none; } }
-@media screen and (max-width: 459px) {
-  .navHeadingWhenClose .menuTextClose {
-    display: block; }
-
-  .navHeadingWhenClose .menuTextMenu {
     display: none; } }
 /* PHONE/SIDENAV MODE END
 ==================================== */
