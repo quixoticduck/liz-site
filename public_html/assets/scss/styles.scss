@@ -626,6 +626,11 @@ and (max-width: $breakpointPhoneMax)
       display: none;
     }
 
+// for if I want there to always be an X on the nav when it's open
+  // .navHeadingWhenOpen .menuTextClose {
+  //     display: block;
+  //   }
+
   .navHeadingWhenOpen .menuTextMenu {
       display: block;
     }
