@@ -1,147 +1,122 @@
 {#
- # Layout template
- # ---------------
- #
- # This template defines your site’s global layout. It can be
- # “extended” by other templates to fill in the gaps.
- #
- # See Twig’s Template Inheritance documentation for more details:
- # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
- #}
-
+# Layout template
+# ---------------
+#
+# This template defines your site’s global layout. It can be
+# “extended” by other templates to fill in the gaps.
+#
+# See Twig’s Template Inheritance documentation for more details:
+# http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+#}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
-<head>
-	<meta charset="utf-8" />
-	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
-	<link rel="home" href="{{ siteUrl }}" />
-	<link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="/assets/css/normalize.css">
-	<link rel="stylesheet" href="/assets/css/styles.css">
-<!-- 	<link rel="stylesheet" href="/assets/css/styles.min.css"> -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<!-- 	">">https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> -->
-	<script src="/assets/js/jquery-1.11.3.min.js"></script>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<div class="main-wrapper">
-	<body class="{{ bodyClass }}">
-		<div id="container">
-
-
-
-<!-- 					<div class="mobileWrap"> -->
-							<button class="mainNavClose navHeadingWhenClose">
-								<i class="fa fa-bars fa-2x"></i>
-									<div class="menuTextMenu"> 
-										<h2>MENU</h2>
-									</div>
-									<div class="menuTextClose"> 
-										<h2>X</h2>
-									</div>
-
-							</button>
-<!-- 							<div class="mobileTopBar">
-								LIZ2
-							</div> -->
-		<!-- 			</div> -->
-
-					<nav class="navClose">
-
-						<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a> 
-						<!-- A Websitey website -->
-
-							</h1>
-								<ul class="main-nav navClose">
-									<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
-									<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
-									<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
-									<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
-									<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
-									<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active last"{% endif %}>Health</a></li>									
-								</ul>
-
-<!-- 					<div class="mobileWrap"> -->
-<!-- 							<button class="mainNavClose"><i class="fa fa-bars fa-2x"></i>
-							</button>
-							<div class="mobileTopBar">
-								LIZ
-							</div> -->
-		<!-- 			</div> -->
-					</nav>
-
-	{% if craft.request.firstSegment == '' %}
-	<p>I AM A TEST. Testy test.</p>
-	{% endif %}
-
-			<main id="content" role="main">
+	<head>
+		<meta charset="utf-8" />
+		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+		<link rel="home" href="{{ siteUrl }}" />
+		<link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/assets/css/normalize.css">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<!-- 	<link rel="stylesheet" href="/assets/css/styles.min.css"> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<!-- 	">">https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> -->
+		<script src="/assets/js/jquery-1.11.3.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<div class="main-wrapper">
+		<body class="{{ bodyClass }}">
+			<div id="container">
+				<!-- 					<div class="mobileWrap"> -->
+				<button class="mainNavClose navHeadingWhenClose">
+				<i class="fa fa-bars fa-2x"></i>
+				<div class="menuTextMenu">
+					<h2>MENU</h2>
+				</div>
+				<div class="menuTextClose">
+					<h2>X</h2>
+				</div>
+				</button>
+				<!-- 							<div class="mobileTopBar">
+						LIZ2
+				</div> -->
+				<!-- 			</div> -->
+				<nav class="navClose">
+					<h1 class="main-logo"><a href="{{ siteUrl }}">{{ siteName }}</a>
+					<!-- A Websitey website -->
+					</h1>
+					<ul class="main-nav navClose">
+						<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}>Home</a></li>
+						<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
+						<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+						<li><a href="{{ url('communication') }}" {% if craft.request.firstSegment == 'communication' %}class="active"{% endif %}>Communication</a></li>
+						<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Relationships</a></li>
+						<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active last"{% endif %}>Health</a></li>
+					</ul>
+					<!-- 					<div class="mobileWrap"> -->
+					<!-- 							<button class="mainNavClose"><i class="fa fa-bars fa-2x"></i>
+					</button>
+					<div class="mobileTopBar">
+							LIZ
+					</div> -->
+					<!-- 			</div> -->
+				</nav>
+				{% if craft.request.firstSegment == '' %}
+					<p>I AM A TEST. Testy test.</p>
+				{% endif %}
+				<main id="content" role="main">
 				{% block content %}
 					<p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
 					<p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
 				{% endblock %}
-			</main>
-
-			<footer id="footer">
-				Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •  
-					<a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>		
-			</footer>
+				</main>
+			</div>
 		</div>
+		<footer id="footer">
+			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •
+			<a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
+		</footer>
+
+
+		<!-- 	</body> -->
+		<script>
+		$(document).ready(function() {
+		var $navBar = $('nav');
+		var $navList = $('.main-nav');
+		var $menuButton = $('.mainNavClose');
+		var sideBarOpen = false;
+			$menuButton.click(function() {
+				console.log ("click");
+			if (!sideBarOpen) {
+					$navBar.removeClass('navClose');
+					$navList.removeClass('navClose');
+					$menuButton.removeClass('navHeadingWhenClose');
+					$('.menuTextClose').removeClass('navHeadingWhenClose');
+					$('.menuTextMenu').removeClass('navHeadingWhenClose');
+					$navBar.addClass('navOpen');
+					$navList.addClass('navOpen');
+					$menuButton.addClass('navHeadingWhenOpen');
+					$('.menuTextClose').addClass('navHeadingWhenOpen');
+					$('.menuTextMenu').addClass('navHeadingWhenOpen');
+			sideBarOpen = true;
+			console.log ("true");
+			}
+			else {
+					$navBar.removeClass('navOpen');
+					$navList.removeClass('navOpen');
+					$menuButton.removeClass('navHeadingWhenOpen');
+					$('.menuTextClose').removeClass('navHeadingWhenOpen');
+					$('.menuTextMenu').removeClass('navHeadingWhenOpen');
+					$navBar.addClass('navClose');
+					$navList.addClass('navClose');
+					$menuButton.addClass('navHeadingWhenClose');
+					$('.menuTextClose').addClass('navHeadingWhenClose');
+					$('.menuTextMenu').addClass('navHeadingWhenClose');
+			sideBarOpen = false;
+			console.log ("false");
+			}
+			});
+				});
+		</script>
 	</body>
-</div>
-
-
-
-<script>
-$(document).ready(function() {
-
-var $navBar = $('nav');
-var $navList = $('.main-nav');
-var $menuButton = $('.mainNavClose');
-
-var sideBarOpen = false;
-
-	$menuButton.click(function() {
-		console.log ("click");
-	    if (!sideBarOpen) {
-			$navBar.removeClass('navClose');
-			$navList.removeClass('navClose');
-			$menuButton.removeClass('navHeadingWhenClose');
-			$('.menuTextClose').removeClass('navHeadingWhenClose');
-			$('.menuTextMenu').removeClass('navHeadingWhenClose');
-
-			$navBar.addClass('navOpen');
-			$navList.addClass('navOpen');
-			$menuButton.addClass('navHeadingWhenOpen');
-			$('.menuTextClose').addClass('navHeadingWhenOpen');
-			$('.menuTextMenu').addClass('navHeadingWhenOpen');
-
-	        sideBarOpen = true;
-	        console.log ("true");
-	    } 
-	    else {
-			$navBar.removeClass('navOpen');
-			$navList.removeClass('navOpen');
-			$menuButton.removeClass('navHeadingWhenOpen');
-			$('.menuTextClose').removeClass('navHeadingWhenOpen');
-			$('.menuTextMenu').removeClass('navHeadingWhenOpen');
-
-			$navBar.addClass('navClose');
-			$navList.addClass('navClose');
-			$menuButton.addClass('navHeadingWhenClose');
-			$('.menuTextClose').addClass('navHeadingWhenClose');
-			$('.menuTextMenu').addClass('navHeadingWhenClose');
-
-	        sideBarOpen = false;
-	        console.log ("false");
-	    }
-	});
-});		
-
-
-</script>
-
-
-</body>
 </html>

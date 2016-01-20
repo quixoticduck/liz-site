@@ -146,6 +146,23 @@ nav li {
   margin-right: 20px;
   color: white; }
 
+footer {
+  color: #FF696D;
+  text-align: center;
+  padding: 10px 0px;
+  height: 100px; }
+  footer a {
+    padding: 20px 0px; }
+
+.testFooter {
+  background-color: #333333;
+  color: #FF696D;
+  text-align: center;
+  padding: 10px 0px;
+  height: 60px; }
+  .testFooter a {
+    padding: 20px 0px; }
+
 /* /END/ DESKTOP Header, Banner and Footer Layout
 ==================================== */
 body {

@@ -1,96 +1,82 @@
-
-
 {% set bodyClass = "" %}
 {% extends "_layout" %}
 {% set title = "Home" %}
-
-
 {% block content %}
 	<h2>{{ entry.title }}</h2>
-
 	{{ entry.body }}
-</br>
+	</br>
 	<div class="textbox">
 		<h3>Testbox Heading</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 	 </p>
 	</div>
-
-<div class="grid">
-  <div class="col col-half colpadding center">
-    <h3>Half</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia labore possimus suscipit nesciunt, voluptatem, ut. Dolore ipsam eligendi, soluta quae cupiditate delectus magni totam enim, aperiam exercitationem ab blanditiis.  </p>
-  </div>
-
-  <div class="col col-half colpadding center">
-    <h3>HALF COLUMN</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam labore laboriosam repellat voluptatum adipisci eum suscipit quasi deleniti illo eligendi voluptate reiciendis, aperiam provident totam quas, maxime, repellendus ducimus! </p>
-  </div>
-</div>
-
-<!-- 	<h3>Recent News</h3>
-
-
-		<ul>
-			{% for entry in craft.entries.section('news').limit(5).find() %}
-				<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-			{% endfor %}
-
-		</ul> -->
-
-<div class="col">
+	<div class="grid">
+		<div class="col col-half colpadding center">
+			<h3>Half</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia labore possimus suscipit nesciunt, voluptatem, ut. Dolore ipsam eligendi, soluta quae cupiditate delectus magni totam enim, aperiam exercitationem ab blanditiis.  </p>
+		</div>
+		<div class="col col-half colpadding center">
+			<h3>HALF COLUMN</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam labore laboriosam repellat voluptatum adipisci eum suscipit quasi deleniti illo eligendi voluptate reiciendis, aperiam provident totam quas, maxime, repellendus ducimus! </p>
+		</div>
+	</div>
+	<!-- 	<h3>Recent News</h3>
+	<ul>
+				{% for entry in craft.entries.section('news').limit(5).find() %}
+							<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+				{% endfor %}
+	</ul> -->
+	<div class="col">
 		{% for block in entry.myBlock %}
 			
-			    {% if block.type == "singleBlock" %}
-				    <div class="col-fullWidth">
-				        <h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
-					    {% set image = block.myBlockImage.first().getUrl %}
-
-					    {% if image %}
-					  	    <a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a> 
-					    {% endif %}
-						<div class="textbox">
-			<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-					        {{ block.myBlockSummary }}
-					    </div>    
-					    {% endif %}
-			    
-		{% endfor %}
-</div>
-
-<!-- <div class="col backgroundPattern"> -->
-	{% for block in entry.myBlock %}
+			{% if block.type == "singleBlock" %}
+				<div class="col-fullWidth">
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
+					{% set image = block.myBlockImage.first().getUrl %}
+					{% if image %}
+						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
+					{% endif %}
+					<div class="textbox">
+						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+						{{ block.myBlockSummary }}
+					</div>
+				{% endif %}
+				
+			{% endfor %}
+	</div>
+		<!-- <div class="col backgroundPattern"> -->
+		{% for block in entry.myBlock %}
 			
-		    {% if block.type == "groupBlocks" %}
-			    <div class="col-half homeImages">
-				    <h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
-				    {% set image = block.myBlockImage.first().getUrl %}
+			{% if block.type == "groupBlocks" %}
+				<div class="col-half homeImages">
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
+					{% set image = block.myBlockImage.first().getUrl %}
+					{% if image %}
+						<div class="imgContainer">
+							<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+						</div>
+					{% endif %}
+					<div class="textbox">
+						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+						{{ block.myBlockSummary }}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+		<!-- </div> -->
 
-				    {% if image %}
-				   		 <div class="imgContainer">
-					  	    <a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-					  	</div>
-					    {% endif %}
-						<div class="textbox">
-			<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-					        {{ block.myBlockSummary }}
-					    </div>
-			    </div>
 
-		    {% endif %}
-
+	{% for block in entry.myBlock %}
+		<div class="testFooter">
+		{% if block.type == "footer" %}
+	{{ block.footerContent }}
+	{% endif %}
+	</div>
 	{% endfor %}
-<!-- </div> -->
 
 
-{% endblock %}
-
-
-
-
-
-
+	{% endblock %}
