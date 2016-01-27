@@ -31,9 +31,18 @@ p {
   line-height: 1.5em;
   margin: 7px 0px 10px 0px; }
 
-h1 {
+.h0 {
   color: white;
   font-family: "brushpen", cursive;
+  font-size: 37px;
+  margin: 12px 0px;
+  text-transform: uppercase;
+  display: inline;
+  line-height: 55px; }
+
+h1 {
+  color: white;
+  font-family: "Fenix", serif;
   font-size: 37px;
   margin: 12px 0px; }
 
@@ -53,11 +62,16 @@ h3 {
 .fa {
   color: red; }
 
-.mainNavClose .fa {
+.mainNavClose .fa, .mainNavClose h2 {
   color: white;
   margin-left: 20px;
   margin-right: -20px;
-  float: left; }
+  float: left;
+  line-height: 55px; }
+
+.mainNavClose h2 {
+  text-transform: uppercase;
+  margin: 0px 35px; }
 
 button:focus {
   outline: none; }
@@ -113,7 +127,7 @@ nav li {
   margin-left: 48px;
   margin-right: 0px; }
 
-.main-logo,
+.mainLogo,
 .main-nav a,
 .main-nav h1 {
   text-decoration: none;
@@ -136,21 +150,24 @@ nav li {
     .main-nav a:hover {
       color: #4795C4; }
 
-.main-logo
+.mainLogo
  {
   display: inline-block;
   float: left;
   margin: 0; }
 
-.main-logo a {
+.mainLogo a {
   margin-right: 20px;
   color: white; }
 
 footer {
+  background-color: #333333;
   color: #FF696D;
   text-align: center;
   padding: 10px 0px;
-  height: 100px; }
+  width: 100%;
+  overflow: hidden;
+  height: auto; }
   footer a {
     padding: 20px 0px; }
 
@@ -169,10 +186,13 @@ body {
   font: 100% "Open Sans", sans-serif;
   background-color: #EE163D; }
 
-.main-wrapper {
-  width: 90%;
-  margin: auto;
+.wrapper {
+  width: 100%;
   background-color: #EE163D; }
+
+.container {
+  width: 90%;
+  margin: auto; }
 
 .center {
   margin: auto;
@@ -327,7 +347,7 @@ figure {
     transition: transform 0.3s ease; }
 
   .navHeadingWhenOpen {
-    transform: translate3d(69px, 0, 0);
+    transform: translate3d(33px, 0, 0);
     transition: transform 0.8s ease; }
 
   .navHeadingWhenClose {
@@ -340,20 +360,12 @@ figure {
     .main-nav li a {
       font-size: 20px;
       display: block;
-      margin-right: 20px;
-      color: blue; }
+      margin-right: 20px; }
 
-  .main-logo {
+  .mainLogo {
     display: block;
-    float: none; }
-
-  .mobileWrap {
-    height: 60px;
-    width: 100%;
-    display: block;
-    max-height: 300px;
-    padding: 20px 15px;
-    background-color: red; }
+    float: none;
+    visibility: hidden; }
 
   .mainNavClose {
     display: block;

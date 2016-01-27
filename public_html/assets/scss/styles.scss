@@ -73,14 +73,6 @@ $color2nd:       #2b7ca7;
 $color2ndLight:  #4795C4;
 
 
-// : #4796C2;
-// : white;
-// : #7EA7BA;
-// : #085072;
-// : #053D58;
-// : #B5CA15;
-// : #333333;
-// : #F40066;
 
 /* Lists
 ========================================================================= */
@@ -100,9 +92,19 @@ p {
   margin: 7px 0px 10px 0px;
 } 
 
-h1 {
+.h0 {
   color:$colorLight;
   font-family: $featureFont;
+  font-size: 37px;
+  margin: 12px 0px; 
+  text-transform: uppercase;
+  display: inline;
+  line-height: 55px;
+}
+
+h1 {
+  color:$colorLight;
+  font-family: $headingFont;
   font-size: 37px;
   margin: 12px 0px; 
 }
@@ -127,11 +129,18 @@ h3 {
   color: red;
 }
 
-.mainNavClose .fa  {
+.mainNavClose .fa, .mainNavClose h2 {
   color: $colorLight;
   margin-left: 20px;
   margin-right: -20px;
   float: left;
+  line-height: 55px;
+}
+
+.mainNavClose h2 {
+  text-transform: uppercase;
+  margin: 0px 35px;
+  // padding-left: 15px;
 }
 
 button:focus { outline: none; }
@@ -144,6 +153,7 @@ button:focus { outline: none; }
 
 html { 
   background: $colorMain; 
+  // margin-bottom: 0px;
 }
 
 a {
@@ -192,12 +202,7 @@ nav {
   max-height: 300px;
   // background-color: $colorMainLight;
   padding: 20px 0px;
-  // padding-top: 20px;
-  // padding-bottom: 5px;
-  // padding-left: 10px;
-  // padding-right: 15px;
-  // border-radius: 5px;
-  // background-color: blue; 
+
 }
 
 nav li {
@@ -213,8 +218,8 @@ nav li {
 //   display: inline-block;
 // }
 
-.main-logo,
-.main-logo h1
+.mainLogo,
+.mainogo h1
 
 // .main-nav li 
 {
@@ -229,7 +234,7 @@ nav li {
   margin-right: 0px;
 }
 
-.main-logo,
+.mainLogo,
 // .main-logo a,
 .main-nav a,
 .main-nav h1,
@@ -262,8 +267,8 @@ nav li {
 }
 
 
-.main-logo
-// .main-logo a 
+.mainLogo
+// .mainLogo a 
 {
   // margin-right: 20px;
   // // padding-top: 10px;
@@ -274,7 +279,7 @@ nav li {
   margin: 0;
 }
 
-.main-logo a {
+.mainLogo a {
 margin-right: 20px;
 color: $colorLight;
 }
@@ -289,10 +294,13 @@ color: $colorLight;
 
 footer {
   // background-image: url("/assets/images/seamlessFlicksRed.png");
-  // background-color: $colorDark;
+  background-color: $colorDark;
   color: $colorMainLight;
   text-align: center;
   padding: 10px 0px;
+  // display: inline-block;
+  width: 100%;
+  overflow: hidden;
   // position: absolute;
   // right: 0;
   // bottom: 0;
@@ -302,7 +310,7 @@ footer {
 
   // position: relative;
   //   bottom:0px;
-  height: 100px;
+  height: auto;
   a {
     padding: 20px 0px;
   }
@@ -328,15 +336,6 @@ footer {
 }
 
 
-// .testfoot {
-//   max-height: 65px;
-//   background-color: blue;
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-// }
-
 /* /END/ DESKTOP Header, Banner and Footer Layout
 ==================================== */
 
@@ -347,10 +346,16 @@ body
   background-color: $colorMain;
 }
 
-.main-wrapper {
-width: 90%;
-margin: auto;
+.wrapper {
+// width: 90%;
+// margin: auto;
+width: 100%;
 background-color: $colorMain;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
 }
 
 // .backgroundPattern {
@@ -528,10 +533,6 @@ and (max-width: $breakpointTabletMax)
 
 // @media screen and (min-width: $breakpointPhoneMax) and (max-width: $breakpointTabletMin) {
 //   .main-nav li a {
-//     font-size: 15px;
-//     color: green;
-//     margin-left: 13px;
-//     margin-right: 13px;
 //   }
 // }
 
@@ -572,7 +573,7 @@ and (max-width: $breakpointPhoneMax)
   }
 
   .navHeadingWhenOpen {
-    transform: translate3d(69px, 0, 0);
+    transform: translate3d(33px, 0, 0);
     transition: transform 0.8s ease;
   }
 
@@ -584,27 +585,33 @@ and (max-width: $breakpointPhoneMax)
   .main-nav li {
     display: block;
     min-height: 45px;
-    a {
-      font-size: 20px;
-      display: block;
-      margin-right: 20px;
-      color: blue;
-    }
+      a {
+        font-size: 20px;
+        display: block;
+        margin-right: 20px;
+        // color: blue;
+        }
   }
 
-  .main-logo {
+  // .main-nav ul:first-child {
+  //   color: green;
+  // }
+
+
+  .mainLogo {
     display: block;
     float: none;
+    visibility: hidden;
   }
 
-  .mobileWrap {
-    height: 60px;
-    width: 100%;
-    display: block;
-    max-height: 300px;
-    padding: 20px 15px;
-    background-color: red;
-  }
+  // .mobileWrap {
+  //   height: 60px;
+  //   width: 100%;
+  //   display: block;
+  //   max-height: 300px;
+  //   padding: 20px 15px;
+  //   background-color: red;
+  // }
 
   .mainNavClose {
     display: block;
@@ -617,55 +624,22 @@ and (max-width: $breakpointPhoneMax)
     border: none;
   }
 
-  // .top {
-  //   display: block;
-  //   position: fixed;
-  //   top: 0px;
-  //   left: 0px;
-  //   width: 100%;
-  //   height: 55px;
-  //   background-color: $colorLight;
-  //   border: none;
-  // }
-
   body {
       padding-top: 55px;
     }
 
-    // .mobileTopBar {
-    //   position: absolute;
-    //   top: 0px;
-    //   // left: 0px;
-    //   right: -120px;
-    //   width: 100%;
-    //       width: 60px;
-    //   height: 60px;
-    //   background-color: $colorMainLight;
-    //   border: none;
-    // }
 
   .col-half {
     width: 100%;
   }
 
 
-  // .main-wrapper {
-  // // width: 90%;
-  // // margin: auto;
-  // }
-
   .myImage:hover {
     width: 90%;
     display: none;
   }
 
-  // @media screen and (max-width: $breakpointPhoneMin) {
-  //   .menuOpen h2 {
-  //     display: none;
-  //   }
-  // } 
-
-  .navHeadingWhenClose .menuTextClose {
+    .navHeadingWhenClose .menuTextClose {
       display: none;
     }
 
