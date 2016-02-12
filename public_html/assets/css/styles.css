@@ -237,6 +237,9 @@ body {
 .col-fullWidth {
   width: 100%; }
 
+.max50 {
+  max-width: 50%; }
+
 .myImage {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -291,7 +294,6 @@ figure {
   -ms-border-radius: 3px;
   border-radius: 3px;
   margin: auto;
-  max-width: 50%;
   text-align: center;
   padding: 12px 12px;
   background-color: white; }
@@ -300,6 +302,9 @@ figure {
   padding: 2px 0px;
   margin-top: 0px;
   margin-bottom: 0px; }
+
+.textbox h3 {
+  color: #EE163D; }
 
 .textbox p {
   color: #333333; }
@@ -383,6 +388,9 @@ figure {
   .col-half {
     width: 100%; }
 
+  .max50 {
+    max-width: 100%; }
+
   .myImage:hover {
     width: 90%;
     display: none; }
@@ -398,18 +406,19 @@ figure {
 
   .navHeadingWhenOpen .menuTextMenu {
     display: block; } }
-@media screen and (max-width: 459px) {
+@media screen and (max-width: 320px) {
+  .wrapper, .mainNavClose {
+    width: 320px; }
+
   .navHeadingWhenClose .menuTextClose {
     display: none; }
-
   .navHeadingWhenClose .menuTextMenu {
     display: block; }
 
-  .navHeadingWhenOpen .menuTextClose {
-    display: block; }
-
   .navHeadingWhenOpen .menuTextMenu {
-    display: none; } }
+    display: none; }
+  .navHeadingWhenOpen .menuTextClose {
+    display: block; } }
 /* PHONE/SIDENAV MODE END
 ==================================== */
 

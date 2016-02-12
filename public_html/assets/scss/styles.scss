@@ -57,9 +57,9 @@ $breakpointLaptopMin: 1070px;
 $breakpointTabletMax: ($breakpointLaptopMin - 1px);
 $breakpointTabletMin: 920px;
 $breakpointPhoneMax: ($breakpointTabletMin - 1px);
-$breakpointPhoneMin: 460px;
+$breakpointPhoneMin: 450px;
 $breakpointTinyMax: ($breakpointPhoneMin - 1px);
-
+$breakpointTinyMin: 320px;
 /* /END/ Media Query Breakpoints
 ==================================== */
 
@@ -406,6 +406,10 @@ $gutter: 20px;
   padding-top: 45px;
 }
 
+//div[class*='col-'] {
+  //border-bottom: 1px solid black;
+//}
+
 .col-quarter {
   width: 22.5%;
 }
@@ -413,6 +417,7 @@ $gutter: 20px;
 .col-half {
   width: 50%;
 }
+
 .col-third {
   width: 33.333333333%;
 }
@@ -432,6 +437,10 @@ $gutter: 20px;
 // min-height: 290px;
 // // max-height: 240px;
 // }
+
+.max50 {
+  max-width: 50%;
+}
 
 .myImage {
   @include border-radius (15px); 
@@ -480,7 +489,7 @@ figure {
 .textbox { 
   @include border-radius (3px); 
   margin: auto;
-  max-width: 50%;
+  // max-width: 50%;
   text-align: center;
   padding: 12px 12px;
   background-color: $colorLight;
@@ -490,6 +499,10 @@ figure {
   padding: 2px 0px;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.textbox h3 {
+  color: $colorMain;
 }
 
 .textbox p {
@@ -633,6 +646,10 @@ and (max-width: $breakpointPhoneMax)
     width: 100%;
   }
 
+  .max50 {
+    max-width: 100%;
+  }
+
 
   .myImage:hover {
     width: 90%;
@@ -662,24 +679,33 @@ and (max-width: $breakpointPhoneMax)
 } 
 
 
+//mobile
 @media screen
-and (max-width: $breakpointTinyMax) 
+and (max-width: $breakpointTinyMin) 
 {
-  .navHeadingWhenClose .menuTextClose {
+  .wrapper, .mainNavClose {
+    width: $breakpointTinyMin;
+  }
+
+  .navHeadingWhenClose {
+    .menuTextClose {
       display: none;
     }
 
-  .navHeadingWhenClose .menuTextMenu {
+    .menuTextMenu {
       display: block;
     }
+  }
 
-  .navHeadingWhenOpen .menuTextClose {
-      display: block;
-    }
-
-  .navHeadingWhenOpen .menuTextMenu {
+  .navHeadingWhenOpen {
+    .menuTextMenu {
       display: none;
     }
+
+    .menuTextClose {
+      display: block;
+    }
+  }
 }
 
 
