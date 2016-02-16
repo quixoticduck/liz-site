@@ -15,11 +15,31 @@
 
 {% extends "_layout" %}
 
+
 {% block content %}
+
 	<article>
 		<h1>{{ entry.title }}</h1>
 		<p><b>Posted on {{ entry.postDate.format('F d, Y') }}</b></p>
 		{{ entry.body }}
-		about entry
 	</article>
+
+		{% for block in entry.channel-segment %}
+			
+			{% if block.type == "channel-segment" %}
+				<div class="col-fullWidth">
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.Description }}</a>  </h2>
+					{% set image = block.Image.first().getUrl %}
+					{% if image %}
+						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
+					{% endif %}
+<!-- 					<div class="textbox">
+								    <a href="{{ block.myBlockUrl }}">Read More</a>
+						{{ block.myBlockSummary }}
+					</div> -->
+				{% endif %}
+				
+			{% endfor %}
+
 {% endblock %}
+
