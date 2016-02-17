@@ -240,7 +240,7 @@ body {
 .max50 {
   max-width: 50%; }
 
-.myImage {
+.myImage, .myImageGroup {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
@@ -256,20 +256,7 @@ body {
   display: block; }
 
 .myImageGroup {
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  border-radius: 15px;
-  margin: auto;
-  max-width: 34%;
-  max-height: 199px;
-  text-align: center;
-  padding: 18px 18px;
-  padding-top: 5px;
-  padding-bottom: 18px;
-  padding-left: 18px;
-  padding-right: 18px;
-  display: block; }
+  max-height: 199px; }
 
 .homepageBig {
   display: none; }
@@ -295,8 +282,11 @@ figure {
   border-radius: 3px;
   margin: auto;
   text-align: center;
-  padding: 12px 12px;
-  background-color: white; }
+  padding: 15px 30px;
+  background-color: white;
+  margin-bottom: 15px; }
+  .textbox a:link {
+    color: #EE163D; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
   padding: 2px 0px;

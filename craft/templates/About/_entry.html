@@ -18,28 +18,47 @@
 
 {% block content %}
 
-	<article>
-		<h1>{{ entry.title }}</h1>
-		<p><b>Posted on {{ entry.postDate.format('F d, Y') }}</b></p>
-		{{ entry.body }}
-	</article>
-
-		{% for block in entry.channel-segment %}
+	<div class="col">
+		{% for block in entry.myBlock %}
 			
-			{% if block.type == "channel-segment" %}
+			{% if block.type == "singleBlock" %}
 				<div class="col-fullWidth">
-					<h2> <a href="{{ block.myBlockUrl }}">{{ block.Description }}</a>  </h2>
-					{% set image = block.Image.first().getUrl %}
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
+					{% set image = block.myBlockImage.first().getUrl %}
 					{% if image %}
 						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
 					{% endif %}
-<!-- 					<div class="textbox">
-								    <a href="{{ block.myBlockUrl }}">Read More</a>
+					<div class="textbox">
+						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
 						{{ block.myBlockSummary }}
-					</div> -->
+					</div>
 				{% endif %}
 				
 			{% endfor %}
+	</div>
+
+	<div class="col">
+		<!-- <div class="col backgroundPattern"> -->
+		{% for block in entry.myBlock %}
+			
+			{% if block.type == "multipleBlocks" %}
+				<div class="col-half homeImages">
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
+					{% set image = block.myBlockImage.first().getUrl %}
+					{% if image %}
+						<div class="imgContainer">
+							<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+						</div>
+					{% endif %}
+					<div class="textbox max50">
+						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+						{{ block.myBlockSummary }}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+		<!-- </div> -->
+	</div>
 
 {% endblock %}
 

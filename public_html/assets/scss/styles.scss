@@ -67,6 +67,7 @@ $breakpointTinyMin: 320px;
 ==================================== */
 $colorDark:      #333333;
 $colorLight:     white;
+// $colorLight:     #f8f8f8;
 $colorMain:      #EE163D;
 $colorMainLight: #FF696D;
 $color2nd:       #2b7ca7;
@@ -442,7 +443,7 @@ $gutter: 20px;
   max-width: 50%;
 }
 
-.myImage {
+.myImage, .myImageGroup {
   @include border-radius (15px); 
   margin: auto;
   max-width: 34%;
@@ -456,17 +457,7 @@ $gutter: 20px;
 }
 
 .myImageGroup {
-  @include border-radius (15px); 
-  margin: auto;
-  max-width: 34%;
   max-height: 199px;
-  text-align: center;
-  padding: 18px 18px;
-  padding-top: 5px;
-  padding-bottom: 18px;
-  padding-left: 18px;
-  padding-right: 18px;
-  display: block;
 }
 
 .homepageBig {
@@ -491,8 +482,12 @@ figure {
   margin: auto;
   // max-width: 50%;
   text-align: center;
-  padding: 12px 12px;
+  padding: 15px 30px;
   background-color: $colorLight;
+  a:link {
+    color: $colorMain;
+  }
+  margin-bottom: 15px;
 }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
