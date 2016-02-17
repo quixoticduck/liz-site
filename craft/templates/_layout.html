@@ -45,11 +45,11 @@
 				</div>
 			</div>
 		</div>
-		<footer id="footer">
-			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •
-			<a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
-		</footer>
 	</div>
+	<footer id="footer">
+		Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •
+		<a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
+	</footer>
 
 		<script src="/assets/js/jquery-1.11.3.min.js"></script>
 		<script>
