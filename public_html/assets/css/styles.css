@@ -191,8 +191,9 @@ body {
   background-color: #EE163D; }
 
 .container {
-  width: 90%;
-  margin: auto; }
+  width: 80%;
+  margin: auto;
+  max-width: 1500px; }
 
 .center {
   margin: auto;
@@ -298,6 +299,9 @@ figure {
 
 .textbox p {
   color: #333333; }
+
+.red {
+  background-color: red; }
 
 /* LAPTOP SCREEN
 ==================================== */

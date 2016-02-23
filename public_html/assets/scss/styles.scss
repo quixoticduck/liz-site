@@ -355,8 +355,9 @@ background-color: $colorMain;
 }
 
 .container {
-  width: 90%;
+  width: 80%;
   margin: auto;
+  max-width: 1500px;
 }
 
 // .backgroundPattern {
@@ -504,6 +505,10 @@ figure {
   color: $colorDark;
 }
 
+
+.red {
+  background-color: red;
+}
 
 /* LAPTOP SCREEN
 ==================================== */
