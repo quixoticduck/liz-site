@@ -116,9 +116,7 @@ h2 {
   display: inline;
 }
 
-.textbox h2 {
-  color: $colorDark;
-}
+
 
 h3 {
   color:$colorLight;
@@ -391,7 +389,8 @@ $gutter: 20px;
   float: left;
   margin: auto;
   // padding-left: $gutter;
-  margin-top: 50px;
+  // margin-top: 50px;
+  margin-top: 15px;
   margin-bottom: 15px;
   text-align: center;
 }
@@ -484,17 +483,23 @@ figure {
   // max-width: 50%;
   text-align: center;
   padding: 15px 30px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   background-color: $colorLight;
   a:link {
     color: $colorMain;
   }
-  margin-bottom: 15px;
+  
 }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
   padding: 2px 0px;
   margin-top: 0px;
   margin-bottom: 0px;
+}
+
+.textbox h2 {
+  color: $colorDark;
 }
 
 .textbox h3 {
@@ -507,7 +512,11 @@ figure {
 
 
 .red {
-  background-color: red;
+  background-color: $colorMainLight;
+}
+
+.blue {
+    background-color: $color2ndLight;
 }
 
 /* LAPTOP SCREEN

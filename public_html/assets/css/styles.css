@@ -51,9 +51,6 @@ h2 {
   font-family: "Fenix", serif;
   display: inline; }
 
-.textbox h2 {
-  color: #333333; }
-
 h3 {
   color: white;
   margin: 12px;
@@ -206,7 +203,7 @@ body {
 .col {
   float: left;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 15px;
   margin-bottom: 15px;
   text-align: center; }
 
@@ -284,8 +281,9 @@ figure {
   margin: auto;
   text-align: center;
   padding: 15px 30px;
-  background-color: white;
-  margin-bottom: 15px; }
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: white; }
   .textbox a:link {
     color: #EE163D; }
 
@@ -294,6 +292,9 @@ figure {
   margin-top: 0px;
   margin-bottom: 0px; }
 
+.textbox h2 {
+  color: #333333; }
+
 .textbox h3 {
   color: #EE163D; }
 
@@ -301,7 +302,10 @@ figure {
   color: #333333; }
 
 .red {
-  background-color: red; }
+  background-color: #FF696D; }
+
+.blue {
+  background-color: #4795C4; }
 
 /* LAPTOP SCREEN
 ==================================== */
