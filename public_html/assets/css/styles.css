@@ -196,10 +196,6 @@ body {
   margin: auto;
   display: block; }
 
-.grid2 {
-  margin: auto;
-  display: inline-block; }
-
 .col {
   float: left;
   margin: auto;
@@ -306,6 +302,13 @@ figure {
 
 .blue {
   background-color: #4795C4; }
+
+.centerHeading {
+  color: blue;
+  text-align: center !important;
+  margin: auto;
+  display: block;
+  padding: 3px 0px; }
 
 /* LAPTOP SCREEN
 ==================================== */

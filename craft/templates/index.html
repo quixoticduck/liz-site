@@ -22,20 +22,24 @@
 				{% endfor %}
 	</ul> -->
 
-	<div class="grid">
-		<div class="col col-half colpadding center">
-			<h3>Half</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus mollitia labore possimus suscipit nesciunt, voluptatem, ut. Dolore ipsam eligendi, soluta quae cupiditate delectus magni totam enim, aperiam exercitationem ab blanditiis. NOT CMS  </p>
-		</div>
-		<div class="col col-half colpadding center">
-			<h3>HALF COLUMN</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis ullam labore laboriosam repellat voluptatum adipisci eum suscipit quasi deleniti illo eligendi voluptate reiciendis, aperiam provident totam quas, maxime, repellendus ducimus! NOT CMS </p>
-		</div>
-	</div>
+	{% for block in entry.myBlock %}
+		{% if block.type == "twoTextColumns" %}
+<!-- 			<div class="grid"> -->
 
-	<div class="col">
-		{% for block in entry.myBlock %}
+				<div class="col col-half colpadding center">
+					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
+					{{ block.myBlockLeftColumn }}
+				</div>
+				<div class="col col-half colpadding center">
+					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
+					{{ block.myBlockRightColumn }}
+				</div>			
+<!-- 			</div>	 -->	
+		{% endif %}
+	{% endfor %}	
 			
+	<div class="col">	
+		{% for block in entry.myBlock %}
 			{% if block.type == "singleBlock" %}
 				<div class="col-fullWidth">
 					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
@@ -48,21 +52,13 @@
 						<h3> {{ block.myBlockTextboxHeading }} </h3>
 						{{ block.myBlockTextboxText }}
 					</div>
-				{% endif %}
-				
+				{% endif %}				
 			{% endfor %}
 	</div>
 
 	<div class="col">
-		<!-- <div class="col backgroundPattern"> -->
-		{% for block in entry.myBlock %}
-			
+		{% for block in entry.myBlock %}		
 			{% if block.type == "multipleBlocks" %}
-
-
-
-
-
 				<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
 					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 					{% set image = block.myBlockImage.first().getUrl %}
@@ -76,13 +72,8 @@
 						{{ block.myBlockTextboxText }}
 					</div>
 				</div>
-
-
-						
-
 			{% endif %}
 		{% endfor %}
-		<!-- </div> -->
 	</div>
 
 

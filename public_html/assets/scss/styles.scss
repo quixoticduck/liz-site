@@ -372,18 +372,19 @@ background-color: $colorMain;
   display: block;
 }
 
-.grid2 {
-  // max-width: 50%;
-  margin: auto;
-  display: inline-block;
-}
+// .grid {
+
+// }
+// .grid2 {
+//   // max-width: 50%;
+//   margin: auto;
+//   display: inline-block;
+// }
 
 
 $gutter: 20px;
 
-.grid {
 
-}
 
 .col {
   float: left;
@@ -517,6 +518,14 @@ figure {
 
 .blue {
     background-color: $color2ndLight;
+}
+
+.centerHeading {
+  color:blue;
+  text-align: center !important;
+  margin: auto;
+  display: block;
+  padding: 3px 0px ;
 }
 
 /* LAPTOP SCREEN
