@@ -37,9 +37,7 @@
 						<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active last"{% endif %}>Health</a></li>
 					</ul>
 				</nav>
-				{% if craft.request.firstSegment == '' %}
-					<p>firstSegment of extended Layout Testy test.</p>
-				{% endif %}
+
 				<div id="content" role="main">
 				{% block content %}{% endblock %}
 				</div>
