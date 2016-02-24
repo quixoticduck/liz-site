@@ -169,12 +169,14 @@ color: $colorLight;
 a:visited
 {
 text-decoration:none;
-color: $color2nd;
 }
+
+ //bug can't make visited p's a different color
+// a:visited p {color: $color2nd;}
 
 a:hover
 {
-@include transition(0.5s);
+@include transition(0.3s);
 color: $color2ndLight;
 }
 
@@ -356,6 +358,7 @@ background-color: $colorMain;
   width: 88%;
   margin: auto;
   max-width: 1500px;
+  min-height: 1000px;
 }
 
 // .backgroundPattern {

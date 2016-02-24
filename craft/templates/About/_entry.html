@@ -1,68 +1,57 @@
-{#
- # News entry template
- # -------------------
- #
- # This template gets loaded whenever a News entry’s URL is
- # requested. That’s because the News section’s Template setting is
- # set to “news/_entry”, the path to this template.
- #
- # When this template is loaded, it will already have an ‘entry’
- # variable, set to the requested News entry.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
- #}
-
 {% set bodyClass = "" %}
 {% extends "_layout" %}
 {% set title = "About" %}
-
 {% block content %}
 
-	<div class="col">
-		{% for block in entry.myBlock %}
+	{% for block in entry.myBlock %}
+		{% if block.type == "twoTextColumns" %}
+				<div class="col col-half colpadding center">
+					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
+					{{ block.myBlockLeftColumn }}
+				</div>
+				<div class="col col-half colpadding center">
+					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
+					{{ block.myBlockRightColumn }}
+				</div>			
+		{% endif %}
+	
 			
+		<div class="col">	
+
 			{% if block.type == "singleBlock" %}
 				<div class="col-fullWidth">
-					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 					{% set image = block.myBlockImage.first().getUrl %}
 					{% if image %}
 						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
-					{% endif %}
+					{% endif %} 
 					<div class="textbox">
 						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-						{{ block.myBlockSummary }}
+						<h3> {{ block.myBlockTextboxHeading }} </h3>
+						{{ block.myBlockTextboxText }}
+					</div>
+				{% endif %}				
+			{% endfor %}
+		</div>
+
+		<div class="col">
+			{% for block in entry.myBlock %}		
+				{% if block.type == "multipleBlocks" %}
+					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
+						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+						{% set image = block.myBlockImage.first().getUrl %}
+						{% if image %}
+							<div class="imgContainer">
+								<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+							</div>
+						{% endif %}
+						<div class="textbox max50">
+							<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+							{{ block.myBlockTextboxText }}
+						</div>
 					</div>
 				{% endif %}
-				
 			{% endfor %}
-	</div>
+		</div>
 
-	<div class="col">
-		<!-- <div class="col backgroundPattern"> -->
-		{% for block in entry.myBlock %}
-			
-			{% if block.type == "multipleBlocks" %}
-
-
-<!-- 			{% if option.coloroption%} {{option.coloroption}} {% endif %}
- -->				<div class="col-half homeImages">
-					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockDescription }}</a>  </h2>
-					{% set image = block.myBlockImage.first().getUrl %}
-					{% if image %}
-						<div class="imgContainer">
-							<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-						</div>
-					{% endif %}
-					<div class="textbox max50">
-						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-						{{ block.myBlockSummary }}
-					</div>
-				</div>
-			{% endif %}
-		{% endfor %}
-		<!-- </div> -->
-	</div>
-
-{% endblock %}
-
+	{% endblock %}

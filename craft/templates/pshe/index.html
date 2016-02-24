@@ -1,22 +1,57 @@
-
-
-{% set bodyClass = 'home' %}
+{% set bodyClass = "" %}
 {% extends "_layout" %}
-{% set title = "Home" %}
-
-
-
+{% set title = "PSHE" %}
 {% block content %}
-	<h1>{{ entry.title }}</h1>
 
-	test test 
+	{% for block in entry.myBlock %}
+		{% if block.type == "twoTextColumns" %}
+				<div class="col col-half colpadding center">
+					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
+					{{ block.myBlockLeftColumn }}
+				</div>
+				<div class="col col-half colpadding center">
+					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
+					{{ block.myBlockRightColumn }}
+				</div>			
+		{% endif %}
+	
+			
+		<div class="col">	
 
-	{{ entry.body }}
+			{% if block.type == "singleBlock" %}
+				<div class="col-fullWidth">
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+					{% set image = block.myBlockImage.first().getUrl %}
+					{% if image %}
+						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
+					{% endif %} 
+					<div class="textbox">
+						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+						<h3> {{ block.myBlockTextboxHeading }} </h3>
+						{{ block.myBlockTextboxText }}
+					</div>
+				{% endif %}				
+			{% endfor %}
+		</div>
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
-{% endblock %}
+		<div class="col">
+			{% for block in entry.myBlock %}		
+				{% if block.type == "multipleBlocks" %}
+					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
+						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+						{% set image = block.myBlockImage.first().getUrl %}
+						{% if image %}
+							<div class="imgContainer">
+								<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+							</div>
+						{% endif %}
+						<div class="textbox max50">
+							<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+							{{ block.myBlockTextboxText }}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+	{% endblock %}

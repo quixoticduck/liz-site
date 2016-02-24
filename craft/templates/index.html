@@ -1,30 +1,15 @@
 {% set bodyClass = "" %}
 {% extends "_layout" %}
-{% set title = "Home" %}
+{% set title = "About" %}
 {% block content %}
-	<h2>{{ entry.title }}</h2>
-	{{ entry.body }}
-	</br>
-<!-- 	<div class="textbox">
-		<h3>Testbox Heading</h3>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 	 </p>
-	</div> -->
 
-		<!-- 	<h3>Recent News</h3>
-	<ul>
-				{% for entry in craft.entries.section('news').limit(5).find() %}
-							<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-				{% endfor %}
-	</ul> -->
+<!-- 	<h2>{{ entry.title }}</h2>
+	{{ entry.body }}
+	</br> -->
 
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
-<!-- 			<div class="grid"> -->
+
 
 				<div class="col col-half colpadding center">
 					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
@@ -34,19 +19,19 @@
 					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
 					{{ block.myBlockRightColumn }}
 				</div>			
-<!-- 			</div>	 -->	
+
 		{% endif %}
-	{% endfor %}	
+	
 			
-	<div class="col">	
-		{% for block in entry.myBlock %}
+		<div class="col">	
+
 			{% if block.type == "singleBlock" %}
 				<div class="col-fullWidth">
 					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 					{% set image = block.myBlockImage.first().getUrl %}
 					{% if image %}
 						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
-					{% endif %}
+					{% endif %} 
 					<div class="textbox">
 						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
 						<h3> {{ block.myBlockTextboxHeading }} </h3>
@@ -54,28 +39,26 @@
 					</div>
 				{% endif %}				
 			{% endfor %}
-	</div>
+		</div>
 
-	<div class="col">
-		{% for block in entry.myBlock %}		
-			{% if block.type == "multipleBlocks" %}
-				<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
-					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
-					{% set image = block.myBlockImage.first().getUrl %}
-					{% if image %}
-						<div class="imgContainer">
-							<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+		<div class="col">
+			{% for block in entry.myBlock %}		
+				{% if block.type == "multipleBlocks" %}
+					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
+						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+						{% set image = block.myBlockImage.first().getUrl %}
+						{% if image %}
+							<div class="imgContainer">
+								<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+							</div>
+						{% endif %}
+						<div class="textbox max50">
+							<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+							{{ block.myBlockTextboxText }}
 						</div>
-					{% endif %}
-					<div class="textbox max50">
-						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-						{{ block.myBlockTextboxText }}
 					</div>
-				</div>
-			{% endif %}
-		{% endfor %}
-	</div>
-
-
+				{% endif %}
+			{% endfor %}
+		</div>
 
 	{% endblock %}
