@@ -1,15 +1,20 @@
-Notes:
+NOTES:
 
-htc access - for redirects e.g. about to about/liz
+TO DO:
+-remove body section from homepage or make it slimmer
+-there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
 
-for a news section, I at the moment only have one entry template
-in twig stuff do if (type? news/about (in sections) then show those entries) else…
 
-image insert image
 
+DONE:
+
+-htc access - for redirects e.g. about to about/liz
+-for a news section, I at the moment only have one entry template
+
+
+
+USEFUL INFO:
 How to: 
-Clone a branch to a blank folder:
-git clone -b homepageSquares https://github.com/quixoticduck/liz-site.git
-
-
-remove body section from homepage or make it slimmer
+-Clone a branch to a blank folder:
+-git clone -b homepageSquares https://github.com/quixoticduck/liz-site.git
+-in twig stuff do if (type? news/about (in sections) then show those entries) else…
