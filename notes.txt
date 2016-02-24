@@ -1,0 +1,15 @@
+Notes:
+
+htc access - for redirects e.g. about to about/liz
+
+for a news section, I at the moment only have one entry template
+in twig stuff do if (type? news/about (in sections) then show those entries) else…
+
+image insert image
+
+How to: 
+Clone a branch to a blank folder:
+git clone -b homepageSquares https://github.com/quixoticduck/liz-site.git
+
+
+remove body section from homepage or make it slimmer
