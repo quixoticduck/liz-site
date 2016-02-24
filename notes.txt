@@ -13,3 +13,6 @@ git clone -b homepageSquares https://github.com/quixoticduck/liz-site.git
 
 
 remove body section from homepage or make it slimmer
+
+
+test line - delete me whenever
