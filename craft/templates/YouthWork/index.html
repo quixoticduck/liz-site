@@ -1,16 +1,10 @@
 {% set bodyClass = "" %}
 {% extends "_layout" %}
-{% set title = "Home" %}
+{% set title = "Youth Work" %}
 {% block content %}
-
-<!-- 	<h2>{{ entry.title }}</h2>
-	{{ entry.body }}
-	</br> -->
 
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
-
-
 				<div class="col col-half colpadding center">
 					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
 					{{ block.myBlockLeftColumn }}
@@ -19,7 +13,6 @@
 					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
 					{{ block.myBlockRightColumn }}
 				</div>			
-
 		{% endif %}
 	
 			
