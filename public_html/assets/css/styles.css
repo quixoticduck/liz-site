@@ -28,6 +28,7 @@ ul {
 
 p {
   color: white;
+  font-size: 1em;
   line-height: 1.5em;
   margin: 7px 0px 10px 0px; }
 
@@ -56,9 +57,6 @@ h3 {
   margin: 12px;
   display: inline; }
 
-.fa {
-  color: red; }
-
 .mainNavClose .fa, .mainNavClose h2 {
   color: white;
   margin-left: 20px;
@@ -78,7 +76,8 @@ button:focus {
 /* Link stylings
 ========================================================================= */
 html {
-  background: #EE163D; }
+  background: #EE163D;
+  font-size: 17px; }
 
 a {
   color: white; }
@@ -118,33 +117,29 @@ nav {
 nav li {
   display: inline-block; }
 
-.main-nav li a {
-  font-size: 21px;
-  margin-left: 48px;
-  margin-right: 0px; }
-
-.mainLogo,
-.main-nav a,
-.main-nav h1 {
-  text-decoration: none;
-  display: inline-block;
-  text-align: inline-block;
-  padding: 10px 0px; }
-
 .main-nav {
   text-align: right; }
+  .main-nav h1 {
+    text-decoration: none;
+    display: inline-block;
+    text-align: inline-block;
+    padding: 10px 0px; }
   .main-nav li {
-    margin: 0; }
+    margin: 0;
+    margin-top: 7px; }
   .main-nav a {
     color: white;
     font: "Fenix", serif;
-    font-size: 18px;
-    line-height: 28px;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
     border-bottom: 2px dotted white;
     padding: 0px 0px;
     margin: 10px 15px; }
     .main-nav a:hover {
       color: #4795C4; }
+  .main-nav li a {
+    margin-left: 1.5rem;
+    margin-right: 0px; }
 
 .mainLogo
  {
@@ -153,7 +148,7 @@ nav li {
   margin: 0; }
 
 .mainLogo a {
-  margin-right: 20px;
+  margin-right: 1.14rem;
   color: white; }
 
 footer {
@@ -189,7 +184,7 @@ body {
 .container {
   width: 88%;
   margin: auto;
-  max-width: 1375px;
+  max-width: 1425px;
   min-height: 1000px; }
 
 .center {
@@ -234,8 +229,8 @@ body {
 .col-fullWidth {
   width: 100%; }
 
-.max50 {
-  max-width: 50%; }
+.max60 {
+  max-width: 60%; }
 
 .myImage, .myImageGroup {
   -webkit-border-radius: 15px;
@@ -325,28 +320,54 @@ figure {
 
 /* LAPTOP SCREEN
 ==================================== */
-@media screen and (min-width: 1070px) and (max-width: 1279px) {
+@media screen and (min-width: 1185px) and (max-width: 1329px) {
+  .mainLogo a {
+    font-size: 2rem; }
+
   .main-nav li a {
-    font-size: 19px;
-    margin-left: 31px;
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-left: 1.5rem;
     color: yellow; } }
 /* LAPTOP SCREEN END
 ==================================== */
 /* TABLET SCREEN
 ==================================== */
-@media screen and (min-width: 920px) and (max-width: 1069px) {
+@media screen and (min-width: 970px) and (max-width: 1184px) {
+  .mainLogo a {
+    font-size: 1.85rem;
+    line-height: 1.3rem;
+    margin-top: 0px;
+    margin-bottom: 12px; }
+
   .main-nav li a {
-    font-size: 17px;
-    margin-left: 22px;
-    color: green; } }
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin-left: 1rem;
+    color: green; }
+
+  .col-half {
+    width: 100%; }
+
+  .max60 {
+    max-width: 70%; }
+
+  .row1, .row2 {
+    min-height: 0px; }
+
+  .homeImages {
+    padding-top: 20px; }
+
+  .red, .blue {
+    background-color: #FF696D; } }
 /* TABLET SCREEN END
 ==================================== */
 .mainNavClose {
   display: none; }
 
-/* PHONE/SIDENAV MODE
+/* PHONE LANDSCAPE
 ==================================== */
-@media screen and (max-width: 919px) {
+@media screen and (max-width: 969px) {
   nav {
     position: fixed;
     top: 0px;
@@ -402,8 +423,18 @@ figure {
   .col-half {
     width: 100%; }
 
-  .max50 {
-    max-width: 100%; }
+  .max60 {
+    max-width: 70%; }
+
+  .row1, .row2 {
+    min-height: 0px;
+    padding-bottom: 15px; }
+
+  .red, .blue {
+    background-color: #FF696D; }
+
+  .homeImages {
+    padding-top: 20px; }
 
   .myImage:hover {
     width: 90%;
@@ -419,7 +450,15 @@ figure {
     display: none; }
 
   .navHeadingWhenOpen .menuTextMenu {
-    display: block; } }
+    display: block; }
+
+  .footer {
+    padding-left: 13px;
+    padding-right: 13px; } }
+/* PHONE LANDSCAPE END
+==================================== */
+/* PHONE PORTRAIT
+==================================== */
 @media screen and (max-width: 320px) {
   .wrapper, .mainNavClose {
     width: 320px; }
@@ -433,7 +472,7 @@ figure {
     display: none; }
   .navHeadingWhenOpen .menuTextClose {
     display: block; } }
-/* PHONE/SIDENAV MODE END
+/* PHONE PORTRAIT END
 ==================================== */
 
 /*# sourceMappingURL=styles.css.map */
