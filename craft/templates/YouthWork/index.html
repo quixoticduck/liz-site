@@ -40,7 +40,7 @@
 
 			{% for block in entry.myBlock %}		
 				{% if block.type == "multipleBlocks" %}
-					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
+					<div class="col-half blockImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
 						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 						{% set image = block.myBlockImage.first().getUrl %}
 						{% if image %}
