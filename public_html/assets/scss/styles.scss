@@ -357,7 +357,7 @@ background-color: $colorMain;
 .container {
   width: 88%;
   margin: auto;
-  max-width: 1500px;
+  max-width: 1375px;
   min-height: 1000px;
 }
 
@@ -387,16 +387,19 @@ background-color: $colorMain;
 
 $gutter: 20px;
 
-
+.dividerMargin {
+  height: 15px;
+}
 
 .col {
   float: left;
   margin: auto;
   // padding-left: $gutter;
   // margin-top: 50px;
-  margin-top: 15px;
+  margin-top: 30px;
   margin-bottom: 15px;
   text-align: center;
+  // max-width: 1300px;
 }
 
 .colpadding {

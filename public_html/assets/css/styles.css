@@ -189,17 +189,20 @@ body {
 .container {
   width: 88%;
   margin: auto;
-  max-width: 1500px;
+  max-width: 1375px;
   min-height: 1000px; }
 
 .center {
   margin: auto;
   display: block; }
 
+.dividerMargin {
+  height: 15px; }
+
 .col {
   float: left;
   margin: auto;
-  margin-top: 15px;
+  margin-top: 30px;
   margin-bottom: 15px;
   text-align: center; }
 

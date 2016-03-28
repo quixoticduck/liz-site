@@ -6,27 +6,26 @@
 <!-- 	<h2>{{ entry.title }}</h2>
 	{{ entry.body }}
 	</br> -->
+<!-- 
+			<div class="dividerMargin"></div> -->
 
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
 
-
-				<div class="col col-half colpadding center">
-					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
-					{{ block.myBlockLeftColumn }}
-				</div>
-				<div class="col col-half colpadding center">
-					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
-					{{ block.myBlockRightColumn }}
-				</div>			
+			<div class="col col-half colpadding center">
+				<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
+				{{ block.myBlockLeftColumn }}
+			</div>
+			<div class="col col-half colpadding center">
+				<h3> {{ block.myBlockRightColumnHeading }}  </h3>
+				{{ block.myBlockRightColumn }}
+			</div>			
 
 		{% endif %}
-	
-			
-		<div class="col">	
+
 
 			{% if block.type == "singleBlock" %}
-				<div class="col-fullWidth">
+				<div class="col col-fullWidth">
 					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 					{% set image = block.myBlockImage.first().getUrl %}
 					{% if image %}
@@ -39,7 +38,7 @@
 					</div>
 				{% endif %}				
 			{% endfor %}
-		</div>
+
 
 		<div class="col">
 			{% for block in entry.myBlock %}		
