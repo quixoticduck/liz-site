@@ -514,6 +514,8 @@ figure {
   color: $colorDark;
 }
 
+/* CRAFT CMS PHP CLASSES
+==================================== */
 
 .red {
   background-color: $colorMainLight;
@@ -522,6 +524,17 @@ figure {
 .blue {
     background-color: $color2ndLight;
 }
+
+.row1 {
+  min-height: 460px;
+}
+
+.row2 {
+  min-height: 460px;
+}
+
+/* // CRAFT CMS PHP CLASSES END
+==================================== */
 
 .centerHeading {
   color:blue;

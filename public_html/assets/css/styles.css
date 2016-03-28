@@ -297,12 +297,22 @@ figure {
 .textbox p {
   color: #333333; }
 
+/* CRAFT CMS PHP CLASSES
+==================================== */
 .red {
   background-color: #FF696D; }
 
 .blue {
   background-color: #4795C4; }
 
+.row1 {
+  min-height: 460px; }
+
+.row2 {
+  min-height: 460px; }
+
+/* // CRAFT CMS PHP CLASSES END
+==================================== */
 .centerHeading {
   color: blue;
   text-align: center !important;
