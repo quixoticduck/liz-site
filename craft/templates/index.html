@@ -12,11 +12,11 @@
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
 
-			<div class="col col-half colpadding center {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
+			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
 				<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
 				{{ block.myBlockLeftColumn }}
 			</div>
-			<div class="col col-half colpadding center {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
+			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
 				<h3> {{ block.myBlockRightColumnHeading }}  </h3>
 				{{ block.myBlockRightColumn }}
 			</div>			
