@@ -309,6 +309,12 @@ figure {
 .row2 {
   min-height: 460px; }
 
+.textRow1 {
+  min-height: 300px; }
+
+.textRow2 {
+  min-height: 300px; }
+
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
 .centerHeading {

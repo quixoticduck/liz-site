@@ -12,11 +12,11 @@
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
 
-			<div class="col col-half colpadding center">
+			<div class="col col-half colpadding center {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
 				<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
 				{{ block.myBlockLeftColumn }}
 			</div>
-			<div class="col col-half colpadding center">
+			<div class="col col-half colpadding center {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
 				<h3> {{ block.myBlockRightColumnHeading }}  </h3>
 				{{ block.myBlockRightColumn }}
 			</div>			
@@ -43,7 +43,7 @@
 		<div class="col">
 			{% for block in entry.myBlock %}		
 				{% if block.type == "multipleBlocks" %}
-					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rownumber %}  {{ block.rownumber }} {% endif %}">
+					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
 						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 						{% set image = block.myBlockImage.first().getUrl %}
 						{% if image %}

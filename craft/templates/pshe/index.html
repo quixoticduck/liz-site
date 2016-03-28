@@ -30,11 +30,14 @@
 						<h3> {{ block.myBlockTextboxHeading }} </h3>
 						{{ block.myBlockTextboxText }}
 					</div>
-				{% endif %}				
-			{% endfor %}
+				</div>
+			{% endif %}	
 		</div>
+			
+	{% endfor %}
 
-		<div class="col">
+
+
 			{% for block in entry.myBlock %}		
 				{% if block.type == "multipleBlocks" %}
 					<div class="col-half homeImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %}">
@@ -52,6 +55,6 @@
 					</div>
 				{% endif %}
 			{% endfor %}
-		</div>
+
 
 	{% endblock %}

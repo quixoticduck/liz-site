@@ -514,6 +514,14 @@ figure {
   min-height: 460px;
 }
 
+.textRow1 {
+  min-height: 300px;
+}
+
+.textRow2 {
+  min-height: 300px;
+}
+
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
 
@@ -696,6 +704,7 @@ and (max-width: $breakpointPhoneMax)
     min-height:  0px;
     padding-bottom: 15px;
   }
+
     .red, .blue {
     background-color: $colorMainLight;
   }

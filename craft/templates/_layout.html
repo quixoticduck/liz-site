@@ -29,8 +29,7 @@
 						<a href="{{ siteUrl }}">{{ siteName }}</a>
 					</h1>
 					<ul class="main-nav navClose">
-						<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}><i class="fa fa-lg fa-home"></i>
-</a></li>
+						<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}><i class="fa fa-lg fa-home"></i></a></li>
 						<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
 						<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
 						<li><a href="{{ url('youthWork') }}" {% if craft.request.firstSegment == 'youthWork' %}class="active"{% endif %}>Youth Work</a></li>
@@ -46,7 +45,7 @@
 		</div>
 		<footer id="footer">
 			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  Built with <a href="http://buildwithcraft.com">Craft</a>  •
-			<a href="{{ url('/news/about') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
+			<a href="{{ url('/news/about/contact.html#contact') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
 		</footer>	
 	</div>
 
