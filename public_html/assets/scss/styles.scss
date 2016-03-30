@@ -136,7 +136,11 @@ h3 {
   line-height: 55px;
 }
 
-.mainNavClose h2 {
+.mainNavClose h1 {
+  line-height: 55px;
+}
+
+.mainNavClose h1, .mainNavClose h2 {
   text-transform: uppercase;
   margin: 0px 35px;
   // padding-left: 15px;
@@ -622,8 +626,21 @@ and (max-width: $breakpointPhoneMax)
   }
 
   .navOpen {
-    transform: translate3d(0px, 0, 0);
+    transform: translate3d(0px, 0px, 0px);
     transition: transform 0.8s ease;
+    // -webkit-transform: translate3d(0,0,0);
+    z-index: 20;
+    z-index: 100;
+   transform: translateZ(100px);
+   // background-color: $colorLight;
+   // color: $colorDark;
+       border-right: 2px;
+   border-style: dashed;
+  }
+
+  nav .navOpen {
+       border-right: 2px;
+   border-style: dotted;
   }
 
   .navClose {
@@ -634,6 +651,7 @@ and (max-width: $breakpointPhoneMax)
   .navHeadingWhenOpen {
     transform: translate3d(33px, 0, 0);
     transition: transform 0.8s ease;
+    background-color: yellow;
   }
 
   .navHeadingWhenClose {
@@ -657,15 +675,6 @@ and (max-width: $breakpointPhoneMax)
     float: none;
     visibility: hidden;
   }
-
-  // .mobileWrap {
-  //   height: 60px;
-  //   width: 100%;
-  //   display: block;
-  //   max-height: 300px;
-  //   padding: 20px 15px;
-  //   background-color: red;
-  // }
 
   .mainNavClose {
     display: block;
@@ -714,19 +723,29 @@ and (max-width: $breakpointPhoneMax)
 
   .navHeadingWhenClose .menuTextMenu {
       display: block;
+      text-align: center;
     }
 
-  .navHeadingWhenOpen .menuTextClose {
-      display: none;
-    }
+// for if I want there to be NO X on the nav when it's open
+  // .navHeadingWhenOpen .menuTextClose {
+  //     display: none;
+  //   }
 
 // for if I want there to always be an X on the nav when it's open
-  // .navHeadingWhenOpen .menuTextClose {
-  //     display: block;
-  //   }
+  .navHeadingWhenOpen .menuTextClose {
+      display: inline;
+      // z-index: 50;
+      // transform: translateZ(5px);
+      position: absolute;
+      z-index: 500;
+      // transform: translate3d(0px, 0px, 500px);
+
+      // text-align: center;
+    }
 
   .navHeadingWhenOpen .menuTextMenu {
       display: block;
+      margin-left: 302px;
     }
 
   .footer {

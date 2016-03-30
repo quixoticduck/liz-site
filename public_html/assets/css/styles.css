@@ -65,7 +65,10 @@ h3 {
   float: left;
   line-height: 55px; }
 
-.mainNavClose h2 {
+.mainNavClose h1 {
+  line-height: 55px; }
+
+.mainNavClose h1, .mainNavClose h2 {
   text-transform: uppercase;
   margin: 0px 35px; }
 
@@ -380,8 +383,17 @@ figure {
     padding: 20px 15px; }
 
   .navOpen {
-    transform: translate3d(0px, 0, 0);
-    transition: transform 0.8s ease; }
+    transform: translate3d(0px, 0px, 0px);
+    transition: transform 0.8s ease;
+    z-index: 20;
+    z-index: 100;
+    transform: translateZ(100px);
+    border-right: 2px;
+    border-style: dashed; }
+
+  nav .navOpen {
+    border-right: 2px;
+    border-style: dotted; }
 
   .navClose {
     transform: translate3d(-290px, 0, 0);
@@ -389,7 +401,8 @@ figure {
 
   .navHeadingWhenOpen {
     transform: translate3d(33px, 0, 0);
-    transition: transform 0.8s ease; }
+    transition: transform 0.8s ease;
+    background-color: yellow; }
 
   .navHeadingWhenClose {
     transform: translate3d(0px, 0, 0);
@@ -445,13 +458,17 @@ figure {
     display: none; }
 
   .navHeadingWhenClose .menuTextMenu {
-    display: block; }
+    display: block;
+    text-align: center; }
 
   .navHeadingWhenOpen .menuTextClose {
-    display: none; }
+    display: inline;
+    position: absolute;
+    z-index: 500; }
 
   .navHeadingWhenOpen .menuTextMenu {
-    display: block; }
+    display: block;
+    margin-left: 302px; }
 
   .footer {
     padding-left: 13px;
