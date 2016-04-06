@@ -542,7 +542,7 @@ and (max-width: $breakpointLaptopMax)
     line-height: 1.4rem;
     margin-left: 1.5rem;
     // margin-right: 0px;
-  color: yellow;
+  color: purple;
   }
 } 
 
@@ -634,13 +634,14 @@ and (max-width: $breakpointPhoneMax)
    transform: translateZ(100px);
    // background-color: $colorLight;
    // color: $colorDark;
-       border-right: 2px;
-   border-style: dashed;
+   // border-right: 2px;
+   // border-style: dashed;
+   padding-top: 5px;
   }
 
   nav .navOpen {
-       border-right: 2px;
-   border-style: dotted;
+    // border-right: 2px;
+    // border-style: dotted;
   }
 
   .navClose {
@@ -651,7 +652,7 @@ and (max-width: $breakpointPhoneMax)
   .navHeadingWhenOpen {
     transform: translate3d(33px, 0, 0);
     transition: transform 0.8s ease;
-    background-color: yellow;
+    background-color: purple;
   }
 
   .navHeadingWhenClose {
@@ -673,7 +674,9 @@ and (max-width: $breakpointPhoneMax)
   .mainLogo {
     display: block;
     float: none;
-    visibility: hidden;
+    margin-bottom: 5px;
+        transition: transform 0.8s ease;
+    // visibility: hidden;
   }
 
   .mainNavClose {
@@ -717,35 +720,46 @@ and (max-width: $breakpointPhoneMax)
     display: none;
   }
 
-    .navHeadingWhenClose .menuTextClose {
-      display: none;
-    }
-
   .navHeadingWhenClose .menuTextMenu {
       display: block;
       text-align: center;
+      h1 {
+        margin-right: 5.9rem;
+      }
     }
+
+  .navHeadingWhenClose .menuTextClose {
+    display: none;
+  }
 
 // for if I want there to be NO X on the nav when it's open
   // .navHeadingWhenOpen .menuTextClose {
   //     display: none;
   //   }
 
-// for if I want there to always be an X on the nav when it's open
+  .navHeadingWhenOpen .menuTextMenu {
+      // display: block;
+      // margin-left: 302px;
+      display: none;
+    }
+
+    // for if I want there to always be an X on the nav when it's open
   .navHeadingWhenOpen .menuTextClose {
-      display: inline;
+      display: block;
+      text-align: center;
+      padding-left: 8.8rem;
+      // display: inline;
+      // margin-left: 300px;
       // z-index: 50;
       // transform: translateZ(5px);
-      position: absolute;
-      z-index: 500;
+      // position: absolute;
+      // z-index: 500;
       // transform: translate3d(0px, 0px, 500px);
-
       // text-align: center;
     }
 
-  .navHeadingWhenOpen .menuTextMenu {
-      display: block;
-      margin-left: 302px;
+    .menuTextClose:hover, .fa-bars:hover {
+      cursor: pointer;
     }
 
   .footer {
