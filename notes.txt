@@ -11,6 +11,11 @@ tiny mobile nav, Liz menu is too much to left
 -add proper contact form?
 -image on about page could be wider on mobile
 -check all fonts are nice, especially main title logo font
+-change two columns to multiple columns of at least 3-4?
+-make short text row (1-3 lines) and (4+ lines text row) or swap to using Foundation 6 grid?
+-fix hyperlinks showing as white
+-fix gaps when headings aren't chosen to be filled in
+-fix footer on some pages
 
 DONE:
 -htc access - for redirects e.g. about to about/liz

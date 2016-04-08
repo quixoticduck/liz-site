@@ -304,9 +304,6 @@ figure {
     font-weight: normal;
     display: inline-block; }
 
-.contactForm input* {
-  color: blue; }
-
 input#puppyField {
   display: none; }
 
@@ -319,10 +316,10 @@ input#puppyField {
   background-color: #4795C4; }
 
 .row1 {
-  min-height: 500px; }
+  min-height: 450px; }
 
 .row2 {
-  min-height: 520px; }
+  min-height: 470px; }
 
 .textRow1 {
   min-height: 300px; }
