@@ -1,8 +1,8 @@
 /**
  * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://buildwithcraft.com/license Craft License Agreement
- * @see       http://buildwithcraft.com
+ * @license   http://craftcms.com/license Craft License Agreement
+ * @see       http://craftcms.com
  * @package   craft.app.resources
  */
 
@@ -133,6 +133,7 @@ Craft.MatrixInput = Garnish.Base.extend(
 		this.updateAddBlockBtn();
 
 		this.addListener(this.$container, 'resize', 'setNewBlockBtn');
+		Garnish.$doc.ready($.proxy(this, 'setNewBlockBtn'));
 	},
 
 	setNewBlockBtn: function()
@@ -544,13 +545,13 @@ var MatrixBlock = Garnish.Base.extend(
 		if (animate)
 		{
 			this.$fieldsContainer.velocity('fadeOut', { duration: 'fast' });
-			this.$container.velocity({ height: 17 }, 'fast');
+			this.$container.velocity({ height: 16 }, 'fast');
 		}
 		else
 		{
 			this.$previewContainer.show();
 			this.$fieldsContainer.hide();
-			this.$container.css({ height: 17 });
+			this.$container.css({ height: 16 });
 		}
 
 		setTimeout($.proxy(function() {

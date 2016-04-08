@@ -288,6 +288,12 @@ figure {
 .textbox p {
   color: #333333; }
 
+.contactForm {
+  background-color: pink; }
+
+input#puppyField {
+  display: none; }
+
 /* CRAFT CMS PHP CLASSES
 ==================================== */
 .red {

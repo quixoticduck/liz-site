@@ -12,8 +12,8 @@ namespace Craft;
  *
  * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://buildwithcraft.com/license Craft License Agreement
- * @see       http://buildwithcraft.com
+ * @license   http://craftcms.com/license Craft License Agreement
+ * @see       http://craftcms.com
  * @package   craft.app.controllers
  * @since     1.0
  */
@@ -281,7 +281,7 @@ class UsersController extends BaseController
 	 */
 	public function actionSetPassword()
 	{
-		// Have they just submitted a password, or are we just displaying teh page?
+		// Have they just submitted a password, or are we just displaying the page?
 		if (!craft()->request->isPostRequest())
 		{
 			if ($info = $this->_processTokenRequest())
@@ -449,6 +449,7 @@ class UsersController extends BaseController
 		// Determine which user account we're editing
 		// ---------------------------------------------------------------------
 
+		$craftEdition = craft()->getEdition();
 		$isClientAccount = false;
 
 		// This will be set if there was a validation error.
@@ -494,7 +495,7 @@ class UsersController extends BaseController
 					throw new HttpException(404);
 				}
 			}
-			else if (craft()->getEdition() == Craft::Pro)
+			else if ($craftEdition == Craft::Pro)
 			{
 				// Registering a new user
 				$variables['account'] = new UserModel();
@@ -503,6 +504,13 @@ class UsersController extends BaseController
 			{
 				// Nada.
 				throw new HttpException(404);
+			}
+		}
+		else
+		{
+			if ($account == 'client')
+			{
+				$isClientAccount = true;
 			}
 		}
 
@@ -527,9 +535,10 @@ class UsersController extends BaseController
 		// ---------------------------------------------------------------------
 
 		$statusActions = array();
+		$loginActions = array();
 		$sketchyActions = array();
 
-		if (craft()->getEdition() >= Craft::Client && !$variables['isNewAccount'])
+		if ($craftEdition >= Craft::Client && !$variables['isNewAccount'])
 		{
 			switch ($variables['account']->getStatus())
 			{
@@ -589,6 +598,11 @@ class UsersController extends BaseController
 
 			if (!$variables['account']->isCurrent())
 			{
+				if (craft()->userSession->isAdmin())
+				{
+					$loginActions[] = array('action' => 'users/impersonate', 'label' => Craft::t('Login as {user}', array('user' => $variables['account']->getName())));
+				}
+
 				if (craft()->userSession->checkPermission('administrateUsers') && $variables['account']->getStatus() != UserStatus::Suspended)
 				{
 					$sketchyActions[] = array('action' => 'users/suspendUser', 'label' => Craft::t('Suspend'));
@@ -614,6 +628,11 @@ class UsersController extends BaseController
 		if ($pluginActions)
 		{
 			$variables['actions'] = array_merge($variables['actions'], array_values($pluginActions));
+		}
+
+		if ($loginActions)
+		{
+			array_push($variables['actions'], $loginActions);
 		}
 
 		if ($sketchyActions)
@@ -644,59 +663,63 @@ class UsersController extends BaseController
 			$variables['title'] = Craft::t("Register a new user");
 		}
 
-		// Show tabs if they have Craft Pro
 		// ---------------------------------------------------------------------
+		$variables['selectedTab'] = 'account';
 
-		if (craft()->getEdition() == Craft::Pro)
-		{
-			$variables['selectedTab'] = 'account';
-
-			$variables['tabs'] = array(
+		$variables['tabs'] = array(
 				'account' => array(
-					'label' => Craft::t('Account'),
-					'url'   => '#account',
+						'label' => Craft::t('Account'),
+						'url'   => '#account',
 				)
-			);
+		);
 
-			// No need to show the Profile tab if it's a new user (can't have an avatar yet) and there's no user fields.
-			if (!$variables['isNewAccount'] || $variables['account']->getFieldLayout()->getFields())
-			{
-				$variables['tabs']['profile'] = array(
+		// No need to show the Profile tab if it's a new user (can't have an avatar yet) and there's no user fields.
+		if (!$variables['isNewAccount'] || ($craftEdition == Craft::Pro && $variables['account']->getFieldLayout()->getFields()))
+		{
+			$variables['tabs']['profile'] = array(
 					'label' => Craft::t('Profile'),
 					'url'   => '#profile',
-				);
-			}
+			);
+		}
 
-			// If they can assign user groups and permissions, show the Permissions tab
-			if (craft()->userSession->getUser()->can('assignUserPermissions'))
-			{
-				$variables['tabs']['perms'] = array(
+
+
+		// Show the permission tab for the users that can change them on Craft Client+ editions (unless
+		// you're on Client and you're the admin account. No need to show since we always need an admin on Client)
+		if (
+			($craftEdition == Craft::Pro && craft()->userSession->getUser()->can('assignUserPermissions')) ||
+			($craftEdition == Craft::Client && $isClientAccount && craft()->userSession->isAdmin())
+		)
+		{
+			$variables['tabs']['perms'] = array(
 					'label' => Craft::t('Permissions'),
 					'url'   => '#perms',
-				);
-			}
+			);
 		}
-		else
+
+		// Just one tab looks awkward, so just don't show them at all then.
+		if (count($variables['tabs']) == 1)
 		{
 			$variables['tabs'] = array();
 		}
-
-		// Ugly.  But Users don't have a real fieldlayout/tabs.
-		$accountFields = array('username', 'firstName', 'lastName', 'email', 'password', 'newPassword', 'currentPassword', 'passwordResetRequired', 'preferredLocale');
-
-		if (craft()->getEdition() == Craft::Pro && $variables['account']->hasErrors())
+		else
 		{
-			$errors = $variables['account']->getErrors();
-
-			foreach ($errors as $attribute => $error)
+			if ($variables['account']->hasErrors())
 			{
-				if (in_array($attribute, $accountFields))
+				// Add the 'error' class to any tabs that have errors
+				$errors = $variables['account']->getErrors();
+				$accountFields = array('username', 'firstName', 'lastName', 'email', 'password', 'newPassword', 'currentPassword', 'passwordResetRequired', 'preferredLocale');
+
+				foreach ($errors as $attribute => $error)
 				{
-					$variables['tabs']['account']['class'] = 'error';
-				}
-				else if (isset($variables['tabs']['profile']))
-				{
-					$variables['tabs']['profile']['class'] = 'error';
+					if (isset($variables['tabs']['account']) && in_array($attribute, $accountFields))
+					{
+						$variables['tabs']['account']['class'] = 'error';
+					}
+					else if (isset($variables['tabs']['profile']))
+					{
+						$variables['tabs']['profile']['class'] = 'error';
+					}
 				}
 			}
 		}
@@ -736,6 +759,7 @@ class UsersController extends BaseController
 	{
 		$this->requirePostRequest();
 
+		$craftEdition = craft()->getEdition();
 		$currentUser = craft()->userSession->getUser();
 		$requireEmailVerification = craft()->systemSettings->getSetting('users', 'requireEmailVerification');
 
@@ -762,7 +786,7 @@ class UsersController extends BaseController
 				craft()->userSession->requirePermission('editUsers');
 			}
 		}
-		else if (craft()->getEdition() == Craft::Client)
+		else if ($craftEdition == Craft::Client)
 		{
 			// Make sure they're logged in
 			craft()->userSession->requireAdmin();
@@ -903,15 +927,23 @@ class UsersController extends BaseController
 		}
 
 		// If this is Craft Pro, grab any profile content from post
-		if (craft()->getEdition() == Craft::Pro)
+		if ($craftEdition == Craft::Pro)
 		{
 			$user->setContentFromPost('fields');
 		}
 
 		// Validate and save!
 		// ---------------------------------------------------------------------
+		$imageValidates = true;
+		$userPhoto = UploadedFile::getInstanceByName('userPhoto');
 
-		if (craft()->users->saveUser($user))
+		if ($userPhoto && !ImageHelper::isImageManipulatable($userPhoto->getExtensionName()))
+		{
+			$imageValidates = false;
+			$user->addError('userPhoto', Craft::t("The user photo provided is not an image."));
+		}
+
+		if ($imageValidates && craft()->users->saveUser($user))
 		{
 			// Is this the current user, and did their username just change?
 			if ($isCurrentUser && $user->username !== $oldUsername)
@@ -971,14 +1003,13 @@ class UsersController extends BaseController
 				$_POST['redirect'] = str_replace('{userId}', '{id}', $_POST['redirect']);
 			}
 
-			// Is this public registration, and is the user going to be activated automatically?
-			if ($thisIsPublicRegistration && $user->status == UserStatus::Active)
+			// Is this public registration, and was the user going to be activated automatically?
+			$publicActivation = $thisIsPublicRegistration && $user->status == UserStatus::Active;
+
+			if ($publicActivation)
 			{
-				// Do we need to auto-login?
-				if (craft()->config->get('autoLoginAfterAccountActivation') === true)
-				{
-					craft()->userSession->loginByUserId($user->id, false, true);
-				}
+				// Maybe automatically log them in
+				$this->_maybeLoginUserAfterAccountActivation($user);
 			}
 
 			if (craft()->request->isAjaxRequest())
@@ -991,7 +1022,16 @@ class UsersController extends BaseController
 			else
 			{
 				craft()->userSession->setNotice(Craft::t('User saved.'));
-				$this->redirectToPostedUrl($user);
+
+				// Is this public registration, and is the user going to be activated automatically?
+				if ($publicActivation)
+				{
+					$this->_redirectUserAfterAccountActivation($user);
+				}
+				else
+				{
+					$this->redirectToPostedUrl($user);
+				}
 			}
 		}
 		else
@@ -1043,24 +1083,30 @@ class UsersController extends BaseController
 		}
 
 		// Upload the file and drop it in the temporary folder
-		$file = $_FILES['image-upload'];
+		$file = UploadedFile::getInstanceByName('image-upload');
 
 		try
 		{
 			// Make sure a file was uploaded
-			if (!empty($file['name']) && !empty($file['size'])  )
+			if ($file)
 			{
+				$fileName = AssetsHelper::cleanAssetName($file->getName(), false, true);
+
+				if (!ImageHelper::isImageManipulatable($file->getExtensionName()))
+				{
+					throw new Exception(Craft::t('The uploaded file is not an image.'));
+				}
+
 				$user = craft()->users->getUserById($userId);
-				$userName = AssetsHelper::cleanAssetName($user->username, false);
+				$userName = AssetsHelper::cleanAssetName($user->username, false, true);
 
 				$folderPath = craft()->path->getTempUploadsPath().'userphotos/'.$userName.'/';
 
 				IOHelper::clearFolder($folderPath);
 
 				IOHelper::ensureFolderExists($folderPath);
-				$fileName = AssetsHelper::cleanAssetName($file['name']);
 
-				move_uploaded_file($file['tmp_name'], $folderPath.$fileName);
+				move_uploaded_file($file->getTempName(), $folderPath.$fileName);
 
 				// Test if we will be able to perform image actions on this image
 				if (!craft()->images->checkMemoryForImage($folderPath.$fileName))
@@ -1069,41 +1115,22 @@ class UsersController extends BaseController
 					$this->returnErrorJson(Craft::t('The uploaded image is too large'));
 				}
 
-                list ($width, $height) = ImageHelper::getImageSize($folderPath.$fileName);
+				craft()->images->
+					loadImage($folderPath.$fileName)->
+					scaleToFit(500, 500, false)->
+					saveAs($folderPath.$fileName);
 
-                if (IOHelper::getExtension($fileName) != 'svg')
-                {
-    				craft()->images->cleanImage($folderPath.$fileName);
-                }
-                else
-                {
-                    // Resave svg files as png
-                    $newFilename = preg_replace('/\.svg$/i', '.png', $fileName);
-
-                    craft()->images->
-                        loadImage($folderPath.$fileName, $width, $height)->
-                        saveAs($folderPath.$newFilename);
-
-                    IOHelper::deleteFile($folderPath.$fileName);
-                    $fileName = $newFilename;
-                }
-
-				$constraint = 500;
+				list ($width, $height) = ImageHelper::getImageSize($folderPath.$fileName);
 
 				// If the file is in the format badscript.php.gif perhaps.
 				if ($width && $height)
 				{
-					// Never scale up the images, so make the scaling factor always <= 1
-					$factor = min($constraint / $width, $constraint / $height, 1);
-
 					$html = craft()->templates->render('_components/tools/cropper_modal',
 						array(
 							'imageUrl' => UrlHelper::getResourceUrl('userphotos/temp/'.$userName.'/'.$fileName),
-							'width' => round($width * $factor),
-							'height' => round($height * $factor),
-							'factor' => $factor,
-							'constraint' => $constraint,
-                            'fileName' => $fileName
+							'width' => $width,
+							'height' => $height,
+							'fileName' => $fileName
 						)
 					);
 
@@ -1113,7 +1140,7 @@ class UsersController extends BaseController
 		}
 		catch (Exception $exception)
 		{
-			Craft::log('There was an error uploading the photo: '.$exception->getMessage(), LogLevel::Error);
+			$this->returnErrorJson($exception->getMessage());
 		}
 
 		$this->returnErrorJson(Craft::t('There was an error uploading your photo.'));
@@ -1148,21 +1175,16 @@ class UsersController extends BaseController
 			$source = UrlHelper::stripQueryString($source);
 
 			$user = craft()->users->getUserById($userId);
-			$userName = AssetsHelper::cleanAssetName($user->username, false);
+			$userName = AssetsHelper::cleanAssetName($user->username, false, true);
 
-            if (IOHelper::getExtension($source) == 'svg')
-            {
-                $source = preg_replace('/\.svg$/i', '.png', $source);
-            }
-
-            // make sure that this is this user's file
+			// make sure that this is this user's file
 			$imagePath = craft()->path->getTempUploadsPath().'userphotos/'.$userName.'/'.$source;
 
 			if (IOHelper::fileExists($imagePath) && craft()->images->checkMemoryForImage($imagePath))
 			{
 				craft()->users->deleteUserPhoto($user);
 
-                $image = craft()->images->loadImage($imagePath);
+				$image = craft()->images->loadImage($imagePath);
 				$image->crop($x1, $x2, $y1, $y2);
 
 				if (craft()->users->saveUserPhoto(IOHelper::getFileName($imagePath), $image, $user))
@@ -1546,7 +1568,7 @@ class UsersController extends BaseController
 		// If the user doesn't have CP access, see if a custom Set Password template exists
 		if (!$user->can('accessCp'))
 		{
-			craft()->path->setTemplatesPath(craft()->path->getSiteTemplatesPath());
+			craft()->templates->setTemplateMode(TemplateMode::Site);
 			$templatePath = craft()->config->getLocalized('setPasswordPath');
 
 			if (craft()->templates->doesTemplateExist($templatePath))
@@ -1557,7 +1579,7 @@ class UsersController extends BaseController
 		}
 
 		// Otherwise go with the CP's template
-		craft()->path->setTemplatesPath(craft()->path->getCpTemplatesPath());
+		craft()->templates->setTemplateMode(TemplateMode::CP);
 		$templatePath = craft()->config->getCpSetPasswordPath();
 		$this->renderTemplate($templatePath, $variables);
 	}
@@ -1621,7 +1643,7 @@ class UsersController extends BaseController
 			$verticalMargin = ($imageHeight - $dimension) / 2;
 			$image->crop($horizontalMargin, $imageWidth - $horizontalMargin, $verticalMargin, $imageHeight - $verticalMargin);
 
-			craft()->users->saveUserPhoto($userPhoto->getName(), $image, $user);
+			craft()->users->saveUserPhoto(AssetsHelper::cleanAssetName($userPhoto->getName()), $image, $user);
 
 			IOHelper::deleteFile($userPhoto->getTempName());
 		}
@@ -1634,30 +1656,38 @@ class UsersController extends BaseController
 	 */
 	private function _processUserGroupsPermissions(UserModel $user)
 	{
-		// Save any user groups
-		if (craft()->getEdition() == Craft::Pro && craft()->userSession->checkPermission('assignUserPermissions'))
+		// Make sure there are assignUserPermissions
+		if (craft()->userSession->checkPermission('assignUserPermissions'))
 		{
-			// Save any user groups
-			$groupIds = craft()->request->getPost('groups');
-
-			if ($groupIds !== null)
+			// Only Craft Pro has user groups
+			if (craft()->getEdition() == Craft::Pro)
 			{
-				craft()->userGroups->assignUserToGroups($user->id, $groupIds);
+				// Save any user groups
+				$groupIds = craft()->request->getPost('groups');
+
+				if ($groupIds !== null)
+				{
+					craft()->userGroups->assignUserToGroups($user->id, $groupIds);
+				}
 			}
 
-			// Save any user permissions
-			if ($user->admin)
+			// Craft Client+ has user permissions.
+			if (craft()->getEdition() >= Craft::Client)
 			{
-				$permissions = array();
-			}
-			else
-			{
-				$permissions = craft()->request->getPost('permissions');
-			}
+				// Save any user permissions
+				if ($user->admin)
+				{
+					$permissions = array();
+				}
+				else
+				{
+					$permissions = craft()->request->getPost('permissions');
+				}
 
-			if ($permissions !== null)
-			{
-				craft()->userPermissions->saveUserPermissions($user->id, $permissions);
+				if ($permissions !== null)
+				{
+					craft()->userPermissions->saveUserPermissions($user->id, $permissions);
+				}
 			}
 		}
 	}
@@ -1739,30 +1769,60 @@ class UsersController extends BaseController
 	/**
 	 * Takes over after a user has been activated.
 	 *
-	 * @param UserModel $user
+	 * @param UserModel $user The user that was just activated
+	 *
+	 * @return void
 	 */
 	private function _onAfterActivateUser(UserModel $user)
 	{
-		// Should we log them in?
-		$loggedIn = false;
+		$this->_maybeLoginUserAfterAccountActivation($user);
 
-		if (craft()->config->get('autoLoginAfterAccountActivation'))
+		if (!craft()->request->isAjaxRequest())
 		{
-			$loggedIn = craft()->userSession->loginByUserId($user->id, false, true);
+			$this->_redirectUserAfterAccountActivation($user);
 		}
+	}
 
+	/**
+	 * Possibly log a user in right after they were activate, if Craft is configured to do so.
+	 *
+	 * @param UserModel $user The user that was just activated
+	 *
+	 * @return bool Whether the user was just logged in
+	 */
+	private function _maybeLoginUserAfterAccountActivation(UserModel $user)
+	{
+		if (craft()->config->get('autoLoginAfterAccountActivation') === true)
+		{
+			return craft()->userSession->loginByUserId($user->id, false, true);
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	/**
+	 * Redirect the browser after a user’s account has been activated.
+	 *
+	 * @param UserModel $user The user that was just activated
+	 *
+	 * @return void
+	 */
+	private function _redirectUserAfterAccountActivation(UserModel $user)
+	{
 		// Can they access the CP?
 		if ($user->can('accessCp'))
 		{
 			$postCpLoginRedirect = craft()->config->get('postCpLoginRedirect');
 			$url = UrlHelper::getCpUrl($postCpLoginRedirect);
+			$this->redirect($url);
 		}
 		else
 		{
 			$activateAccountSuccessPath = craft()->config->getLocalized('activateAccountSuccessPath');
 			$url = UrlHelper::getSiteUrl($activateAccountSuccessPath);
+			$this->redirectToPostedUrl($user, $url);
 		}
-
-		$this->redirect($url);
 	}
 }

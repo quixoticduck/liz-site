@@ -8,8 +8,8 @@ namespace Craft;
  *
  * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
- * @license   http://buildwithcraft.com/license Craft License Agreement
- * @see       http://buildwithcraft.com
+ * @license   http://craftcms.com/license Craft License Agreement
+ * @see       http://craftcms.com
  * @package   craft.app.services
  * @since     1.0
  */
@@ -83,7 +83,7 @@ class EmailService extends BaseApplicationComponent
 	 * Craft has four predefined email keys: account_activation, verify_new_email, forgot_password, and test_email.
 	 *
 	 * Plugins can register additional email keys using the
-	 * [registerEmailMessages](http://buildwithcraft.com/docs/plugins/hooks-reference#registerEmailMessages) hook, and
+	 * [registerEmailMessages](http://craftcms.com/docs/plugins/hooks-reference#registerEmailMessages) hook, and
 	 * by providing the corresponding language strings.
 	 *
 	 * ```php
@@ -116,7 +116,8 @@ class EmailService extends BaseApplicationComponent
 			$emailModel->body     = Craft::t($key.'_body', null, null, 'en_us');
 		}
 
-		$tempTemplatesPath = '';
+		$templatesService = craft()->templates;
+		$oldTemplateMode = $templatesService->getTemplateMode();
 
 		if (craft()->getEdition() >= Craft::Client)
 		{
@@ -125,14 +126,15 @@ class EmailService extends BaseApplicationComponent
 
 			if (!empty($settings['template']))
 			{
-				$tempTemplatesPath = craft()->path->getSiteTemplatesPath();
+				$templatesService->setTemplateMode(TemplateMode::Site);
 				$template = $settings['template'];
 			}
 		}
 
 		if (empty($template))
 		{
-			$tempTemplatesPath = craft()->path->getCpTemplatesPath();
+			// Default to the _special/email.html template
+			$templatesService->setTemplateMode(TemplateMode::CP);
 			$template = '_special/email';
 		}
 
@@ -147,18 +149,14 @@ class EmailService extends BaseApplicationComponent
 			$emailModel->htmlBody.
 			"{% endset %}\n";
 
-		// Temporarily swap the templates path
-		$originalTemplatesPath = craft()->path->getTemplatesPath();
-		craft()->path->setTemplatesPath($tempTemplatesPath);
-
 		// Tell the template which email key was being requested
 		$variables['emailKey'] = $key;
 
 		// Send the email
 		$return = $this->_sendEmail($user, $emailModel, $variables);
 
-		// Return to the original templates path
-		craft()->path->setTemplatesPath($originalTemplatesPath);
+		// Return to the original template mode
+		$templatesService->setTemplateMode($oldTemplateMode);
 
 		return $return;
 	}
@@ -231,6 +229,16 @@ class EmailService extends BaseApplicationComponent
 		$this->raiseEvent('onSendEmail', $event);
 	}
 
+	/**
+	 * Fires an 'onSendEmailError' event.
+	 *
+	 * @param Event $event
+	 */
+	public function onSendEmailError(Event $event)
+	{
+		$this->raiseEvent('onSendEmailError', $event);
+	}
+
 	// Private Methods
 	// =========================================================================
 
@@ -252,7 +260,6 @@ class EmailService extends BaseApplicationComponent
 			throw new Exception(Craft::t('Could not determine how to send the email.  Check your email settings.'));
 		}
 
-
 		// Fire an 'onBeforeSendEmail' event
 		$event = new Event($this, array(
 			'user' => $user,
@@ -265,6 +272,9 @@ class EmailService extends BaseApplicationComponent
 		// Is the event giving us the go-ahead?
 		if ($event->performAction)
 		{
+			// In case a plugin changed any variables in onBeforeSendEmail
+			$variables = $event->params['variables'];
+
 			$email = new \PHPMailer(true);
 
 			// Default the charset to UTF-8
@@ -329,22 +339,7 @@ class EmailService extends BaseApplicationComponent
 					}
 			}
 
-			$testToEmail = craft()->config->get('testToEmailAddress');
-
-			// If they have the test email config var set to a non-empty string use it instead of the supplied email.
-			if (is_string($testToEmail) && $testToEmail !== '')
-			{
-				$email->addAddress($testToEmail, 'Test Email');
-			}
-			// If they have the test email config var set to a non-empty array use the values instead of the supplied email.
-			else if (is_array($testToEmail) && count($testToEmail) > 0)
-			{
-				foreach ($testToEmail as $testEmail)
-				{
-					$email->addAddress($testEmail, 'Test Email');
-				}
-			}
-			else
+			if (!$this->_processTestToEmail($email, 'Address'))
 			{
 				$email->addAddress($user->email, $user->getFullName());
 			}
@@ -361,14 +356,17 @@ class EmailService extends BaseApplicationComponent
 			// Add any BCC's
 			if (!empty($emailModel->bcc))
 			{
-				foreach ($emailModel->bcc as $bcc)
+				if (!$this->_processTestToEmail($email, 'BCC'))
 				{
-					if (!empty($bcc['email']))
+					foreach ($emailModel->bcc as $bcc)
 					{
-						$bccEmail = $bcc['email'];
+						if (!empty($bcc['email']))
+						{
+							$bccEmail = $bcc['email'];
 
-						$bccName = !empty($bcc['name']) ? $bcc['name'] : '';
-						$email->addBCC($bccEmail, $bccName);
+							$bccName = !empty($bcc['name']) ? $bcc['name'] : '';
+							$email->addBCC($bccEmail, $bccName);
+						}
 					}
 				}
 			}
@@ -376,14 +374,17 @@ class EmailService extends BaseApplicationComponent
 			// Add any CC's
 			if (!empty($emailModel->cc))
 			{
-				foreach ($emailModel->cc as $cc)
+				if (!$this->_processTestToEmail($email, 'CC'))
 				{
-					if (!empty($cc['email']))
+					foreach ($emailModel->cc as $cc)
 					{
-						$ccEmail = $cc['email'];
+						if (!empty($cc['email']))
+						{
+							$ccEmail = $cc['email'];
 
-						$ccName = !empty($cc['name']) ? $cc['name'] : '';
-						$email->addCC($ccEmail, $ccName);
+							$ccName = !empty($cc['name']) ? $cc['name'] : '';
+							$email->addCC($ccEmail, $ccName);
+						}
 					}
 				}
 			}
@@ -443,27 +444,30 @@ class EmailService extends BaseApplicationComponent
 
 			if (!$email->Send())
 			{
+				// Fire an 'onSendEmailError' event
+				$this->onSendEmailError(new Event($this, array(
+					'user' => $user,
+					'emailModel' => $emailModel,
+					'variables'	 => $variables,
+					'error' => $email->ErrorInfo
+				)));
+
 				throw new Exception(Craft::t('Email error: {error}', array('error' => $email->ErrorInfo)));
 			}
 
-			$success = true;
-		}
-		else
-		{
-			$success = false;
-		}
+			Craft::log('Successfully sent email with subject: '.$email->Subject, LogLevel::Info);
 
-		if ($success)
-		{
 			// Fire an 'onSendEmail' event
 			$this->onSendEmail(new Event($this, array(
 				'user' => $user,
 				'emailModel' => $emailModel,
 				'variables'	 => $variables
 			)));
+
+			return true;
 		}
 
-		return $success;
+		return false;
 	}
 
 	/**
@@ -517,5 +521,36 @@ class EmailService extends BaseApplicationComponent
 		$email->Host = $emailSettings['host'];
 		$email->Port = $emailSettings['port'];
 		$email->Timeout = $emailSettings['timeout'];
+	}
+
+	/**
+	 * @param $email
+	 * @param $method
+	 *
+	 * @return bool
+	 */
+	private function _processTestToEmail($email, $method)
+	{
+		$testToEmail = craft()->config->get('testToEmailAddress');
+		$method = 'add'.$method;
+
+		// If they have the test email config var set to a non-empty string use it instead of the supplied email.
+		if (is_string($testToEmail) && $testToEmail !== '')
+		{
+			$email->$method($testToEmail, 'Test Email');
+			return true;
+		}
+		// If they have the test email config var set to a non-empty array use the values instead of the supplied email.
+		else if (is_array($testToEmail) && count($testToEmail) > 0)
+		{
+			foreach ($testToEmail as $testEmail)
+			{
+				$email->$method($testEmail, 'Test Email');
+			}
+
+			return true;
+		}
+
+		return false;
 	}
 }
