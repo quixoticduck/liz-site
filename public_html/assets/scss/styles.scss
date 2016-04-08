@@ -482,7 +482,30 @@ figure {
 }
 
 .contactForm {
-  background-color: pink;
+  // background-color: pink;
+  min-height: 100px;
+  width: 37%;
+  overflow: hidden;
+  padding: 10px 50px 25px 50px;
+  margin: auto;
+  // label* {
+  //   color: yellow;
+  // }
+}
+
+.contactField {
+  margin: 15px 0px;
+  display: block;
+  margin: auto;
+  h3 {
+    margin: 20px 0px 5px 0px;
+    font-weight: normal;
+    display: inline-block;
+  }
+}
+
+.contactForm input* {
+  color: blue;
 }
 
 input#puppyField { display: none; }

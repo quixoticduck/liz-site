@@ -289,7 +289,23 @@ figure {
   color: #333333; }
 
 .contactForm {
-  background-color: pink; }
+  min-height: 100px;
+  width: 37%;
+  overflow: hidden;
+  padding: 10px 50px 25px 50px;
+  margin: auto; }
+
+.contactField {
+  margin: 15px 0px;
+  display: block;
+  margin: auto; }
+  .contactField h3 {
+    margin: 20px 0px 5px 0px;
+    font-weight: normal;
+    display: inline-block; }
+
+.contactForm input* {
+  color: blue; }
 
 input#puppyField {
   display: none; }
