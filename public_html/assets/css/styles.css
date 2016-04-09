@@ -24,7 +24,9 @@ ol,
 ul {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  color: white;
+  font-weight: normal; }
 
 p {
   color: white;
@@ -84,7 +86,7 @@ html {
   font-size: 17px; }
 
 a {
-  color: white; }
+  color: #2b7ca7; }
 
 a:link {
   text-decoration: none;
@@ -92,7 +94,7 @@ a:link {
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   transition: 0.4s;
-  color: white; }
+  color: #2b7ca7; }
 
 a:visited {
   text-decoration: none; }
@@ -195,6 +197,14 @@ body {
   margin-top: 30px;
   margin-bottom: 15px;
   text-align: center; }
+  .col ul {
+    text-align: left;
+    margin-left: 40px; }
+  .col li:before {
+    font-family: 'FontAwesome';
+    content: '\f0a3';
+    margin: 0 5px 0 -15px;
+    padding-right: 10px; }
 
 .colpadding {
   padding-left: 30px;
@@ -270,9 +280,13 @@ figure {
   margin-top: 10px;
   margin-bottom: 20px;
   background-color: white; }
+  .textbox a {
+    color: #EE163D; }
   .textbox a:link {
     transition: none;
     color: #EE163D; }
+  .textbox a:hover {
+    color: #4795C4; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
   padding: 2px 0px;

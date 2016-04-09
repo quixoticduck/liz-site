@@ -85,6 +85,8 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: $colorLight;
+  font-weight: normal;
 }
 
 p {
@@ -161,14 +163,14 @@ html {
 }
 
 a {
-    color: $colorLight;
+    color: $color2nd;
   }
 
 a:link
 {
 text-decoration:none;
 @include transition;
-color: $colorLight;
+color: $color2nd;
 }
 
 a:visited
@@ -364,6 +366,20 @@ $gutter: 20px;
   margin-bottom: 15px;
   text-align: center;
   // max-width: 1300px;
+  // li {
+  //   list-style: "fa fa-circle-o"
+  // }
+  ul {
+    text-align: left;
+    margin-left: 40px;
+  }
+  li:before {    
+    font-family: 'FontAwesome';
+    content: '\f0a3';
+    margin:0 5px 0 -15px;
+    padding-right: 10px;
+    // width: 2px;
+  }
 }
 
 .colpadding {
@@ -457,9 +473,15 @@ figure {
   margin-top: 10px;
   margin-bottom: 20px;
   background-color: $colorLight;
+  a {
+    color: $colorMain;
+  }
   a:link {
     transition: none;
     color: $colorMain;
+  }
+  a:hover {
+    color: $color2ndLight;
   }
 }
 
