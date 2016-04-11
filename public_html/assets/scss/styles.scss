@@ -687,7 +687,7 @@ and (max-width: $breakpointPhoneMax)
    // color: $colorDark;
    // border-right: 2px;
    // border-style: dashed;
-   padding-top: 5px;
+   padding-top: 6px;
   }
 
   nav .navOpen {
@@ -715,7 +715,7 @@ and (max-width: $breakpointPhoneMax)
     display: block;
     min-height: 45px;
       a {
-        font-size: 20px;
+        font-size: 18px;
         display: block;
         margin-right: 20px;
         // color: blue;
@@ -799,6 +799,7 @@ and (max-width: $breakpointPhoneMax)
       display: block;
       text-align: center;
       padding-left: 8.8rem;
+      // padding-left: 160px;
       // display: inline;
       // margin-left: 300px;
       // z-index: 50;
@@ -826,29 +827,40 @@ and (max-width: $breakpointPhoneMax)
 @media screen
 and (max-width: $breakpointTinyMin) 
 {
-  .wrapper, .mainNavClose {
+  .wrapper, .mainNavClose 
+  {
     width: $breakpointTinyMin;
   }
 
-  .navHeadingWhenClose {
-    .menuTextClose {
+  .navHeadingWhenClose 
+  {
+    .menuTextClose 
+    {
       display: none;
     }
 
-    .menuTextMenu {
+    .menuTextMenu 
+    {
       display: block;
     }
   }
 
-  .navHeadingWhenOpen {
-    .menuTextMenu {
+  .navHeadingWhenOpen 
+  {
+    .menuTextMenu 
+    {
       display: none;
     }
 
-    .menuTextClose {
+    .menuTextClose 
+    {
       display: block;
     }
   }
+
+  // .wrapper 
+  // { max-width: 360px;
+  // }
 }
 
 /* PHONE PORTRAIT END

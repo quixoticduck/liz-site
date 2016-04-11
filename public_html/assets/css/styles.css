@@ -421,7 +421,7 @@ input#puppyField {
     z-index: 20;
     z-index: 100;
     transform: translateZ(100px);
-    padding-top: 5px; }
+    padding-top: 6px; }
 
   .navClose {
     transform: translate3d(-290px, 0, 0);
@@ -440,7 +440,7 @@ input#puppyField {
     display: block;
     min-height: 45px; }
     .main-nav li a {
-      font-size: 20px;
+      font-size: 18px;
       display: block;
       margin-right: 20px; }
 

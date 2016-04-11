@@ -1,6 +1,7 @@
 NOTES:
 
 TO DO:
+on my mobile the screen is scrollable left to right. needs max width on mobile
 -Final li of mobile nav needs same margin as rest
 -top margins on mobile nav could be better
 -on tiny mobile nav the hamburger menu and margins in general should be less (so content is wider)
@@ -15,7 +16,7 @@ tiny mobile nav, Liz menu is too much to left
 -make short text row (1-3 lines) and (4+ lines text row) or swap to using Foundation 6 grid?
 -fix hyperlinks showing as white
 -fix gaps when headings aren't chosen to be filled in
--fix footer on some pages
+-fix footer on some pages ( actually only an issue when not enough content so should be ok)
 
 DONE:
 -htc access - for redirects e.g. about to about/liz
