@@ -195,8 +195,7 @@ body {
   float: left;
   margin: auto;
   margin-top: 30px;
-  margin-bottom: 15px;
-  text-align: center; }
+  margin-bottom: 15px; }
   .col ul {
     text-align: left;
     margin-left: 40px; }
@@ -264,21 +263,28 @@ figure {
   border-radius: 30px;
   overflow: hidden; }
 
-.cloudBox {
-  background-image: url("/assets/images/cloud.png");
+.textParagraphs {
   margin: auto;
-  padding: 12px 12px; }
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 15px 45px;
+  color: purple;
+  text-align: left; }
+  .textParagraphs h3 {
+    margin-left: 0px; }
+
+.textSentences {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  text-align: center; }
 
 .textbox {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -ms-border-radius: 3px;
   border-radius: 3px;
-  margin: auto;
-  text-align: center;
-  padding: 15px 30px;
-  margin-top: 10px;
-  margin-bottom: 20px;
   background-color: white; }
   .textbox a {
     color: #EE163D; }
@@ -323,23 +329,14 @@ input#puppyField {
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */
-.red {
-  background-color: #FF696D; }
-
-.blue {
-  background-color: #4795C4; }
-
 .row1 {
   min-height: 450px; }
 
 .row2 {
   min-height: 470px; }
 
-.textRow1 {
-  min-height: 300px; }
-
-.textRow2 {
-  min-height: 300px; }
+.textRow1, .textRow2 {
+  text-align: left; }
 
 #contact {
   overflow: hidden;

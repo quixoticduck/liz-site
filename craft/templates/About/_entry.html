@@ -25,7 +25,7 @@
 				{% if image %}
 					<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
 				{% endif %} 
-				<div class="textbox">
+				<div class="textParagraphs textbox">
 					<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
 					<h3> {{ block.myBlockTextboxHeading }} </h3>
 					{{ block.myBlockTextboxText }}
@@ -43,7 +43,7 @@
 						<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 					</div>
 				{% endif %}
-				<div class="textbox max60">
+				<div class="textSentences textbox max60">
 					<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
 					{{ block.myBlockTextboxText }}
 				</div>
