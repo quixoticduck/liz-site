@@ -293,6 +293,8 @@ figure {
     color: #EE163D; }
   .textbox a:hover {
     color: #4795C4; }
+  .textbox h1 {
+    color: #EE163D; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
   padding: 2px 0px;
