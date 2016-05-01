@@ -1,0 +1,36 @@
+NOTES:
+
+TO DO:
+on my mobile the screen is scrollable left to right. needs max width on mobile
+-Final li of mobile nav needs same margin as rest
+-top margins on mobile nav could be better
+-on tiny mobile nav the hamburger menu and margins in general should be less (so content is wider)
+tiny mobile nav, Liz menu is too much to left
+-replace placeholder text
+-return all colours to normal
+-edit globe continents and edit speech image colours
+-add proper contact form?
+-image on about page could be wider on mobile
+-check all fonts are nice, especially main title logo font
+-change two columns to multiple columns of at least 3-4?
+-make short text row (1-3 lines) and (4+ lines text row) or swap to using Foundation 6 grid?
+-fix hyperlinks showing as white
+-fix gaps when headings aren't chosen to be filled in
+-fix footer on some pages ( actually only an issue when not enough content so should be ok)
+-google analytics
+-404 page
+- sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
+-FAVICON
+-google preview
+
+DONE:
+-htc access - for redirects e.g. about to about/liz
+-for a news section, I at the moment only have one entry template
+-there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
+-remove body section from homepage or make it slimmer
+
+USEFUL INFO:
+How to: 
+-Clone a branch to a blank folder:
+-git clone -b homepageSquares https://github.com/quixoticduck/liz-site.git
+-in twig stuff do if (type? news/about (in sections) then show those entries) else…

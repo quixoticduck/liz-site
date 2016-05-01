@@ -1,0 +1,942 @@
+/* MIXINS
+==================================== */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($transition:0.4s) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
+@mixin blur ($blur:5px) {
+filter: blur(5px);
+-webkit-filter: blur(5px);
+}
+
+/* MIXINS END
+==================================== */
+
+/* FONT STUFF
+==================================== */
+
+@font-face {
+  font-family: 'brushpen';
+  src: url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$featureFont: 'brushpen', cursive;
+$headingFont: 'Fenix', serif;
+$pFont:'Open Sans', sans-serif;
+
+// @font-face {
+//   font-family: 'Lobster';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Lobster'), local('Lobster), url(http://fonts.gstatic.com/s/vollkorn/v5/BCFBp4rt5gxxFrX6F12DKnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+// }
+
+/* FONT STUFF END
+==================================== */
+
+/* Media Query Breakpoints
+==================================== */
+$breakpointDesktopMin: 1330px;
+$breakpointLaptopMax: ($breakpointDesktopMin - 1px);
+$breakpointLaptopMin: 1185px;
+$breakpointTabletMax: ($breakpointLaptopMin - 1px);
+$breakpointTabletMin: 970px;
+$breakpointPhoneMax: ($breakpointTabletMin - 1px);
+$breakpointPhoneMin: 450px;
+$breakpointTinyMax: ($breakpointPhoneMin - 1px);
+$breakpointTinyMin: 320px;
+/* /END/ Media Query Breakpoints
+==================================== */
+
+/* Layout Element Colors
+==================================== */
+$colorDark:      #333333;
+$colorLight:     white;
+// $colorLight:     #f8f8f8;
+// $colorMain:      #EE163D;
+// $colorMain:      #AB3442;
+$colorMain:      #C8233F;
+
+$colorMainLight: #FF696D;
+$color2nd:       #2b7ca7;
+$color2ndLight:  #4795C4;
+
+
+
+/* Lists
+========================================================================= */
+
+// Remove default list styles, margins and padding
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: $colorLight;
+  font-weight: normal;
+}
+
+p {
+  color: $colorLight;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 7px 0px 10px 0px;
+} 
+
+.h0 {
+  color:$colorLight;
+  font-family: $featureFont;
+  font-size: 37px;
+  margin: 12px 0px; 
+  text-transform: uppercase;
+  display: inline;
+  line-height: 55px;
+}
+
+h1 {
+  color:$colorLight;
+  font-family: $headingFont;
+  font-size: 37px;
+  margin: 12px 0px; 
+}
+
+h2 {
+  color:$colorLight;
+  font-family: $headingFont;
+  display: inline;
+  text-align: center;
+}
+
+h3 {
+  color:$colorLight;
+  // margin: 12px;
+  // display: inline;
+}
+
+// .fa {
+//   color: red;
+// }
+
+.mainNavClose .fa, .mainNavClose h2 {
+  color: $colorLight;
+  margin-left: 20px;
+  margin-right: -20px;
+  float: left;
+  line-height: 55px;
+}
+
+.mainNavClose h1 {
+  line-height: 55px;
+}
+
+.mainNavClose h1, .mainNavClose h2 {
+  text-transform: uppercase;
+  margin: 0px 35px;
+  // padding-left: 15px;
+}
+
+button:focus { outline: none; }
+
+/* /END/ Lists
+========================================================================= */
+
+/* Link stylings
+========================================================================= */
+
+html { 
+  background: $colorMain; 
+  // margin-bottom: 0px;
+  font-size: 17px;
+}
+
+a, a:link {
+	text-decoration:none;
+	@include transition;
+	// color: $color2nd;
+	color: $colorLight;
+	font-weight: bold;
+    // border-bottom: 2px dotted $colorLight;
+}
+
+// a:visited
+// {
+// text-decoration:none;
+// }
+
+ //bug can't make visited p's a different color
+// a:visited p {color: $color2nd;}
+
+a:hover
+{
+@include transition(0.3s);
+color: $color2ndLight;
+}
+
+a:active
+{
+text-decoration:none;
+color: #f8f8f8; 
+}
+
+/* /END/ Link stylings
+========================================================================= */
+
+/* DESKTOP Header, Banner and Footer Layout
+==================================== */
+
+// .navbar {
+//   max-height: 300px;
+//   background-color: $colorMainLight;
+// }
+
+nav {
+  text-align: center;
+  text-transform: uppercase;
+  max-height: 300px;
+  // background-color: $colorMainLight;
+  padding: 20px 0px;
+
+}
+
+nav li {
+  display: inline-block;
+    // float:right;
+}
+
+.main-nav 
+  {
+  text-align: right;
+  h1,
+    {
+      text-decoration: none;
+      display: inline-block;
+      text-align: inline-block;
+      padding: 10px 0px;
+    }
+
+  li {
+    margin: 0;
+    margin-top: 7px;
+  }
+
+  a {
+    color: $colorLight;
+    font: $headingFont;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+    border-bottom: 2px dotted $colorLight;
+    padding: 0px 0px;
+    margin: 10px 15px;
+    &:hover {color:$color2ndLight;}
+    // background-color: blue;
+  }
+
+  li a 
+  {
+    margin-left: 1.5rem;
+    margin-right: 0px;
+    // background-color: red;
+  }
+}
+
+.mainLogo
+// .mainLogo a 
+{
+  // margin-right: 20px;
+  // // padding-top: 10px;
+  // margin-top: -11px;
+  // margin-bottom: 0px;
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+
+.mainLogo a {
+margin-right: 1.14rem;
+color: $colorLight;
+}
+
+.main-header {
+  // padding-top: 20px;
+  // padding-bottom: 5px;
+  // color: pink;
+  // background-color: orange;
+}
+
+footer {
+  // background-image: url("/assets/images/seamlessFlicksRed.png");
+  background-color: $colorDark;
+  color: $colorMainLight;
+  text-align: center;
+  padding: 10px 0px;
+  // display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // position: absolute;
+  // left:0px;
+
+  // position: relative;
+  //   bottom:0px;
+  height: auto;
+    a {
+      padding: 20px 0px;
+    }
+}
+
+
+
+/* /END/ DESKTOP Header, Banner and Footer Layout
+==================================== */
+
+body 
+{
+  font: 100% $pFont;
+  // color: $colorMain 
+  background-color: $colorMain;
+}
+
+.wrapper {
+// width: 90%;
+// margin: auto;
+width: 100%;
+background-color: $colorMain;
+}
+
+.container {
+  width: 88%;
+  margin: auto;
+  max-width: 1425px;
+  min-height: 1000px;
+}
+
+// .backgroundPattern {
+//   width: 100%;
+//   // background-color: $colorMainLight;
+//   background-image: url("/assets/images/seamlessCrossesRed.png");
+//   // @include blur;
+//   // opacity: 0.4;
+//   // filter: alpha(opacity=40); /* For IE8 and earlier */
+// }
+
+.center {
+  margin: auto;
+  display: block;
+}
+
+// .grid {
+
+// }
+// .grid2 {
+//   // max-width: 50%;
+//   margin: auto;
+//   display: inline-block;
+// }
+
+$gutter: 20px;
+
+.dividerMargin {
+  height: 15px;
+}
+
+.col {
+  float: left;
+  margin: auto;
+  // padding-left: $gutter;
+  // margin-top: 50px;
+  // margin-top: 30px;
+  margin-bottom: 15px;
+  // text-align: center;
+  // max-width: 1300px;
+  // li {
+  //   list-style: "fa fa-circle-o"
+  // }
+  ul {
+    text-align: left;
+    margin-left: 40px;
+  }
+  li:before {    
+    font-family: 'FontAwesome';
+    content: '\f0a3';
+    margin:0 5px 0 -15px;
+    padding-right: 10px;
+    // width: 2px;
+  }
+}
+
+.colpadding {
+  padding-left: 30px;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+.blockImages {
+  min-height: 350px;
+  float: left;
+  padding-top: 45px;
+  text-align: center;
+  // a {
+  //   margin: 5px;
+  // }
+}
+
+//div[class*='col-'] {
+  //border-bottom: 1px solid black;
+//}
+
+.col-quarter {
+  width: 22.5%;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-third {
+  width: 33.333333333%;
+}
+.col-twoThirds {
+  width: 66.666666666%;
+}
+
+.col-threeQuarters {
+  width: 75%;
+}
+
+.col-fullWidth {
+  width: 100%;
+}
+
+// .imgContainer {
+// min-height: 290px;
+// // max-height: 240px;
+// }
+
+.max60 {
+  max-width: 60%;
+}
+
+.myImage, .myImageGroup {
+  @include border-radius (15px); 
+  margin: auto;
+  max-width: 34%;
+  text-align: center;
+  padding: 25px;
+  display: block;
+}
+
+.myImageGroup {
+  max-height: 199px;
+}
+
+.homepageBig {
+  display:none;
+}
+
+figure {
+    width:300px;
+    height:300px;
+    @include border-radius (30px);
+    overflow:hidden;
+}
+
+// .cloudBox {
+//   background-image: url("/assets/images/cloud.png");
+//   margin: auto;
+//   padding: 12px 12px;
+// }
+
+.textParagraphs {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 15px 45px;
+  // color: purple;
+  text-align: left;
+  h3 {
+    margin-left: 0px;
+  }
+}
+
+.textSentences {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.textbox { 
+  @include border-radius (3px); 
+  background-color: $colorLight;
+  a {
+    color: $colorMain;
+  }
+  a:link {
+    transition: none;
+    color: $colorMain;
+  }
+  a:hover {
+    color: $color2ndLight;
+  }
+  h1 {
+    color: $colorMain;
+  }
+}
+
+.textbox p, .textbox h1, .textbox h2, .textbox h3 {
+  padding: 2px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.textbox h2 {
+  color: $colorDark;
+}
+
+.textbox h3 {
+  color: $colorMain;
+}
+
+.textbox p {
+  color: $colorDark;
+}
+
+
+
+.contactForm {
+  // background-color: pink;
+  min-height: 100px;
+  width: 37%;
+  overflow: hidden;
+  padding: 10px 50px 25px 50px;
+  margin: auto;
+  // label* {
+  //   color: yellow;
+  // }
+}
+
+.contactField {
+  margin: 15px 0px;
+  display: block;
+  margin: auto;
+  h3 {
+    margin: 20px 0px 5px 0px;
+    font-weight: normal;
+    display: inline-block;
+  }
+}
+
+// .contactForm input* {
+//   color: blue;
+// }
+
+input#puppyField { display: none; }
+
+/* CRAFT CMS PHP CLASSES
+==================================== */
+
+// .red {
+//   background-color: $colorMainLight;
+// }
+
+// .blue {
+//     background-color: $color2ndLight;
+// }
+
+.row1 {
+  min-height: 450px;
+}
+
+.row2 {
+  min-height: 470px;
+}
+
+.textRow1, .textRow2 {
+  // min-height: 100px;
+  text-align: left;
+}
+
+#contact {
+  // color: green;
+  // background-color: blue;
+  overflow: hidden;
+  height: 5px;
+  width: 5px;
+}
+
+/* // CRAFT CMS PHP CLASSES END
+==================================== */
+
+
+.centerHeading {
+  color:blue;
+  text-align: center !important;
+  margin: auto;
+  display: block;
+  padding: 3px 0px ;
+}
+
+/* LAPTOP SCREEN
+==================================== */
+@media screen
+and (min-width: $breakpointLaptopMin)
+and (max-width: $breakpointLaptopMax) 
+{
+    .mainLogo a {
+    font-size: 2rem;
+  }
+
+  .main-nav li a {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-left: 1.5rem;
+    // margin-right: 0px;
+  // color: purple;
+  }
+} 
+
+/* LAPTOP SCREEN END
+==================================== */
+
+/* TABLET SCREEN
+==================================== */
+@media screen
+and (min-width: $breakpointTabletMin)
+and (max-width: $breakpointTabletMax) 
+{
+  .mainLogo a {
+    font-size: 1.85rem;
+    line-height: 1.3rem;
+    margin-top: 0px;
+    margin-bottom: 12px;
+  }
+  .main-nav li a {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin-left: 1rem;
+    // color: green;
+  }
+
+
+  .col-half {
+    width: 100%;
+    // margin-bottom: 10px;
+    // margin-top: 10px;
+  }
+
+  .max60 {
+    max-width: 70%;
+  }
+
+  .row1, .row2 {
+    min-height: 0px;
+  }
+  .blockImages {
+    padding-top: 20px;
+  }
+
+  .red, .blue {
+    // background-color: $colorMainLight;
+  }
+} 
+
+/* TABLET SCREEN END
+==================================== */
+
+// @media screen and (min-width: $breakpointPhoneMax) and (max-width: $breakpointTabletMin) {
+//   .main-nav li a {
+//   }
+// }
+
+
+.mainNavClose {
+  display: none;
+}
+
+
+/* PHONE LANDSCAPE
+==================================== */
+
+@media screen
+// and (min-width: $breakpointTinyMax)
+and (max-width: $breakpointPhoneMax) 
+{
+  nav {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 260px;
+    max-height: none;
+    background-color: $colorMainLight;
+    padding: 20px 15px;
+    // transform: translate3d(-290px, 0, 0);
+    // transition: transform 0.4s ease;
+  }
+
+  .navOpen {
+    padding-top: 6px;
+
+    transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+
+    transition: transform 0.8s ease;    
+    -webkit-transition: transform 0.8s ease;    
+    -moz-transition: transform 0.8s ease;    
+    -ms-transition: transform 0.8s ease;
+
+    // z-index: 20;
+    // z-index: 100;
+    // transform: translateZ(100px);
+   // background-color: $colorLight;
+   // color: $colorDark;
+   // border-right: 2px;
+   // border-style: dashed;
+  }
+
+  nav .navOpen {
+    // border-right: 2px;
+    // border-style: dotted;
+  }
+
+  .navClose {
+    transform: translate3d(-290px, 0, 0);
+    -webkit-transform: translate3d(-290px, 0, 0);
+    -moz-transform: translate3d(-290px, 0, 0);
+    -ms-transform: translate3d(-290px, 0, 0);
+
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+  }
+
+  .navHeadingWhenOpen {
+    transform: translate3d(33px, 0, 0);
+    -webkit-transform: translate3d(33px, 0, 0);
+    -moz-transform: translate3d(33px, 0, 0);
+    -ms-transform: translate3d(33px, 0, 0);
+    
+    transition: transform 0.8s ease;
+    -webkit-transition: transform 0.8s ease;
+    -moz-transition: transform 0.8s ease;
+    -ms-transition: transform 0.8s ease;
+    // background-color: purple;
+  }
+
+  .navHeadingWhenClose {
+    transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+    
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+  }
+
+  .main-nav li {
+    display: block;
+    min-height: 45px;
+      a {
+        font-size: 18px;
+        display: block;
+        margin-right: 20px;
+        // color: blue;
+        }
+  }
+
+  .mainLogo {
+    display: block;
+    float: none;
+    margin-bottom: 5px;
+        transition: transform 0.8s ease;
+    // visibility: hidden;
+  }
+
+  .mainNavClose {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: $colorMainLight;
+    border: none;
+  }
+
+  body {
+      padding-top: 55px;
+    }
+
+  .col-half {
+    width: 100%;
+  }
+
+  .max60 {
+    max-width: 70%;
+  }
+
+  .row1, .row2 {
+    min-height:  0px;
+    padding-bottom: 15px;
+  }
+
+    .red, .blue {
+    // background-color: $colorMainLight;
+  }
+
+  .blockImages {
+    padding-top: 20px;
+  }
+
+  .myImage:hover {
+    width: 90%;
+    display: none;
+  }
+
+  .navHeadingWhenClose .menuTextMenu {
+      display: block;
+      text-align: center;
+      h1 {
+        margin-right: 5.9rem;
+      }
+    }
+
+  .navHeadingWhenClose .menuTextClose {
+    display: none;
+  }
+
+// for if I want there to be NO X on the nav when it's open
+  // .navHeadingWhenOpen .menuTextClose {
+  //     display: none;
+  //   }
+
+  .navHeadingWhenOpen .menuTextMenu {
+      // display: block;
+      // margin-left: 302px;
+      display: none;
+    }
+
+    // for if I want there to always be an X on the nav when it's open
+  .navHeadingWhenOpen .menuTextClose {
+      display: block;
+      text-align: center;
+      padding-left: 8.8rem;
+      // padding-left: 160px;
+      // display: inline;
+      // margin-left: 300px;
+      // z-index: 50;
+      // transform: translateZ(5px);
+      // position: absolute;
+      // z-index: 500;
+      // transform: translate3d(0px, 0px, 500px);
+      // text-align: center;
+    }
+
+    .menuTextClose:hover, .fa-bars:hover {
+      cursor: pointer;
+    }
+
+  .footer {
+    padding-left: 13px;
+    padding-right: 13px;
+  }  
+} 
+/* PHONE LANDSCAPE END
+==================================== */
+
+/* PHONE PORTRAIT
+==================================== */
+@media screen
+and (max-width: $breakpointTinyMin) 
+{
+  .wrapper, .mainNavClose 
+  {
+    width: $breakpointTinyMin;
+  }
+
+  .navHeadingWhenClose 
+  {
+    .menuTextClose 
+    {
+      display: none;
+    }
+
+    .menuTextMenu 
+    {
+      display: block;
+    }
+  }
+
+  .navHeadingWhenOpen 
+  {
+    .menuTextMenu 
+    {
+      display: none;
+    }
+
+    .menuTextClose 
+    {
+      display: block;
+    }
+  }
+
+  // .wrapper 
+  // { max-width: 360px;
+  // }
+}
+
+/* PHONE PORTRAIT END
+==================================== */
+
+
+
+
+// .img {
+//   @include border-radius (10px); 
+// }
+
+// .imgbox2 {
+//   @include border-radius (10px); 
+//   margin: auto;
+//   max-width: 50%;
+//   text-align: center;
+//   padding: 12px 12px;
+// }
+
+// .imgtest {
+//   height: 100px;
+//   width: 100px;
+//   background-color: blue;
+//   background-image: url("/assets/images/white_tiles.png");
+// }
+
+
+
+
+
+

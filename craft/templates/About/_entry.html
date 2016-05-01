@@ -32,30 +32,27 @@
 				</div>
 			</div>
 		{% endif %}	
-			
+	{% endfor %}
 
-		{% if block.type == "multipleBlocks" %}
-			<div class="col-half blockImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
-				<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
-				{% set image = block.myBlockImage.first().getUrl %}
-				{% if image %}
-					<div class="imgContainer">
-						<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+<div class="col">
+			{% for block in entry.myBlock %}		
+				{% if block.type == "multipleBlocks" %}
+					<div class="col-half blockImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
+						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+						{% set image = block.myBlockImage.first().getUrl %}
+						{% if image %}
+							<div class="imgContainer">
+								<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+							</div>
+						{% endif %}
+						<div class="textSentences textbox max60">
+							<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+							{{ block.myBlockTextboxText }}
+						</div>
 					</div>
 				{% endif %}
-				<div class="textSentences textbox max60">
-					<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-					{{ block.myBlockTextboxText }}
-				</div>
-			</div>
-		{% endif %}
-
-		{% if block.type == "contactMe" %}
-				<div id="{% if block.contactMe %}{{ block.contactMe }}{% endif %}">
-				</div>
-		{% endif %}	
-
-	{% endfor %}
+			{% endfor %}
+		</div>
 
 <div class="contactForm">	
 	{% macro errorList(errors) %}
