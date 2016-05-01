@@ -26,8 +26,19 @@ tiny mobile nav, Liz menu is too much to left
 - sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
 -FAVICON
 -google preview
+- urls are too long for mobile, not wrapping
+
 -iphone issues: LIZ DEAN navbar text goes onto two lines
 - closing x is not in viewport, but to the right
+
+
+
+DONE:
+-htc access - for redirects e.g. about to about/liz
+-for a news section, I at the moment only have one entry template
+-there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
+-remove body section from homepage or make it slimmer
+-add proper contact form?
 - mobile nav is salmon, desktop is plain red:
 nav {
     position: fixed;
@@ -45,13 +56,6 @@ nav {
     border-top: none;
     border-bottom: none;
 }
-
-DONE:
--htc access - for redirects e.g. about to about/liz
--for a news section, I at the moment only have one entry template
--there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
--remove body section from homepage or make it slimmer
--add proper contact form?
 
 USEFUL INFO:
 How to: 
