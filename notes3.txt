@@ -26,11 +26,11 @@ tiny mobile nav, Liz menu is too much to left
 -contact thanks page has contact form on for some reason 
 -FAVICON
 -google preview
-- urls are too long for mobile, not wrapping
+
 
 
 -iphone issues: LIZ DEAN navbar text goes onto two lines
-- closing x is not in viewport, but to the right
+
 
 
 
@@ -60,6 +60,9 @@ nav {
     border-bottom: none;
 }
 - sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
+- urls are too long for mobile, not wrapping
+-centering main nav title
+- closing x is not in viewport, but to the right
 
 USEFUL INFO:
 How to: 

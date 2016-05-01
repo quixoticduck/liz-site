@@ -100,6 +100,21 @@ p {
   line-height: 1.5em;
   margin: 7px 0px 10px 0px;
   text-shadow: 1px 1px $colorTextShadow;
+  //   /* These are technically the same, but use both */
+  // overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  // -ms-word-break: break-all;
+  // /* This is the dangerous one in WebKit, as it breaks things wherever */
+  // word-break: break-all;
+  // /* Instead use this non-standard one: */
+  // word-break: break-word;
+
+  // /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  // -webkit-hyphens: auto;
+  // hyphens: auto;
 } 
 
 .h0 {
@@ -117,6 +132,7 @@ h1 {
   font-family: $headingFont;
   font-size: 37px;
   margin: 12px 0px; 
+  word-wrap: normal;
 }
 
 h2 {
@@ -395,6 +411,8 @@ $gutter: 20px;
   box-sizing: border-box;
 }
 
+
+
 .blockImages {
   min-height: 350px;
   float: left;
@@ -589,6 +607,10 @@ input#puppyField { display: none; }
   overflow: hidden;
   height: 5px;
   width: 5px;
+}
+
+.footerFix {
+  min-height: 200px;
 }
 
 /* // CRAFT CMS PHP CLASSES END
@@ -836,7 +858,7 @@ nav {
       display: block;
       text-align: center;
       h1 {
-        margin-right: 5.9rem;
+        margin-right: 72px;
       }
     }
 
