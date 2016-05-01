@@ -32,7 +32,8 @@ p {
   color: white;
   font-size: 1em;
   line-height: 1.5em;
-  margin: 7px 0px 10px 0px; }
+  margin: 7px 0px 10px 0px;
+  text-shadow: 1px 1px #774444; }
 
 .h0 {
   color: white;
@@ -80,7 +81,7 @@ button:focus {
 /* Link stylings
 ========================================================================= */
 html {
-  background: #C8233F;
+  background: #B4234D;
   font-size: 17px; }
 
 a, a:link {
@@ -165,11 +166,11 @@ footer {
 ==================================== */
 body {
   font: 100% "Open Sans", sans-serif;
-  background-color: #C8233F; }
+  background-color: #B4234D; }
 
 .wrapper {
   width: 100%;
-  background-color: #C8233F; }
+  background-color: #B4234D; }
 
 .container {
   width: 88%;
@@ -191,6 +192,8 @@ body {
   .col ul {
     text-align: left;
     margin-left: 40px; }
+  .col li {
+    text-shadow: 0px 1px #774444; }
   .col li:before {
     font-family: 'FontAwesome';
     content: '\f0a3';
@@ -278,28 +281,24 @@ figure {
   border-radius: 3px;
   background-color: white; }
   .textbox a {
-    color: #C8233F; }
+    color: #B4234D; }
   .textbox a:link {
     transition: none;
-    color: #C8233F; }
+    color: #B4234D; }
   .textbox a:hover {
     color: #4795C4; }
   .textbox h1 {
-    color: #C8233F; }
+    color: #B4234D; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
   padding: 2px 0px;
   margin-top: 0px;
-  margin-bottom: 0px; }
-
-.textbox h2 {
+  margin-bottom: 0px;
+  text-shadow: none;
   color: #333333; }
 
 .textbox h3 {
-  color: #C8233F; }
-
-.textbox p {
-  color: #333333; }
+  color: #B4234D; }
 
 .contactForm {
   min-height: 100px;
@@ -397,7 +396,7 @@ input#puppyField {
     left: 0px;
     width: 260px;
     max-height: none;
-    background-color: #C8233F;
+    background-color: #B4234D;
     padding: 20px 15px;
     border-right: 4px;
     border-color: white;
@@ -468,7 +467,7 @@ input#puppyField {
     left: 0px;
     width: 100%;
     height: 55px;
-    background-color: #C8233F;
+    background-color: #B4234D;
     border: none; }
 
   body {

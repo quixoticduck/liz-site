@@ -70,11 +70,13 @@ $colorLight:     white;
 // $colorLight:     #f8f8f8;
 // $colorMain:      #EE163D;
 // $colorMain:      #AB3442;
-$colorMain:      #C8233F;
+// $colorMain:      #C8233F;
+$colorMain:      #B4234D;
 
 $colorMainLight: #FF696D;
 $color2nd:       #2b7ca7;
 $color2ndLight:  #4795C4;
+$colorTextShadow: #774444;
 
 
 
@@ -97,6 +99,7 @@ p {
   font-size: 1em;
   line-height: 1.5em;
   margin: 7px 0px 10px 0px;
+  text-shadow: 1px 1px $colorTextShadow;
 } 
 
 .h0 {
@@ -374,6 +377,9 @@ $gutter: 20px;
     text-align: left;
     margin-left: 40px;
   }
+  li {
+    text-shadow: 0px 1px $colorTextShadow;
+  }
   li:before {    
     font-family: 'FontAwesome';
     content: '\f0a3';
@@ -507,20 +513,21 @@ figure {
   padding: 2px 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-.textbox h2 {
+  text-shadow: none;
   color: $colorDark;
 }
+
+// .textbox p {
+//   color: $colorDark;
+// }
+
+// .textbox h2 {
+//   color: $colorDark;
+// }
 
 .textbox h3 {
   color: $colorMain;
 }
-
-.textbox p {
-  color: $colorDark;
-}
-
 
 
 .contactForm {
@@ -692,7 +699,7 @@ nav {
     left: 0px;
     width: 260px;
     max-height: none;
-    background-color: #C8233F;
+    background-color: $colorMain;
     padding: 20px 15px;
     border-right: 4px;
     border-color: white;

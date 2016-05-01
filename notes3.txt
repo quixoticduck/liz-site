@@ -5,12 +5,12 @@ Double check:
 
 TO DO:
 on my mobile the screen is scrollable left to right. needs max width on mobile
--Final li of mobile nav needs same margin as rest
+
 -mobile nav li's onto two lines sometimes
 -top margins on mobile nav could be better
 -on tiny mobile nav the hamburger menu and margins in general should be less (so content is wider)
 tiny mobile nav, Liz menu is too much to left
--replace placeholder text
+
 -return all colours to normal
 -edit globe continents and edit speech image colours
 
@@ -23,10 +23,11 @@ tiny mobile nav, Liz menu is too much to left
 -fix footer on some pages ( actually only an issue when not enough content so should be ok)
 -google analytics
 -404 page
-- sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
+-contact thanks page has contact form on for some reason 
 -FAVICON
 -google preview
 - urls are too long for mobile, not wrapping
+
 
 -iphone issues: LIZ DEAN navbar text goes onto two lines
 - closing x is not in viewport, but to the right
@@ -39,6 +40,8 @@ DONE:
 -there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
 -remove body section from homepage or make it slimmer
 -add proper contact form?
+-replace placeholder text
+-Final li of mobile nav needs same margin as rest
 - mobile nav is salmon, desktop is plain red:
 nav {
     position: fixed;
@@ -56,6 +59,7 @@ nav {
     border-top: none;
     border-bottom: none;
 }
+- sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
 
 USEFUL INFO:
 How to: 
