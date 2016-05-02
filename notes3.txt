@@ -12,6 +12,7 @@ TO DO !important:
 - mobile nav li's onto two lines on iphone 5
 - decide on design conventions e.g. when textboxes are used, when headings
 - on tiny mobile there should be less padding (so content is wider)
+- tried to make phone size text less wide but now not enough side padding on big screens
 - FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
 
 TO DO not important:
