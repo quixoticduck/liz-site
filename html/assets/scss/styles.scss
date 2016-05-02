@@ -464,8 +464,10 @@ $gutter: 20px;
 .myImage, .myImageGroup {
   @include border-radius (15px); 
   margin: auto;
-  width: 34%;
+  // width: 34%;
   max-width: 34%;
+  // height: 34%;
+  max-height: 34%;
   text-align: center;
   padding: 25px;
   display: block;
@@ -497,7 +499,7 @@ figure {
   margin-top: 10px;
   margin-bottom: 30px;
   // margin: 10px 45px 30px 45px;
-  padding: 13px 45px;
+  padding: 13px 35px;
   // color: purple;
   text-align: left;
   h3 {
@@ -928,6 +930,18 @@ nav {
 
 // h1 {color: purple;}
 } 
+
+.textParagraphs, .textSentences {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .textbox {
+    .textParagraphs, .textSentences {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  }
 /* PHONE LANDSCAPE END
 ==================================== */
 
@@ -972,6 +986,17 @@ and (max-width: $breakpointTinyMin)
     }
   }
 
+.textParagraphs, .textSentences {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+// .textbox {
+//   .textParagraphs, .textSentences {
+//     padding-left: 30px;
+//     padding-right: 30px;
+//   }
+// }
   // .wrapper 
   // { max-width: 360px;
   // }

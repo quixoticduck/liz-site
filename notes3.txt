@@ -1,44 +1,43 @@
 NOTES:
 
 Double check:
--contact form
+- contact form
+- on iphone 5 is the screen is scrollable left to right? needs max width on mobile?
 
-TO DO:
-on my mobile the screen is scrollable left to right. needs max width on mobile
 
--mobile nav li's onto two lines sometimes
--top margins on mobile nav could be better
--on tiny mobile nav the hamburger menu and margins in general should be less (so content is wider)
-tiny mobile nav, Liz menu is too much to left
-
--return all colours to normal
--edit globe continents and edit speech image colours
-
--image on about page could be wider on mobile
--check all fonts are nice, especially main title logo font
--change two columns to multiple columns of at least 3-4?
--make short text row (1-3 lines) and (4+ lines text row) or swap to using Foundation 6 grid?
--fix gaps when headings aren't chosen to be filled in
--fix footer on some pages ( actually only an issue when not enough content so should be ok)
--google analytics
--404 page
--contact thanks page has contact form on for some reason 
--FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
--google preview
--iphone issues: LIZ DEAN navbar text goes onto two lines
+TO DO !important:
+- contact thanks page has contact form on for some reason 
+- fix gaps when headings aren't chosen to be filled in
 - around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
+- mobile nav li's onto two lines on iphone 5
+- decide on design conventions e.g. when textboxes are used, when headings
+- on tiny mobile there should be less padding (so content is wider)
+- FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
 
+TO DO not important:
+- edit globe continents and edit speech image colours
+- image on about page could be wider on mobile
+- check all fonts are nice, especially main title logo font
+- change two columns to multiple columns of at least 3-4?
+- make short text row (1-3 lines) and (4+ lines text row) or swap to using Foundation 6 grid?
+- fix footer on some pages ( actually only an issue when not enough content so should be ok)
+- google analytics - php option - is working?
+- 404 page
+- google preview
 
 
 DONE:
--htc access - for redirects e.g. about to about/liz
--for a news section, I at the moment only have one entry template
--there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
--remove body section from homepage or make it slimmer
--add proper contact form?
--replace placeholder text
--fix hyperlinks showing as white
--Final li of mobile nav needs same margin as rest
+- htc access - for redirects e.g. about to about/liz
+- for a news section, I at the moment only have one entry template
+- there is an issue with the 4 image boxes on home page where the fourth one drops down low when page is certain widths
+- remove body section from homepage or make it slimmer
+- add proper contact form?
+- replace placeholder text
+- fix hyperlinks showing as white
+- Final li of mobile nav needs same margin as rest
+- tiny mobile nav, Liz menu is too much to left
+- top margins on mobile nav could be better
+- return all colours to normal
 - mobile nav is salmon, desktop is plain red:
 nav {
     position: fixed;
@@ -58,8 +57,10 @@ nav {
 }
 - sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
 - urls are too long for mobile, not wrapping
--centering main nav title
+- centering main nav title
 - closing x is not in viewport, but to the right
+- iphone issues: LIZ DEAN navbar text goes onto two lines
+
 
 USEFUL INFO:
 How to: 

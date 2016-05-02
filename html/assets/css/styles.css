@@ -242,8 +242,8 @@ body {
   -ms-border-radius: 15px;
   border-radius: 15px;
   margin: auto;
-  width: 34%;
   max-width: 34%;
+  max-height: 34%;
   text-align: center;
   padding: 25px;
   display: block; }
@@ -267,7 +267,7 @@ figure {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 30px;
-  padding: 13px 45px;
+  padding: 13px 35px;
   text-align: left; }
   .textParagraphs h3 {
     margin-left: 0px; }
@@ -531,6 +531,14 @@ input#puppyField {
 
   .myImage:hover {
     width: 90%; } }
+.textParagraphs, .textSentences {
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.textbox .textParagraphs, .textbox .textSentences {
+  padding-left: 30px;
+  padding-right: 30px; }
+
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT
@@ -550,7 +558,11 @@ input#puppyField {
   .navHeadingWhenOpen .menuTextMenu {
     display: none; }
   .navHeadingWhenOpen .menuTextClose {
-    display: block; } }
+    display: block; }
+
+  .textParagraphs, .textSentences {
+    padding-left: 30px;
+    padding-right: 30px; } }
 /* PHONE PORTRAIT END
 ==================================== */
 
