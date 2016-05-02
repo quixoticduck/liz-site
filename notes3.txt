@@ -24,11 +24,8 @@ tiny mobile nav, Liz menu is too much to left
 -google analytics
 -404 page
 -contact thanks page has contact form on for some reason 
--FAVICON
+-FAVICON doesn't work - Charlotte's does
 -google preview
-
-
-
 -iphone issues: LIZ DEAN navbar text goes onto two lines
 
 

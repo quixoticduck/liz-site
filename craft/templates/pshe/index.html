@@ -3,6 +3,7 @@
 {% set title = "PSHE" %}
 {% block content %}
 
+<?php include_once("../analyticstracking.php") ?>
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
 				<div class="col col-half colpadding center">
