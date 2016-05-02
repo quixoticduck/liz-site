@@ -18,7 +18,6 @@ tiny mobile nav, Liz menu is too much to left
 -check all fonts are nice, especially main title logo font
 -change two columns to multiple columns of at least 3-4?
 -make short text row (1-3 lines) and (4+ lines text row) or swap to using Foundation 6 grid?
--fix hyperlinks showing as white
 -fix gaps when headings aren't chosen to be filled in
 -fix footer on some pages ( actually only an issue when not enough content so should be ok)
 -google analytics
@@ -27,7 +26,7 @@ tiny mobile nav, Liz menu is too much to left
 -FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
 -google preview
 -iphone issues: LIZ DEAN navbar text goes onto two lines
-
+- around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
 
 
 
@@ -38,6 +37,7 @@ DONE:
 -remove body section from homepage or make it slimmer
 -add proper contact form?
 -replace placeholder text
+-fix hyperlinks showing as white
 -Final li of mobile nav needs same margin as rest
 - mobile nav is salmon, desktop is plain red:
 nav {

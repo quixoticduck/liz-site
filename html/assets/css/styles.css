@@ -242,6 +242,7 @@ body {
   -ms-border-radius: 15px;
   border-radius: 15px;
   margin: auto;
+  width: 34%;
   max-width: 34%;
   text-align: center;
   padding: 25px;
@@ -497,13 +498,6 @@ input#puppyField {
     min-height: 0px;
     padding-bottom: 15px; }
 
-  .blockImages {
-    padding-top: 20px; }
-
-  .myImage:hover {
-    width: 90%;
-    display: none; }
-
   .navHeadingWhenClose .menuTextMenu {
     display: block;
     text-align: center; }
@@ -526,7 +520,17 @@ input#puppyField {
 
   .footer {
     padding-left: 13px;
-    padding-right: 13px; } }
+    padding-right: 13px; }
+
+  .blockImages {
+    padding-top: 20px; }
+
+  .myImage {
+    width: 50%;
+    max-width: 50%; }
+
+  .myImage:hover {
+    width: 90%; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT

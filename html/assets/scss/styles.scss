@@ -464,6 +464,7 @@ $gutter: 20px;
 .myImage, .myImageGroup {
   @include border-radius (15px); 
   margin: auto;
+  width: 34%;
   max-width: 34%;
   text-align: center;
   padding: 25px;
@@ -857,14 +858,6 @@ nav {
     // background-color: $colorMainLight;
   }
 
-  .blockImages {
-    padding-top: 20px;
-  }
-
-  .myImage:hover {
-    width: 90%;
-    display: none;
-  }
 
   .navHeadingWhenClose .menuTextMenu {
       display: block;
@@ -918,6 +911,21 @@ nav {
     padding-left: 13px;
     padding-right: 13px;
   }  
+
+    .blockImages {
+    padding-top: 20px;
+  }
+
+  .myImage {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .myImage:hover {
+    width: 90%;
+    // display: none;
+  }
+
 // h1 {color: purple;}
 } 
 /* PHONE LANDSCAPE END
@@ -967,6 +975,12 @@ and (max-width: $breakpointTinyMin)
   // .wrapper 
   // { max-width: 360px;
   // }
+
+  // .myImage {
+  //   width: 60%;
+  //   max-width: 60%;
+  // }
+
 }
 
 /* PHONE PORTRAIT END
