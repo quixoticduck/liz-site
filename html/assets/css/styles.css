@@ -59,7 +59,9 @@ h2 {
   text-align: center; }
 
 h3 {
-  color: white; }
+  color: white;
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 .mainNavClose .fa, .mainNavClose h2 {
   color: white;
@@ -263,8 +265,8 @@ figure {
 .textParagraphs {
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 15px 45px;
+  margin-bottom: 30px;
+  padding: 0px 45px;
   text-align: left; }
   .textParagraphs h3 {
     margin-left: 0px; }
@@ -273,7 +275,7 @@ figure {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 15px 30px;
+  padding: 13px 30px;
   text-align: center; }
 
 .textbox {
@@ -293,11 +295,18 @@ figure {
     color: #B4234D; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
-  padding: 2px 0px;
+  padding: 0px 0px;
   margin-top: 0px;
   margin-bottom: 0px;
   text-shadow: none;
   color: #333333; }
+
+.textbox h3 {
+  padding: 10px 0px; }
+
+.textbox p {
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .textbox h3 {
   color: #B4234D; }
@@ -324,10 +333,10 @@ input#puppyField {
 /* CRAFT CMS PHP CLASSES
 ==================================== */
 .row1 {
-  min-height: 450px; }
+  min-height: 460px; }
 
 .row2 {
-  min-height: 470px; }
+  min-height: 520px; }
 
 .textRow1, .textRow2 {
   text-align: left; }
@@ -522,9 +531,12 @@ input#puppyField {
 ==================================== */
 /* PHONE PORTRAIT
 ==================================== */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 350px) {
+  h1 {
+    font-size: 32px; }
+
   .wrapper, .mainNavClose {
-    width: 320px; }
+    width: 350px; }
 
   .navHeadingWhenClose .menuTextClose {
     display: none; }
