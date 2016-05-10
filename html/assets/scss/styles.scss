@@ -89,9 +89,11 @@ ol,
 ul {
   margin: 0;
   padding: 0;
-  list-style: none;
+  // list-style: none;
   color: $colorLight;
   font-weight: normal;
+  // list-style-type: circle;
+  list-style-type: square;
 }
 
 p {
@@ -398,18 +400,18 @@ $gutter: 20px;
   li {
     text-shadow: 0px 1px $colorTextShadow;
   }
-  li:before {    
-    font-family: 'FontAwesome';
-    content: '\f0a3';
-    margin:0 5px 0 -15px;
-    padding-right: 10px;
-    // width: 2px;
-  }
+  // li:before {    
+  //   font-family: 'FontAwesome';
+  //   content: '\f0a3';
+  //   margin:0 5px 0 -15px;
+  //   padding-right: 10px;
+  //   // width: 2px;
+  // }
 }
 
 .colpadding {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 21px;
+  padding-right: 13px;
   box-sizing: border-box;
 }
 

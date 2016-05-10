@@ -1,5 +1,10 @@
 NOTES:
 
+IDEAS:
+- Try adding class for float left e.g. Liz' photo on about page
+- try using textboxes for important/main info/blockquote
+- bigger /different sized headings, break up the page
+
 Double check:
 - contact form
 - on iphone 5 is the screen is scrollable left to right? needs max width on mobile?

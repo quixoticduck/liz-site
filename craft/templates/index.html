@@ -1,13 +1,10 @@
-{% set bodyClass = "" %}
+
 {% extends "_layout" %}
 {% set title = "Home" %}
 {% block content %}
 
-<!-- 	<h2>{{ entry.title }}</h2>
-	{{ entry.body }}
-	</br> -->
-<!-- 
-			<div class="dividerMargin"></div> -->
+
+			<div class="dividerMargin"></div> 
 <?php include_once("analyticstracking.php") ?>
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
