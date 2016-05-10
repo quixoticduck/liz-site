@@ -348,7 +348,12 @@ input#puppyField {
   width: 5px; }
 
 .footerFix {
-  min-height: 200px; }
+  min-height: 85 0px; }
+
+.centerMessage {
+  margin: auto;
+  padding: 20%;
+  text-align: center; }
 
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
@@ -465,7 +470,7 @@ input#puppyField {
     display: block;
     min-height: 45px; }
     .main-nav li a {
-      font-size: 17px;
+      font-size: 16px;
       display: block;
       margin-right: 20px; }
 
