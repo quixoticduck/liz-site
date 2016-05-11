@@ -4,6 +4,7 @@ IDEAS:
 - Try adding class for float left e.g. Liz' photo on about page
 - try using textboxes for important/main info/blockquote
 - bigger /different sized headings, break up the page (change red/blue to in textbox/not)
+- sort out image transforms in Craft - only available inserting an image into rich text?
 
 Double check:
 - contact form
