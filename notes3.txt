@@ -3,7 +3,7 @@ NOTES:
 IDEAS:
 - Try adding class for float left e.g. Liz' photo on about page
 - try using textboxes for important/main info/blockquote
-- bigger /different sized headings, break up the page
+- bigger /different sized headings, break up the page (change red/blue to in textbox/not)
 
 Double check:
 - contact form
