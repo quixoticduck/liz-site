@@ -20,6 +20,7 @@ TO DO !important:
 - on tiny mobile there should be less padding (so content is wider)
 - tried to make phone size text less wide but now not enough side padding on big screens
 - FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
+-remove http://localhost:8888/contact/thanks from showing
 
 TO DO not important:
 - edit globe continents and edit speech image colours
