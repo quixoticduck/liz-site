@@ -28,6 +28,9 @@ ul {
   font-weight: normal;
   list-style-type: square; }
 
+li.menu-item {
+  margin: 0 0 50px 0; }
+
 p {
   color: white;
   font-size: 1em;
@@ -365,8 +368,12 @@ input#puppyField {
 
 .centerMessage {
   margin: auto;
-  padding: 20%;
+  padding: 10%;
   text-align: center; }
+  .centerMessage ul {
+    list-style: none; }
+    .centerMessage ul li {
+      margin-bottom: 20px; }
 
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
