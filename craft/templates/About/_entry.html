@@ -18,7 +18,7 @@
 		{% endif %}
 
 		{% if block.type == "responsiveImage" %}
-			<div class="col col-fullWidth image-responsive {% if block.responsiveoption %}  {{ block.responsiveoption }} {% endif %}">
+			<div class="col col-fullWidth {% if block.responsiveoption %}  {{ block.responsiveoption }} {% endif %}">
 				{% set image = block.responsiveimage.first().getUrl %}
 				{% if image %}
 					<a href=""><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>

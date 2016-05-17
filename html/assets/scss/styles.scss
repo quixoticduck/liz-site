@@ -565,6 +565,12 @@ figure {
   color: $colorMain;
 }
 
+.textbox img {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
 
 .contactForm {
   // background-color: pink;
@@ -748,7 +754,6 @@ and (max-width: $breakpointTabletMax)
   //   margin-left: -35px;
   //   margin-right: -38px;
   //   margin-bottom: -15px;
-  //   float: right;
   // }
 
   .image-responsive {
@@ -761,7 +766,6 @@ and (max-width: $breakpointTabletMax)
     // margin-left: -39px;
     // margin-right: -140px;
     // margin-bottom: -13px;
-    float: left;
   }
 
   .responsiveLeft {
@@ -1009,7 +1013,6 @@ nav {
     margin-left: -37px;
     margin-right: -43px;
     margin-bottom: -15px;
-    float: left;
   }
 
   .responsiveLeft {
@@ -1025,6 +1028,13 @@ nav {
     float: none;
     max-width: 100%;
   }
+
+  .textbox img {
+  width: 50%;
+  float: left;
+  padding-right: 25px;
+}
+
 
   // h1 {color: purple;}
 
@@ -1092,7 +1102,6 @@ and (max-width: $breakpointTinyMin)
   //   // margin-left: -39px;
   //   // margin-right: -140px;
   //   // margin-bottom: -13px;
-  //   float: left;
   // }
 
   // .responsiveLeft {

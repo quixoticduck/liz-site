@@ -310,6 +310,11 @@ figure {
 .textbox h3 {
   color: #B4234D; }
 
+.textbox img {
+  width: 50%;
+  display: block;
+  margin: 0 auto; }
+
 .contactForm {
   min-height: 100px;
   width: 37%;
@@ -420,8 +425,7 @@ input#puppyField {
     padding-top: 15px;
     margin-left: -190px;
     margin-right: -190px;
-    margin-bottom: -13px;
-    float: left; }
+    margin-bottom: -13px; }
 
   .responsiveLeft {
     float: left; }
@@ -571,8 +575,7 @@ input#puppyField {
     padding-top: 15px;
     margin-left: -37px;
     margin-right: -43px;
-    margin-bottom: -15px;
-    float: left; }
+    margin-bottom: -15px; }
 
   .responsiveLeft {
     float: left; }
@@ -583,7 +586,12 @@ input#puppyField {
   .responsiveNot {
     margin: auto;
     float: none;
-    max-width: 100%; } }
+    max-width: 100%; }
+
+  .textbox img {
+    width: 50%;
+    float: left;
+    padding-right: 25px; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT

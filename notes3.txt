@@ -13,6 +13,8 @@ Double check:
 
 
 TO DO !important:
+- contact form send button is not white
+- in about page the text does not start high enough
 - contact thanks page has contact form on for some reason 
 - fix gaps when headings aren't chosen to be filled in
 - around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
