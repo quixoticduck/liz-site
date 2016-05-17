@@ -326,6 +326,24 @@ figure {
 input#puppyField {
   display: none; }
 
+.centerHeading {
+  color: blue;
+  text-align: center !important;
+  margin: auto;
+  display: block;
+  padding: 3px 0px; }
+
+.mainNavClose {
+  display: none; }
+
+.textParagraphs, .textSentences {
+  padding-left: 25px;
+  padding-right: 25px; }
+
+.textbox .textParagraphs, .textbox .textSentences {
+  padding-left: 30px;
+  padding-right: 30px; }
+
 /* CRAFT CMS PHP CLASSES
 ==================================== */
 .row1 {
@@ -352,13 +370,6 @@ input#puppyField {
 
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
-.centerHeading {
-  color: blue;
-  text-align: center !important;
-  margin: auto;
-  display: block;
-  padding: 3px 0px; }
-
 /* LAPTOP SCREEN
 ==================================== */
 @media screen and (min-width: 1185px) and (max-width: 1329px) {
@@ -395,12 +406,28 @@ input#puppyField {
     min-height: 0px; }
 
   .blockImages {
-    padding-top: 20px; } }
+    padding-top: 20px; }
+
+  .image-responsive {
+    max-width: 80%;
+    padding-top: 15px;
+    margin-left: -190px;
+    margin-right: -190px;
+    margin-bottom: -13px;
+    float: left; }
+
+  .responsiveLeft {
+    float: left; }
+
+  .responsiveRight {
+    float: right; }
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%; } }
 /* TABLET SCREEN END
 ==================================== */
-.mainNavClose {
-  display: none; }
-
 /* PHONE LANDSCAPE
 ==================================== */
 @media screen and (max-width: 969px) {
@@ -530,15 +557,26 @@ input#puppyField {
     max-width: 50%; }
 
   .myImage:hover {
-    width: 90%; } }
-.textParagraphs, .textSentences {
-  padding-left: 25px;
-  padding-right: 25px; }
+    width: 90%; }
 
-.textbox .textParagraphs, .textbox .textSentences {
-  padding-left: 30px;
-  padding-right: 30px; }
+  .image-responsive {
+    max-width: 80%;
+    padding-top: 15px;
+    margin-left: -37px;
+    margin-right: -43px;
+    margin-bottom: -15px;
+    float: left; }
 
+  .responsiveLeft {
+    float: left; }
+
+  .responsiveRight {
+    float: right; }
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT

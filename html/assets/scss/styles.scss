@@ -326,8 +326,6 @@ footer {
     }
 }
 
-
-
 /* /END/ DESKTOP Header, Banner and Footer Layout
 ==================================== */
 
@@ -502,7 +500,6 @@ figure {
   margin-bottom: 30px;
   // margin: 10px 45px 30px 45px;
   padding: 13px 35px;
-  // color: purple;
   text-align: left;
   h3 {
     margin-left: 0px;
@@ -573,7 +570,6 @@ figure {
   padding: 10px 50px 25px 50px;
   margin: auto;
   // label* {
-  //   color: yellow;
   // }
 }
 
@@ -593,6 +589,39 @@ figure {
 // }
 
 input#puppyField { display: none; }
+
+// .image-responsive {
+//   max-width: 80%;
+//   padding-top: 40px;
+//   margin-left: -35px;
+//   margin-right: -38px;
+//   margin-bottom: -15px;
+//   float: left;
+// }
+
+.centerHeading {
+  color:blue;
+  text-align: center !important;
+  margin: auto;
+  display: block;
+  padding: 3px 0px ;
+}
+
+.mainNavClose {
+  display: none;
+}
+
+.textParagraphs, .textSentences {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .textbox {
+    .textParagraphs, .textSentences {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */
@@ -641,13 +670,6 @@ input#puppyField { display: none; }
 ==================================== */
 
 
-.centerHeading {
-  color:blue;
-  text-align: center !important;
-  margin: auto;
-  display: block;
-  padding: 3px 0px ;
-}
 
 /* LAPTOP SCREEN
 ==================================== */
@@ -664,10 +686,9 @@ and (max-width: $breakpointLaptopMax)
     line-height: 1.4rem;
     margin-left: 1.5rem;
     // margin-right: 0px;
-  // color: purple;
   }
-} 
 
+}
 /* LAPTOP SCREEN END
 ==================================== */
 
@@ -690,7 +711,6 @@ and (max-width: $breakpointTabletMax)
     // color: green;
   }
 
-
   .col-half {
     width: 100%;
     // margin-bottom: 10px;
@@ -711,8 +731,46 @@ and (max-width: $breakpointTabletMax)
   .red, .blue {
     // background-color: $colorMainLight;
   }
-} 
 
+  // .image-responsive {
+  //   max-width: 40%;
+  //   padding-top: 40px;
+  //   margin-left: -35px;
+  //   margin-right: -38px;
+  //   margin-bottom: -15px;
+  //   float: right;
+  // }
+
+  .image-responsive {
+    max-width: 80%;
+    padding-top: 15px;
+    margin-left: -190px;
+    margin-right: -190px;
+    margin-bottom: -13px;
+    // padding-top: 115px;
+    // margin-left: -39px;
+    // margin-right: -140px;
+    // margin-bottom: -13px;
+    float: left;
+  }
+
+  .responsiveLeft {
+    float: left;
+  }
+
+  .responsiveRight {
+  float: right;
+  }
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%;
+  }
+
+  // h1, h2, h3, p {color: yellow;}
+
+} 
 /* TABLET SCREEN END
 ==================================== */
 
@@ -721,10 +779,6 @@ and (max-width: $breakpointTabletMax)
 //   }
 // }
 
-
-.mainNavClose {
-  display: none;
-}
 
 
 /* PHONE LANDSCAPE
@@ -803,7 +857,6 @@ nav {
     -webkit-transition: transform 0.8s ease;
     -moz-transition: transform 0.8s ease;
     -ms-transition: transform 0.8s ease;
-    // background-color: purple;
   }
 
   .navHeadingWhenClose {
@@ -869,8 +922,6 @@ nav {
     // background-color: $colorMainLight;
   }
 
-
-
   .navHeadingWhenClose .menuTextMenu {
       display: block;
       text-align: center;
@@ -914,8 +965,8 @@ nav {
           top: -2px;
       }
     }
-
-    .menuTextClose:hover, .fa-bars:hover {
+    .menuTextClose:hover, .fa-bars:hover 
+    {
       cursor: pointer;
     }
 
@@ -938,20 +989,36 @@ nav {
     // display: none;
   }
 
-// h1 {color: purple;}
+  .image-responsive {
+    max-width: 80%;
+    // padding-top: 15px;
+    // margin-left: -89px;
+    // margin-right: -90px;
+    // margin-bottom: -13px;
+    padding-top: 15px;
+    margin-left: -37px;
+    margin-right: -43px;
+    margin-bottom: -15px;
+    float: left;
+  }
+
+  .responsiveLeft {
+    float: left;
+  }
+
+  .responsiveRight {
+  float: right;
+  }
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%;
+  }
+
+  // h1 {color: purple;}
+
 } 
-
-.textParagraphs, .textSentences {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-
-  .textbox {
-    .textParagraphs, .textSentences {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  }
 /* PHONE LANDSCAPE END
 ==================================== */
 
@@ -1001,47 +1068,41 @@ and (max-width: $breakpointTinyMin)
     padding-right: 30px;
   }
 
-// .textbox {
-//   .textParagraphs, .textSentences {
-//     padding-left: 30px;
-//     padding-right: 30px;
-//   }
-// }
-  // .wrapper 
-  // { max-width: 360px;
+  // .image-responsive {
+  //   display: none;
   // }
 
-  // .myImage {
-  //   width: 60%;
-  //   max-width: 60%;
+  // .image-responsive {
+  //   max-width: 80%;
+  //   padding-top: 15px;
+  //   margin-left: -89px;
+  //   margin-right: -90px;
+  //   margin-bottom: -13px;
+  //   // padding-top: 115px;
+  //   // margin-left: -39px;
+  //   // margin-right: -140px;
+  //   // margin-bottom: -13px;
+  //   float: left;
   // }
 
+  // .responsiveLeft {
+  //   float: left;
+  // }
+
+  // .responsiveRight {
+  // float: right;
+  // }
+
+  // .responsiveNot {
+  //   margin: auto;
+  //   float: none;
+  //   max-width: 100%;
+  // }
+
+  // h1 {color: blue;}
 }
-
 /* PHONE PORTRAIT END
 ==================================== */
-
-
-
-
-// .img {
-//   @include border-radius (10px); 
-// }
-
-// .imgbox2 {
-//   @include border-radius (10px); 
-//   margin: auto;
-//   max-width: 50%;
-//   text-align: center;
-//   padding: 12px 12px;
-// }
-
-// .imgtest {
-//   height: 100px;
-//   width: 100px;
-//   background-color: blue;
-//   background-image: url("/assets/images/white_tiles.png");
-// }
 
 
 
