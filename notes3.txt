@@ -6,6 +6,7 @@ IDEAS:
 - bigger /different sized headings, break up the page (change red/blue to in textbox/not)
 - sort out image transforms in Craft - only available inserting an image into rich text?
 - make Liz image square?
+- make nav tezt have slight shadow?
 
 Double check:
 - contact form
