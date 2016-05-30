@@ -382,6 +382,16 @@ input#puppyField {
     .centerMessage ul li {
       margin-bottom: 20px; }
 
+.form-button {
+  color: #B4234D;
+  font-weight: bold; }
+  .form-button input {
+    background-color: white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
 /* LAPTOP SCREEN

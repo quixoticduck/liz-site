@@ -39,10 +39,10 @@
 					<ul class="main-nav navClose">
 						<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}><i class="fa fa-lg fa-home"></i></a></li>
 						<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
-						<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
-						<li><a href="{{ url('youthWork') }}" {% if craft.request.firstSegment == 'youthWork' %}class="active"{% endif %}>Youth Work</a></li>
-						<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Sex and Relationships</a></li>
-						<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active last"{% endif %}>Health Promotion</a></li>
+						<li><a href="{{ url('/pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+						<li><a href="{{ url('/youthWork') }}" {% if craft.request.firstSegment == 'youthWork' %}class="active"{% endif %}>Youth Work</a></li>
+						<li><a href="{{ url('/relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Sex and Relationships</a></li>
+						<li><a href="{{ url('/health') }}" {% if craft.request.firstSegment == 'health' %}class="active last"{% endif %}>Health Promotion</a></li>
 					</ul>
 				</nav>
 				<div id="content" role="main">

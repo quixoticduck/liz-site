@@ -7,24 +7,25 @@ IDEAS:
 - sort out image transforms in Craft - only available inserting an image into rich text?
 - make Liz image square?
 - make nav tezt have slight shadow?
+- make liz image float left on large screens or position to left outside with posotion abosolute? (Haha yeah so the text box would also need a left margin as wide as the image or more.
+
+Looks like it's absolute to the browser not the parent. So the parent prob still needs to be relative)
 
 Double check:
 - contact form
 - on iphone 5 is the screen is scrollable left to right? needs max width on mobile?
 
-
 TO DO !important:
-- contact form send button is not white
-- in about page the text does not start high enough
-- contact thanks page has contact form on for some reason 
-- fix gaps when headings aren't chosen to be filled in
-- around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
-- mobile nav li's onto two lines on iphone 5
+- add in a 'introductary paragraph' section in the cms (which is in a textbox)
 - decide on design conventions e.g. when textboxes are used, when headings
-- on tiny mobile there should be less padding (so content is wider)
-- tried to make phone size text less wide but now not enough side padding on big screens
+
+- mobile margins are lopsided on my phone / - on tiny mobile there should be less padding (so content is wider) / - tried to make phone size text less wide but now not enough side padding on big screens
+
+- mobile nav li's onto two lines on iphone 5
+- around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
+
 - FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
--remove http://localhost:8888/contact/thanks from showing
+
 
 TO DO not important:
 - edit globe continents and edit speech image colours
@@ -51,6 +52,17 @@ DONE:
 - top margins on mobile nav could be better
 - return all colours to normal
 - mobile nav is salmon, desktop is plain red:
+- in about page the text does not start high enough
+- sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
+- urls are too long for mobile, not wrapping
+- centering main nav title
+- closing x is not in viewport, but to the right
+- iphone issues: LIZ DEAN navbar text goes onto two lines
+- contact form send button is not white
+- contact thanks page has contact form on for some reason 
+- OBSELETE fix gaps when headings aren't chosen to be filled in
+- remove http://localhost:8888/contact/thanks from showing
+
 nav {
     position: fixed;
     top: 0px;
@@ -67,11 +79,6 @@ nav {
     border-top: none;
     border-bottom: none;
 }
-- sending an email goes to 404 because there is no page http://www.lizdeanconsultancy.co.uk/index.php/contact/thanks
-- urls are too long for mobile, not wrapping
-- centering main nav title
-- closing x is not in viewport, but to the right
-- iphone issues: LIZ DEAN navbar text goes onto two lines
 
 
 USEFUL INFO:

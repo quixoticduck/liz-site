@@ -28,7 +28,7 @@
 		
 		{% if block.type == "singleBlock" %}
 			<div class="col col-fullWidth">
-<!-- 				<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2> -->
+				<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
 				<div class="image-responsive">
 					{% set image = block.myBlockImage.first().getUrl %}
 					{% if image %}
@@ -37,7 +37,6 @@
 				</div>
 				<div class="textParagraphs textbox">
 					<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-					<h3> {{ block.myBlockTextboxHeading }} </h3>
 					{{ block.myBlockTextboxText }}
 				</div>
 			</div>
@@ -105,7 +104,7 @@
 		    <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
 		    {{ message is defined and message ? errorList(message.getErrors('message')) }}
 	    </div>
-	   	<div class="contactField"></br>
+	   	<div class="contactField form-button"></br>
 		    <input type="submit" value="Send">
 	    </div>
 	</form>

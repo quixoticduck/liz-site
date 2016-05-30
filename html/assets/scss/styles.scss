@@ -686,6 +686,15 @@ input#puppyField { display: none; }
   
 }
 
+.form-button {
+  color: $colorMain;
+  font-weight: bold;
+  input {
+    background-color: $colorLight;
+    @include border-radius (3px);
+  }
+}
+
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
 
