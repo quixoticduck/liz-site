@@ -131,8 +131,7 @@ nav li {
     text-decoration: none;
     display: inline-block;
     text-align: inline-block;
-    padding: 10px 0px;
-    text-shadow: 1px 1px #774444; }
+    padding: 10px 0px; }
   .main-nav li {
     margin: 0;
     margin-top: 7px; }
@@ -263,22 +262,6 @@ figure {
   border-radius: 30px;
   overflow: hidden; }
 
-.textParagraphs {
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  padding: 13px 35px;
-  text-align: left; }
-  .textParagraphs h3 {
-    margin-left: 0px; }
-
-.textSentences {
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 13px 30px;
-  text-align: center; }
-
 .textbox {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -294,6 +277,22 @@ figure {
     color: #4795C4; }
   .textbox h1 {
     color: #B4234D; }
+
+.textParagraphs {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 13px 35px;
+  text-align: left; }
+  .textParagraphs h3 {
+    margin-left: 0px; }
+
+.textSentences {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 13px 30px;
+  text-align: center; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
   padding: 0px 0px;

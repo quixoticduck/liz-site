@@ -71,8 +71,8 @@ $colorLight:     white;
 // $colorMain:      #EE163D;
 // $colorMain:      #AB3442;
 // $colorMain:      #C8233F;
+// $colorTeal: #008888;
 $colorMain:      #B4234D;
-
 $colorMainLight: #FF696D;
 $color2nd:       #2b7ca7;
 $color2ndLight:  #4795C4;
@@ -256,7 +256,7 @@ nav li {
       display: inline-block;
       text-align: inline-block;
       padding: 10px 0px;
-      text-shadow: 1px 1px $colorTextShadow;
+      // text-shadow: 1px 1px $colorTextShadow;
     }
 
   li {
@@ -500,25 +500,7 @@ figure {
 //   padding: 12px 12px;
 // }
 
-.textParagraphs {
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  // margin: 10px 45px 30px 45px;
-  padding: 13px 35px;
-  text-align: left;
-  h3 {
-    margin-left: 0px;
-  }
-}
 
-.textSentences {
-  margin: auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 13px 30px;
-  text-align: center;
-}
 
 .textbox { 
   @include border-radius (3px); 
@@ -536,6 +518,29 @@ figure {
   h1 {
     color: $colorMain;
   }
+}
+
+.textParagraphs {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  // margin: 10px 45px 30px 45px;
+  padding: 13px 35px;
+  text-align: left;
+  h3 {
+    margin-left: 0px;
+  }
+  // color: purple !important;
+}
+
+.textSentences {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 13px 30px;
+  text-align: center;
+  // color: yellow !important;
+
 }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
@@ -761,24 +766,13 @@ and (max-width: $breakpointTabletMax)
     // background-color: $colorMainLight;
   }
 
-  // .image-responsive {
-  //   max-width: 40%;
-  //   padding-top: 40px;
-  //   margin-left: -35px;
-  //   margin-right: -38px;
-  //   margin-bottom: -15px;
-  // }
-
   .image-responsive {
     max-width: 80%;
     padding-top: 15px;
     margin-left: -190px;
     margin-right: -190px;
     margin-bottom: -13px;
-    // padding-top: 115px;
-    // margin-left: -39px;
-    // margin-right: -140px;
-    // margin-bottom: -13px;
+
   }
 
   .responsiveLeft {

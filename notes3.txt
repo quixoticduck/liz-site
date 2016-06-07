@@ -6,7 +6,6 @@ IDEAS:
 - bigger /different sized headings, break up the page (change red/blue to in textbox/not)
 - sort out image transforms in Craft - only available inserting an image into rich text?
 - make Liz image square?
-- make nav tezt have slight shadow?
 - make liz image float left on large screens or position to left outside with posotion abosolute? (Haha yeah so the text box would also need a left margin as wide as the image or more.
 
 Looks like it's absolute to the browser not the parent. So the parent prob still needs to be relative)
@@ -16,13 +15,18 @@ Double check:
 - on iphone 5 is the screen is scrollable left to right? needs max width on mobile?
 
 TO DO !important:
-- add in a 'introductary paragraph' section in the cms (which is in a textbox)
+- Try attaching a document such as a PDF
+- change wording of textbox summary in cms and code - old name makes little semantic sense now
+- add in a 'introductary paragraph' section in the cms (which is in a textbox) TEXT PARAGRAPHS STYLING IS CONFLICTING E.G. YOUTH WORK PAGE isn't in textbox
 - decide on design conventions e.g. when textboxes are used, when headings
+- multiple columns - header situation if none is input?
 
 - mobile margins are lopsided on my phone / - on tiny mobile there should be less padding (so content is wider) / - tried to make phone size text less wide but now not enough side padding on big screens
-
 - mobile nav li's onto two lines on iphone 5
+
 - around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
+
+- row number error for multiple columns  - textRowNo is still 'rowNumber' in some html docs  = causes error
 
 - FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
 
@@ -62,6 +66,8 @@ DONE:
 - contact thanks page has contact form on for some reason 
 - OBSELETE fix gaps when headings aren't chosen to be filled in
 - remove http://localhost:8888/contact/thanks from showing
+- add the shadow to the navbar
+- WEBSITE CURRENTLY UNDER RECONSTRUCTION heading etc should not be a link
 
 nav {
     position: fixed;
