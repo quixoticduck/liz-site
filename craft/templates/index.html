@@ -11,7 +11,7 @@
 
 			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
 				 {% if block.myBlockLeftColumnHeading %}
-		            {% if block.myBlockLeftColumnHeading|length > 0 %}
+		            {% if ( block.myBlockLeftColumnHeading|length > 0 ) or ( block.myBlockRightColumnHeading|length > 0 ) %}
 						<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
 				 	{% endif %}
 		   	 	{% endif %}
@@ -19,7 +19,7 @@
 			</div>
 			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
 				 {% if block.myBlockRightColumnHeading %}
-		            {% if block.myBlockRightColumnHeading|length > 0 %}
+		            {% if ( block.myBlockLeftColumnHeading|length > 0 ) or ( block.myBlockRightColumnHeading|length > 0 ) %}
 						<h3> {{ block.myBlockRightColumnHeading }}  </h3>
 				 	{% endif %}
 		   	 	{% endif %}
