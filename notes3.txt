@@ -16,6 +16,8 @@ Double check:
 
 TO DO !important:
 - Try attaching a document such as a PDF
+- add new if statements to all pages
+- solo  images don't show up in CMS such as in cms at bottom of homepage there should be a heart test
 - change wording of textbox summary in cms and code - old name makes little semantic sense now
 - add in a 'introductary paragraph' section in the cms (which is in a textbox) TEXT PARAGRAPHS STYLING IS CONFLICTING E.G. YOUTH WORK PAGE isn't in textbox
 - decide on design conventions e.g. when textboxes are used, when headings

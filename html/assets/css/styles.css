@@ -278,11 +278,14 @@ figure {
   .textbox h1 {
     color: #B4234D; }
 
+.textParagraphs, .textSentences {
+  padding-left: 25px;
+  padding-right: 25px; }
+
 .textParagraphs {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 0px 35px;
   text-align: left; }
   .textParagraphs h3 {
     margin-left: 0px; }
@@ -291,7 +294,6 @@ figure {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 13px 30px;
   text-align: center; }
 
 .textbox p, .textbox h1, .textbox h2, .textbox h3 {
@@ -305,8 +307,8 @@ figure {
   padding: 10px 0px; }
 
 .textbox p {
-  padding-top: 10px;
-  padding-bottom: 10px; }
+  padding-top: 20px;
+  padding-bottom: 20px; }
 
 .textbox h3 {
   color: #B4234D; }
@@ -344,14 +346,6 @@ input#puppyField {
 
 .mainNavClose {
   display: none; }
-
-.textParagraphs, .textSentences {
-  padding-left: 25px;
-  padding-right: 25px; }
-
-.textbox .textParagraphs, .textbox .textSentences {
-  padding-left: 30px;
-  padding-right: 30px; }
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */

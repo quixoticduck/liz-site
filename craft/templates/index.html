@@ -5,7 +5,7 @@
 
 
 			<div class="dividerMargin"></div> 
-<?php include_once("analyticstracking.php") ?>
+
 	{% for block in entry.myBlock %}
 		{% if block.type == "twoTextColumns" %}
 
@@ -18,7 +18,7 @@
 		   	 	{{ block.myBlockLeftColumn }}
 			</div>
 			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
-				 {% if block.myBlockRightColumnHeading %}
+				 {% if ( block.myBlockLeftColumnHeading ) or ( block.myBlockRightColumnHeading )  %}
 		            {% if ( block.myBlockLeftColumnHeading|length > 0 ) or ( block.myBlockRightColumnHeading|length > 0 ) %}
 						<h3> {{ block.myBlockRightColumnHeading }}  </h3>
 				 	{% endif %}
@@ -37,32 +37,38 @@
 	   	 	{% endif %}
 			
 			{% set image = block.myBlockImage.first().getUrl %}
-				{% if image %}
-					<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
-				{% endif %} 
-			    {% if block.type.handle == "singleBlock" %}
-			        {% if block.myBlockTextboxText %}
-			            {% if block.myBlockTextboxText|length > 0 %}
+			{% if image %}
+				<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
+			{% endif %} 
 
-				            <div class="textParagraphs textbox">
-				                {{ block.myBlockTextboxText }} 
-				                <!-- {{ block.myBlockTextboxText|length }} -->
-				            </div>
-				        {% endif %}
-			         {% endif %}
-			    {% endif %}
+		    {% if block.type.handle == "singleBlock" %}
+		        {% if block.myBlockTextboxText %}
+		            {% if block.myBlockTextboxText|length > 0 %}
+			            <div class="textParagraphs textbox">
+			                {{ block.myBlockTextboxText }} 
+			                <!-- {{ block.myBlockTextboxText|length }} -->
+			            </div>
+			        {% endif %}
+		        {% endif %}
+		    {% endif %}
 
-			    {% if block.type.handle == "singleBlock" %}
-			        {% if block.mainContentText %}
-			            {% if block.mainContentText|length > 0 %}
-						<div class="textParagraphs">
-							{{ block.mainContentText }}
-						</div>	
-					 	{% endif %}
-			   	 	{% endif %}
-			   	  {% endif %}
+		    {% if block.type.handle == "singleBlock" %}
+		        {% if block.mainContentText %}
+		            {% if block.mainContentText|length > 0 %}
+					<div class="textParagraphs">
+						{{ block.mainContentText }}
+					</div>	
+				 	{% endif %}
+		   	 	{% endif %}
+		   	{% endif %}
 
-		{% endif %}				
+		{% endif %}		
+
+
+
+
+
+
 	{% endfor %}
 
 
@@ -97,6 +103,16 @@
 					
 				</div>
 			{% endif %}
+
+
+{% if block.type.handle == "pdfFile" %}
+    {% if block.pdfFile.first %}
+    <a href="{{ block.pdfFile.first.url }}">Download</a>
+    {% endif %}
+{% endif %}
+
+
+			
 		{% endfor %}
 	</div>
 
