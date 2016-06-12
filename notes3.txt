@@ -16,6 +16,14 @@ Double check:
 
 TO DO !important:
 - Try attaching a document such as a PDF
+- divider margin? in index page? what does it do
+- row number in multiple block layout does nothing. so remove it?
+- color option in multiple bloc  layout
+- seperate responsive image field - does it work,. should i remove it?
+- should I make multiple images a pair by default?
+- remove tags?
+- all files go in images section in the cms and in the folders
+
 - add new if statements to all pages
 - solo  images don't show up in CMS such as in cms at bottom of homepage there should be a heart test
 - change wording of textbox summary in cms and code - old name makes little semantic sense now
