@@ -57,20 +57,21 @@
 
 		{% if block.type == "twoTextColumns" %}
 			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
-			{% if block.myBlockLeftColumnHeading %}
-				{% if ( block.myBlockLeftColumnHeading|length > 0 ) or ( block.myBlockRightColumnHeading|length > 0 ) %}
-					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
+<!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
+					<h3> {{ block.LeftColumnHeading }}  </h3>
 				{% endif %}
-			{% endif %}
-			{{ block.myBlockLeftColumn }}
+			 -->
+			<h3>{{ block.LeftColumnHeading }}</h3>
+			{{ block.LeftColumnText }}
 		</div>
 		<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
-			{% if ( block.myBlockLeftColumnHeading ) or ( block.myBlockRightColumnHeading )  %}
-				{% if ( block.myBlockLeftColumnHeading|length > 0 ) or ( block.myBlockRightColumnHeading|length > 0 ) %}
-					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
+<!-- 			
+				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
+					<h3> {{ block.RightColumnHeading }}  </h3>
 				{% endif %}
-			{% endif %}
-			{{ block.myBlockRightColumn }}
+			 -->
+			<h3>{{ block.RightColumnHeading }}</h3>
+			{{ block.RightColumnText }}
 		</div>
 		{% endif %}
 
