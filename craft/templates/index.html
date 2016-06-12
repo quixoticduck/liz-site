@@ -105,14 +105,15 @@
 			{% endif %}
 
 
-{% if block.type.handle == "pdfFile" %}
-    {% if block.pdfFile.first %}
-    <a href="{{ block.pdfFile.first.url }}">Download</a>
+{% if block.type.handle == "attachDocument" %}
+    {% if block.documentFile.first %}
+	    <a href="{{ block.documentFile.first.url }}"> 
+	    <!-- Download --> 
+	    {{ block.documentInformation }}</a>
     {% endif %}
 {% endif %}
 
 
-			
 		{% endfor %}
 	</div>
 
