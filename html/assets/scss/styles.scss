@@ -382,7 +382,7 @@ background-color: $colorMain;
 $gutter: 20px;
 
 .dividerMargin {
-  height: 15px;
+  height: 14px;
 }
 
 .col {
@@ -424,7 +424,7 @@ $gutter: 20px;
 .blockImages {
   min-height: 350px;
   float: left;
-  padding-top: 45px;
+  padding-top: 13px;
   text-align: center;
   // a {
   //   margin: 5px;
@@ -538,7 +538,7 @@ figure {
 .textSentences {
   margin: auto;
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 47px;
   text-align: center;
 }
 
@@ -593,20 +593,8 @@ figure {
   }
 }
 
-// .contactForm input* {
-//   color: blue;
-// }
 
 input#puppyField { display: none; }
-
-// .image-responsive {
-//   max-width: 80%;
-//   padding-top: 40px;
-//   margin-left: -35px;
-//   margin-right: -38px;
-//   margin-bottom: -15px;
-//   float: left;
-// }
 
 .centerHeading {
   color:blue;
@@ -624,14 +612,6 @@ input#puppyField { display: none; }
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */
-
-// .red {
-//   background-color: $colorMainLight;
-// }
-
-// .blue {
-//     background-color: $color2ndLight;
-// }
 
 .row1 {
   min-height: 460px;
@@ -677,6 +657,21 @@ input#puppyField { display: none; }
   input {
     background-color: $colorLight;
     @include border-radius (3px);
+  }
+
+  .responsiveLeft {
+    float: left;
+  }
+
+  .responsiveRight {
+    float: right;
+    background-color: blue;
+  } 
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%;
   }
 }
 
@@ -739,7 +734,7 @@ and (max-width: $breakpointTabletMax)
     min-height: 0px;
   }
   .blockImages {
-    padding-top: 20px;
+    padding-top: 13px;
   }
 
   .red, .blue {
@@ -821,14 +816,6 @@ nav {
     -webkit-transition: transform 0.8s ease;    
     -moz-transition: transform 0.8s ease;    
     -ms-transition: transform 0.8s ease;
-
-    // z-index: 20;
-    // z-index: 100;
-    // transform: translateZ(100px);
-   // background-color: $colorLight;
-   // color: $colorDark;
-   // border-right: 2px;
-   // border-style: dashed;
   }
 
   nav .navOpen {
@@ -1075,37 +1062,7 @@ and (max-width: $breakpointTinyMin)
     padding-right: 30px;
   }
 
-  // .image-responsive {
-  //   display: none;
-  // }
 
-  // .image-responsive {
-  //   max-width: 80%;
-  //   padding-top: 15px;
-  //   margin-left: -89px;
-  //   margin-right: -90px;
-  //   margin-bottom: -13px;
-  //   // padding-top: 115px;
-  //   // margin-left: -39px;
-  //   // margin-right: -140px;
-  //   // margin-bottom: -13px;
-  // }
-
-  // .responsiveLeft {
-  //   float: left;
-  // }
-
-  // .responsiveRight {
-  // float: right;
-  // }
-
-  // .responsiveNot {
-  //   margin: auto;
-  //   float: none;
-  //   max-width: 100%;
-  // }
-
-  // h1 {color: blue;}
 }
 /* PHONE PORTRAIT END
 ==================================== */

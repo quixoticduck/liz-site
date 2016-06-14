@@ -34,27 +34,6 @@
 			</div>
 		{% endif %}
 
-		{% if block.type == "multipleBlocks" %}
-			<div class="col-half blockImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
-				{% if block.myBlockHeading|length > 0 %}
-					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
-				{% endif %}
-				{% set image = block.myBlockImage.first().getUrl %}
-				{% if image %}
-					<div class="imgContainer">
-						<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-					</div>
-				{% endif %}
-				{% if block.type.handle == "multipleBlocks" %}
-					{% if block.myBlockTextboxText|length > 0 %}
-						<div class="textSentences textbox max60">
-							{{ block.myBlockTextboxText }}
-						</div>
-					{% endif %}
-				{% endif %}
-			</div>
-		{% endif %}
-
 		{% if block.type == "twoTextColumns" %}
 			<div class="col col-half colpadding center ">
 <!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
@@ -117,17 +96,20 @@
 
 		{% if block.type.handle == "attachDocument" %}
 			{% if block.documentFile.first %}
-				<a href="{{ block.documentFile.first.url }}">
-					<!-- Download -->
-				{{ block.documentInformation }}</a>
+				
+					<a href="{{ block.documentFile.first.url }}">
+						<!-- Download -->
+					{{ block.documentInformation }}</a>
+				<div class="dividerMargin">
+				</div>
 			{% endif %}
 		{% endif %}
 
 		{% if block.type.handle == "responsiveImage" %}
 			{% set image = block.responsiveImage.first().getUrl %}
 			{% if image %}
-				<div class="imgContainer {% if block.responsiveOption %}  {{ block.responsiveOption }} {% endif %}">
-					<a href="{{ block.imageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+				<div class="imgContainer {% if block.responsiveOption %} {{ block.responsiveOption }} {% endif %}">
+					<a href="{{ block.imageUrl }}"><img class="myImageGroup {% if block.responsiveOption %} {{ block.responsiveOption }} {% endif %}" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 				</div>
 			{% endif %}
 		{% endif %}

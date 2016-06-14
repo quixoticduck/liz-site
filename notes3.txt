@@ -15,21 +15,10 @@ Double check:
 - on iphone 5 is the screen is scrollable left to right? needs max width on mobile?
 
 TO DO !important:
-- Try attaching a document such as a PDF
-- divider margin? in index page? what does it do
-- row number in multiple block layout does nothing. so remove it?
-- color option in multiple bloc  layout
-- seperate responsive image field - does it work,. should i remove it?
-- should I make multiple images a pair by default?
-- remove tags?
-- all files go in images section in the cms and in the folders
-
 - add new if statements to all pages
-- solo  images don't show up in CMS such as in cms at bottom of homepage there should be a heart test
+
 - change wording of textbox summary in cms and code - old name makes little semantic sense now
-- add in a 'introductary paragraph' section in the cms (which is in a textbox) TEXT PARAGRAPHS STYLING IS CONFLICTING E.G. YOUTH WORK PAGE isn't in textbox
-- decide on design conventions e.g. when textboxes are used, when headings
-- multiple columns - header situation if none is input?
+
 
 - mobile margins are lopsided on my phone / - on tiny mobile there should be less padding (so content is wider) / - tried to make phone size text less wide but now not enough side padding on big screens
 - mobile nav li's onto two lines on iphone 5
@@ -40,6 +29,10 @@ TO DO !important:
 
 - FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
 
+TO REMOVE/FIX - not important:
+- seperate responsive image field - does it work,. should i remove it?
+- remove tags?
+- all files go in images section in the cms and in the folders
 
 TO DO not important:
 - edit globe continents and edit speech image colours
@@ -78,6 +71,15 @@ DONE:
 - remove http://localhost:8888/contact/thanks from showing
 - add the shadow to the navbar
 - WEBSITE CURRENTLY UNDER RECONSTRUCTION heading etc should not be a link
+- Try attaching a document such as a PDF
+- divider margin? in index page? what does it do
+- row number in multiple block layout does nothing. so remove it?
+- color option in multiple block layout
+- should I make multiple images a pair by default?
+- solo  images don't show up in CMS such as in cms at bottom of homepage there should be a heart test
+- add in a 'introductary paragraph' section in the cms (which is in a textbox) TEXT PARAGRAPHS STYLING IS CONFLICTING E.G. YOUTH WORK PAGE isn't in textbox
+- decide on design conventions e.g. when textboxes are used, when headings
+- multiple columns - header situation if none is input?
 
 nav {
     position: fixed;
