@@ -487,6 +487,14 @@ figure {
   h1 {
     color: $colorMain;
   }
+  ul {
+    color: $colorMain;
+    // font-weight: 500;
+  }
+
+  li {
+    text-shadow: none;
+  }
 }
 
 .textParagraphs, .textSentences {

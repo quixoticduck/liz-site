@@ -1,5 +1,5 @@
 {% extends "_layout" %}
-{% set title = "Home" %}
+{% set title = "Health Promotion" %}
 {% block content %}
 	<div class="dividerMargin"></div>
 	{% for block in entry.myBlock %}
@@ -55,7 +55,7 @@
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
-			<div class="col-half blockImages">
+			<div class="col col-half blockImages">
 				{% if block.leftColumnHeading|length > 0 %}
 					<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
 				{% endif %}
@@ -73,7 +73,7 @@
 					{% endif %}
 				{% endif %}
 			</div>
-			<div class="col-half blockImages">
+			<div class="col col-half blockImages">
 				{% if block.rightColumnHeading|length > 0 %}
 					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
 				{% endif %}

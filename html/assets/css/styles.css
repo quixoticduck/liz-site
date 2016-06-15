@@ -277,6 +277,10 @@ figure {
     color: #4795C4; }
   .textbox h1 {
     color: #B4234D; }
+  .textbox ul {
+    color: #B4234D; }
+  .textbox li {
+    text-shadow: none; }
 
 .textParagraphs, .textSentences {
   padding-left: 25px;

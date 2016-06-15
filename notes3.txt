@@ -15,18 +15,13 @@ Double check:
 - on iphone 5 is the screen is scrollable left to right? needs max width on mobile?
 
 TO DO !important:
-- add new if statements to all pages
-
+- check google analystics tracking
+- Make sure all pages are long enough MAINLY CONTACT THANKS AND 404 PAGE
 - change wording of textbox summary in cms and code - old name makes little semantic sense now
-
-
 - mobile margins are lopsided on my phone / - on tiny mobile there should be less padding (so content is wider) / - tried to make phone size text less wide but now not enough side padding on big screens
 - mobile nav li's onto two lines on iphone 5
-
 - around width 1160 the navbar text is set to shrink quite small for such a size. add another breakpoint?
-
 - row number error for multiple columns  - textRowNo is still 'rowNumber' in some html docs  = causes error
-
 - FAVICON doesn't work - Charlotte's does - currently still drupal (in browser back button dropdown)
 
 TO REMOVE/FIX - not important:
@@ -80,6 +75,8 @@ DONE:
 - add in a 'introductary paragraph' section in the cms (which is in a textbox) TEXT PARAGRAPHS STYLING IS CONFLICTING E.G. YOUTH WORK PAGE isn't in textbox
 - decide on design conventions e.g. when textboxes are used, when headings
 - multiple columns - header situation if none is input?
+- add new if statements to all pages
+- fix white text on youthwork page
 
 nav {
     position: fixed;
