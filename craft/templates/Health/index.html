@@ -1,56 +1,118 @@
 {% extends "_layout" %}
-{% set title = "Health" %}
+{% set title = "Home" %}
 {% block content %}
-
-<?php include_once("analyticstracking.php") ?>
-
+	<div class="dividerMargin"></div>
 	{% for block in entry.myBlock %}
-		{% if block.type == "twoTextColumns" %}
-				<div class="col col-half colpadding center">
-					<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
-					{{ block.myBlockLeftColumn }}
-				</div>
-				<div class="col col-half colpadding center">
-					<h3> {{ block.myBlockRightColumnHeading }}  </h3>
-					{{ block.myBlockRightColumn }}
-				</div>			
-		{% endif %}
-	
-			
-			{% if block.type == "singleBlock" %}
-				<div class="col col-fullWidth">
-					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
-					{% set image = block.myBlockImage.first().getUrl %}
-					{% if image %}
-						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
-					{% endif %} 
-					<div class="textParagraphs textbox">
-						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
-						{{ block.myBlockTextboxText }}
-					</div>
-				{% endif %}				
-			{% endfor %}
 
-
-		<div class="col">
-			{% for block in entry.myBlock %}		
-				{% if block.type == "multipleBlocks" %}
-					<div class="col-half blockImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
-						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
-						{% set image = block.myBlockImage.first().getUrl %}
-						{% if image %}
-							<div class="imgContainer">
-								<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-							</div>
-						{% endif %}
-						<div class="textSentences textbox max60">
-							<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+		{% if block.type == "singleBlock" %}
+			<div class="col col-fullWidth">
+				{% if block.myBlockHeading %}
+					{% if block.myBlockHeading|length > 0 %}
+						<h2> {{ block.myBlockHeading }}  </h2>
+					{% endif %}
+				{% endif %}
+				
+				{% set image = block.myBlockImage.first().getUrl %}
+				{% if image %}
+					<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
+				{% endif %}
+				{% if block.type.handle == "singleBlock" %}				
+					{% if block.myBlockTextboxText|length > 0 %}
+						<div class="textParagraphs textbox">
 							{{ block.myBlockTextboxText }}
+							<!-- {{ block.myBlockTextboxText|length }} -->
 						</div>
+					{% endif %}					
+				{% endif %}
+				{% if block.type.handle == "singleBlock" %}					
+					{% if block.mainContentText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.mainContentText }}
+						</div>
+					{% endif %}					
+				{% endif %}
+			</div>
+		{% endif %}
+
+		{% if block.type == "twoTextColumns" %}
+			<div class="col col-half colpadding center ">
+<!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
+					<h3> {{ block.LeftColumnHeading }}  </h3>
+				{% endif %}
+			 -->
+			<h3>{{ block.LeftColumnHeading }}</h3>
+			{{ block.LeftColumnText }}
+		</div>
+		<div class="col col-half colpadding center ">
+<!-- 			
+				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
+					<h3> {{ block.RightColumnHeading }}  </h3>
+				{% endif %}
+			 -->
+			<h3>{{ block.RightColumnHeading }}</h3>
+			{{ block.RightColumnText }}
+		</div>
+		{% endif %}
+
+		{% if block.type == "pairedBlock" %}
+			<div class="col-half blockImages">
+				{% if block.leftColumnHeading|length > 0 %}
+					<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
+				{% endif %}
+				{% set image = block.leftColumnImage.first().getUrl %}
+				{% if image %}
+					<div class="imgContainer">
+						<a href="{{ block.leftColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 					</div>
 				{% endif %}
-			{% endfor %}
-		</div>
+				{% if block.type.handle == "pairedBlock" %}
+					{% if block.leftColumnTextboxText|length > 0 %}
+						<div class="textSentences textbox max60">
+							{{ block.leftColumnTextboxText }}
+						</div>
+					{% endif %}
+				{% endif %}
+			</div>
+			<div class="col-half blockImages">
+				{% if block.rightColumnHeading|length > 0 %}
+					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
+				{% endif %}
+				{% set image = block.rightColumnImage.first().getUrl %}
+				{% if image %}
+					<div class="imgContainer">
+						<a href="{{ block.rightColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+					</div>
+				{% endif %}
+				{% if block.type.handle == "pairedBlock" %}
+					{% if block.rightColumnTextboxText|length > 0 %}
+						<div class="textSentences textbox max60">
+							{{ block.rightColumnTextboxText }}
+						</div>
+					{% endif %}
+				{% endif %}
+			</div>
+		{% endif %}
 
 
-	{% endblock %}
+		{% if block.type.handle == "attachDocument" %}
+			{% if block.documentFile.first %}
+				
+					<a href="{{ block.documentFile.first.url }}">
+						<!-- Download -->
+					{{ block.documentInformation }}</a>
+				<div class="dividerMargin">
+				</div>
+			{% endif %}
+		{% endif %}
+
+		{% if block.type.handle == "responsiveImage" %}
+			{% set image = block.responsiveImage.first().getUrl %}
+			{% if image %}
+				<div class="imgContainer {% if block.responsiveOption %} {{ block.responsiveOption }} {% endif %}">
+					<a href="{{ block.imageUrl }}"><img class="myImageGroup {% if block.responsiveOption %} {{ block.responsiveOption }} {% endif %}" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+				</div>
+			{% endif %}
+		{% endif %}
+
+	{% endfor %}
+{% endblock %}
