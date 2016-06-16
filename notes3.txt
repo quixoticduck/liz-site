@@ -15,6 +15,9 @@ Double check:
 - on iphone 5 is the screen is scrollable left to right? needs max width on mobile?
 
 TO DO !important:
+-close ftp on server?
+- Youth Work page - bullet points in a textbox have no padding - give ul's padding like paragraphs have
+- combine paired block with two textbox sections?
 - check google analystics tracking
 - Make sure all pages are long enough MAINLY CONTACT THANKS AND 404 PAGE
 - change wording of textbox summary in cms and code - old name makes little semantic sense now
