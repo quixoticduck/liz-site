@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+		<link rel="home" href="{{ siteUrl }}" />
+		<link href='https://fonts.googleapis.com/css?family=Lobster|Open+Sans' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/assets/css/normalize.css">
+		<link rel="stylesheet" href="/assets/css/styles.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<div class="wrapper">
+		<div class="container">
+			<body class="{{ bodyClass }}">
+				<div class="mainNavClose navHeadingWhenClose">
+				
+					<h2><i class="fa fa-bars fa-lg"></i></h2>
+					<!-- <h2>menu</h2>  -->
+					<div class="menuTextClose">
+						<h1>x</h1>
+					</div>
+					<div class="menuTextMenu">
+						<h1>liz dean</h1>
+					</div>
+
+				</div>
+				<nav class="navClose">
+					<h1 class="mainLogo">
+						<a href="{{ siteUrl }}">{{ siteName }}</a>
+					</h1>
+					<ul class="main-nav navClose">
+						<li><a href="{{ url('/') }}" {% if craft.request.firstSegment == 'home' %}class="active"{% endif %}><i class="fa fa-lg fa-home"></i></a></li>
+						<li><a href="{{ url('/about/liz') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>About</a></li>
+						<li><a href="{{ url('pshe') }}" {% if craft.request.firstSegment == 'pshe' %}class="active"{% endif %}>PSHE</a></li>
+						<li><a href="{{ url('youthWork') }}" {% if craft.request.firstSegment == 'youthWork' %}class="active"{% endif %}>Youth Work</a></li>
+						<li><a href="{{ url('relationships') }}" {% if craft.request.firstSegment == 'Relationships' %}class="active"{% endif %}>Sex and Relationships</a></li>
+						<li><a href="{{ url('health') }}" {% if craft.request.firstSegment == 'health' %}class="active last"{% endif %}>Health Promotion</a></li>
+					</ul>
+				</nav>
+
+				<div id="content" role="main">
+				{% block content %}{% endblock %}
+				</div>
+			</div>
+		</div>
+		<footer id="footer">
+			Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •  
+	<!-- 		Built with <a href="http://buildwithcraft.com">Craft</a>  • -->
+			<a href="{{ url('/about/liz#contact') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
+		</footer>	
+	</div>
+
+
+		<script src="/assets/js/jquery-1.11.3.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var $navBar = $('nav');
+				var $navList = $('.main-nav');
+				var $menuButton = $('.mainNavClose');
+				var sideBarOpen = false;
+				$menuButton.click(function() {
+					console.log ("click");
+					if (!sideBarOpen) {
+						$navBar.removeClass('navClose');
+						$navList.removeClass('navClose');
+						$menuButton.removeClass('navHeadingWhenClose');
+						$('.menuTextClose').removeClass('navHeadingWhenClose');
+						$('.menuTextMenu').removeClass('navHeadingWhenClose');
+						$navBar.addClass('navOpen');
+						$navList.addClass('navOpen');
+						$menuButton.addClass('navHeadingWhenOpen');
+						$('.menuTextClose').addClass('navHeadingWhenOpen');
+						$('.menuTextMenu').addClass('navHeadingWhenOpen');
+						sideBarOpen = true;
+						console.log ("true");
+					} else {
+						$navBar.removeClass('navOpen');
+						$navList.removeClass('navOpen');
+						$menuButton.removeClass('navHeadingWhenOpen');
+						$('.menuTextClose').removeClass('navHeadingWhenOpen');
+						$('.menuTextMenu').removeClass('navHeadingWhenOpen');
+						$navBar.addClass('navClose');
+						$navList.addClass('navClose');
+						$menuButton.addClass('navHeadingWhenClose');
+						$('.menuTextClose').addClass('navHeadingWhenClose');
+						$('.menuTextMenu').addClass('navHeadingWhenClose');
+						sideBarOpen = false;
+						console.log ("false");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

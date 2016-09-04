@@ -1,0 +1,1057 @@
+/* MIXINS
+==================================== */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($transition:0.4s) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
+@mixin blur ($blur:5px) {
+filter: blur(5px);
+-webkit-filter: blur(5px);
+}
+
+/* MIXINS END
+==================================== */
+
+/* FONT STUFF
+==================================== */
+
+@font-face {
+  font-family: 'brushpen';
+  src: url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/AnotherBrushPen/anotherBrushPen-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$featureFont: 'brushpen', cursive;
+$headingFont: 'Fenix', serif;
+$pFont:'Open Sans', sans-serif;
+
+// @font-face {
+//   font-family: 'Lobster';
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local('Lobster'), local('Lobster), url(http://fonts.gstatic.com/s/vollkorn/v5/BCFBp4rt5gxxFrX6F12DKnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+// }
+
+/* FONT STUFF END
+==================================== */
+
+/* Media Query Breakpoints
+==================================== */
+$breakpointDesktopMin: 1330px;
+$breakpointLaptopMax: ($breakpointDesktopMin - 1px);
+$breakpointLaptopMin: 1185px;
+$breakpointTabletMax: ($breakpointLaptopMin - 1px);
+$breakpointTabletMin: 970px;
+$breakpointPhoneMax: ($breakpointTabletMin - 1px);
+$breakpointPhoneMin: 450px;
+$breakpointTinyMax: ($breakpointPhoneMin - 1px);
+$breakpointTinyMin: 350px;
+/* /END/ Media Query Breakpoints
+==================================== */
+
+/* Layout Element Colors
+==================================== */
+$colorDark:      #333333;
+$colorLight:     white;
+// $colorLight:     #f8f8f8;
+// $colorMain:      #EE163D;
+// $colorMain:      #AB3442;
+// $colorMain:      #C8233F;
+// $colorTeal: #008888;
+$colorMain:      #B4234D;
+$colorMainLight: #FF696D;
+$color2nd:       #2b7ca7;
+$color2ndLight:  #4795C4;
+$colorTextShadow: #774444;
+
+
+
+/* Lists
+========================================================================= */
+
+// Remove default list styles, margins and padding
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  // list-style: none;
+  color: $colorLight;
+  font-weight: normal;
+  // list-style-type: circle;
+  list-style-type: square;
+}
+
+li.menu-item {
+ margin:0 0 50px 0;   
+}
+
+p {
+  color: $colorLight;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 7px 0px 10px 0px;
+  text-shadow: 1px 1px $colorTextShadow;
+  //   /* These are technically the same, but use both */
+  // overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  // -ms-word-break: break-all;
+  // /* This is the dangerous one in WebKit, as it breaks things wherever */
+  // word-break: break-all;
+  // /* Instead use this non-standard one: */
+  // word-break: break-word;
+
+  // /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  // -ms-hyphens: auto;
+  // -moz-hyphens: auto;
+  // -webkit-hyphens: auto;
+  // hyphens: auto;
+} 
+
+.h0 {
+  color:$colorLight;
+  font-family: $featureFont;
+  font-size: 37px;
+  margin: 12px 0px; 
+  text-transform: uppercase;
+  display: inline;
+  line-height: 55px;
+}
+
+h1 {
+  color:$colorLight;
+  font-family: $headingFont;
+  font-size: 37px;
+  margin: 12px 0px; 
+  word-wrap: normal;
+}
+
+h2 {
+  color:$colorLight;
+  font-family: $headingFont;
+  display: inline;
+  text-align: center;
+}
+
+h3 {
+  color:$colorLight;
+  // margin: 12px;
+  // display: inline;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+// .fa {
+//   color: red;
+// }
+
+.mainNavClose .fa, .mainNavClose h2 {
+  color: $colorLight;
+  margin-left: 20px;
+  margin-right: -20px;
+  float: left;
+  line-height: 55px;
+}
+
+.mainNavClose h1 {
+  line-height: 55px;
+}
+
+.mainNavClose h1, .mainNavClose h2 {
+  text-transform: uppercase;
+  margin: 0px 35px;
+  // padding-left: 15px;
+}
+
+button:focus { outline: none; }
+
+/* /END/ Lists
+========================================================================= */
+
+/* Link stylings
+========================================================================= */
+
+html { 
+  background: $colorMain; 
+  // margin-bottom: 0px;
+  font-size: 17px;
+}
+
+a, a:link {
+	text-decoration:none;
+	@include transition;
+	// color: $color2nd;
+	color: $colorLight;
+	font-weight: bold;
+    // border-bottom: 2px dotted $colorLight;
+}
+
+// a:visited
+// {
+// text-decoration:none;
+// }
+
+ //bug can't make visited p's a different color
+// a:visited p {color: $color2nd;}
+
+a:hover
+{
+@include transition(0.3s);
+color: $color2ndLight;
+}
+
+a:active
+{
+text-decoration:none;
+color: #f8f8f8; 
+}
+
+/* /END/ Link stylings
+========================================================================= */
+
+/* DESKTOP Header, Banner and Footer Layout
+==================================== */
+
+// .navbar {
+//   max-height: 300px;
+//   background-color: $colorMainLight;
+// }
+
+nav {
+  text-align: center;
+  text-transform: uppercase;
+  max-height: 300px;
+  // background-color: $colorMainLight;
+  padding: 20px 0px;
+  text-shadow: 1px 1px $colorTextShadow;
+
+}
+
+nav li {
+  display: inline-block;
+    // float:right;
+}
+
+.main-nav 
+  {
+  text-align: right;
+  h1,
+    {
+      text-decoration: none;
+      display: inline-block;
+      text-align: inline-block;
+      padding: 10px 0px;
+      // text-shadow: 1px 1px $colorTextShadow;
+    }
+
+  li {
+    margin: 0;
+    margin-top: 7px;
+  }
+
+  a {
+    color: $colorLight;
+    font: $headingFont;
+    font-size: 1.2rem;
+    line-height: 1.45rem;
+    border-bottom: 2px dotted $colorLight;
+    padding: 0px 0px;
+    margin: 10px 15px;
+    &:hover {color:$color2ndLight;}
+    // background-color: blue;
+  }
+
+  li a 
+  {
+    margin-left: 1.5rem;
+    margin-right: 0px;
+    // background-color: red;
+  }
+}
+
+.mainLogo
+// .mainLogo a 
+{
+  // margin-right: 20px;
+  // // padding-top: 10px;
+  // margin-top: -11px;
+  // margin-bottom: 0px;
+  display: inline-block;
+  float: left;
+  margin: 0;
+}
+
+.mainLogo a {
+margin-right: 1.14rem;
+color: $colorLight;
+}
+
+.main-header {
+  // padding-top: 20px;
+  // padding-bottom: 5px;
+  // color: pink;
+  // background-color: orange;
+}
+
+footer {
+  // background-image: url("/assets/images/seamlessFlicksRed.png");
+  background-color: $colorDark;
+  color: $colorMainLight;
+  text-align: center;
+  padding: 10px 0px;
+  // display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  // position: absolute;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  // position: absolute;
+  // left:0px;
+
+  // position: relative;
+  //   bottom:0px;
+  height: auto;
+    a {
+      padding: 20px 0px;
+    }
+}
+
+/* /END/ DESKTOP Header, Banner and Footer Layout
+==================================== */
+
+body 
+{
+  font: 100% $pFont;
+  // color: $colorMain 
+  background-color: $colorMain;
+}
+
+.wrapper {
+// width: 90%;
+// margin: auto;
+width: 100%;
+background-color: $colorMain;
+}
+
+.container {
+  width: 88%;
+  margin: auto;
+  max-width: 1425px;
+  min-height: 1000px;
+}
+
+// .backgroundPattern {
+//   width: 100%;
+//   // background-color: $colorMainLight;
+//   background-image: url("/assets/images/seamlessCrossesRed.png");
+//   // @include blur;
+//   // opacity: 0.4;
+//   // filter: alpha(opacity=40); /* For IE8 and earlier */
+// }
+
+.center {
+  margin: auto;
+  display: block;
+}
+
+
+$gutter: 20px;
+
+.dividerMargin {
+  height: 14px;
+}
+
+.blockImages {
+  min-height: 350px;
+  float: left;
+  padding-top: 13px;
+  text-align: center;
+}
+
+.col {
+  float: left;
+  margin: auto;
+  margin-bottom: 20px;
+
+  ul {
+    text-align: left;
+    margin-left: 40px;
+  }
+  li {
+    text-shadow: 0px 1px $colorTextShadow;
+  }
+}
+
+.colpadding {
+  padding-left: 21px;
+  padding-right: 13px;
+  box-sizing: border-box;
+}
+
+.col-quarter {
+  width: 22.5%;
+}
+
+.col-half {
+  width: 50%;
+}
+
+.col-third {
+  width: 33.333333333%;
+}
+.col-twoThirds {
+  width: 66.666666666%;
+}
+
+.col-threeQuarters {
+  width: 75%;
+}
+
+.col-fullWidth {
+  width: 100%;
+}
+
+// .imgContainer {
+// min-height: 290px;
+// // max-height: 240px;
+// }
+
+.max60 {
+  max-width: 60%;
+}
+
+.myImage, .myImageGroup {
+  @include border-radius (15px); 
+  margin: auto;
+  // width: 34%;
+  max-width: 34%;
+  // height: 34%;
+  max-height: 34%;
+  text-align: center;
+  padding: 25px;
+  display: block;
+}
+
+.myImageGroup {
+  max-height: 199px;
+}
+
+.homepageBig {
+  display:none;
+}
+
+figure {
+    width:300px;
+    height:300px;
+    @include border-radius (30px);
+    overflow:hidden;
+}
+
+// .cloudBox {
+//   background-image: url("/assets/images/cloud.png");
+//   margin: auto;
+//   padding: 12px 12px;
+// }
+
+
+
+.textbox { 
+  @include border-radius (3px); 
+  background-color: $colorLight;
+  a {
+    color: $colorMain;
+  }
+  a:link {
+    transition: none;
+    color: $colorMain;
+  }
+  a:hover {
+    color: $color2ndLight;
+  }
+  h1 {
+    color: $colorMain;
+  }
+  ul {
+    color: $colorMain;
+    // font-weight: 500;
+  }
+
+  li {
+    text-shadow: none;
+  }
+}
+
+.textParagraphs, .textSentences {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+.textParagraphs {
+  margin: auto;
+  margin-top: 15px;
+  // margin-bottom: 20px;
+  text-align: left;
+  h3 {
+    margin-left: 0px;
+  }
+}
+
+.textSentences {
+  margin: auto;
+  margin-top: 10px;
+  // margin-bottom: 47px;
+  text-align: center;
+}
+
+.textbox p, .textbox h1, .textbox h2, .textbox h3 {
+  padding: 0px 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-shadow: none;
+  color: $colorDark;
+}
+
+.textbox h3 {
+  padding: 10px 0px;
+}
+
+.textbox p {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.textbox h3 {
+  color: $colorMain;
+}
+
+.textbox img {
+  width: 45%;
+  display: block;
+  margin: 0 auto 15px auto;
+  // padding-top: -13;
+  // padding-bottom: 10;
+}
+
+.contactForm {
+  // background-color: pink;
+  min-height: 100px;
+  width: 37%;
+  overflow: hidden;
+  padding: 10px 50px 25px 50px;
+  margin: auto;
+  // label* {
+  // }
+}
+
+.contactField {
+  margin: 15px 0px;
+  display: block;
+  margin: auto;
+  h3 {
+    margin: 20px 0px 5px 0px;
+    font-weight: normal;
+    display: inline-block;
+  }
+}
+
+
+input#puppyField { display: none; }
+
+.centerHeading {
+  color:blue;
+  text-align: center !important;
+  margin: auto;
+  display: block;
+  padding: 3px 0px ;
+}
+
+.mainNavClose {
+  display: none;
+}
+
+
+
+/* CRAFT CMS PHP CLASSES
+==================================== */
+
+// .row1 {
+//   min-height: 460px;
+// }
+
+// .row2 {
+//   min-height: 520px;
+// }
+
+.textRow1, .textRow2 {
+  text-align: left;
+}
+
+#contact {
+  // color: green;
+  // background-color: blue;
+  overflow: hidden;
+  height: 5px;
+  width: 5px;
+}
+
+.footerFix {
+  min-height: 85
+  0px;
+}
+
+.centerMessage {
+  margin: auto;
+  padding: 10%;
+  text-align: center;
+  ul {list-style: none;
+    li {
+      margin-bottom: 20px;
+    }
+  }  
+  
+}
+
+.form-button {
+  color: $colorMain;
+  font-weight: bold;
+  input {
+    background-color: $colorLight;
+    @include border-radius (3px);
+  }
+
+  .responsiveLeft {
+    float: left;
+  }
+
+  .responsiveRight {
+    float: right;
+    background-color: blue;
+  } 
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%;
+  }
+}
+
+/* // CRAFT CMS PHP CLASSES END
+==================================== */
+
+
+
+/* LAPTOP SCREEN
+==================================== */
+@media screen
+and (min-width: $breakpointLaptopMin)
+and (max-width: $breakpointLaptopMax) 
+{
+    .mainLogo a {
+    font-size: 2rem;
+  }
+
+  .main-nav li a {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+    margin-left: 1.5rem;
+    // margin-right: 0px;
+  }
+
+}
+/* LAPTOP SCREEN END
+==================================== */
+
+/* TABLET SCREEN
+==================================== */
+@media screen
+and (min-width: $breakpointTabletMin)
+and (max-width: $breakpointTabletMax) 
+{
+  .mainLogo a {
+    font-size: 1.85rem;
+    line-height: 1.3rem;
+    margin-top: 0px;
+    margin-bottom: 12px;
+  }
+  .main-nav li a {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+    margin-left: 1rem;
+    // color: green;
+  }
+
+  .col {
+    margin-bottom: 20px;
+  }
+
+  .col-half {
+    width: 100%;
+  }
+
+  .max60 {
+    max-width: 70%;
+  }
+
+.textParagraphs {
+  margin-bottom: 5px;
+}
+
+  .blockImages {
+    padding-top: 13px;
+  }
+
+  .image-responsive {
+    max-width: 80%;
+    padding-top: 15px;
+    margin-left: -190px;
+    margin-right: -190px;
+    margin-bottom: -13px;
+  }
+
+  .responsiveLeft {
+    float: left;
+  }
+
+  .responsiveRight {
+  float: right;
+  }
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%;
+  }
+
+  // h1, h2, h3, p {color: yellow;}
+
+} 
+/* TABLET SCREEN END
+==================================== */
+
+// @media screen and (min-width: $breakpointPhoneMax) and (max-width: $breakpointTabletMin) {
+//   .main-nav li a {
+//   }
+// }
+
+
+
+/* PHONE LANDSCAPE
+==================================== */
+
+@media screen
+// and (min-width: $breakpointTinyMax)
+and (max-width: $breakpointPhoneMax) 
+{
+
+nav {
+    // background-color: $colorMainLight;
+    // transform: translate3d(-290px, 0, 0);
+    // transition: transform 0.4s ease;  
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 260px;
+    max-height: none;
+    background-color: $colorMain;
+    padding: 20px 15px;
+    border-right: 4px;
+    border-color: white;
+    border-style: double;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
+  .navOpen {
+    padding-top: 6px;
+
+    transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+
+    transition: transform 0.8s ease;    
+    -webkit-transition: transform 0.8s ease;    
+    -moz-transition: transform 0.8s ease;    
+    -ms-transition: transform 0.8s ease;
+  }
+
+  nav .navOpen {
+    // border-right: 2px;
+    // border-style: dotted;
+  }
+
+  .navClose {
+    transform: translate3d(-290px, 0, 0);
+    -webkit-transform: translate3d(-290px, 0, 0);
+    -moz-transform: translate3d(-290px, 0, 0);
+    -ms-transform: translate3d(-290px, 0, 0);
+
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+  }
+
+  .navHeadingWhenOpen {
+    transform: translate3d(33px, 0, 0);
+    -webkit-transform: translate3d(33px, 0, 0);
+    -moz-transform: translate3d(33px, 0, 0);
+    -ms-transform: translate3d(33px, 0, 0);
+    
+    transition: transform 0.8s ease;
+    -webkit-transition: transform 0.8s ease;
+    -moz-transition: transform 0.8s ease;
+    -ms-transition: transform 0.8s ease;
+  }
+
+  .navHeadingWhenClose {
+    transform: translate3d(0px, 0, 0);
+    -webkit-transform: translate3d(0px, 0, 0);
+    -moz-transform: translate3d(0px, 0, 0);
+    -ms-transform: translate3d(0px, 0, 0);
+    
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+  }
+
+  .main-nav li {
+    display: block;
+    min-height: 45px;
+      a {
+        font-size: 16px;
+        display: block;
+        margin-right: 20px;
+        // color: blue;
+        }
+  }
+
+  .mainLogo {
+    display: block;
+    float: none;
+    margin-bottom: 5px;
+        transition: transform 0.8s ease;
+    // visibility: hidden;
+  }
+
+  .mainNavClose {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: $colorMain;
+    border: none;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  body {
+      padding-top: 55px;
+    }
+
+  .col {
+    margin-bottom: 20px;
+  }
+  .col-half {
+    width: 100%;
+  }
+
+  .max60 {
+    max-width: 70%;
+  }
+
+.textParagraphs {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+// .row-2 {
+//     margin-top: 10px;
+//     color: blue;
+//   }
+
+  .navHeadingWhenClose .menuTextMenu {
+      display: block;
+      text-align: center;
+      h1 {
+        margin-right: 72px;
+      }
+    }
+
+  .navHeadingWhenClose .menuTextClose {
+    display: none;
+  }
+
+// for if I want there to be NO X on the nav when it's open
+  // .navHeadingWhenOpen .menuTextClose {
+  //     display: none;
+  //   }
+
+  .navHeadingWhenOpen .menuTextMenu {
+      // display: block;
+      // margin-left: 302px;
+      display: none;
+    }
+
+    // for if I want there to always be an X/burger menu on the nav when it's open
+  .navHeadingWhenOpen .menuTextClose {
+      // display: inline-block;
+      // text-align: center;
+      // padding-left: 8.8rem;
+      // padding-left: 160px;
+      // display: inline;
+      // margin-left: 300px;
+      // z-index: 50;
+      // transform: translateZ(5px);
+      // position: absolute;
+      // z-index: 500;
+      // transform: translate3d(0px, 0px, 500px);
+      // text-align: center;
+      .fa-bars {
+          position: absolute;
+          left: 226px;
+          top: -2px;
+      }
+    }
+    .menuTextClose:hover, .fa-bars:hover 
+    {
+      cursor: pointer;
+    }
+
+  .footer {
+    padding-left: 13px;
+    padding-right: 13px;
+  }  
+
+    .blockImages {
+    padding-top: 20px;
+  }
+
+  .myImage {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .myImage:hover {
+    width: 90%;
+    // display: none;
+  }
+
+  .image-responsive {
+    max-width: 80%;
+    // padding-top: 15px;
+    // margin-left: -89px;
+    // margin-right: -90px;
+    // margin-bottom: -13px;
+    padding-top: 15px;
+    margin-left: -37px;
+    margin-right: -43px;
+    margin-bottom: -15px;
+  }
+
+  .responsiveLeft {
+    float: left;
+  }
+
+  .responsiveRight {
+  float: right;
+  }
+
+  .responsiveNot {
+    margin: auto;
+    float: none;
+    max-width: 100%;
+  }
+
+  .textbox img {
+  width: 50%;
+  float: left;
+  padding-right: 25px;
+}
+
+
+  // h1 {color: purple;}
+
+} 
+/* PHONE LANDSCAPE END
+==================================== */
+
+/* PHONE PORTRAIT
+==================================== */
+@media screen
+and (max-width: $breakpointTinyMin) 
+{
+  h1 {
+      font-size: 32px;
+      // color: green;
+  }
+
+  .wrapper, .mainNavClose 
+  {
+    width: $breakpointTinyMin;
+  }
+
+  .navHeadingWhenClose 
+  {
+    .menuTextClose 
+    {
+      display: none;
+    }
+
+    .menuTextMenu 
+    {
+      display: block;
+    }
+  }
+
+  .navHeadingWhenOpen 
+  {
+    .menuTextMenu 
+    {
+      display: none;
+    }
+
+    .menuTextClose 
+    {
+      display: block;
+    }
+  }
+
+.textParagraphs, .textSentences {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+
+}
+/* PHONE PORTRAIT END
+==================================== */
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+Bugfixes
+
+Craft Images aren't affected by border radius mixin, only in inspect element does it work

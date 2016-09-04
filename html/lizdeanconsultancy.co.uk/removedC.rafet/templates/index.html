@@ -1,0 +1,63 @@
+{% set bodyClass = "" %}
+{% extends "_layout" %}
+{% set title = "Home" %}
+{% block content %}
+
+<!-- 	<h2>{{ entry.title }}</h2>
+	{{ entry.body }}
+	</br> -->
+<!-- 
+			<div class="dividerMargin"></div> -->
+
+	{% for block in entry.myBlock %}
+		{% if block.type == "twoTextColumns" %}
+
+			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
+				<h3> {{ block.myBlockLeftColumnHeading }}  </h3>
+				{{ block.myBlockLeftColumn }}
+			</div>
+			<div class="col col-half colpadding center {% if block.textRowNo %}  {{ block.textRowNo }} {% endif %}">
+				<h3> {{ block.myBlockRightColumnHeading }}  </h3>
+				{{ block.myBlockRightColumn }}
+			</div>			
+
+		{% endif %}
+
+
+			{% if block.type == "singleBlock" %}
+				<div class="col col-fullWidth">
+					<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+					{% set image = block.myBlockImage.first().getUrl %}
+					{% if image %}
+						<a href="{{ block.myBlockUrl }}"><img class="myImage" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}"></a>
+					{% endif %} 
+					<div class="textParagraphs textbox">
+						<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+						<h3> {{ block.myBlockTextboxHeading }} </h3>
+						{{ block.myBlockTextboxText }}
+					</div>
+				{% endif %}				
+			{% endfor %}
+
+
+		<div class="col">
+			{% for block in entry.myBlock %}		
+				{% if block.type == "multipleBlocks" %}
+					<div class="col-half blockImages {% if block.coloroption %}  {{ block.coloroption }} {% endif %} {% if block.rowNumber %}  {{ block.rowNumber }} {% endif %}">
+						<h2> <a href="{{ block.myBlockUrl }}">{{ block.myBlockHeading }}</a>  </h2>
+						{% set image = block.myBlockImage.first().getUrl %}
+						{% if image %}
+							<div class="imgContainer">
+								<a href="{{ block.myBlockUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+							</div>
+						{% endif %}
+						<div class="textSentences textbox max60">
+							<!-- 		    <a href="{{ block.myBlockUrl }}">Read More</a> -->
+							{{ block.myBlockTextboxText }}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+	{% endblock %}
