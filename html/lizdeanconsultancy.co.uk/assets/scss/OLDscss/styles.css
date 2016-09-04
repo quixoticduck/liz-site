@@ -174,17 +174,11 @@ footer {
 ==================================== */
 body {
   font: 100% "Open Sans", sans-serif;
-  background-color: #B4234D;
-  padding: 0px;
-  margin: 0px; }
+  background-color: #B4234D; }
 
 .wrapper {
-  background-color: #B4234D;
-  padding: 10px;
-  /*  max-width: 900px;*/
-  max-width: 1600px;
-  margin: 0 auto;
-  text-align: center; }
+  width: 100%;
+  background-color: #B4234D; }
 
 .container {
   width: 88%;
@@ -200,60 +194,43 @@ body {
   height: 14px; }
 
 .blockImages {
+  min-height: 350px;
+  float: left;
+  padding-top: 13px;
   text-align: center; }
 
-/*Component styles*/
-.Cards {
-  padding: 0;
-  margin: 0; }
-
-.Card-item {
-  list-style: none;
-  margin-bottom: 20px; }
-
-/*Grid styles*/
-.Grid {
-  overflow: hidden; }
-
-.Grid-item {
-  box-sizing: border-box;
-  margin: 1%;
+.col {
   float: left;
+  margin: auto;
+  margin-bottom: 20px; }
+  .col ul {
+    text-align: left;
+    margin-left: 40px; }
+  .col li {
+    text-shadow: 0px 1px #774444; }
+
+.colpadding {
+  padding-left: 21px;
+  padding-right: 13px;
+  box-sizing: border-box; }
+
+.col-quarter {
+  width: 22.5%; }
+
+.col-half {
+  width: 50%; }
+
+.col-third {
+  width: 33.333333333%; }
+
+.col-twoThirds {
+  width: 66.666666666%; }
+
+.col-threeQuarters {
+  width: 75%; }
+
+.col-fullWidth {
   width: 100%; }
-
-/*Media queries*/
-@media all and (min-width: 480px) {
-  /*Component styles*/
-  .Card-info {
-    min-height: 200px; }
-
-  /*Grid styles*/
-  .Grid-item {
-    width: 48%; } }
-@media all and (min-width: 592px) {
-  .Grid {
-    display: flex;
-    /*Flexbox container*/
-    flex-wrap: wrap; }
-
-  /*Global styles*/
-  /*Grid styles*/
-  .Grid-item {
-    width: auto; }
-
-  .Grid-whole {
-    width: 98%; }
-
-  .Grid-half {
-    width: 48%; }
-
-  .Grid-third {
-    width: 31.3%; }
-
-  .Grid-quarter {
-    width: 23%; } }
-.col li {
-  text-shadow: 0px 1px #774444; }
 
 .max60 {
   max-width: 60%; }
@@ -263,6 +240,7 @@ body {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   border-radius: 15px;
+  margin: auto;
   max-width: 34%;
   max-height: 34%;
   text-align: center;
@@ -270,8 +248,7 @@ body {
   display: block; }
 
 .myImageGroup {
-  max-height: 199px;
-  margin: auto; }
+  max-height: 199px; }
 
 .homepageBig {
   display: none; }
@@ -300,10 +277,6 @@ figure {
     color: #4795C4; }
   .textbox h1 {
     color: #B4234D; }
-  .textbox ul {
-    color: #B4234D; }
-  .textbox li {
-    text-shadow: none; }
 
 .textParagraphs, .textSentences {
   padding-left: 25px;
@@ -441,6 +414,15 @@ input#puppyField {
     line-height: 1.3rem;
     margin-left: 1rem; }
 
+  .col {
+    margin-bottom: 20px; }
+
+  .col-half {
+    width: 100%; }
+
+  .max60 {
+    max-width: 70%; }
+
   .textParagraphs {
     margin-bottom: 5px; }
 
@@ -469,9 +451,6 @@ input#puppyField {
 /* PHONE LANDSCAPE
 ==================================== */
 @media screen and (max-width: 969px) {
-  .Grid-half {
-    width: 98%; }
-
   nav {
     position: fixed;
     top: 0px;
