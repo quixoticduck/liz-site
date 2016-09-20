@@ -89,6 +89,7 @@ ol,
 ul {
   margin: 0;
   padding: 0;
+  padding-left: 40px;
   // list-style: none;
   color: $colorLight;
   font-weight: normal;
@@ -227,10 +228,7 @@ color: #f8f8f8;
 /* DESKTOP Header, Banner and Footer Layout
 ==================================== */
 
-// .navbar {
-//   max-height: 300px;
-//   background-color: $colorMainLight;
-// }
+
 
 nav {
   text-align: center;
@@ -287,10 +285,7 @@ nav li {
 .mainLogo
 // .mainLogo a 
 {
-  // margin-right: 20px;
-  // // padding-top: 10px;
-  // margin-top: -11px;
-  // margin-bottom: 0px;
+
   display: inline-block;
   float: left;
   margin: 0;
@@ -302,10 +297,7 @@ color: $colorLight;
 }
 
 .main-header {
-  // padding-top: 20px;
-  // padding-bottom: 5px;
-  // color: pink;
-  // background-color: orange;
+
 }
 
 footer {
@@ -317,15 +309,7 @@ footer {
   // display: inline-block;
   width: 100%;
   overflow: hidden;
-  // position: absolute;
-  // right: 0;
-  // bottom: 0;
-  // left: 0;
-  // position: absolute;
-  // left:0px;
 
-  // position: relative;
-  //   bottom:0px;
   height: auto;
     a {
       padding: 20px 0px;
@@ -364,14 +348,7 @@ text-align: center;
   min-height: 1000px;
 }
 
-// .backgroundPattern {
-//   width: 100%;
-//   // background-color: $colorMainLight;
-//   background-image: url("/assets/images/seamlessCrossesRed.png");
-//   // @include blur;
-//   // opacity: 0.4;
-//   // filter: alpha(opacity=40); /* For IE8 and earlier */
-// }
+
 
 .center {
   margin: auto;
@@ -394,14 +371,7 @@ $gutter: 20px;
 
 
 /*Component styles*/
-// .Photo {
-//   border-radius: 300px;
-//   max-width: 200px;
-//   margin: 10px auto 20px auto;
-//   display: block;
-//   -webkit-filter: grayscale(100%);
-//     filter: grayscale(100%);
-// }
+
 .Cards {
   padding: 0;
   margin: 0;
@@ -422,6 +392,7 @@ $gutter: 20px;
   margin: 1%;
   float: left;
   width: 100%;
+  margin-bottom: 20px;
 }
 .Grid-item:hover {
   // transform: scale(1.02);
@@ -442,6 +413,9 @@ $gutter: 20px;
   .Grid {
     display: flex;  /*Flexbox container*/
     flex-wrap: wrap;
+      li {
+    text-shadow: 0px 1px $colorTextShadow;
+  }
   }
   /*Global styles*/
   // h1 {
@@ -467,19 +441,19 @@ $gutter: 20px;
   }
 }
 
-.col {
-  // float: left;
-  // margin: auto;
-  // margin-bottom: 20px;
+// .col {
+//   // float: left;
+//   // margin: auto;
+//   // margin-bottom: 20px;
 
-  ul {
-    // text-align: left;
-    // margin-left: 40px;
-  }
-  li {
-    text-shadow: 0px 1px $colorTextShadow;
-  }
-}
+//   ul {
+//     // text-align: left;
+//     // margin-left: 40px;
+//   }
+//   li {
+//     text-shadow: 0px 1px $colorTextShadow;
+//   }
+// }
 
 
 // .colpadding {
@@ -527,12 +501,15 @@ $gutter: 20px;
   @include border-radius (15px); 
   // margin: auto;
 
-  max-width: 34%;
-
-  max-height: 34%;
+  // max-width: 34%;
+  // max-height: 34%;
   text-align: center;
   padding: 25px;
   display: block;
+}
+
+.myImage {
+  margin: auto;
 }
 
 .myImageGroup {
@@ -545,19 +522,18 @@ $gutter: 20px;
 }
 
 figure {
-    width:300px;
-    height:300px;
+    // width:350px;
+    // height:250px;
     @include border-radius (30px);
     overflow:hidden;
+
+    img {
+      // @include border-radius (6px);
+      margin-left: 30%;
+      margin-right: 30%;
+
+    }
 }
-
-// .cloudBox {
-//   background-image: url("/assets/images/cloud.png");
-//   margin: auto;
-//   padding: 12px 12px;
-// }
-
-
 
 .textbox { 
   @include border-radius (3px); 
@@ -964,12 +940,12 @@ nav {
       padding-top: 55px;
     }
 
-  .col {
-    margin-bottom: 20px;
-  }
-  .col-half {
-    width: 100%;
-  }
+  // .col {
+  //   margin-bottom: 20px;
+  // }
+  // .col-half {
+  //   width: 100%;
+  // }
 
   .max60 {
     max-width: 70%;
@@ -1045,6 +1021,7 @@ nav {
   .myImage {
     width: 50%;
     max-width: 50%;
+    margin: auto;
   }
 
   .myImage:hover {

@@ -5,10 +5,14 @@
 	{% for block in entry.myBlock %}
 
 		{% if block.type == "singleBlock" %}
-			<div class="col col-fullWidth">
+					<!-- <div class="col col-fullWidth"> -->
+
+		<ul class="Cards Grid">
+			<li class="Card-item Grid-item Grid-fullWidth">
 				{% if block.myBlockHeading %}
 					{% if block.myBlockHeading|length > 0 %}
 						<h2> {{ block.myBlockHeading }}  </h2>
+
 					{% endif %}
 				{% endif %}
 				
@@ -31,32 +35,56 @@
 						</div>
 					{% endif %}					
 				{% endif %}
-			</div>
+			<!-- </div> -->
+			</li></ul>
 		{% endif %}
 
+
+
+
+
+
+
+
+
 		{% if block.type == "twoTextColumns" %}
-			<div class="col col-half colpadding center ">
+		<ul class="Cards Grid">
+			<li class="Card-item Grid-item Grid-half">
+<!-- 			<div class="col col-half colpadding center "> -->
 <!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
 					<h3> {{ block.LeftColumnHeading }}  </h3>
 				{% endif %}
 			 -->
+			 <div class="textParagraphs">
 			<h3>{{ block.LeftColumnHeading }}</h3>
 			{{ block.LeftColumnText }}
-		</div>
-		<div class="col col-half colpadding center ">
+			</div>
+			</li>
+			
+	<!-- 	</div> -->
+				
+			<li class="Card-item Grid-item Grid-half">
+<!-- 		<div class="col col-half colpadding center "> -->
 <!-- 			
 				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
 					<h3> {{ block.RightColumnHeading }}  </h3>
 				{% endif %}
 			 -->
+			  <div class="textParagraphs">
 			<h3>{{ block.RightColumnHeading }}</h3>
 			{{ block.RightColumnText }}
-		</div>
+			</div>
+<!-- 		</div> -->
+					</li>
+			</ul>
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
-			<div class="col col-half blockImages">
+<!-- 			<div class="col col-half blockImages"> -->
+		<ul class="Cards Grid">
+							<li class="Card-item Grid-item Grid-half blockImages">
 				{% if block.leftColumnHeading|length > 0 %}
+
 					<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
 				{% endif %}
 				{% set image = block.leftColumnImage.first().getUrl %}
@@ -72,9 +100,13 @@
 						</div>
 					{% endif %}
 				{% endif %}
-			</div>
-			<div class="col col-half blockImages">
+			<!-- </div> -->
+			</li>
+
+
+<!-- 			<div class="col col-half blockImages"> -->
 				{% if block.rightColumnHeading|length > 0 %}
+							<li class="Card-item Grid-item Grid-half blockImages">
 					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
 				{% endif %}
 				{% set image = block.rightColumnImage.first().getUrl %}
@@ -90,21 +122,14 @@
 						</div>
 					{% endif %}
 				{% endif %}
-			</div>
+		<!-- 	</div> -->
+			</li>
+			</ul>
 		{% endif %}
 
 
-		{% if block.type.handle == "attachDocument" %}
-			{% if block.documentFile.first %}
-				
-					<a href="{{ block.documentFile.first.url }}">
-						<!-- Download -->
-					{{ block.documentInformation }}</a>
-				<div class="dividerMargin">
-				</div>
-			{% endif %}
-		{% endif %}
-
+		<ul class="Card-item Grid">
+			<li class="Card-item Grid-item Grid-whole blockImages">
 		{% if block.type.handle == "responsiveImage" %}
 			{% set image = block.responsiveImage.first().getUrl %}
 			{% if image %}
@@ -113,6 +138,6 @@
 				</div>
 			{% endif %}
 		{% endif %}
-
+</li></ul>
 	{% endfor %}
 {% endblock %}

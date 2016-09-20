@@ -24,6 +24,7 @@ ol,
 ul {
   margin: 0;
   padding: 0;
+  padding-left: 40px;
   color: white;
   font-weight: normal;
   list-style-type: square; }
@@ -219,7 +220,8 @@ body {
   box-sizing: border-box;
   margin: 1%;
   float: left;
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 20px; }
 
 /*Media queries*/
 @media all and (min-width: 480px) {
@@ -235,6 +237,8 @@ body {
     display: flex;
     /*Flexbox container*/
     flex-wrap: wrap; }
+    .Grid li {
+      text-shadow: 0px 1px #774444; }
 
   /*Global styles*/
   /*Grid styles*/
@@ -252,9 +256,6 @@ body {
 
   .Grid-quarter {
     width: 23%; } }
-.col li {
-  text-shadow: 0px 1px #774444; }
-
 .max60 {
   max-width: 60%; }
 
@@ -263,11 +264,12 @@ body {
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   border-radius: 15px;
-  max-width: 34%;
-  max-height: 34%;
   text-align: center;
   padding: 25px;
   display: block; }
+
+.myImage {
+  margin: auto; }
 
 .myImageGroup {
   max-height: 199px;
@@ -277,13 +279,14 @@ body {
   display: none; }
 
 figure {
-  width: 300px;
-  height: 300px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   border-radius: 30px;
   overflow: hidden; }
+  figure img {
+    margin-left: 30%;
+    margin-right: 30%; }
 
 .textbox {
   -webkit-border-radius: 3px;
@@ -560,12 +563,6 @@ input#puppyField {
   body {
     padding-top: 55px; }
 
-  .col {
-    margin-bottom: 20px; }
-
-  .col-half {
-    width: 100%; }
-
   .max60 {
     max-width: 70%; }
 
@@ -602,7 +599,8 @@ input#puppyField {
 
   .myImage {
     width: 50%;
-    max-width: 50%; }
+    max-width: 50%;
+    margin: auto; }
 
   .myImage:hover {
     width: 90%; }
