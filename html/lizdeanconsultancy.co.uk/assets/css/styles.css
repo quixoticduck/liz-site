@@ -342,9 +342,9 @@ figure {
   color: #B4234D; }
 
 .textbox img {
-  width: 45%;
-  display: block;
-  margin: 0 auto 15px auto; }
+  width: 50%;
+  float: left;
+  padding-right: 25px; }
 
 .contactForm {
   min-height: 100px;

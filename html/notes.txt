@@ -1,0 +1,34 @@
+22/07/16:
+
+use charlottes flexbox code to make own version and swap out for my old code
+
+Change contact email to Liz's email
+
+Send Liz the four logos I've created
+
+Text wrap for bigger screens by default
+Inserting images. Square?
+
+Can use font awesome facebook icon from within crm? Link to Facebook page. "LizDean ypc"
+And in the navbar
+
+On about page: when delete the contact details text the box stays there and possibly the red space box below it also
+
+(default Crm image) captions get overridden by my code
+
+And text wrap for images doesn't have border? E. G. For health page with pdf file link.
+
+Possible 3 blocks per row option?
+
+Combine paired block and double row text as right now there's now way to have non textbox text in a paired block? and non-textbox image in paired block
+
+Can an image link to a pdf file without having to upload the pdf file as a link?
+
+delete pdf insertion from fields and all templates
+
+update the critical craft update
+
+currently any uls without   ul {list-style: none; are showing as vertical lines due to grid: overflow hidden (was caused by not havign card-item in template
+new issue: gaps on health page that are caused by grid as weren't in original
+
+h2 headings are not left aligned
