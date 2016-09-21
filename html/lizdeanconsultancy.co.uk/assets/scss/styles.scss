@@ -521,6 +521,10 @@ $gutter: 20px;
   display:none;
 }
 
+// img {
+//   margin: auto;
+// }
+
 figure {
     // width:350px;
     // height:250px;
@@ -559,6 +563,9 @@ figure {
   li {
     text-shadow: none;
   }
+
+  // float: left;
+  // padding-bottom: 25px;
 }
 
 .textParagraphs, .textSentences {
@@ -612,11 +619,11 @@ figure {
 //   // padding-bottom: 10;
 // }
 
-  .textbox img {
-  width: 50%;
-  float: left;
-  padding-right: 25px;
-}
+//   .textbox img {
+//   width: 45%;
+//   float: left;
+//   padding-right: 25px;
+// }
 
 .contactForm {
   // background-color: pink;
@@ -1062,7 +1069,7 @@ nav {
   }
 
   .textbox img {
-  width: 50%;
+  width: 45%;
   float: left;
   padding-right: 25px;
 }

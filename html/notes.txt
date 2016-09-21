@@ -1,5 +1,8 @@
 22/07/16:
 
+DONE:
+Change contact email to Liz's email (is done on live website but it might be overwritten when I upload the new database)
+
 use charlottes flexbox code to make own version and swap out for my old code
 
 Change contact email to Liz's email

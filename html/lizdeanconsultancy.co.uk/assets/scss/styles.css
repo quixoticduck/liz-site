@@ -278,9 +278,6 @@ body {
 .homepageBig {
   display: none; }
 
-img {
-  margin: auto; }
-
 figure {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
