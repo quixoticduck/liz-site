@@ -39,34 +39,6 @@
 			</li></ul>
 		{% endif %}
 
-
-
-
-
-
-
-
-
-				{% if block.type == "twoTextColumns" %}
-			<div class="col col-half colpadding center ">
-<!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
-					<h3> {{ block.LeftColumnHeading }}  </h3>
-				{% endif %}
-			 -->
-			<h3>{{ block.LeftColumnHeading }}</h3>
-			{{ block.LeftColumnText }}
-		</div>
-		<div class="col col-half colpadding center ">
-<!-- 			
-				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
-					<h3> {{ block.RightColumnHeading }}  </h3>
-				{% endif %}
-			 -->
-			<h3>{{ block.RightColumnHeading }}</h3>
-			{{ block.RightColumnText }}
-		</div>
-		{% endif %}
-
 		{% if block.type == "pairedBlock" %}
 <!-- 			<div class="col col-half blockImages"> -->
 		<ul class="Cards Grid">

@@ -1,7 +1,7 @@
 {% extends "_layout" %}
 {% set title = "Health Promotion" %}
 {% block content %}
-		<div class="dividerMargin"></div>
+	<div class="dividerMargin"></div>
 	{% for block in entry.myBlock %}
 
 		{% if block.type == "singleBlock" %}
@@ -12,7 +12,6 @@
 				{% if block.myBlockHeading %}
 					{% if block.myBlockHeading|length > 0 %}
 						<h2> {{ block.myBlockHeading }}  </h2>
-
 					{% endif %}
 				{% endif %}
 				
@@ -39,46 +38,6 @@
 			</li></ul>
 		{% endif %}
 
-
-
-
-
-
-
-
-
-		{% if block.type == "twoTextColumns" %}
-		<ul class="Cards Grid">
-			<li class="Card-item Grid-item Grid-half">
-<!-- 			<div class="col col-half colpadding center "> -->
-<!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
-					<h3> {{ block.LeftColumnHeading }}  </h3>
-				{% endif %}
-			 -->
-			 <div class="textParagraphs">
-			<h3>{{ block.LeftColumnHeading }}</h3>
-			{{ block.LeftColumnText }}
-			</div>
-			</li>
-			
-	<!-- 	</div> -->
-				
-			<li class="Card-item Grid-item Grid-half">
-<!-- 		<div class="col col-half colpadding center "> -->
-<!-- 			
-				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
-					<h3> {{ block.RightColumnHeading }}  </h3>
-				{% endif %}
-			 -->
-			  <div class="textParagraphs">
-			<h3>{{ block.RightColumnHeading }}</h3>
-			{{ block.RightColumnText }}
-			</div>
-<!-- 		</div> -->
-					</li>
-			</ul>
-		{% endif %}
-
 		{% if block.type == "pairedBlock" %}
 <!-- 			<div class="col col-half blockImages"> -->
 		<ul class="Cards Grid">
@@ -96,6 +55,11 @@
 					{% if block.leftColumnTextboxText|length > 0 %}
 						<div class="textSentences textbox max60">
 							{{ block.leftColumnTextboxText }}
+						</div>
+					{% endif %}
+					{% if block.leftColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.leftColumnText }}
 						</div>
 					{% endif %}
 				{% endif %}
@@ -119,6 +83,11 @@
 							{{ block.rightColumnTextboxText }}
 						</div>
 					{% endif %}
+					{% if block.leftColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.rightColumnText }}
+						</div>
+					{% endif %}
 				{% endif %}
 		<!-- 	</div> -->
 			</li>
@@ -126,8 +95,17 @@
 		{% endif %}
 
 
-		<ul class=" Grid">
-			<li class=" Grid-item Grid-whole blockImages">
+		{% if block.type.handle == "attachDocument" %}
+			{% if block.documentFile.first %}
+				
+					<a href="{{ block.documentFile.first.url }}">
+						<!-- Download -->
+					{{ block.documentInformation }}</a>
+				<div class="dividerMargin">
+				</div>
+			{% endif %}
+		{% endif %}
+
 		{% if block.type.handle == "responsiveImage" %}
 			{% set image = block.responsiveImage.first().getUrl %}
 			{% if image %}
@@ -136,6 +114,6 @@
 				</div>
 			{% endif %}
 		{% endif %}
-</li></ul>
+
 	{% endfor %}
 {% endblock %}

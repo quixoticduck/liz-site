@@ -12,7 +12,6 @@
 				{% if block.myBlockHeading %}
 					{% if block.myBlockHeading|length > 0 %}
 						<h2> {{ block.myBlockHeading }}  </h2>
-
 					{% endif %}
 				{% endif %}
 				
@@ -47,47 +46,24 @@
 
 
 
-		{% if block.type == "twoTextColumns" %}
-		<ul class="Cards Grid">
-			<li class="Card-item Grid-item Grid-half">
-<!-- 			<div class="col col-half colpadding center "> -->
+				{% if block.type == "twoTextColumns" %}
+			<div class="col col-half colpadding center ">
 <!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
 					<h3> {{ block.LeftColumnHeading }}  </h3>
 				{% endif %}
 			 -->
-			 <div class="textParagraphs">
 			<h3>{{ block.LeftColumnHeading }}</h3>
 			{{ block.LeftColumnText }}
-											{% if block.leftColumnText|length > 0 %}
-						<div class="textParagraphs">
-							{{ block.leftColumnText }}
-						</div>
-					{% endif %}	
-			</div>
-			</li>
-			
-	<!-- 	</div> -->
-				
-			<li class="Card-item Grid-item Grid-half">
-<!-- 		<div class="col col-half colpadding center "> -->
+		</div>
+		<div class="col col-half colpadding center ">
 <!-- 			
 				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
 					<h3> {{ block.RightColumnHeading }}  </h3>
 				{% endif %}
 			 -->
-			  <div class="textParagraphs">
 			<h3>{{ block.RightColumnHeading }}</h3>
 			{{ block.RightColumnText }}
-			{{ block.rightColumnTextboxText }}
-											{% if block.rightColumnText|length > 0 %}
-						<div class="textParagraphs">
-							{{ block.rightColumnText }}
-						</div>
-					{% endif %}	
-			</div>
-<!-- 		</div> -->
-					</li>
-			</ul>
+		</div>
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
@@ -110,7 +86,7 @@
 						</div>
 					{% endif %}
 					{% if block.leftColumnText|length > 0 %}
-						<div class="textSentences max60">
+						<div class="textParagraphs">
 							{{ block.leftColumnText }}
 						</div>
 					{% endif %}
@@ -136,8 +112,8 @@
 						</div>
 					{% endif %}
 					{% if block.leftColumnText|length > 0 %}
-						<div class="textSentences max60">
-							{{ block.leftColumnText }}
+						<div class="textParagraphs">
+							{{ block.rightColumnText }}
 						</div>
 					{% endif %}
 				{% endif %}

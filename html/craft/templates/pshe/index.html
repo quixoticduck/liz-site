@@ -5,7 +5,10 @@
 	{% for block in entry.myBlock %}
 
 		{% if block.type == "singleBlock" %}
-			<div class="col col-fullWidth">
+					<!-- <div class="col col-fullWidth"> -->
+
+		<ul class="Cards Grid">
+			<li class="Card-item Grid-item Grid-fullWidth">
 				{% if block.myBlockHeading %}
 					{% if block.myBlockHeading|length > 0 %}
 						<h2> {{ block.myBlockHeading }}  </h2>
@@ -31,31 +34,14 @@
 						</div>
 					{% endif %}					
 				{% endif %}
-			</div>
-		{% endif %}
-
-		{% if block.type == "twoTextColumns" %}
-			<div class="col col-half colpadding center ">
-<!-- 							{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
-					<h3> {{ block.LeftColumnHeading }}  </h3>
-				{% endif %}
-			 -->
-			<h3>{{ block.LeftColumnHeading }}</h3>
-			{{ block.LeftColumnText }}
-		</div>
-		<div class="col col-half colpadding center ">
-<!-- 			
-				{% if ( block.LeftColumnHeading|length > 0 ) or ( block.RightColumnHeading|length > 0 ) %}
-					<h3> {{ block.RightColumnHeading }}  </h3>
-				{% endif %}
-			 -->
-			<h3>{{ block.RightColumnHeading }}</h3>
-			{{ block.RightColumnText }}
-		</div>
+			<!-- </div> -->
+			</li></ul>
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
-			<div class="col col-half blockImages">
+<!-- 			<div class="col col-half blockImages"> -->
+		<ul class="Cards Grid">
+			<li class="Card-item Grid-item Grid-half blockImages">
 				{% if block.leftColumnHeading|length > 0 %}
 					<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
 				{% endif %}
@@ -71,9 +57,17 @@
 							{{ block.leftColumnTextboxText }}
 						</div>
 					{% endif %}
+					{% if block.leftColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.leftColumnText }}
+						</div>
+					{% endif %}
 				{% endif %}
-			</div>
-			<div class="col col-half blockImages">
+			<!-- </div> -->
+			</li>
+
+			<li class="Card-item Grid-item Grid-half blockImages">
+<!-- 			<div class="col col-half blockImages"> -->
 				{% if block.rightColumnHeading|length > 0 %}
 					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
 				{% endif %}
@@ -89,8 +83,15 @@
 							{{ block.rightColumnTextboxText }}
 						</div>
 					{% endif %}
+					{% if block.leftColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.rightColumnText }}
+						</div>
+					{% endif %}
 				{% endif %}
-			</div>
+		<!-- 	</div> -->
+			</li>
+			</ul>
 		{% endif %}
 
 
