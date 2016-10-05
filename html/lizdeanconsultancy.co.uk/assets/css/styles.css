@@ -278,9 +278,6 @@ body {
 .homepageBig {
   display: none; }
 
-img {
-  margin: auto; }
-
 figure {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -310,6 +307,15 @@ figure {
     color: #B4234D; }
   .textbox li {
     text-shadow: none; }
+
+.textbox {
+  overflow: hidden;
+  padding-bottom: 25px; }
+
+.textbox img {
+  width: 37%;
+  float: left;
+  padding-right: 25px; }
 
 .textParagraphs, .textSentences {
   padding-left: 25px;
@@ -624,7 +630,8 @@ input#puppyField {
   .textbox img {
     width: 45%;
     float: left;
-    padding-right: 25px; } }
+    padding-right: 25px;
+    padding-bottom: 1px; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT
