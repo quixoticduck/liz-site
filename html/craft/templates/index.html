@@ -5,14 +5,11 @@
 	{% for block in entry.myBlock %}
 
 		{% if block.type == "singleBlock" %}
-					<!-- <div class="col col-fullWidth"> -->
-
-		<ul class="Cards Grid">
+				<ul class="Cards Grid">
 			<li class="Card-item Grid-item Grid-fullWidth">
 				{% if block.myBlockHeading %}
 					{% if block.myBlockHeading|length > 0 %}
 						<h2> {{ block.myBlockHeading }}  </h2>
-
 					{% endif %}
 				{% endif %}
 				
@@ -24,7 +21,6 @@
 					{% if block.myBlockTextboxText|length > 0 %}
 						<div class="textParagraphs textbox">
 							{{ block.myBlockTextboxText }}
-							<!-- {{ block.myBlockTextboxText|length }} -->
 						</div>
 					{% endif %}					
 				{% endif %}
@@ -35,12 +31,10 @@
 						</div>
 					{% endif %}					
 				{% endif %}
-			<!-- </div> -->
 			</li></ul>
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
-<!-- 			<div class="col col-half blockImages"> -->
 		<ul class="Cards Grid">
 			<li class="Card-item Grid-item Grid-half blockImages">
 				{% if block.leftColumnHeading|length > 0 %}
@@ -64,11 +58,9 @@
 						</div>
 					{% endif %}
 				{% endif %}
-			<!-- </div> -->
 			</li>
 
 			<li class="Card-item Grid-item Grid-half blockImages">
-<!-- 			<div class="col col-half blockImages"> -->
 				{% if block.rightColumnHeading|length > 0 %}
 					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
 				{% endif %}
@@ -90,7 +82,6 @@
 						</div>
 					{% endif %}
 				{% endif %}
-		<!-- 	</div> -->
 			</li>
 			</ul>
 		{% endif %}
