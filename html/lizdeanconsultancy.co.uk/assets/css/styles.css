@@ -379,6 +379,9 @@ input#puppyField {
 .mainNavClose {
   display: none; }
 
+.facebook-word {
+  display: none; }
+
 /* CRAFT CMS PHP CLASSES
 ==================================== */
 .textRow1, .textRow2 {
@@ -631,7 +634,10 @@ input#puppyField {
     width: 45%;
     float: left;
     padding-right: 25px;
-    padding-bottom: 1px; } }
+    padding-bottom: 1px; }
+
+  .facebook-word {
+    display: inline; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT
@@ -655,7 +661,10 @@ input#puppyField {
 
   .textParagraphs, .textSentences {
     padding-left: 30px;
-    padding-right: 30px; } }
+    padding-right: 30px; }
+
+  .facebook-word {
+    display: inline; } }
 /* PHONE PORTRAIT END
 ==================================== */
 

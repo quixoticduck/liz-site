@@ -669,7 +669,9 @@ input#puppyField { display: none; }
   display: none;
 }
 
-
+  .facebook-word {
+    display: none;
+  }
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */
@@ -1082,7 +1084,9 @@ nav {
   padding-bottom: 1px;
 }
 
-
+  .facebook-word {
+    display: inline;
+  }
   // h1 {color: purple;}
 
 } 
@@ -1135,7 +1139,9 @@ and (max-width: $breakpointTinyMin)
     padding-right: 30px;
   }
 
-
+  .facebook-word {
+    display: inline;
+  }
 }
 /* PHONE PORTRAIT END
 ==================================== */
