@@ -25,8 +25,8 @@ $.extend(Craft,
 		'257':'aa', '269':'ch', '275':'ee', '291':'gj', '299':'ii', '311':'kj', '316':'lj', '326':'nj', '353':'sh', '363':'uu',
 		'382':'zh', '256':'aa', '268':'ch', '274':'ee', '290':'gj', '298':'ii', '310':'kj', '315':'lj', '325':'nj', '337':'o',
 		'352':'sh', '362':'uu', '369':'u',  '381':'zh', '260':'A',  '261':'a',  '262':'C',  '263':'c',  '280':'E',  '281':'e',
-		'321':'L',  '322':'l',  '323':'N',  '324':'n',  '211':'O',  '346':'S',  '347':'s',  '379':'Z',  '380':'z',  '377':'Z',
-		'388':'z'
+		'321':'L',  '322':'l',  '323':'N',  '324':'n',  '211':'O',  '346':'S',  '347':'s',  '377':'Z',  '378':'z',  '379':'Z',
+		'380':'z',  '388':'z',
 	},
 
 	/**
@@ -592,7 +592,7 @@ $.extend(Craft,
 			// If they're actual objects (not arrays), compare the keys
 			if (!(obj1 instanceof Array))
 			{
-				if (!Craft.compare(Craft.getObjectKeys(obj1), Craft.getObjectKeys(obj2)))
+				if (!Craft.compare(Craft.getObjectKeys(obj1).sort(), Craft.getObjectKeys(obj2).sort()))
 				{
 					return false;
 				}
@@ -628,6 +628,10 @@ $.extend(Craft,
 
 		for (var key in obj)
 		{
+			if (!obj.hasOwnProperty(key)) {
+				continue;
+			}
+
 			keys.push(key);
 		}
 
@@ -1206,12 +1210,13 @@ $.extend(Craft,
 	 * Shows an element editor HUD.
 	 *
 	 * @param object $element
+	 * @param object settings
 	 */
-	showElementEditor: function($element)
+	showElementEditor: function($element, settings)
 	{
 		if (Garnish.hasAttr($element, 'data-editable') && !$element.hasClass('disabled') && !$element.hasClass('loading'))
 		{
-			new Craft.ElementEditor($element);
+			return new Craft.ElementEditor($element, settings);
 		}
 	}
 });
@@ -2205,11 +2210,13 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 				{
 					this.$selectAllCheckbox.removeClass('indeterminate');
 					this.$selectAllCheckbox.addClass('checked');
+					this.$selectAllBtn.attr('aria-checked', 'true');
 				}
 				else
 				{
 					this.$selectAllCheckbox.addClass('indeterminate');
 					this.$selectAllCheckbox.removeClass('checked');
+					this.$selectAllBtn.attr('aria-checked', 'mixed');
 				}
 
 				this.showActionTriggers();
@@ -2217,6 +2224,7 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 			else
 			{
 				this.$selectAllCheckbox.removeClass('indeterminate checked');
+				this.$selectAllBtn.attr('aria-checked', 'false');
 				this.hideActionTriggers();
 			}
 		}
@@ -3018,8 +3026,14 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 			{
 				// Create the select all button
 				this.$selectAllContainer = $('<td class="selectallcontainer thin"/>');
-				this.$selectAllBtn = $('<div class="btn"/>').appendTo(this.$selectAllContainer);
+				this.$selectAllBtn = $('<div class="btn" />').appendTo(this.$selectAllContainer);
 				this.$selectAllCheckbox = $('<div class="checkbox"/>').appendTo(this.$selectAllBtn);
+
+				this.$selectAllBtn.attr({
+					'role': 'checkbox',
+					'tabindex': '0',
+					'aria-checked': 'false',
+				});
 
 				this.addListener(this.$selectAllBtn, 'click', function()
 				{
@@ -3032,11 +3046,23 @@ Craft.BaseElementIndex = Garnish.Base.extend(
 						this.view.deselectAllElements();
 					}
 				});
+
+				this.addListener(this.$selectAllBtn, 'keydown', function(ev)
+				{
+					if(ev.keyCode == Garnish.SPACE_KEY)
+					{
+						ev.preventDefault();
+
+						$(ev.currentTarget).trigger('click');
+					}
+				});
 			}
 			else
 			{
 				// Reset the select all button
 				this.$selectAllCheckbox.removeClass('indeterminate checked');
+
+				this.$selectAllBtn.attr('aria-checked', 'false');
 			}
 
 			// Place the select all button at the beginning of the toolbar
@@ -3284,7 +3310,7 @@ Craft.BaseElementIndexView = Garnish.Base.extend(
 		// Enable inline element editing if this is an index page
 		if (this.settings.context == 'index')
 		{
-			this.addListener(this.$elementContainer, 'dblclick', function(ev)
+			this._handleElementEditing = $.proxy(function(ev)
 			{
 				var $target = $(ev.target);
 
@@ -3312,7 +3338,14 @@ Craft.BaseElementIndexView = Garnish.Base.extend(
 				{
 					this.createElementEditor($element);
 				}
-			});
+			}, this);
+
+			this.addListener(this.$elementContainer, 'dblclick', this._handleElementEditing);
+
+			if($.isTouchCapable())
+			{
+				this.addListener(this.$elementContainer, 'taphold', this._handleElementEditing);
+			}
 		}
 
 		// Give sub-classes a chance to do post-initialization stuff here
@@ -3637,6 +3670,7 @@ Craft.BaseElementSelectInput = Garnish.Base.extend(
 	elementSelect: null,
 	elementSort: null,
 	modal: null,
+	elementEditor: null,
 
 	$container: null,
 	$elementsContainer: null,
@@ -3862,10 +3896,16 @@ Craft.BaseElementSelectInput = Garnish.Base.extend(
 
 		if (this.settings.editable)
 		{
-			this.addListener($elements, 'dblclick', function(ev)
+			this._handleShowElementEditor = $.proxy(function(ev) {
+				this.elementEditor = Craft.showElementEditor($(ev.currentTarget), this.settings.editorSettings);
+			}, this);
+
+			this.addListener($elements, 'dblclick', this._handleShowElementEditor);
+
+			if($.isTouchCapable())
 			{
-				Craft.showElementEditor($(ev.currentTarget));
-			});
+				this.addListener($elements, 'taphold', this._handleShowElementEditor);
+			}
 		}
 
 		$elements.find('.delete').on('click', $.proxy(function(ev)
@@ -3969,6 +4009,7 @@ Craft.BaseElementSelectInput = Garnish.Base.extend(
 			sources:            this.settings.sources,
 			criteria:           this.settings.criteria,
 			multiSelect:        (this.settings.limit != 1),
+			showLocaleMenu:     this.settings.showLocaleMenu,
 			disabledElementIds: this.getDisabledElementIds(),
 			onSelect:           $.proxy(this, 'onModalSelect')
 		}, this.settings.modalSettings);
@@ -4121,13 +4162,15 @@ Craft.BaseElementSelectInput = Garnish.Base.extend(
 		sourceElementId: null,
 		viewMode: 'list',
 		limit: null,
+		showLocaleMenu: false,
 		modalStorageKey: null,
 		modalSettings: {},
 		onSelectElements: $.noop,
 		onRemoveElements: $.noop,
 		sortable: true,
 		selectable: true,
-		editable: true
+		editable: true,
+		editorSettings: {}
 	}
 });
 
@@ -4333,6 +4376,10 @@ Craft.BaseElementSelectorModal = Garnish.Modal.extend(
 			sources:     this.settings.sources
 		};
 
+		if (this.settings.showLocaleMenu !== null && this.settings.showLocaleMenu != 'auto') {
+			data.showLocaleMenu = this.settings.showLocaleMenu ? '1' : '0';
+		}
+
 		Craft.postActionRequest('elements/getModalBody', data, $.proxy(function(response, textStatus)
 		{
 			if (textStatus == 'success')
@@ -4356,8 +4403,8 @@ Craft.BaseElementSelectorModal = Garnish.Modal.extend(
 					onSelectionChange:  $.proxy(this, 'onSelectionChange')
 				});
 
-				// Double-clicking should select the elements
-				this.addListener(this.elementIndex.$elements, 'dblclick', 'selectElements');
+				// Double-clicking or double-tapping should select the elements
+				this.addListener(this.elementIndex.$elements, 'doubletap', 'selectElements');
 			}
 
 		}, this));
@@ -4370,6 +4417,7 @@ Craft.BaseElementSelectorModal = Garnish.Modal.extend(
 		sources: null,
 		criteria: null,
 		multiSelect: false,
+		showLocaleMenu: null,
 		disabledElementIds: [],
 		disableElementsOnSelect: false,
 		hideOnSelect: true,
@@ -6242,17 +6290,24 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 	uploader: null,
 	progressBar: null,
 
-	init: function()
-	{
-		this.base.apply(this, arguments);
+	originalFilename: '',
+	originalExtension: '',
+
+	init: function (settings) {
+		settings.editorSettings = {
+			onShowHud: $.proxy(this.resetOriginalFilename, this),
+			onCreateForm: $.proxy(this._renameHelper, this),
+			validators: [$.proxy(this.validateElementForm, this)]
+		};
+
+		this.base(settings);
 		this._attachUploader();
 	},
 
 	/**
 	 * Attach the uploader with drag event handler
 	 */
-	_attachUploader: function()
-	{
+	_attachUploader: function () {
 		this.progressBar = new Craft.ProgressBar($('<div class="progress-shade"></div>').appendTo(this.$container));
 
 		var options = {
@@ -6265,14 +6320,12 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 		};
 
 		// If CSRF protection isn't enabled, these won't be defined.
-		if (typeof Craft.csrfTokenName !== 'undefined' && typeof Craft.csrfTokenValue !== 'undefined')
-		{
+		if (typeof Craft.csrfTokenName !== 'undefined' && typeof Craft.csrfTokenValue !== 'undefined') {
 			// Add the CSRF token
 			options.formData[Craft.csrfTokenName] = Craft.csrfTokenValue;
 		}
 
-		if (typeof this.settings.criteria.kind != "undefined")
-		{
+		if (typeof this.settings.criteria.kind != "undefined") {
 			options.allowedKinds = this.settings.criteria.kind;
 		}
 
@@ -6289,11 +6342,9 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 	/**
 	 * Add the freshly uploaded file to the input field.
 	 */
-	selectUploadedFile: function(element)
-	{
+	selectUploadedFile: function (element) {
 		// Check if we're able to add new elements
-		if (!this.canAddMoreElements())
-		{
+		if (!this.canAddMoreElements()) {
 			return;
 		}
 
@@ -6301,17 +6352,17 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 
 		// Make a couple tweaks
 		$newElement.addClass('removable');
-		$newElement.prepend('<input type="hidden" name="'+this.settings.name+'[]" value="'+element.id+'">' +
-			'<a class="delete icon" title="'+Craft.t('Remove')+'"></a>');
+		$newElement.prepend('<input type="hidden" name="' + this.settings.name + '[]" value="' + element.id + '">' +
+			'<a class="delete icon" title="' + Craft.t('Remove') + '"></a>');
 
 		$newElement.appendTo(this.$elementsContainer);
 
-		var margin = -($newElement.outerWidth()+10);
+		var margin = -($newElement.outerWidth() + 10);
 
-		this.$addElementBtn.css('margin-'+Craft.left, margin+'px');
+		this.$addElementBtn.css('margin-' + Craft.left, margin + 'px');
 
 		var animateCss = {};
-		animateCss['margin-'+Craft.left] = 0;
+		animateCss['margin-' + Craft.left] = 0;
 		this.$addElementBtn.velocity(animateCss, 'fast');
 
 		this.addElements($newElement);
@@ -6322,8 +6373,7 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 	/**
 	 * On upload start.
 	 */
-	_onUploadStart: function(event)
-	{
+	_onUploadStart: function (event) {
 		this.progressBar.$progressBar.css({
 			top: Math.round(this.$container.outerHeight() / 2) - 6
 		});
@@ -6336,8 +6386,7 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 	/**
 	 * On upload progress.
 	 */
-	_onUploadProgress: function(event, data)
-	{
+	_onUploadProgress: function (event, data) {
 		var progress = parseInt(data.loaded / data.total * 100, 10);
 		this.progressBar.setProgressPercentage(progress);
 	},
@@ -6345,22 +6394,18 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 	/**
 	 * On a file being uploaded.
 	 */
-	_onUploadComplete: function(event, data)
-	{
-		if (data.result.error)
-		{
+	_onUploadComplete: function (event, data) {
+		if (data.result.error) {
 			alert(data.result.error);
 		}
-		else
-		{
+		else {
 			var html = $(data.result.html);
 			Craft.appendHeadHtml(data.result.headHtml);
 			this.selectUploadedFile(Craft.getElementInfo(html));
 		}
 
 		// Last file
-		if (this.uploader.isLastUpload())
-		{
+		if (this.uploader.isLastUpload()) {
 			this.progressBar.hideProgressBar();
 			this.$container.removeClass('uploading');
 		}
@@ -6369,9 +6414,90 @@ Craft.AssetSelectInput = Craft.BaseElementSelectInput.extend(
 	/**
 	 * We have to take into account files about to be added as well
 	 */
-	canAddMoreFiles: function (slotsTaken)
-	{
-		return (!this.settings.limit || this.$elements.length  + slotsTaken < this.settings.limit);
+	canAddMoreFiles: function (slotsTaken) {
+		return (!this.settings.limit || this.$elements.length + slotsTaken < this.settings.limit);
+	},
+
+	/**
+	 * Parse the passed filename into the base filename and extension.
+	 *
+	 * @param filename
+	 * @returns {{extension: string, baseFileName: string}}
+	 */
+	_parseFilename: function (filename) {
+		var parts = filename.split('.'),
+			extension = '';
+
+		if (parts.length > 1) {
+			extension = parts.pop();
+		}
+		var baseFileName = parts.join('.');
+		return {extension: extension, baseFileName: baseFileName};
+	},
+
+	/**
+	 * A helper function or the filename field.
+	 * @private
+	 */
+	_renameHelper: function ($form) {
+		$('.renameHelper', $form).on('focus', $.proxy(function (e) {
+			input = e.currentTarget;
+			var filename = this._parseFilename(input.value);
+
+			if (this.originalFilename == "" && this.originalExtension == "") {
+				this.originalFilename = filename.baseFileName;
+				this.originalExtension = filename.extension;
+			}
+
+			var startPos = 0,
+				endPos = filename.baseFileName.length;
+
+			if (typeof input.selectionStart != "undefined") {
+				input.selectionStart = startPos;
+				input.selectionEnd = endPos;
+			} else if (document.selection && document.selection.createRange) {
+				// IE branch
+				input.select();
+				var range = document.selection.createRange();
+				range.collapse(true);
+				range.moveEnd("character", endPos);
+				range.moveStart("character", startPos);
+				range.select();
+			}
+
+		}, this));
+	},
+
+	resetOriginalFilename: function () {
+		this.originalFilename = "";
+		this.originalExtension = "";
+	},
+
+	validateElementForm: function () {
+		var $filenameField = $('.renameHelper', this.elementEditor.hud.$hud.data('elementEditor').$form);
+		var filename = this._parseFilename($filenameField.val());
+
+		if (filename.extension != this.originalExtension) {
+			// Blank extension
+			if (filename.extension == "") {
+				// If filename changed as well, assume removal of extension a mistake
+				if (this.originalFilename != filename.baseFileName) {
+					$filenameField.val(filename.baseFileName + '.' + this.originalExtension);
+					return true;
+				} else {
+					// If filename hasn't changed, make sure they want to remove extension
+					return confirm(Craft.t("Are you sure you want to remove the extension “.{ext}”?", {ext: this.originalExtension}));
+				}
+			} else {
+				// If the extension has changed, make sure it s intentional
+				return confirm(Craft.t("Are you sure you want to change the extension from “.{oldExt}” to “.{newExt}”?",
+					{
+						oldExt: this.originalExtension,
+						newExt: filename.extension
+					}));
+			}
+		}
+		return true;
 	}
 });
 
@@ -6434,10 +6560,11 @@ Craft.AssetSelectorModal = Craft.BaseElementSelectorModal.extend(
 		{
 			allowTransforms = true;
 
-				for (var i = 0; i < $selectedElements.length; i++)
+			for (var i = 0; i < $selectedElements.length; i++)
 			{
 				if (!$('.element.hasthumb:first', $selectedElements[i]).length)
 				{
+					allowTransforms = false;
 					break;
 				}
 			}
@@ -9461,7 +9588,7 @@ Craft.EditableTable = Garnish.Base.extend(
 	addRow: function()
 	{
 		var rowId = this.settings.rowIdPrefix+(this.biggestId+1),
-			rowHtml = Craft.EditableTable.getRowHtml(rowId, this.columns, this.baseName, {}),
+			rowHtml = this.getRowHtml(rowId, this.columns, this.baseName, {}),
 			$tr = $(rowHtml).appendTo(this.$tbody);
 
 		new Craft.EditableTable.Row(this, $tr);
@@ -9472,6 +9599,11 @@ Craft.EditableTable = Garnish.Base.extend(
 
 		// onAddRow callback
 		this.settings.onAddRow($tr);
+	},
+
+	getRowHtml: function(rowId, columns, baseName, values)
+	{
+		return Craft.EditableTable.getRowHtml(rowId, columns, baseName, values);
 	}
 },
 {
@@ -9991,7 +10123,7 @@ Craft.ElementEditor = Garnish.Base.extend(
 
 			if (response.locales)
 			{
-				var $header = $('<div class="header"/>'),
+				var $header = $('<div class="hud-header"/>'),
 					$localeSelectContainer = $('<div class="select"/>').appendTo($header);
 
 				this.$localeSelect = $('<select/>').appendTo($localeSelectContainer);
@@ -10013,7 +10145,9 @@ Craft.ElementEditor = Garnish.Base.extend(
 
 			this.updateForm(response);
 
-			var $footer = $('<div class="footer"/>').appendTo(this.$form),
+			this.onCreateForm(this.$form);
+
+			var $footer = $('<div class="hud-footer"/>').appendTo(this.$form),
 				$buttonsContainer = $('<div class="buttons right"/>').appendTo($footer);
 			this.$cancelBtn = $('<div class="btn">'+Craft.t('Cancel')+'</div>').appendTo($buttonsContainer);
 			this.$saveBtn = $('<input class="btn submit" type="submit" value="'+Craft.t('Save')+'"/>').appendTo($buttonsContainer);
@@ -10114,6 +10248,19 @@ Craft.ElementEditor = Garnish.Base.extend(
 
 	saveElement: function()
 	{
+		var validators = this.settings.validators;
+
+		if ($.isArray(validators))
+		{
+			for (var i = 0; i < validators.length; i++)
+			{
+				if ($.isFunction(validators[i]) && !validators[i].call())
+				{
+					return false;
+				}
+			}
+		}
+
 		this.$spinner.removeClass('hidden');
 
 		var data = $.param(this.getBaseData())+'&'+this.hud.$body.serialize();
@@ -10210,6 +10357,11 @@ Craft.ElementEditor = Garnish.Base.extend(
 			response: response
 		});
 	},
+
+	onCreateForm: function ($form)
+	{
+		this.settings.onCreateForm($form);
+	}
 },
 {
 	defaults: {
@@ -10225,9 +10377,278 @@ Craft.ElementEditor = Garnish.Base.extend(
 		onHideHud: $.noop,
 		onBeginLoading: $.noop,
 		onEndLoading: $.noop,
-		onSaveElement: $.noop
+		onCreateForm: $.noop,
+		onSaveElement: $.noop,
+
+		validators: []
 	}
 });
+
+
+/**
+ * Elevated Session Form
+ */
+Craft.ElevatedSessionForm = Garnish.Base.extend(
+{
+	$form: null,
+	inputs: null,
+
+	init: function(form, inputs)
+	{
+		this.$form = $(form);
+
+		// Only check specific inputs?
+		if (typeof inputs !== typeof undefined)
+		{
+			this.inputs = [];
+			var inputs = $.makeArray(inputs);
+
+			for (var i = 0; i < inputs.length; i++)
+			{
+				var $inputs = $(inputs[i]);
+
+				for (var j = 0; j < $inputs.length; j++)
+				{
+					var $input = $inputs.eq(j);
+
+					this.inputs.push({
+						input: $input,
+						val: Garnish.getInputPostVal($input)
+					});
+				}
+			}
+		}
+
+		this.addListener(this.$form, 'submit', 'handleFormSubmit');
+	},
+
+	handleFormSubmit: function(ev)
+	{
+		// Ignore if we're in the middle of getting the elevated session timeout
+		if (Craft.elevatedSessionManager.fetchingTimeout)
+		{
+			ev.preventDefault();
+			return;
+		}
+
+		// Are we only interested in certain inputs?
+		if (this.inputs)
+		{
+			var inputsChanged = false;
+
+			for (var i = 0; i < this.inputs.length; i++)
+			{
+				// Has this input's value changed?
+				if (Garnish.getInputPostVal(this.inputs[i].input) != this.inputs[i].val)
+				{
+					inputsChanged = true;
+					break;
+				}
+			}
+
+			if (!inputsChanged)
+			{
+				// No need to interrupt the submit
+				return;
+			}
+		}
+
+		// Prevent the form from submitting until the user has an elevated session
+		ev.preventDefault();
+		Craft.elevatedSessionManager.requireElevatedSession($.proxy(this, 'submitForm'));
+	},
+
+	submitForm: function()
+	{
+		// Don't let handleFormSubmit() interrupt this time
+		this.disable();
+		this.$form.submit();
+		this.enable();
+	}
+});
+
+
+/**
+ * Elevated Session Manager
+ */
+Craft.ElevatedSessionManager = Garnish.Base.extend(
+{
+	fetchingTimeout: false,
+
+	passwordModal: null,
+	$passwordInput: null,
+	$passwordSpinner: null,
+	$submitBtn: null,
+	$errorPara: null,
+
+	callback: null,
+
+	/**
+	 * Requires that the user has an elevated session.
+	 *
+	 * @param function callback The callback function that should be called once the user has an elevated session
+	 */
+	requireElevatedSession: function(callback)
+	{
+		this.callback = callback;
+
+		// Check the time remaining on the user's elevated session (if any)
+		this.fetchingTimeout = true;
+
+		Craft.postActionRequest('users/getElevatedSessionTimeout', $.proxy(function(response, textStatus)
+		{
+			this.fetchingTimeout = false;
+
+			if (textStatus == 'success')
+			{
+				// Is there still enough time left or has it been disabled?
+				if (response.timeout === false || response.timeout >= Craft.ElevatedSessionManager.minSafeElevatedSessionTimeout)
+				{
+					this.callback();
+				}
+				else
+				{
+					// Show the password modal
+					this.showPasswordModal();
+				}
+			}
+		}, this));
+	},
+
+	showPasswordModal: function()
+	{
+		if (!this.passwordModal)
+		{
+			var $passwordModal = $('<form id="elevatedsessionmodal" class="modal secure fitted"/>'),
+				$body = $('<div class="body"><p>'+Craft.t('Enter your password to continue.')+'</p></div>').appendTo($passwordModal),
+				$inputContainer = $('<div class="inputcontainer">').appendTo($body),
+				$inputsTable = $('<table class="inputs fullwidth"/>').appendTo($inputContainer),
+				$inputsRow = $('<tr/>').appendTo($inputsTable),
+				$passwordCell = $('<td/>').appendTo($inputsRow),
+				$buttonCell = $('<td class="thin"/>').appendTo($inputsRow),
+				$passwordWrapper = $('<div class="passwordwrapper"/>').appendTo($passwordCell);
+
+			this.$passwordInput = $('<input type="password" class="text password fullwidth" placeholder="'+Craft.t('Password')+'"/>').appendTo($passwordWrapper);
+			this.$passwordSpinner = $('<div class="spinner hidden"/>').appendTo($inputContainer);
+			this.$submitBtn = $('<input type="submit" class="btn submit disabled" value="'+Craft.t('Submit')+'" />').appendTo($buttonCell);
+			this.$errorPara = $('<p class="error"/>').appendTo($body);
+
+			this.passwordModal = new Garnish.Modal($passwordModal, {
+				closeOtherModals: false,
+				onFadeIn: $.proxy(function()
+				{
+					setTimeout($.proxy(this, 'focusPasswordInput'), 100);
+				}, this),
+				onFadeOut: $.proxy(function()
+				{
+					this.$passwordInput.val('');
+				}, this),
+			});
+
+			new Craft.PasswordInput(this.$passwordInput, {
+				onToggleInput: $.proxy(function($newPasswordInput) {
+					this.$passwordInput = $newPasswordInput;
+				}, this)
+			});
+
+			this.addListener(this.$passwordInput, 'textchange', 'validatePassword');
+			this.addListener($passwordModal, 'submit', 'submitPassword');
+		}
+		else
+		{
+			this.passwordModal.show();
+		}
+	},
+
+	focusPasswordInput: function()
+	{
+		if (!Garnish.isMobileBrowser(true))
+		{
+			this.$passwordInput.focus();
+		}
+	},
+
+	validatePassword: function()
+	{
+		if (this.$passwordInput.val().length >= 6)
+		{
+			this.$submitBtn.removeClass('disabled');
+			return true;
+		}
+		else
+		{
+			this.$submitBtn.addClass('disabled');
+			return false;
+		}
+	},
+
+	submitPassword: function(ev)
+	{
+		if (ev)
+		{
+			ev.preventDefault();
+		}
+
+		if (!this.validatePassword())
+		{
+			return;
+		}
+
+		this.$passwordSpinner.removeClass('hidden');
+		this.clearLoginError();
+
+		var data = {
+			password: this.$passwordInput.val()
+		};
+
+		Craft.postActionRequest('users/startElevatedSession', data, $.proxy(function(response, textStatus)
+		{
+			this.$passwordSpinner.addClass('hidden');
+
+			if (textStatus == 'success')
+			{
+				if (response.success)
+				{
+					this.passwordModal.hide();
+					this.callback();
+				}
+				else
+				{
+					this.showPasswordError(Craft.t('Incorrect password.'));
+					Garnish.shake(this.passwordModal.$container);
+					this.focusPasswordInput();
+				}
+			}
+			else
+			{
+				this.showPasswordError();
+			}
+
+		}, this));
+	},
+
+	showPasswordError: function(error)
+	{
+		if (error === null || typeof error == 'undefined')
+		{
+			error = Craft.t('An unknown error occurred.');
+		}
+
+		this.$errorPara.text(error);
+		this.passwordModal.updateSizeAndPosition();
+	},
+
+	clearLoginError: function()
+	{
+		this.showPasswordError('');
+	},
+},
+{
+	minSafeElevatedSessionTimeout: 5,
+});
+
+// Instantiate it
+Craft.elevatedSessionManager = new Craft.ElevatedSessionManager();
 
 
 /**
@@ -11468,6 +11889,10 @@ Craft.Grid = Garnish.Base.extend(
 	itemHeights: null,
 	leftPadding: null,
 
+	_refreshingCols: false,
+	_refreshColsAfterRefresh: false,
+	_forceRefreshColsAfterRefresh: false,
+
 	init: function(container, settings)
 	{
 		this.$container = $(container);
@@ -11544,8 +11969,19 @@ Craft.Grid = Garnish.Base.extend(
 
 	refreshCols: function(force, animate)
 	{
+		if (this._refreshingCols) {
+			this._refreshColsAfterRefresh = true;
+			if (force) {
+				this._forceRefreshColsAfterRefresh = true;
+			}
+			return;
+		}
+
+		this._refreshingCols = true;
+
 		if (!this.items.length)
 		{
+			this.completeRefreshCols();
 			return;
 		}
 
@@ -11559,7 +11995,7 @@ Craft.Grid = Garnish.Base.extend(
 
 		if (this.refreshCols._.scrollHeight == 0)
 		{
-			delete this.refreshCols._;
+			this.completeRefreshCols();
 			return;
 		}
 
@@ -11585,7 +12021,7 @@ Craft.Grid = Garnish.Base.extend(
 		// Same number of columns as before?
 		if (force !== true && this.totalCols === this.refreshCols._.totalCols)
 		{
-			delete this.refreshCols._;
+			this.completeRefreshCols();
 			return;
 		}
 
@@ -11858,12 +12294,33 @@ Craft.Grid = Garnish.Base.extend(
 			}
 		}
 
-		this.onRefreshCols();
-
-		delete this.refreshCols._;
+		this.completeRefreshCols();
 
 		// Resume container resize listening
 		this.addListener(this.$container, 'resize', this.handleContainerHeightProxy);
+
+		this.onRefreshCols();
+	},
+
+	completeRefreshCols: function()
+	{
+		// Delete the internal variable object
+		if (typeof this.refreshCols._ != typeof undefined)
+		{
+			delete this.refreshCols._;
+		}
+
+		this._refreshingCols = false;
+
+		if (this._refreshColsAfterRefresh) {
+			force = this._forceRefreshColsAfterRefresh;
+			this._refreshColsAfterRefresh = false;
+			this._forceRefreshColsAfterRefresh = false;
+
+			Garnish.requestAnimationFrame($.proxy(function() {
+				this.refreshCols(force);
+			}, this))
+		}
 	},
 
 	getItemWidth: function(colspan)
@@ -12607,6 +13064,11 @@ Craft.LightSwitch = Garnish.Base.extend(
 
 		this.on = this.$outerContainer.hasClass('on');
 
+		this.$outerContainer.attr({
+			'role': 'checkbox',
+			'aria-checked': (this.on ? 'true' : 'false'),
+		});
+
 		this.addListener(this.$outerContainer, 'mousedown', '_onMouseDown');
 		this.addListener(this.$outerContainer, 'keydown', '_onKeyDown');
 
@@ -12629,6 +13091,7 @@ Craft.LightSwitch = Garnish.Base.extend(
 
 		this.$input.val('1');
 		this.$outerContainer.addClass('on');
+		this.$outerContainer.attr('aria-checked', 'true');
 		this.on = true;
 		this.onChange();
 	},
@@ -12643,6 +13106,7 @@ Craft.LightSwitch = Garnish.Base.extend(
 
 		this.$input.val('');
 		this.$outerContainer.removeClass('on');
+		this.$outerContainer.attr('aria-checked', 'false');
 		this.on = false;
 		this.onChange();
 	},
@@ -13581,9 +14045,6 @@ Craft.PasswordInput = Garnish.Base.extend(
 		this.setCurrentInput(this.$passwordInput);
 		this.updateToggleLabel(Craft.t('Show'));
 		this.showingPassword = false;
-
-		// Alt key temporarily shows the password
-		this.addListener(this.$passwordInput, 'keydown', 'onKeyDown');
 	},
 
 	togglePassword: function()
@@ -13598,27 +14059,6 @@ Craft.PasswordInput = Garnish.Base.extend(
 		}
 
 		this.settings.onToggleInput(this.$currentInput);
-	},
-
-	onKeyDown: function(ev)
-	{
-		if (ev.keyCode == Garnish.ALT_KEY && this.$currentInput.val())
-		{
-			this.showPassword();
-			this.$showPasswordToggle.hide();
-			this.addListener(this.$textInput, 'keyup', 'onKeyUp');
-		}
-	},
-
-	onKeyUp: function(ev)
-	{
-		ev.preventDefault();
-
-		if (ev.keyCode == Garnish.ALT_KEY)
-		{
-			this.hidePassword();
-			this.$showPasswordToggle.show();
-		}
 	},
 
 	onInputChange: function()
@@ -16016,7 +16456,7 @@ Craft.ui =
 
 		if (config.showCharsLeft && config.maxlength)
 		{
-			$input.css('padding-'(Craft.orientation == 'ltr' ? 'right' : 'left'), (7.2*config.maxlength.toString().length+14)+'px');
+			$input.css('padding-'+(Craft.orientation == 'ltr' ? 'right' : 'left'), (7.2*config.maxlength.toString().length+14)+'px');
 		}
 
 		if (config.placeholder || config.showCharsLeft)
@@ -16169,7 +16609,7 @@ Craft.ui =
 
 		var $field = $('<div/>', {
 			'class': 'field',
-			id: (config.id ? config.id+'-field' : null)
+			'id': config.fieldId || (config.id ? config.id+'-field' : null)
 		});
 
 		if (config.first) $field.addClass('first');
@@ -16181,6 +16621,7 @@ Craft.ui =
 			if (label)
 			{
 				var $label = $('<label/>', {
+					'id': config.labelId || (config.id ? config.id+'-label' : null),
 					'class': (config.required ? 'required' : null),
 					'for': config.id,
 					text: label
