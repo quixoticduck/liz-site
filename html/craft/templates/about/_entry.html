@@ -35,54 +35,54 @@
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
-		<ul class="Cards Grid">
-			<li class="Card-item Grid-item Grid-half blockImages">
-				{% if block.leftColumnHeading|length > 0 %}
-					<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
-				{% endif %}
-				{% set image = block.leftColumnImage.first().getUrl %}
-				{% if image %}
-					<div class="imgContainer">
-						<a href="{{ block.leftColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-					</div>
-				{% endif %}
-				{% if block.type.handle == "pairedBlock" %}
-					{% if block.leftColumnTextboxText|length > 0 %}
-						<div class="textSentences textbox max60">
-							{{ block.leftColumnTextboxText }}
+			<ul class="Cards Grid">
+				<li class="Card-item Grid-item Grid-half blockImages">
+					{% if block.leftColumnHeading|length > 0 %}
+						<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
+					{% endif %}
+					{% set image = block.leftColumnImage.first().getUrl %}
+					{% if image %}
+						<div class="imgContainer">
+							<a href="{{ block.leftColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 						</div>
 					{% endif %}
-					{% if block.leftColumnText|length > 0 %}
-						<div class="textParagraphs">
-							{{ block.leftColumnText }}
-						</div>
+					{% if block.type.handle == "pairedBlock" %}
+						{% if block.leftColumnTextboxText|length > 0 %}
+							<div class="textSentences textbox max60">
+								{{ block.leftColumnTextboxText }}
+							</div>
+						{% endif %}
+						{% if block.leftColumnText|length > 0 %}
+							<div class="textParagraphs">
+								{{ block.leftColumnText }}
+							</div>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-			</li>
+				</li>
 
-			<li class="Card-item Grid-item Grid-half blockImages">
-				{% if block.rightColumnHeading|length > 0 %}
-					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
-				{% endif %}
-				{% set image = block.rightColumnImage.first().getUrl %}
-				{% if image %}
-					<div class="imgContainer">
-						<a href="{{ block.rightColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
-					</div>
-				{% endif %}
-				{% if block.type.handle == "pairedBlock" %}
-					{% if block.rightColumnTextboxText|length > 0 %}
-						<div class="textSentences textbox max60">
-							{{ block.rightColumnTextboxText }}
+				<li class="Card-item Grid-item Grid-half blockImages">
+					{% if block.rightColumnHeading|length > 0 %}
+						<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
+					{% endif %}
+					{% set image = block.rightColumnImage.first().getUrl %}
+					{% if image %}
+						<div class="imgContainer">
+							<a href="{{ block.rightColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 						</div>
 					{% endif %}
-					{% if block.leftColumnText|length > 0 %}
-						<div class="textParagraphs">
-							{{ block.rightColumnText }}
-						</div>
+					{% if block.type.handle == "pairedBlock" %}
+						{% if block.rightColumnTextboxText|length > 0 %}
+							<div class="textSentences textbox max60">
+								{{ block.rightColumnTextboxText }}
+							</div>
+						{% endif %}
+						{% if block.leftColumnText|length > 0 %}
+							<div class="textParagraphs">
+								{{ block.rightColumnText }}
+							</div>
+						{% endif %}
 					{% endif %}
-				{% endif %}
-			</li>
+				</li>
 			</ul>
 		{% endif %}
 
@@ -109,54 +109,54 @@
 
 	{% endfor %}
 
-		<ul class=" Grid">
-			<li class=" Grid-item Grid-whole">
-<div class="contactForm">	
-	{% macro errorList(errors) %}
-	    {% if errors %}
-	        <ul class="errors">
-	            {% for error in errors %}
-	                <li>{{ error }}</li>
-	            {% endfor %}
-	        </ul>
-	    {% endif %}
-	{% endmacro %}
+<ul class="Cards Grid">
+	<li class="Card-item Grid-item Grid-whole">
+		<div class="contactForm">	
+			{% macro errorList(errors) %}
+			    {% if errors %}
+			        <ul class="errors">
+			            {% for error in errors %}
+			                <li>{{ error }}</li>
+			            {% endfor %}
+			        </ul>
+			    {% endif %}
+			{% endmacro %}
 
-	{% from _self import errorList %}
+			{% from _self import errorList %}
 
-	<form method="post" action="" accept-charset="UTF-8">
-	    {{ getCsrfInput() }}
-	    <input type="hidden" name="action" value="contactForm/sendMessage">
-	    <input type="hidden" name="redirect" value="thanks">
+			<form method="post" action="" accept-charset="UTF-8" style="text-align: left;">
+			    {{ getCsrfInput() }}
+			    <input type="hidden" name="action" value="contactForm/sendMessage">
+			    <input type="hidden" name="redirect" value="thanks">
 
-	    <input id="puppyField" name="puppyField" type="text">
+			    <input id="puppyField" name="puppyField" type="text">
 
-	    <div class="contactField">
-		    <h3><label for="fromName">Your Name</label></h3></br>
-		    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
-		    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
-	    </div>
-	    <div class="contactField">
-		    <h3><label for="fromEmail">Your Email</label></h3></br>
-		    <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
-		    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+			    <div class="contactField">
+				    <h3><label for="fromName">Your Name</label></h3></br>
+				    <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+				    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+			    </div>
+			    <div class="contactField">
+				    <h3><label for="fromEmail">Your Email</label></h3></br>
+				    <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+				    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+				</div>
+				<div class="contactField">
+				    <h3><label for="subject">Subject</label></h3></br>
+				    <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+				    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+			    </div>
+			    <div class="contactField">
+				    <h3><label for="message">Message</label></h3></br>
+				    <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+				    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+			    </div>
+			   	<div class="contactField form-button"></br>
+				    <input type="submit" value="Send">
+			    </div>
+			</form>
 		</div>
-		<div class="contactField">
-		    <h3><label for="subject">Subject</label></h3></br>
-		    <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
-		    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
-	    </div>
-	    <div class="contactField">
-		    <h3><label for="message">Message</label></h3></br>
-		    <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
-		    {{ message is defined and message ? errorList(message.getErrors('message')) }}
-	    </div>
-	   	<div class="contactField form-button"></br>
-		    <input type="submit" value="Send">
-	    </div>
-	</form>
-</div>
-</li>
+	</li>
 </ul>
 
 {% endblock %}

@@ -637,7 +637,11 @@ input#puppyField {
     padding-bottom: 1px; }
 
   .facebook-word {
-    display: inline; } }
+    display: inline; }
+
+  .contactForm {
+    padding: 10px 50px 25px 7px;
+    margin: auto; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT
@@ -664,7 +668,11 @@ input#puppyField {
     padding-right: 30px; }
 
   .facebook-word {
-    display: inline; } }
+    display: inline; }
+
+  .contactForm {
+    padding: 10px 50px 25px 0px;
+    margin: auto; } }
 /* PHONE PORTRAIT END
 ==================================== */
 
