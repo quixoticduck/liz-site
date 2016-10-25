@@ -765,46 +765,17 @@ and (max-width: $breakpointTabletMax)
     color: yellow;
   }
 
-.myImage {
-  max-width: 40%;
-}
+  .myImage {
+    max-width: 40%;
+  }
 
-.textParagraphs {
-  margin-bottom: 5px;
-}
+  .textParagraphs {
+    margin-bottom: 5px;
+  }
 
-.blockImages {
-  padding-top: 13px;
-}
-
-
-// .myImage {
-//   max-width: 40%;
-// }
-  // .image-responsive {
-  //   max-width: 80%;
-  //   padding-top: 15px;
-  //   margin-left: -190px;
-  //   margin-right: -190px;
-  //   margin-bottom: -13px;
-  // }
-
-  // .responsiveLeft {
-  //   float: left;
-  // }
-
-  // .responsiveRight {
-  // float: right;
-  // }
-
-  // .responsiveNot {
-  //   margin: auto;
-  //   float: none;
-  //   max-width: 100%;
-  // }
-
-  // h1, h2, h3, p {color: yellow;}
-
+  .blockImages {
+    padding-top: 13px;
+  }
 } 
 /* TABLET SCREEN END
 ==================================== */
@@ -989,9 +960,9 @@ nav {
     padding-right: 13px;
   }  
 
-    .blockImages {
-    padding-top: 20px;
-  }
+  //   .blockImages {
+  //   padding-top: 5px;
+  // }
 
   .myImage {
     width: 40%;
@@ -1004,31 +975,31 @@ nav {
     // display: none;
   }
 
-  .image-responsive {
-    max-width: 80%;
-    // padding-top: 15px;
-    // margin-left: -89px;
-    // margin-right: -90px;
-    // margin-bottom: -13px;
-    padding-top: 15px;
-    margin-left: -37px;
-    margin-right: -43px;
-    margin-bottom: -15px;
-  }
+  // .image-responsive {
+  //   max-width: 80%;
+  //   // padding-top: 15px;
+  //   // margin-left: -89px;
+  //   // margin-right: -90px;
+  //   // margin-bottom: -13px;
+  //   padding-top: 15px;
+  //   margin-left: -37px;
+  //   margin-right: -43px;
+  //   margin-bottom: -15px;
+  // }
 
-  .responsiveLeft {
-    float: left;
-  }
+  // .responsiveLeft {
+  //   float: left;
+  // }
 
-  .responsiveRight {
-  float: right;
-  }
+  // .responsiveRight {
+  // float: right;
+  // }
 
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%;
-  }
+  // .responsiveNot {
+  //   margin: auto;
+  //   float: none;
+  //   max-width: 100%;
+  // }
 
   .textbox img {
   width: 45%;

@@ -588,9 +588,6 @@ input#puppyField {
     padding-left: 13px;
     padding-right: 13px; }
 
-  .blockImages {
-    padding-top: 20px; }
-
   .myImage {
     width: 40%;
     max-width: 40%;
@@ -598,24 +595,6 @@ input#puppyField {
 
   .myImage:hover {
     width: 90%; }
-
-  .image-responsive {
-    max-width: 80%;
-    padding-top: 15px;
-    margin-left: -37px;
-    margin-right: -43px;
-    margin-bottom: -15px; }
-
-  .responsiveLeft {
-    float: left; }
-
-  .responsiveRight {
-    float: right; }
-
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%; }
 
   .textbox img {
     width: 45%;
