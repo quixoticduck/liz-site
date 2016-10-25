@@ -103,8 +103,8 @@ li.menu-item {
 
 p {
   color: $colorLight;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 0.95em;
+  line-height: 1.7em;
   margin: 7px 0px 10px 0px;
   text-shadow: 1px 1px $colorTextShadow;
   //   /* These are technically the same, but use both */
@@ -526,18 +526,17 @@ $gutter: 20px;
 // }
 
 figure {
-    // width:350px;
-    // height:250px;
-    @include border-radius (30px);
-    overflow:hidden;
+
 
     img {
-      // @include border-radius (6px);
-      margin-left: 30%;
-      margin-right: 30%;
-
+      // margin-left: 30%;
+      // margin-right: 30%;
+      float: left;
+      margin-right: 10px;
     }
 }
+
+
 
 .textbox { 
   @include border-radius (3px); 
@@ -570,18 +569,22 @@ figure {
 
 .textbox {
   overflow: hidden;
-  padding-bottom: 25px;
+  // padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .textbox img {
   max-width: 37%;
   float: left;
-  padding-right: 25px;
+  padding-top: 6px;
+  padding-right: 45px;
+  padding-bottom: 15px;
 }
 
 .textParagraphs, .textSentences {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 45px;
+    padding-right: 45px;
   }
 
 .textParagraphs {
@@ -762,7 +765,7 @@ and (max-width: $breakpointTabletMax)
     font-size: 0.85rem;
     line-height: 1.3rem;
     margin-left: 1rem;
-    color: yellow;
+    color: blue;
   }
 
   .myImage {
@@ -964,49 +967,26 @@ nav {
   //   padding-top: 5px;
   // }
 
-  .myImage {
-    width: 40%;
-    max-width: 40%;
-    margin: auto;
-  }
-
-  .myImage:hover {
-    width: 90%;
-    // display: none;
-  }
-
-  // .image-responsive {
-  //   max-width: 80%;
-  //   // padding-top: 15px;
-  //   // margin-left: -89px;
-  //   // margin-right: -90px;
-  //   // margin-bottom: -13px;
-  //   padding-top: 15px;
-  //   margin-left: -37px;
-  //   margin-right: -43px;
-  //   margin-bottom: -15px;
-  // }
-
-  // .responsiveLeft {
-  //   float: left;
-  // }
-
-  // .responsiveRight {
-  // float: right;
-  // }
-
-  // .responsiveNot {
+  // .myImage {
+  //   width: 40%;
+  //   max-width: 40%;
   //   margin: auto;
-  //   float: none;
-  //   max-width: 100%;
+  // }
+
+  // .myImage:hover {
+  //   width: 90%;
+  //   max-width: 90%;
+  //   // display: none;
   // }
 
   .textbox img {
   width: 45%;
+  max-width: 45%;
   float: left;
-  padding-right: 25px;
-  padding-bottom: 1px;
-}
+  display: block;
+  padding-right: 35px;
+  padding-bottom: 10px;
+  }
 
   .facebook-word {
     display: inline;
@@ -1021,6 +1001,20 @@ nav {
 } 
 /* PHONE LANDSCAPE END
 ==================================== */
+
+@media screen
+// and (min-width: $breakpointTinyMax)
+and (max-width: $breakpointPhoneMin) 
+{
+  .textbox img {
+  width: 90%;
+  max-width: 90%;
+  // float: left;
+  display: block;
+  padding: 1% 5% 8% 5%;
+  // padding-bottom: 1px;
+  }
+}
 
 /* PHONE PORTRAIT
 ==================================== */
@@ -1076,6 +1070,17 @@ and (max-width: $breakpointTinyMin)
     padding: 10px 50px 25px 0px;
     margin: auto;
   }
+
+  .textbox img {
+  width: 90%;
+  max-width: 90%;
+  // float: left;
+  display: block;
+  padding: 2% 5%;
+  // padding-bottom: 1px;
+  }
+
+
 
 }
 /* PHONE PORTRAIT END

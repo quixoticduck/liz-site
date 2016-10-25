@@ -34,8 +34,8 @@ li.menu-item {
 
 p {
   color: white;
-  font-size: 1em;
-  line-height: 1.5em;
+  font-size: 0.95em;
+  line-height: 1.7em;
   margin: 7px 0px 10px 0px;
   text-shadow: 1px 1px #774444;
   word-wrap: break-word; }
@@ -278,15 +278,9 @@ body {
 .homepageBig {
   display: none; }
 
-figure {
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px;
-  overflow: hidden; }
-  figure img {
-    margin-left: 30%;
-    margin-right: 30%; }
+figure img {
+  float: left;
+  margin-right: 10px; }
 
 .textbox {
   -webkit-border-radius: 3px;
@@ -310,16 +304,19 @@ figure {
 
 .textbox {
   overflow: hidden;
-  padding-bottom: 25px; }
+  padding-top: 5px;
+  padding-bottom: 5px; }
 
 .textbox img {
   max-width: 37%;
   float: left;
-  padding-right: 25px; }
+  padding-top: 6px;
+  padding-right: 45px;
+  padding-bottom: 15px; }
 
 .textParagraphs, .textSentences {
-  padding-left: 25px;
-  padding-right: 25px; }
+  padding-left: 45px;
+  padding-right: 45px; }
 
 .textParagraphs {
   margin: auto;
@@ -451,7 +448,7 @@ input#puppyField {
     font-size: 0.85rem;
     line-height: 1.3rem;
     margin-left: 1rem;
-    color: yellow; }
+    color: blue; }
 
   .myImage {
     max-width: 40%; }
@@ -588,19 +585,13 @@ input#puppyField {
     padding-left: 13px;
     padding-right: 13px; }
 
-  .myImage {
-    width: 40%;
-    max-width: 40%;
-    margin: auto; }
-
-  .myImage:hover {
-    width: 90%; }
-
   .textbox img {
     width: 45%;
+    max-width: 45%;
     float: left;
-    padding-right: 25px;
-    padding-bottom: 1px; }
+    display: block;
+    padding-right: 35px;
+    padding-bottom: 10px; }
 
   .facebook-word {
     display: inline; }
@@ -610,6 +601,12 @@ input#puppyField {
     margin: auto; } }
 /* PHONE LANDSCAPE END
 ==================================== */
+@media screen and (max-width: 450px) {
+  .textbox img {
+    width: 90%;
+    max-width: 90%;
+    display: block;
+    padding: 1% 5% 8% 5%; } }
 /* PHONE PORTRAIT
 ==================================== */
 @media screen and (max-width: 350px) {
@@ -638,7 +635,13 @@ input#puppyField {
 
   .contactForm {
     padding: 10px 50px 25px 0px;
-    margin: auto; } }
+    margin: auto; }
+
+  .textbox img {
+    width: 90%;
+    max-width: 90%;
+    display: block;
+    padding: 2% 5%; } }
 /* PHONE PORTRAIT END
 ==================================== */
 

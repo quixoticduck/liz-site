@@ -231,7 +231,7 @@ body {
 
   /*Grid styles*/
   .Grid-item {
-    width: 48%; } }
+    width: 98%; } }
 @media all and (min-width: 592px) {
   .Grid {
     display: flex;
@@ -308,6 +308,15 @@ figure {
   .textbox li {
     text-shadow: none; }
 
+.textbox {
+  overflow: hidden;
+  padding-bottom: 25px; }
+
+.textbox img {
+  max-width: 37%;
+  float: left;
+  padding-right: 25px; }
+
 .textParagraphs, .textSentences {
   padding-left: 25px;
   padding-right: 25px; }
@@ -370,6 +379,9 @@ input#puppyField {
 .mainNavClose {
   display: none; }
 
+.facebook-word {
+  display: none; }
+
 /* CRAFT CMS PHP CLASSES
 ==================================== */
 .textRow1, .textRow2 {
@@ -417,51 +429,38 @@ input#puppyField {
 ==================================== */
 @media screen and (min-width: 1185px) and (max-width: 1329px) {
   .mainLogo a {
-    font-size: 2rem; }
+    font-size: 1.85rem; }
 
   .main-nav li a {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.4rem;
-    margin-left: 1.5rem; } }
+    margin-left: 1.5rem;
+    color: green; } }
 /* LAPTOP SCREEN END
 ==================================== */
 /* TABLET SCREEN
 ==================================== */
 @media screen and (min-width: 970px) and (max-width: 1184px) {
   .mainLogo a {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
     line-height: 1.3rem;
     margin-top: 0px;
     margin-bottom: 12px; }
 
   .main-nav li a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.3rem;
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    color: blue; }
+
+  .myImage {
+    max-width: 40%; }
 
   .textParagraphs {
     margin-bottom: 5px; }
 
   .blockImages {
-    padding-top: 13px; }
-
-  .image-responsive {
-    max-width: 80%;
-    padding-top: 15px;
-    margin-left: -190px;
-    margin-right: -190px;
-    margin-bottom: -13px; }
-
-  .responsiveLeft {
-    float: left; }
-
-  .responsiveRight {
-    float: right; }
-
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%; } }
+    padding-top: 13px; } }
 /* TABLET SCREEN END
 ==================================== */
 /* PHONE LANDSCAPE
@@ -589,39 +588,27 @@ input#puppyField {
     padding-left: 13px;
     padding-right: 13px; }
 
-  .blockImages {
-    padding-top: 20px; }
-
   .myImage {
-    width: 50%;
-    max-width: 50%;
+    width: 40%;
+    max-width: 40%;
     margin: auto; }
 
   .myImage:hover {
     width: 90%; }
 
-  .image-responsive {
-    max-width: 80%;
-    padding-top: 15px;
-    margin-left: -37px;
-    margin-right: -43px;
-    margin-bottom: -15px; }
-
-  .responsiveLeft {
-    float: left; }
-
-  .responsiveRight {
-    float: right; }
-
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%; }
-
   .textbox img {
-    width: 45%;
-    float: left;
-    padding-right: 25px; } }
+    width: 90%;
+    max-width: 90%;
+    display: block;
+    padding-right: 25px;
+    padding-bottom: 1px; }
+
+  .facebook-word {
+    display: inline; }
+
+  .contactForm {
+    padding: 10px 50px 25px 7px;
+    margin: auto; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 /* PHONE PORTRAIT
@@ -645,7 +632,14 @@ input#puppyField {
 
   .textParagraphs, .textSentences {
     padding-left: 30px;
-    padding-right: 30px; } }
+    padding-right: 30px; }
+
+  .facebook-word {
+    display: inline; }
+
+  .contactForm {
+    padding: 10px 50px 25px 0px;
+    margin: auto; } }
 /* PHONE PORTRAIT END
 ==================================== */
 
