@@ -622,16 +622,6 @@ figure {
   color: $colorMain;
 }
 
-// .textbox img {
-//   width: 45%;
-//   display: block;
-//   margin: 0 auto 15px auto;
-//   // padding-top: -13;
-//   // padding-bottom: 10;
-// }
-
-
-
 .contactForm {
   // background-color: pink;
   min-height: 100px;
@@ -675,14 +665,6 @@ input#puppyField { display: none; }
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */
-
-// .row1 {
-//   min-height: 460px;
-// }
-
-// .row2 {
-//   min-height: 520px;
-// }
 
 .textRow1, .textRow2 {
   text-align: left;
@@ -749,14 +731,15 @@ and (min-width: $breakpointLaptopMin)
 and (max-width: $breakpointLaptopMax) 
 {
     .mainLogo a {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
 
   .main-nav li a {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.4rem;
     margin-left: 1.5rem;
     // margin-right: 0px;
+    color: green;
   }
 
 }
@@ -770,70 +753,61 @@ and (min-width: $breakpointTabletMin)
 and (max-width: $breakpointTabletMax) 
 {
   .mainLogo a {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
     line-height: 1.3rem;
     margin-top: 0px;
     margin-bottom: 12px;
   }
   .main-nav li a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.3rem;
     margin-left: 1rem;
-    // color: green;
+    color: yellow;
   }
 
-  // .col {
-  //   margin-bottom: 20px;
-  // }
-
-  // .col-half {
-  //   width: 100%;
-  // }
-
-  // .max60 {
-  //   max-width: 70%;
-  // }
+.myImage {
+  max-width: 40%;
+}
 
 .textParagraphs {
   margin-bottom: 5px;
 }
 
-  .blockImages {
-    padding-top: 13px;
-  }
+.blockImages {
+  padding-top: 13px;
+}
 
-  .image-responsive {
-    max-width: 80%;
-    padding-top: 15px;
-    margin-left: -190px;
-    margin-right: -190px;
-    margin-bottom: -13px;
-  }
 
-  .responsiveLeft {
-    float: left;
-  }
+// .myImage {
+//   max-width: 40%;
+// }
+  // .image-responsive {
+  //   max-width: 80%;
+  //   padding-top: 15px;
+  //   margin-left: -190px;
+  //   margin-right: -190px;
+  //   margin-bottom: -13px;
+  // }
 
-  .responsiveRight {
-  float: right;
-  }
+  // .responsiveLeft {
+  //   float: left;
+  // }
 
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%;
-  }
+  // .responsiveRight {
+  // float: right;
+  // }
+
+  // .responsiveNot {
+  //   margin: auto;
+  //   float: none;
+  //   max-width: 100%;
+  // }
 
   // h1, h2, h3, p {color: yellow;}
 
 } 
 /* TABLET SCREEN END
 ==================================== */
-
-// @media screen and (min-width: $breakpointPhoneMax) and (max-width: $breakpointTabletMin) {
-//   .main-nav li a {
-//   }
-// }
 
 
 
@@ -844,15 +818,11 @@ and (max-width: $breakpointTabletMax)
 // and (min-width: $breakpointTinyMax)
 and (max-width: $breakpointPhoneMax) 
 {
-
   .Grid-half {
     width: 98%;
   }
 
 nav {
-    // background-color: $colorMainLight;
-    // transform: translate3d(-290px, 0, 0);
-    // transition: transform 0.4s ease;  
     position: fixed;
     top: 0px;
     bottom: 0px;
@@ -880,11 +850,6 @@ nav {
     -webkit-transition: transform 0.8s ease;    
     -moz-transition: transform 0.8s ease;    
     -ms-transition: transform 0.8s ease;
-  }
-
-  nav .navOpen {
-    // border-right: 2px;
-    // border-style: dotted;
   }
 
   .navClose {
@@ -962,13 +927,6 @@ nav {
       padding-top: 55px;
     }
 
-  // .col {
-  //   margin-bottom: 20px;
-  // }
-  // .col-half {
-  //   width: 100%;
-  // }
-
   .max60 {
     max-width: 70%;
   }
@@ -977,11 +935,6 @@ nav {
   margin-top: 15px;
   margin-bottom: 5px;
 }
-
-// .row-2 {
-//     margin-top: 10px;
-//     color: blue;
-//   }
 
   .navHeadingWhenClose .menuTextMenu {
       display: block;
@@ -1041,8 +994,8 @@ nav {
   }
 
   .myImage {
-    width: 50%;
-    max-width: 50%;
+    width: 40%;
+    max-width: 40%;
     margin: auto;
   }
 

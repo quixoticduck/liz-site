@@ -429,51 +429,38 @@ input#puppyField {
 ==================================== */
 @media screen and (min-width: 1185px) and (max-width: 1329px) {
   .mainLogo a {
-    font-size: 2rem; }
+    font-size: 1.85rem; }
 
   .main-nav li a {
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.4rem;
-    margin-left: 1.5rem; } }
+    margin-left: 1.5rem;
+    color: green; } }
 /* LAPTOP SCREEN END
 ==================================== */
 /* TABLET SCREEN
 ==================================== */
 @media screen and (min-width: 970px) and (max-width: 1184px) {
   .mainLogo a {
-    font-size: 1.85rem;
+    font-size: 1.6rem;
     line-height: 1.3rem;
     margin-top: 0px;
     margin-bottom: 12px; }
 
   .main-nav li a {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.3rem;
-    margin-left: 1rem; }
+    margin-left: 1rem;
+    color: yellow; }
+
+  .myImage {
+    max-width: 40%; }
 
   .textParagraphs {
     margin-bottom: 5px; }
 
   .blockImages {
-    padding-top: 13px; }
-
-  .image-responsive {
-    max-width: 80%;
-    padding-top: 15px;
-    margin-left: -190px;
-    margin-right: -190px;
-    margin-bottom: -13px; }
-
-  .responsiveLeft {
-    float: left; }
-
-  .responsiveRight {
-    float: right; }
-
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%; } }
+    padding-top: 13px; } }
 /* TABLET SCREEN END
 ==================================== */
 /* PHONE LANDSCAPE
@@ -605,8 +592,8 @@ input#puppyField {
     padding-top: 20px; }
 
   .myImage {
-    width: 50%;
-    max-width: 50%;
+    width: 40%;
+    max-width: 40%;
     margin: auto; }
 
   .myImage:hover {
