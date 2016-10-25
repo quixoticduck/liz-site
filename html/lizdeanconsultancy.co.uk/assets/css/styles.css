@@ -313,7 +313,7 @@ figure {
   padding-bottom: 25px; }
 
 .textbox img {
-  width: 37%;
+  max-width: 37%;
   float: left;
   padding-right: 25px; }
 
