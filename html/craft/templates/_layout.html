@@ -54,7 +54,7 @@
 		</div>
 	</div>
 	<footer id="footer">
-		Copyright {{ now.year }} {{ craft.request.serverName | ucfirst }}. All rights reserved  •
+		Copyright {{ now.year }} {{ craft.request.serverName | lcfirst }}. All rights reserved  •
 		<!-- 		Built with <a href="http://buildwithcraft.com">Craft</a>  • -->
 		<a href="{{ url('/about/liz#contact') }}" {% if craft.request.firstSegment == 'about' %}class="active"{% endif %}>Contact</a></li>
 	</footer>
