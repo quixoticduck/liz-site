@@ -34,12 +34,10 @@
 						</div>
 					{% endif %}					
 				{% endif %}
-			<!-- </div> -->
 			</li></ul>
 		{% endif %}
 
 		{% if block.type == "pairedBlock" %}
-<!-- 			<div class="col col-half blockImages"> -->
 		<ul class="Cards Grid">
 			<li class="Card-item Grid-item Grid-half blockImages">
 				{% if block.leftColumnHeading|length > 0 %}
@@ -63,11 +61,9 @@
 						</div>
 					{% endif %}
 				{% endif %}
-			<!-- </div> -->
 			</li>
 
 			<li class="Card-item Grid-item Grid-half blockImages">
-<!-- 			<div class="col col-half blockImages"> -->
 				{% if block.rightColumnHeading|length > 0 %}
 					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
 				{% endif %}
@@ -89,11 +85,85 @@
 						</div>
 					{% endif %}
 				{% endif %}
-		<!-- 	</div> -->
 			</li>
 			</ul>
 		{% endif %}
 
+	{% if block.type == "tripleBlock" %}
+		<ul class="Cards Grid">
+			<li class="Card-item Grid-item Grid-third blockImages">
+				{% if block.leftColumnHeading|length > 0 %}
+					<h2> <a href="{{ block.leftColumnImageUrl }}">{{ block.leftColumnHeading }}</a>  </h2>
+				{% endif %}
+				{% set image = block.leftColumnImage.first().getUrl %}
+				{% if image %}
+					<div class="imgContainer">
+						<a href="{{ block.leftColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+					</div>
+				{% endif %}
+				{% if block.type.handle == "pairedBlock" %}
+					{% if block.leftColumnTextboxText|length > 0 %}
+						<div class="textSentences textbox max60">
+							{{ block.leftColumnTextboxText }}
+						</div>
+					{% endif %}
+					{% if block.leftColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.leftColumnText }}
+						</div>
+					{% endif %}
+				{% endif %}
+			</li>
+
+			<li class="Card-item Grid-item Grid-third blockImages">
+				{% if block.middleColumnHeading|length > 0 %}
+					<h2> <a href="{{ block.middleColumnImageUrl }}">{{ block.middleColumnHeading }}</a>  </h2>
+				{% endif %}
+				{% set image = block.middleColumnImage.first().getUrl %}
+				{% if image %}
+					<div class="imgContainer">
+						<a href="{{ block.middleColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+					</div>
+				{% endif %}
+				{% if block.type.handle == "pairedBlock" %}
+					{% if block.middleColumnTextboxText|length > 0 %}
+						<div class="textSentences textbox max60">
+							{{ block.middleColumnTextboxText }}
+						</div>
+					{% endif %}
+					{% if block.middleColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.middleColumnText }}
+						</div>
+					{% endif %}
+				{% endif %}
+			</li>			
+
+			<li class="Card-item Grid-item Grid-third blockImages">
+				{% if block.rightColumnHeading|length > 0 %}
+					<h2> <a href="{{ block.rightColumnImageUrl }}">{{ block.rightColumnHeading }}</a>  </h2>
+				{% endif %}
+				{% set image = block.rightColumnImage.first().getUrl %}
+				{% if image %}
+					<div class="imgContainer">
+						<a href="{{ block.rightColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
+					</div>
+				{% endif %}
+				{% if block.type.handle == "pairedBlock" %}
+					{% if block.rightColumnTextboxText|length > 0 %}
+						<div class="textSentences textbox max60">
+							{{ block.rightColumnTextboxText }}
+						</div>
+					{% endif %}
+					{% if block.leftColumnText|length > 0 %}
+						<div class="textParagraphs">
+							{{ block.rightColumnText }}
+						</div>
+					{% endif %}
+				{% endif %}
+			</li>
+		</ul>
+		{% endif %}
 
 		{% if block.type.handle == "attachDocument" %}
 			{% if block.documentFile.first %}
@@ -116,4 +186,28 @@
 		{% endif %}
 
 	{% endfor %}
+
+
+
+		<ul class="Cards Grid">
+			<li class="Card-item Grid-item Grid-third blockImages">
+<h2>dslkfjnsdlsdf</h2>
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
+
+			</li>
+
+			<li class="Card-item Grid-item Grid-third blockImages">
+<h2>dslkfjnsjsdf</h2>
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
+			</li>			
+
+			<li class="Card-item Grid-item Grid-third blockImages">
+
+<h2>dslkfjnsdlfkjslf</h2>
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+			</li>
+		</ul>
+
 {% endblock %}
