@@ -101,7 +101,7 @@
 						<a href="{{ block.leftColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 					</div>
 				{% endif %}
-				{% if block.type.handle == "pairedBlock" %}
+				{% if block.type.handle == "tripleBlock" %}
 					{% if block.leftColumnTextboxText|length > 0 %}
 						<div class="textSentences textbox max60">
 							{{ block.leftColumnTextboxText }}
@@ -125,7 +125,7 @@
 						<a href="{{ block.middleColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 					</div>
 				{% endif %}
-				{% if block.type.handle == "pairedBlock" %}
+				{% if block.type.handle == "tripleBlock" %}
 					{% if block.middleColumnTextboxText|length > 0 %}
 						<div class="textSentences textbox max60">
 							{{ block.middleColumnTextboxText }}
@@ -149,7 +149,7 @@
 						<a href="{{ block.rightColumnImageUrl }}"><img class="myImageGroup" src="{{ image }}" width="{{ image.getWidth('squarehomepage') }}" height="{{ image.getHeight('squarehomepage') }}" alt="{{ image.title }}" ></a>
 					</div>
 				{% endif %}
-				{% if block.type.handle == "pairedBlock" %}
+				{% if block.type.handle == "tripleBlock" %}
 					{% if block.rightColumnTextboxText|length > 0 %}
 						<div class="textSentences textbox max60">
 							{{ block.rightColumnTextboxText }}
