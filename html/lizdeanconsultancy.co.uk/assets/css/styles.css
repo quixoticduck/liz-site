@@ -250,10 +250,6 @@ body {
   max-width: 60%; }
 
 .myImage, .myImageGroup {
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  border-radius: 15px;
   text-align: center;
   padding: 25px;
   display: block; }
@@ -662,12 +658,14 @@ input#puppyField {
 
   .textParagraphs, .textSentences {
     padding-left: 13px;
-    padding-right: 8px; }
+    padding-right: 11px; }
 
-  img {
+  img, .myImage {
     text-align: center;
     margin: auto;
-    max-width: 98%; }
+    max-width: 98%;
+    padding-left: 0px;
+    padding-right: 0px; }
 
   h1 {
     color: orange; } }

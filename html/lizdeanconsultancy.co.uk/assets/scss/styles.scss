@@ -455,14 +455,7 @@ $gutter: 20px;
 }
 
 .myImage, .myImageGroup {
-    // height: 34%;
-      // width: 34%;
-  
-  @include border-radius (15px); 
-  // margin: auto;
-
-  // max-width: 34%;
-  // max-height: 34%;
+  // @include border-radius (15px); 
   text-align: center;
   padding: 25px;
   display: block;
@@ -473,7 +466,7 @@ $gutter: 20px;
 }
 
 .myImageGroup {
-  max-height: 199px;
+ max-height: 199px;
  margin: auto;
 }
 
@@ -1076,7 +1069,7 @@ and (max-width: $breakpointPhoneMin)
 
 .textParagraphs, .textSentences {
     padding-left: 13px;
-    padding-right: 8px;
+    padding-right: 11px;
   }
 
 // .myImageGroup {
@@ -1088,10 +1081,12 @@ and (max-width: $breakpointPhoneMin)
 //   margin-bottom: 30px;
 // }
 
-img {
+img, .myImage {
   text-align: center;
   margin: auto;
   max-width: 98%;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
   h1 {color: orange;}  
