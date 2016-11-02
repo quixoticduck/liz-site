@@ -56,7 +56,9 @@ $breakpointLaptopMax: ($breakpointDesktopMin - 1px);
 $breakpointLaptopMin: 1185px;
 $breakpointTabletMax: ($breakpointLaptopMin - 1px);
 $breakpointTabletMin: 970px;
-$breakpointPhoneMax: ($breakpointTabletMin - 1px);
+$breakpointPhabletMax: ($breakpointTabletMin - 1px);
+$breakpointPhabletMin: 700px;
+$breakpointPhoneMax: ($breakpointPhabletMin - 1px);
 $breakpointPhoneMin: 450px;
 $breakpointTinyMax: ($breakpointPhoneMin - 1px);
 $breakpointTinyMin: 350px;
@@ -270,7 +272,6 @@ nav li {
     padding: 0px 0px;
     margin: 10px 15px;
     &:hover {color:$color2ndLight;}
-    // background-color: blue;
   }
 
   li a 
@@ -281,10 +282,7 @@ nav li {
   }
 }
 
-.mainLogo
-// .mainLogo a 
-{
-
+.mainLogo {
   display: inline-block;
   float: left;
   margin: 0;
@@ -401,47 +399,47 @@ $gutter: 20px;
   }
 
 /*Media queries*/
-@media all and (min-width: 480px) {
-  /*Component styles*/
-  .Card-info {
-    min-height: 200px;
-  }
-  /*Grid styles*/
-  .Grid-item {
-    width: 98%;
-  }
-}
-@media all and (min-width: 592px) {
-  .Grid {
-    display: flex;  /*Flexbox container*/
-    flex-wrap: wrap;
-      li {
-    text-shadow: 0px 1px $colorTextShadow;
-  }
-  }
-  /*Global styles*/
-  // h1 {
-  //   font-size: 60px;
-  //   margin-top: 30px;
-  //   margin-bottom: 30px;
-  // }
-  /*Grid styles*/
-  .Grid-item {
-    width: auto;
-  }
-  .Grid-whole {
-    width: 98%;
-  }
-  .Grid-half {
-    width: 48%;
-  }
-  .Grid-third {
-    width: 31.3%;
-  }
-  .Grid-quarter {
-    width: 23%;
-  }
-}
+// @media all and (min-width: 480px) {
+//   /*Component styles*/
+//   .Card-info {
+//     min-height: 200px;
+//   }
+//   /*Grid styles*/
+//   .Grid-item {
+//     width: 98%;
+//   }
+// }
+// @media all and (min-width: 592px) {
+//   .Grid {
+//     display: flex;  /*Flexbox container*/
+//     flex-wrap: wrap;
+//       li {
+//     text-shadow: 0px 1px $colorTextShadow;
+//   }
+//   }
+//   /*Global styles*/
+//   // h1 {
+//   //   font-size: 60px;
+//   //   margin-top: 30px;
+//   //   margin-bottom: 30px;
+//   // }
+//   /*Grid styles*/
+//   .Grid-item {
+//     width: auto;
+//   }
+//   .Grid-whole {
+//     width: 98%;
+//   }
+//   .Grid-half {
+//     width: 48%;
+//   }
+//   .Grid-third {
+//     width: 31.3%;
+//   }
+//   .Grid-quarter {
+//     width: 23%;
+//   }
+// }
 
 .max60 {
   max-width: 60%;
@@ -609,7 +607,6 @@ figure {
 input#puppyField { display: none; }
 
 .centerHeading {
-  color:blue;
   text-align: center !important;
   margin: auto;
   display: block;
@@ -627,13 +624,12 @@ input#puppyField { display: none; }
 /* CRAFT CMS PHP CLASSES
 ==================================== */
 
-.textRow1, .textRow2 {
-  text-align: left;
-}
+// .textRow1, .textRow2 {
+//   text-align: left;
+// }
 
 #contact {
-  // color: green;
-  // background-color: blue;
+
   overflow: hidden;
   height: 5px;
   width: 5px;
@@ -664,20 +660,20 @@ input#puppyField { display: none; }
     @include border-radius (3px);
   }
 
-  .responsiveLeft {
-    float: left;
-  }
+  // .responsiveLeft {
+  //   float: left;
+  // }
 
-  .responsiveRight {
-    float: right;
-    background-color: blue;
-  } 
+  // .responsiveRight {
+  //   float: right;
+  //   background-color: blue;
+  // } 
 
-  .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%;
-  }
+  // .responsiveNot {
+  //   margin: auto;
+  //   float: none;
+  //   max-width: 100%;
+  // }
 
 
 }
@@ -706,7 +702,7 @@ and (max-width: $breakpointLaptopMax)
   }
 
   .Grid-third {
-    width: 98%;
+    width: 31.3%;
   }
 
 }
@@ -720,16 +716,16 @@ and (min-width: $breakpointTabletMin)
 and (max-width: $breakpointTabletMax) 
 {
   .mainLogo a {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     line-height: 1.3rem;
     margin-top: 0px;
     margin-bottom: 12px;
+    margin-right: 0.5rem;
   }
   .main-nav li a {
-    font-size: 0.85rem;
+    font-size: 0.97rem;
     line-height: 1.3rem;
-    margin-left: 1rem;
-    color: blue;
+    margin-left: 0.95rem;
   }
 
   .myImage {
@@ -744,12 +740,70 @@ and (max-width: $breakpointTabletMax)
     padding-top: 13px;
   }
 
-  .Grid-third {
-    width: 98%;
+  .Grid {
+    display: flex;  /*Flexbox container*/
+    flex-wrap: wrap;
+      li {
+    text-shadow: 0px 1px $colorTextShadow;
   }
 
+  }
+  /*Grid styles*/
+  .Grid-item {
+    width: auto;
+  }
+  .Grid-whole {
+    width: 98%;
+  }
+  .Grid-half {
+    width: 48%;
+  }
+  .Grid-third {
+    width: 31.3%;
+  }
+  .Grid-quarter {
+    width: 23%;
+  }
+
+  .main-nav li a {
+    color: blue;
+  }
 } 
 /* TABLET SCREEN END
+==================================== */
+
+
+/* PHABLET SCREEN
+==================================== */
+@media screen
+and (min-width: $breakpointPhabletMin)
+and (max-width: $breakpointPhabletMax) 
+{
+  .mainLogo a {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 0.35rem;
+  }
+  .main-nav li a {
+    font-size: 0.75rem;
+    line-height: 1.3rem;
+    margin-left: .3rem;
+  }
+// .main-nav {
+//   text-align: center;
+// }
+
+    .Grid-third {
+    width: 98%;
+  }
+h1 {color: yellow;}
+  .main-nav li a {
+    color: yellow;
+  }
+}
+/* PHABLET SCREEN END
 ==================================== */
 
 
@@ -838,7 +892,6 @@ nav {
         font-size: 16px;
         display: block;
         margin-right: 20px;
-        // color: blue;
         }
   }
 
@@ -981,6 +1034,16 @@ and (max-width: $breakpointPhoneMin)
   padding: 1% 5% 8% 5%;
   // padding-bottom: 1px;
   }
+
+  /*Component styles*/
+  .Card-info {
+    min-height: 200px;
+  }
+  /*Grid styles*/
+  .Grid-item {
+    width: 98%;
+  }
+
 }
 
 /* PHONE PORTRAIT
@@ -1024,9 +1087,14 @@ and (max-width: $breakpointTinyMin)
     }
   }
 
+// .textParagraphs, .textSentences {
+//     padding-left: 30px;
+//     padding-right: 30px;
+//   }
+
 .textParagraphs, .textSentences {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .facebook-word {
@@ -1053,10 +1121,6 @@ and (max-width: $breakpointTinyMin)
 //   // overflow: hidden;
 //   }
 
-.textParagraphs, .textSentences {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
 
 }
 /* PHONE PORTRAIT END

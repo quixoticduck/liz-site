@@ -150,8 +150,7 @@ nav li {
     margin-left: 1.5rem;
     margin-right: 0px; }
 
-.mainLogo
- {
+.mainLogo {
   display: inline-block;
   float: left;
   margin: 0; }
@@ -226,38 +225,6 @@ body {
   width: 31.3%; }
 
 /*Media queries*/
-@media all and (min-width: 480px) {
-  /*Component styles*/
-  .Card-info {
-    min-height: 200px; }
-
-  /*Grid styles*/
-  .Grid-item {
-    width: 98%; } }
-@media all and (min-width: 592px) {
-  .Grid {
-    display: flex;
-    /*Flexbox container*/
-    flex-wrap: wrap; }
-    .Grid li {
-      text-shadow: 0px 1px #774444; }
-
-  /*Global styles*/
-  /*Grid styles*/
-  .Grid-item {
-    width: auto; }
-
-  .Grid-whole {
-    width: 98%; }
-
-  .Grid-half {
-    width: 48%; }
-
-  .Grid-third {
-    width: 31.3%; }
-
-  .Grid-quarter {
-    width: 23%; } }
 .max60 {
   max-width: 60%; }
 
@@ -369,7 +336,6 @@ input#puppyField {
   display: none; }
 
 .centerHeading {
-  color: blue;
   text-align: center !important;
   margin: auto;
   display: block;
@@ -383,9 +349,6 @@ input#puppyField {
 
 /* CRAFT CMS PHP CLASSES
 ==================================== */
-.textRow1, .textRow2 {
-  text-align: left; }
-
 #contact {
   overflow: hidden;
   height: 5px;
@@ -412,15 +375,6 @@ input#puppyField {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     border-radius: 3px; }
-  .form-button .responsiveLeft {
-    float: left; }
-  .form-button .responsiveRight {
-    float: right;
-    background-color: blue; }
-  .form-button .responsiveNot {
-    margin: auto;
-    float: none;
-    max-width: 100%; }
 
 /* // CRAFT CMS PHP CLASSES END
 ==================================== */
@@ -437,23 +391,23 @@ input#puppyField {
     color: green; }
 
   .Grid-third {
-    width: 98%; } }
+    width: 31.3%; } }
 /* LAPTOP SCREEN END
 ==================================== */
 /* TABLET SCREEN
 ==================================== */
 @media screen and (min-width: 970px) and (max-width: 1184px) {
   .mainLogo a {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     line-height: 1.3rem;
     margin-top: 0px;
-    margin-bottom: 12px; }
+    margin-bottom: 12px;
+    margin-right: 0.5rem; }
 
   .main-nav li a {
-    font-size: 0.85rem;
+    font-size: 0.97rem;
     line-height: 1.3rem;
-    margin-left: 1rem;
-    color: blue; }
+    margin-left: 0.95rem; }
 
   .myImage {
     max-width: 40%; }
@@ -464,13 +418,61 @@ input#puppyField {
   .blockImages {
     padding-top: 13px; }
 
+  .Grid {
+    display: flex;
+    /*Flexbox container*/
+    flex-wrap: wrap; }
+    .Grid li {
+      text-shadow: 0px 1px #774444; }
+
+  /*Grid styles*/
+  .Grid-item {
+    width: auto; }
+
+  .Grid-whole {
+    width: 98%; }
+
+  .Grid-half {
+    width: 48%; }
+
   .Grid-third {
-    width: 98%; } }
+    width: 31.3%; }
+
+  .Grid-quarter {
+    width: 23%; }
+
+  .main-nav li a {
+    color: blue; } }
 /* TABLET SCREEN END
+==================================== */
+/* PHABLET SCREEN
+==================================== */
+@media screen and (min-width: 700px) and (max-width: 969px) {
+  .mainLogo a {
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-right: 0.35rem; }
+
+  .main-nav li a {
+    font-size: 0.75rem;
+    line-height: 1.3rem;
+    margin-left: .3rem; }
+
+  .Grid-third {
+    width: 98%; }
+
+  h1 {
+    color: yellow; }
+
+  .main-nav li a {
+    color: yellow; } }
+/* PHABLET SCREEN END
 ==================================== */
 /* PHONE LANDSCAPE
 ==================================== */
-@media screen and (max-width: 969px) {
+@media screen and (max-width: 699px) {
   .Grid-half {
     width: 98%; }
 
@@ -628,7 +630,15 @@ input#puppyField {
     width: 90%;
     max-width: 90%;
     display: block;
-    padding: 1% 5% 8% 5%; } }
+    padding: 1% 5% 8% 5%; }
+
+  /*Component styles*/
+  .Card-info {
+    min-height: 200px; }
+
+  /*Grid styles*/
+  .Grid-item {
+    width: 98%; } }
 /* PHONE PORTRAIT
 ==================================== */
 @media screen and (max-width: 350px) {
@@ -649,8 +659,8 @@ input#puppyField {
     display: block; }
 
   .textParagraphs, .textSentences {
-    padding-left: 30px;
-    padding-right: 30px; }
+    padding-left: 20px;
+    padding-right: 20px; }
 
   .facebook-word {
     display: inline; }
@@ -663,11 +673,7 @@ input#puppyField {
     width: 90%;
     max-width: 90%;
     display: block;
-    padding: 2% 5%; }
-
-  .textParagraphs, .textSentences {
-    padding-left: 20px;
-    padding-right: 20px; } }
+    padding: 2% 5%; } }
 /* PHONE PORTRAIT END
 ==================================== */
 
