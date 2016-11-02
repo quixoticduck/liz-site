@@ -39,13 +39,6 @@ $featureFont: 'brushpen', cursive;
 $headingFont: 'Fenix', serif;
 $pFont:'Open Sans', sans-serif;
 
-// @font-face {
-//   font-family: 'Lobster';
-//   font-style: normal;
-//   font-weight: 400;
-//   src: local('Lobster'), local('Lobster), url(http://fonts.gstatic.com/s/vollkorn/v5/BCFBp4rt5gxxFrX6F12DKnYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
-// }
-
 /* FONT STUFF END
 ==================================== */
 
@@ -90,12 +83,9 @@ $colorTextShadow: #774444;
 ol,
 ul {
   margin: 0;
+  margin-top: 10px;
   padding: 0;
   padding-left: 40px;
-  // list-style: none;
-  color: $colorLight;
-  font-weight: normal;
-  // list-style-type: circle;
   list-style-type: square;
 }
 
@@ -103,10 +93,14 @@ li.menu-item {
  margin:0 0 50px 0;   
 }
 
-p {
-  color: $colorLight;
+p, ul {
   font-size: 0.95em;
   line-height: 1.7em;
+  color: $colorLight;
+  font-weight: normal;
+} 
+
+p {
   margin: 7px 0px 10px 0px;
   text-shadow: 1px 1px $colorTextShadow;
   //   /* These are technically the same, but use both */
@@ -523,7 +517,6 @@ figure {
     color: $colorMain;
     // font-weight: 500;
   }
-
   li {
     text-shadow: none;
   }
@@ -783,7 +776,7 @@ and (max-width: $breakpointTabletMax)
     .Grid-quarter {
     width: 98%;
   }
-  
+
   .main-nav li a {
     color: blue;
   }
@@ -838,9 +831,6 @@ h1 {color: yellow;}
 // and (min-width: $breakpointTinyMax)
 and (max-width: $breakpointPhoneMax) 
 {
-  .Grid-half {
-    width: 98%;
-  }
 
 nav {
     position: fixed;
@@ -884,6 +874,35 @@ nav {
     -ms-transition: transform 0.3s ease;
   }
 
+  .mainNavClose {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: $colorMain;
+    border: none;
+  }
+
+  .main-nav li {
+    display: block;
+    min-height: 45px;
+      a {
+        font-size: 16px;
+        display: block;
+        margin-right: 20px;
+        }
+  }
+
+  .mainLogo {
+    display: block;
+    float: none;
+    margin-bottom: 5px;
+        transition: transform 0.8s ease;
+    // visibility: hidden;
+  }
+
   .navHeadingWhenOpen {
     transform: translate3d(33px, 0, 0);
     -webkit-transform: translate3d(33px, 0, 0);
@@ -907,53 +926,6 @@ nav {
     -moz-transition: transform 0.3s ease;
     -ms-transition: transform 0.3s ease;
   }
-
-  .main-nav li {
-    display: block;
-    min-height: 45px;
-      a {
-        font-size: 16px;
-        display: block;
-        margin-right: 20px;
-        }
-  }
-
-  .mainLogo {
-    display: block;
-    float: none;
-    margin-bottom: 5px;
-        transition: transform 0.8s ease;
-    // visibility: hidden;
-  }
-
-  .mainNavClose {
-    display: block;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 55px;
-    background-color: $colorMain;
-    border: none;
-  }
-
-  p {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
-  body {
-      padding-top: 55px;
-    }
-
-  .max60 {
-    max-width: 70%;
-  }
-
-.textParagraphs {
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
 
   .navHeadingWhenClose .menuTextMenu {
       display: block;
@@ -980,18 +952,6 @@ nav {
 
     // for if I want there to always be an X/burger menu on the nav when it's open
   .navHeadingWhenOpen .menuTextClose {
-      // display: inline-block;
-      // text-align: center;
-      // padding-left: 8.8rem;
-      // padding-left: 160px;
-      // display: inline;
-      // margin-left: 300px;
-      // z-index: 50;
-      // transform: translateZ(5px);
-      // position: absolute;
-      // z-index: 500;
-      // transform: translate3d(0px, 0px, 500px);
-      // text-align: center;
       .fa-bars {
           position: absolute;
           left: 226px;
@@ -1003,10 +963,34 @@ nav {
       cursor: pointer;
     }
 
-  .footer {
-    padding-left: 13px;
-    padding-right: 13px;
-  }  
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  body {
+      padding-top: 55px;
+    }
+
+  .max60 {
+    max-width: 95%;
+  }
+
+ .container {
+  width: 98%;
+  // overflow: hidden;
+  margin: auto;
+  }
+
+.textParagraphs, .textSentences {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+.textParagraphs {
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
 
   .textbox img {
   width: 45%;
@@ -1017,30 +1001,38 @@ nav {
   padding-bottom: 10px;
   }
 
+.myImageGroup {
+  padding-top: 21px;
+  padding-bottom: 13px;
+}
+
+.textbox {
+  margin-bottom: 30px;
+}
+
   .facebook-word {
     display: inline;
   }
 
+  .Grid-half {
+    width: 98%;
+  }
+
+  .Grid-third {
+    width: 98%;
+  }
+
+  .footer {
+    padding-left: 13px;
+    padding-right: 13px;
+  }  
 
   .contactForm {
     padding: 10px 50px 25px 7px;
     margin: auto;
   }
-  h1 {color: purple;}
- .container {
-  width: 93%;
-  // overflow: hidden;
-  margin: auto;
-  }
 
-.textParagraphs, .textSentences {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-
-    .Grid-third {
-    width: 98%;
-  }
+  h1 {color: purple;}  
 } 
 /* PHONE LANDSCAPE END
 ==================================== */
@@ -1058,6 +1050,21 @@ and (max-width: $breakpointPhoneMin)
   // padding-bottom: 1px;
   }
 
+  .max60 {
+    max-width: 95%;
+  }
+
+ .container {
+  width: 98%;
+  // overflow: hidden;
+  margin: auto;
+  }
+
+  .textbox p {
+    padding-left: 3px;
+    padding-right: 0px;
+  }
+
   /*Component styles*/
   .Card-info {
     min-height: 200px;
@@ -1066,6 +1073,28 @@ and (max-width: $breakpointPhoneMin)
   .Grid-item {
     width: 98%;
   }
+
+.textParagraphs, .textSentences {
+    padding-left: 13px;
+    padding-right: 8px;
+  }
+
+// .myImageGroup {
+//   padding-top: 21px;
+//   padding-bottom: 13px;
+// }
+
+// .textbox {
+//   margin-bottom: 30px;
+// }
+
+img {
+  text-align: center;
+  margin: auto;
+  max-width: 98%;
+}
+
+  h1 {color: orange;}  
 
 }
 
@@ -1110,11 +1139,6 @@ and (max-width: $breakpointTinyMin)
     }
   }
 
-// .textParagraphs, .textSentences {
-//     padding-left: 30px;
-//     padding-right: 30px;
-//   }
-
 .textParagraphs, .textSentences {
     padding-left: 20px;
     padding-right: 20px;
@@ -1138,12 +1162,12 @@ and (max-width: $breakpointTinyMin)
   // padding-bottom: 1px;
   }
 
-//   h1 {color: pink;}
 // .wrapper, .container {
 //   width: 98%;
 //   // overflow: hidden;
 //   }
 
+  h1 {color: pink;}
 
 }
 /* PHONE PORTRAIT END

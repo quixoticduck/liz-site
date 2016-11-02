@@ -23,19 +23,21 @@
 ol,
 ul {
   margin: 0;
+  margin-top: 10px;
   padding: 0;
   padding-left: 40px;
-  color: white;
-  font-weight: normal;
   list-style-type: square; }
 
 li.menu-item {
   margin: 0 0 50px 0; }
 
-p {
-  color: white;
+p, ul {
   font-size: 0.95em;
   line-height: 1.7em;
+  color: white;
+  font-weight: normal; }
+
+p {
   margin: 7px 0px 10px 0px;
   text-shadow: 1px 1px #774444;
   word-wrap: break-word; }
@@ -473,9 +475,6 @@ input#puppyField {
 /* PHONE LANDSCAPE
 ==================================== */
 @media screen and (max-width: 699px) {
-  .Grid-half {
-    width: 98%; }
-
   nav {
     position: fixed;
     top: 0px;
@@ -513,6 +512,30 @@ input#puppyField {
     -moz-transition: transform 0.3s ease;
     -ms-transition: transform 0.3s ease; }
 
+  .mainNavClose {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 55px;
+    background-color: #B4234D;
+    border: none; }
+
+  .main-nav li {
+    display: block;
+    min-height: 45px; }
+    .main-nav li a {
+      font-size: 16px;
+      display: block;
+      margin-right: 20px; }
+
+  .mainLogo {
+    display: block;
+    float: none;
+    margin-bottom: 5px;
+    transition: transform 0.8s ease; }
+
   .navHeadingWhenOpen {
     transform: translate3d(33px, 0, 0);
     -webkit-transform: translate3d(33px, 0, 0);
@@ -532,44 +555,6 @@ input#puppyField {
     -webkit-transition: transform 0.3s ease;
     -moz-transition: transform 0.3s ease;
     -ms-transition: transform 0.3s ease; }
-
-  .main-nav li {
-    display: block;
-    min-height: 45px; }
-    .main-nav li a {
-      font-size: 16px;
-      display: block;
-      margin-right: 20px; }
-
-  .mainLogo {
-    display: block;
-    float: none;
-    margin-bottom: 5px;
-    transition: transform 0.8s ease; }
-
-  .mainNavClose {
-    display: block;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 55px;
-    background-color: #B4234D;
-    border: none; }
-
-  p {
-    margin-top: 0px;
-    margin-bottom: 0px; }
-
-  body {
-    padding-top: 55px; }
-
-  .max60 {
-    max-width: 70%; }
-
-  .textParagraphs {
-    margin-top: 15px;
-    margin-bottom: 5px; }
 
   .navHeadingWhenClose .menuTextMenu {
     display: block;
@@ -591,9 +576,27 @@ input#puppyField {
   .menuTextClose:hover, .fa-bars:hover {
     cursor: pointer; }
 
-  .footer {
-    padding-left: 13px;
-    padding-right: 13px; }
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+
+  body {
+    padding-top: 55px; }
+
+  .max60 {
+    max-width: 95%; }
+
+  .container {
+    width: 98%;
+    margin: auto; }
+
+  .textParagraphs, .textSentences {
+    padding-left: 25px;
+    padding-right: 25px; }
+
+  .textParagraphs {
+    margin-top: 15px;
+    margin-bottom: 5px; }
 
   .textbox img {
     width: 45%;
@@ -603,26 +606,32 @@ input#puppyField {
     padding-right: 35px;
     padding-bottom: 10px; }
 
+  .myImageGroup {
+    padding-top: 21px;
+    padding-bottom: 13px; }
+
+  .textbox {
+    margin-bottom: 30px; }
+
   .facebook-word {
     display: inline; }
+
+  .Grid-half {
+    width: 98%; }
+
+  .Grid-third {
+    width: 98%; }
+
+  .footer {
+    padding-left: 13px;
+    padding-right: 13px; }
 
   .contactForm {
     padding: 10px 50px 25px 7px;
     margin: auto; }
 
   h1 {
-    color: purple; }
-
-  .container {
-    width: 93%;
-    margin: auto; }
-
-  .textParagraphs, .textSentences {
-    padding-left: 30px;
-    padding-right: 30px; }
-
-  .Grid-third {
-    width: 98%; } }
+    color: purple; } }
 /* PHONE LANDSCAPE END
 ==================================== */
 @media screen and (max-width: 450px) {
@@ -632,13 +641,36 @@ input#puppyField {
     display: block;
     padding: 1% 5% 8% 5%; }
 
+  .max60 {
+    max-width: 95%; }
+
+  .container {
+    width: 98%;
+    margin: auto; }
+
+  .textbox p {
+    padding-left: 3px;
+    padding-right: 0px; }
+
   /*Component styles*/
   .Card-info {
     min-height: 200px; }
 
   /*Grid styles*/
   .Grid-item {
-    width: 98%; } }
+    width: 98%; }
+
+  .textParagraphs, .textSentences {
+    padding-left: 13px;
+    padding-right: 8px; }
+
+  img {
+    text-align: center;
+    margin: auto;
+    max-width: 98%; }
+
+  h1 {
+    color: orange; } }
 /* PHONE PORTRAIT
 ==================================== */
 @media screen and (max-width: 350px) {
@@ -673,7 +705,10 @@ input#puppyField {
     width: 90%;
     max-width: 90%;
     display: block;
-    padding: 2% 5%; } }
+    padding: 2% 5%; }
+
+  h1 {
+    color: pink; } }
 /* PHONE PORTRAIT END
 ==================================== */
 
