@@ -1,0 +1,1024 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"col",
+				"colorMain"
+			],
+			[
+				"color",
+				"color2ndLight"
+			],
+			[
+				"colorMai",
+				"colorMainLight"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"mari",
+				"margin-bottom"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"pad",
+				"padding-bottom"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"colo",
+				"colorDark"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"colorM",
+				"colorMain"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"colorm",
+				"colorMain"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"d",
+				"double"
+			],
+			[
+				"border",
+				"border-right"
+			],
+			[
+				"left",
+				"padding-left"
+			],
+			[
+				"ligh",
+				"colorMainLight"
+			],
+			[
+				"marin",
+				"margin-top"
+			],
+			[
+				"mini",
+				"min-height"
+			],
+			[
+				"box",
+				"box-shadow"
+			],
+			[
+				"borde",
+				"border-style"
+			],
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"colorl",
+				"colorMainLight"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"p",
+				"padding-top"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"color2nd",
+				"color2ndLight"
+			],
+			[
+				"c",
+				"colorLight"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "/* Media Query Breakpoints\n==================================== */\n$breakpointDesktopMin: 1330px;\n$breakpointLaptopMax: ($breakpointDesktopMin - 1px);\n$breakpointLaptopMin: 1185px;\n$breakpointTabletMax: ($breakpointLaptopMin - 1px);\n$breakpointTabletMin: 970px;\n$breakpointPhoneMax: ($breakpointTabletMin - 1px);\n$breakpointPhoneMin: 450px;\n$breakpointTinyMax: ($breakpointPhoneMin - 1px);\n$breakpointTinyMin: 350px;\n/* /END/ Media Query Breakpoints\n==================================== */\\\n\n\n\n\n\n\n\n/* Media Query Breakpoints\n==================================== */\n$breakpointDesktopMin: 1330px;\n$breakpointLaptopMax: ($breakpointDesktopMin - 1px);\n$breakpointLaptopMin: 1185px;\n$breakpointTabletMax: ($breakpointLaptopMin - 1px);\n$breakpointTabletMin: 970px;\n$breakpointPhabletMax: ($breakpointTabletMin - 1px);\n$breakpointPhabletMin: 700px;\n$breakpointPhoneMax: ($breakpointPhabletMin - 1px);\n$breakpointPhoneMin: 450px;\n$breakpointTinyMax: ($breakpointPhoneMin - 1px);\n$breakpointTinyMin: 350px;\n/* /END/ Media Query Breakpoints\n==================================== */",
+			"settings":
+			{
+				"buffer_size": 1071,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/lizdeanconsultancy.co.uk/assets/scss/styles.scss",
+			"settings":
+			{
+				"buffer_size": 19754,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "html/craft/templates/youthwork/index.html",
+			"settings":
+			{
+				"buffer_size": 10100,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "inst",
+		"selected_items":
+		[
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Clara/GitHub/liz-site",
+		"/C/Users/Clara/GitHub/liz-site/html",
+		"/C/Users/Clara/GitHub/liz-site/html/craft",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/about",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/health",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/news",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/pshe",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/relationships",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/youthwork",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk/assets",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk/assets/css",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk/assets/scss"
+	],
+	"file_history":
+	[
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/about/_entry.html",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk/assets/scss/grid.scss",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/_layout.html",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/index.html",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Ramco_pm00.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/4. Webinar_Reminder_base_pm00.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_Ramco_am00.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/3. Webinar_Reminder_base_am00.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_Ramco_am30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Ramco_pm30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Ovidius_pm30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Thales_pm30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_base_am30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_base_pm30.ics",
+		"/C/Users/Clara/AppData/Local/Microsoft/Windows/Temporary Internet Files/Content.Outlook/UHQFUUW0/cobalt-201610-approved.txt",
+		"/C/Users/Clara/GitHub/liz-site/html/flexbox example.md",
+		"/C/Users/Clara/AppData/Local/Temp/Temp1_Craft-2.6.2949.zip/readme.txt",
+		"/C/Users/Clara/AppData/Local/Temp/Temp1_ContactForm-1.8.1.zip/ContactForm-1.8.1/README.md",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/analyticstracking.php",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/youthwork/index.html",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/relationships/index.html",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/health/index.html",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/pshe/index.html",
+		"/C/Users/Clara/GitHub/liz-site/html/craft/templates/news/index.html",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Trax_pm30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_Trax_am30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_TRAX_am30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_TRAX_pm30.ics",
+		"/C/Program Files/Unity/Editor/Data/Documentation/en/Manual/class-InputManager.html",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk/.htaccess",
+		"/C/Users/Clara/Google Drive/00. Work shared w Duck/Ops sept 16 article page numbers.txt",
+		"/C/Users/Clara/GitHub/liz-site - 04-09-16 website v/html/craft/templates/about/_entry.html",
+		"/C/Users/Clara/GitHub/liz-site - 04-09-16 website v/html/craft/templates/youthwork/index.html",
+		"/C/Users/Clara/GitHub/liz-site - 04-09-16 website v/html/craft/templates/old/about-me.html",
+		"/C/Users/Clara/GitHub/liz-site - 04-09-16 website v/html/craft/templates/news/index.html",
+		"/C/Users/Clara/GitHub/liz-site - 04-09-16 website v/html/craft/templates/news/_entry.html",
+		"/C/Users/Clara/GitHub/liz-site - 04-09-16 website v/html/craft/templates/index.html",
+		"/C/Users/Clara/GitHub/grav-portfolio/grav-admin/user/pages/01.home/default.md",
+		"/C/Users/Clara/GitHub/grav-portfolio/grav-admin/user/pages/02.modular-test/modular.md",
+		"/C/Users/Clara/GitHub/liz-site/html/lizdeanconsultancy.co.uk/assets/scss/test.css",
+		"/C/Users/Clara/GitHub/cs-software/index.html",
+		"/C/Users/Clara/GitHub/cs-software/css/main.css",
+		"/E/E - My Videos/David Bowie - 2004-06-04 Wantagh DVD9/other parts.txt",
+		"/E/E - My Videos/David Bowie - 2004-06-04 Wantagh DVD9/Info.txt",
+		"/C/Users/Clara/GitHub/Roundhill/html/index.html",
+		"/C/Users/Clara/GitHub/Roundhill/html/assets/css/main.css",
+		"/C/Users/Clara/Dropbox/Apps/site44/claraalder.site44.com/assets/css/portfolio.css",
+		"/C/Users/Clara/Dropbox/Apps/site44/claraalder.site44.com/index.html",
+		"/C/Users/Clara/general-notes",
+		"/C/Users/Clara/Dropbox/Apps/site44/claraalder.site44.com/portfolio.html",
+		"/C/Users/Clara/Desktop/mousetrap/keyDownTest.ahk",
+		"/C/Users/Clara/Desktop/my oven tray dimensions.txt",
+		"/E/E - Downloads/CoolerMaster SDK160630/Src/ReadMe.txt",
+		"/C/Program Files/Unity/Editor/Data/Documentation/en/ScriptReference/MonoBehaviour.html",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_CrossConsense_pm30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_CrossConsense_am30.ics",
+		"/C/Users/Clara/Google Drive/00. Work shared w Duck/eJournal text Ops.txt",
+		"/C/Users/Clara/AppData/Roaming/StardewValley/Saves - Copy (4)/Clara_121226344/Clara_121226344",
+		"/C/Users/Clara/Desktop/index.html",
+		"/C/Users/Clara/GitHub/liz-site/notes3.txt",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/user/themes/antimatter/templates/modular.html.twig",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/vendor/twig/twig/lib/Twig/Template.php",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/templates/modular.html.twig",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/templates/modular/latest_projects.html.twig",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/templates/default.html.twig",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/user/pages/01.home/modular.md",
+		"/C/Users/Clara/AppData/Local/Temp/Temp1_Sommerregen-grav-theme-developer-v2.0.4-0-g2904bc1.zip/Sommerregen-grav-theme-developer-0518392/README.md",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/_footer.html",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/user/pages/01.home/default.md",
+		"/C/Users/Clara/AppData/Local/Temp/Temp1_grav-admin-v1.0.10.zip/grav-admin/user/pages/01.home/default.md",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/user/pages/03.blog/blog.md",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/index.php",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/index.html",
+		"/C/Users/Clara/GitHub/clara-site/htmlgrav/system/src/Grav/Common/GPM/Installer.php",
+		"/C/Users/Clara/GitHub/clara-site/htmlgravskel/README.md",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/_layout.html",
+		"/C/Users/Clara/GitHub/liz-site/html/assets/scss/styles.scss",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/about/_entry.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/health/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/youthWork/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/relationships/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/pshe/index.html",
+		"/C/Users/Clara/Desktop/Liz-Test-PDF.pdf",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_Mxi_Technologies_am30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/Webinar_Reminder_Mxi_Technologies_pm30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Mxi_Technologies_pm30.ics",
+		"/C/Users/Clara/Google Drive/00. Work shared w Duck/scrundie and stardew notes.txt",
+		"/C/Users/Clara/AppData/Roaming/StardewValley/Saves/Clara_121226344/Clara_121226344",
+		"/C/Users/Clara/AppData/Roaming/StardewValley/Saves/Clara_121226344/SaveGameInfo",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/About/_entry.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/YouthWork/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/Health/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/thanks.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/Relationships/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/old/contact.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/old/about-me.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/news/index.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/news/_entry.html",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/1. Webinar_Reminder_Flatirons_am30.ics",
+		"/C/Users/Clara/Dropbox/Webinar outlook reminders/2. Webinar_Reminder_Flatirons_pm30.ics",
+		"/C/Users/Clara/Dropbox/11. Rosalind2222 + Clara/Clara Work textfile.txt",
+		"/C/Users/Clara/Dropbox/09. Aldwin's shared folder/Clara Work textfile.txt",
+		"/E/E - Downloads/DeDRM_tools_6.4.3/ReadMe_First.txt",
+		"/E/E - Downloads/DeDRM_tools_6.4.3/DeDRM_calibre_plugin/DeDRM_plugin_ReadMe.txt",
+		"/C/Users/Clara/AppData/Local/Temp/Temp1_DeDRM_tools_6.4.3.zip/ReadMe_First.txt",
+		"/C/Users/Clara/Music/iTunes/iTunes Music Library.xml",
+		"/C/Users/Clara/Music/iTunes/iTunes Library.itl",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/404.html",
+		"/C/Users/Clara/Google Drive/00. Work shared w Duck/01- Non-work/message.txt",
+		"/C/Users/Clara/Google Drive/00. Work shared w Duck/01- Non-work/notes-for-home.txt",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/analyticstracking.php",
+		"/C/Users/Clara/GitHub/liz-site/craft/templates/contact/_entry.html",
+		"/C/Users/Clara/GitHub/liz-site/craft/config/general.php",
+		"/C/Users/Clara/GitHub/liz-site/craft/config/db.php",
+		"/C/Users/Clara/GitHub/_LIZ SITES/WORKING LIZ SERVER SITE2/notes3.txt",
+		"/C/Users/Clara/GitHub/_LIZ SITES/WORKING LIZ SERVER SITE2/html/craft/config/db.php",
+		"/C/Users/Clara/GitHub/liz-site/notes3 (2).txt",
+		"/C/Users/Clara/GitHub/liz-site/public_html/assets/scss/styles.scss",
+		"/C/Users/Clara/GitHub/liz-site/notes.txt",
+		"/C/Users/Clara/Dropbox/Apps/site44/claraalder.site44.com/assets/scss/main.scss",
+		"/C/Users/Clara/GitHub/inkscape-exports/layout.html",
+		"/C/Users/Clara/GitHub/liz-site/public_html/index.php",
+		"/C/Users/Clara/GitHub/liz-site/notes2.txt",
+		"/C/Users/Clara/AppData/Local/Temp/fz3temp-1/db.php",
+		"/C/Users/Clara/AppData/Local/Temp/fz3temp-1/db 2.php",
+		"/C/Users/Clara/GitHub/liz-site/logs/craft.log",
+		"/C/Users/Clara/GitHub/liz-site/public_html/t-index.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"pairedBlock",
+			"MAINLO",
+			"green",
+			"third",
+			"green",
+			"blue",
+			"phablet",
+			"Tablet",
+			"TABLET",
+			"tablet",
+			"tabletm",
+			"media qu",
+			"media qw",
+			"phone",
+			"third",
+			"purpl",
+			"purple",
+			"hald",
+			"third",
+			"left",
+			"half",
+			"tect",
+			"0602",
+			"0507",
+			"wrapp",
+			"290px",
+			"nav",
+			"nav#",
+			"wrapper",
+			"25",
+			"purple",
+			"blue",
+			"media",
+			"container",
+			"wrapper",
+			"content",
+			"padding",
+			"nav ",
+			"48",
+			"nav li",
+			"inline",
+			"inline-b",
+			"inline-",
+			"inline",
+			"single",
+			"%}\n",
+			"leftCol",
+			"TEXT",
+			"textbox i",
+			"text",
+			"textbox {",
+			"textbox im",
+			"img",
+			"15T",
+			"15",
+			"none",
+			"ul",
+			"ul {",
+			"grid",
+			"figure",
+			"center",
+			"cent",
+			"myimage",
+			"myimage {",
+			"myimage",
+			"myimageg",
+			"col ",
+			"wrapper",
+			"contain",
+			"media",
+			"blocki",
+			"block",
+			"myima",
+			"blockim",
+			"center",
+			"ul {",
+			"tinyma",
+			"phone",
+			"media all",
+			"media ",
+			"grid-h",
+			"half",
+			"</ul",
+			"myima",
+			"body",
+			"tabletma",
+			"laptopmin",
+			"media ",
+			"colormain",
+			"colo",
+			"half",
+			"two",
+			"card",
+			"flexb",
+			"grid",
+			"logo",
+			"hover",
+			"logo",
+			"#cs-software-logo",
+			"#cs-software-logo:hover .orange {animation-delay: 0s}",
+			"purple",
+			"purpl",
+			"about",
+			"nav",
+			"navb",
+			"contain",
+			"main",
+			"mainc",
+			"third",
+			"font",
+			"98",
+			"comp",
+			"20px",
+			"padding 30",
+			"modular",
+			"modul",
+			"textb",
+			"col {",
+			".textParagraphs",
+			"paragr",
+			"ara",
+			"row2",
+			"row",
+			"row2",
+			";\n",
+			"textParagraphs",
+			"para",
+			"col {"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"file://localhost/E:/E%20-%20My%20Music/iTunes/iTunes%20Media/Music/",
+			"file://localhost/E:/Music/iTunes/iTunes%20Media/Music/",
+			"file://localhost/E:/Music/iTunes/iTunes%20Music/",
+			"h2",
+			"mainNavClose",
+			"file://localhost/F:/F - My Music/iTunes/iTunes%20Media/Music/",
+			"file://localhost/F:/F%20-%20My%20Music/iTunes/iTunes%20Media/Music/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1071,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1071,
+								1071
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"default_dir": "C:\\Users\\Clara\\GitHub\\liz-site",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/lizdeanconsultancy.co.uk/assets/scss/styles.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19754,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12642,
+								12642
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										12649,
+										12650
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										12570,
+										12571
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai.tmTheme",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13309.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "html/craft/templates/youthwork/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10100,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3995,
+								3995
+							],
+							[
+								4966,
+								4966
+							],
+							[
+								5943,
+								5943
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										3998,
+										3999
+									],
+									"2":
+									[
+										4969,
+										4970
+									],
+									"3":
+									[
+										5946,
+										5947
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									],
+									"2":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									],
+									"3":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"brackethighlighter.default"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										3956,
+										3957
+									],
+									"2":
+									[
+										4927,
+										4928
+									],
+									"3":
+									[
+										5904,
+										5905
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1719.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 29.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/SASS Build/SASS - Compressed.sublime-build",
+	"project": "liz-website.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

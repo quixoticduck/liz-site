@@ -380,6 +380,15 @@ $gutter: 20px;
 
 
 /*Grid styles*/
+
+.Grid {
+    display: flex;  /*Flexbox container*/
+    flex-wrap: wrap;
+      li {
+    text-shadow: 0px 1px $colorTextShadow;
+  }
+}
+
 .Grid {
   overflow: hidden;
 }
@@ -390,12 +399,29 @@ $gutter: 20px;
   width: 100%;
   margin-bottom: 20px;
 }
+
+  .Grid-item {
+    width: auto;
+  }
+
 .Grid-item:hover {
   // transform: scale(1.02);
 }
 
+  .Grid-half {
+    width: 48%;
+  }
+
+   .Grid-whole {
+    width: 98%;
+  }
+
   .Grid-third {
     width: 31.3%;
+  }
+
+  .Grid-quarter {
+    width: 23%;
   }
 
 /*Media queries*/
@@ -427,18 +453,7 @@ $gutter: 20px;
 //   .Grid-item {
 //     width: auto;
 //   }
-//   .Grid-whole {
-//     width: 98%;
-//   }
-//   .Grid-half {
-//     width: 48%;
-//   }
-//   .Grid-third {
-//     width: 31.3%;
-//   }
-//   .Grid-quarter {
-//     width: 23%;
-//   }
+
 // }
 
 .max60 {
@@ -701,10 +716,13 @@ and (max-width: $breakpointLaptopMax)
     color: green;
   }
 
-  .Grid-third {
-    width: 31.3%;
-  }
+  // .Grid-third {
+  //   width: 31.3%;
+  // }
 
+  //   .Grid-quarter {
+  //   width: 98%;
+  // }
 }
 /* LAPTOP SCREEN END
 ==================================== */
@@ -740,31 +758,32 @@ and (max-width: $breakpointTabletMax)
     padding-top: 13px;
   }
 
-  .Grid {
-    display: flex;  /*Flexbox container*/
-    flex-wrap: wrap;
-      li {
-    text-shadow: 0px 1px $colorTextShadow;
-  }
-
-  }
+  // .Grid {
+  //     display: flex;  /*Flexbox container*/
+  //     flex-wrap: wrap;
+  //       li {
+  //     text-shadow: 0px 1px $colorTextShadow;
+  //   }
+  // }
   /*Grid styles*/
-  .Grid-item {
-    width: auto;
-  }
-  .Grid-whole {
+ 
+  // .Grid-whole {
+  //   width: 98%;
+  // }
+  // .Grid-half {
+  //   width: 48%;
+  // }
+  // .Grid-third {
+  //   width: 31.3%;
+  // }
+  // .Grid-quarter {
+  //   width: 23%;
+  // }
+
+    .Grid-quarter {
     width: 98%;
   }
-  .Grid-half {
-    width: 48%;
-  }
-  .Grid-third {
-    width: 31.3%;
-  }
-  .Grid-quarter {
-    width: 23%;
-  }
-
+  
   .main-nav li a {
     color: blue;
   }
@@ -795,9 +814,13 @@ and (max-width: $breakpointPhabletMax)
 //   text-align: center;
 // }
 
-    .Grid-third {
+  .Grid-third {
     width: 98%;
   }
+  .Grid-quarter {
+    width: 98%;
+  }
+
 h1 {color: yellow;}
   .main-nav li a {
     color: yellow;
