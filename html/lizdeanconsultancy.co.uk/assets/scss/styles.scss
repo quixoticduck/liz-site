@@ -394,61 +394,30 @@ $gutter: 20px;
   margin-bottom: 20px;
 }
 
-  .Grid-item {
-    width: auto;
-  }
+  // .Grid-item {
+  //   width: auto;
+  // }
 
 .Grid-item:hover {
   // transform: scale(1.02);
 }
 
-  .Grid-half {
-    width: 48%;
-  }
+.Grid-half {
+  width: 48%;
+}
 
-   .Grid-whole {
-    width: 98%;
-  }
+ .Grid-whole {
+  width: 98%;
+}
 
-  .Grid-third {
-    width: 31.3%;
-  }
+.Grid-third {
+  width: 31.3%;
+}
 
-  .Grid-quarter {
-    width: 23%;
-  }
+.Grid-quarter {
+  width: 23%;
+}
 
-/*Media queries*/
-// @media all and (min-width: 480px) {
-//   /*Component styles*/
-//   .Card-info {
-//     min-height: 200px;
-//   }
-//   /*Grid styles*/
-//   .Grid-item {
-//     width: 98%;
-//   }
-// }
-// @media all and (min-width: 592px) {
-//   .Grid {
-//     display: flex;  /*Flexbox container*/
-//     flex-wrap: wrap;
-//       li {
-//     text-shadow: 0px 1px $colorTextShadow;
-//   }
-//   }
-//   /*Global styles*/
-//   // h1 {
-//   //   font-size: 60px;
-//   //   margin-top: 30px;
-//   //   margin-bottom: 30px;
-//   // }
-//   /*Grid styles*/
-//   .Grid-item {
-//     width: auto;
-//   }
-
-// }
 
 .max60 {
   max-width: 60%;
@@ -699,16 +668,10 @@ and (max-width: $breakpointLaptopMax)
     line-height: 1.4rem;
     margin-left: 1.5rem;
     // margin-right: 0px;
-    color: green;
+    color: orange;
   }
 
-  // .Grid-third {
-  //   width: 31.3%;
-  // }
 
-  //   .Grid-quarter {
-  //   width: 98%;
-  // }
 }
 /* LAPTOP SCREEN END
 ==================================== */
@@ -744,34 +707,12 @@ and (max-width: $breakpointTabletMax)
     padding-top: 13px;
   }
 
-  // .Grid {
-  //     display: flex;  /*Flexbox container*/
-  //     flex-wrap: wrap;
-  //       li {
-  //     text-shadow: 0px 1px $colorTextShadow;
-  //   }
-  // }
-  /*Grid styles*/
- 
-  // .Grid-whole {
-  //   width: 98%;
-  // }
-  // .Grid-half {
-  //   width: 48%;
-  // }
-  // .Grid-third {
-  //   width: 31.3%;
-  // }
-  // .Grid-quarter {
-  //   width: 23%;
-  // }
-
     .Grid-quarter {
     width: 98%;
   }
 
   .main-nav li a {
-    color: blue;
+    color: yellow;
   }
 } 
 /* TABLET SCREEN END
@@ -807,9 +748,9 @@ and (max-width: $breakpointPhabletMax)
     width: 98%;
   }
 
-h1 {color: yellow;}
+h1 {color: green;}
   .main-nav li a {
-    color: yellow;
+    color: green;
   }
 }
 /* PHABLET SCREEN END
@@ -1025,9 +966,12 @@ nav {
     margin: auto;
   }
 
-  h1 {color: purple;}  
+  h1 {color: blue;}  
 } 
 /* PHONE LANDSCAPE END
+==================================== */
+
+/* WIDE PHONE PORTRAIT
 ==================================== */
 
 @media screen
@@ -1062,6 +1006,7 @@ and (max-width: $breakpointPhoneMin)
   .Card-info {
     min-height: 200px;
   }
+
   /*Grid styles*/
   .Grid-item {
     width: 98%;
@@ -1089,9 +1034,12 @@ img, .myImage {
   padding-right: 0px;
 }
 
-  h1 {color: orange;}  
+  h1 {color: indigo;}  
 
 }
+
+/* WIDE PHONE PORTRAIT END
+==================================== */
 
 /* PHONE PORTRAIT
 ==================================== */
@@ -1100,7 +1048,7 @@ and (max-width: $breakpointTinyMin)
 {
   h1 {
       font-size: 32px;
-      // color: green;
+      // color: violet;
   }
 
   .wrapper, .mainNavClose 
@@ -1162,7 +1110,7 @@ and (max-width: $breakpointTinyMin)
 //   // overflow: hidden;
 //   }
 
-  h1 {color: pink;}
+  h1 {color: violet;}
 
 }
 /* PHONE PORTRAIT END
